@@ -7,7 +7,7 @@ dependencies:
     - core.entity_view_mode.media.inline_embedded
     - entity_browser.browser.ckeditor_media_browser
   content:
-    - 'file:file:b8b2801f-29e4-4ae5-acdb-ce541161eea9'
+    - 'file:file:3c184ea4-4d4a-4a37-9fe6-1df904123c62'
   module:
     - entity_embed
     - image
@@ -27,4 +27,4 @@ type_settings:
   entity_browser: ckeditor_media_browser
   entity_browser_settings:
     display_review: true
-icon_uuid: b8b2801f-29e4-4ae5-acdb-ce541161eea9
+icon_uuid: 3c184ea4-4d4a-4a37-9fe6-1df904123c62

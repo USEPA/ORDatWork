@@ -19,3 +19,5 @@ permissions:
   - 'view group_node:landing_page entity'
   - 'view group_node:page entity'
   - 'view group_node:staff_member entity'
+  - 'view group_node:webform content'
+  - 'view group_node:webform entity'
