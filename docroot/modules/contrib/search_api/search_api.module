@@ -106,6 +106,7 @@ function search_api_cron() {
     }
     foreach ($indexes as $id => $index) {
       if (!$first_pass && time() >= $end) {
+        \Drupal::service('logger.channel.search_api')->info('Breaking out of indexing: first pass = ' . $first_pass . ', $end =' . $end . ', time()= ' . time());
         break 2;
       }
       if (!empty($ignored_servers[$index->getServerId()])) {
@@ -124,8 +125,7 @@ function search_api_cron() {
             ];
             \Drupal::service('logger.channel.search_api')->info('Indexed @num items for index %name.', $variables);
           }
-        }
-        catch (SearchApiException $e) {
+        } catch (SearchApiException $e) {
           // Exceptions will probably be caused by the server in most cases.
           // Therefore, don't index for any index on this server.
           $ignored_servers[$index->getServerId()] = TRUE;
@@ -373,7 +373,7 @@ function search_api_node_access_records_alter(array &$grants, NodeInterface $nod
         case 'comment':
           if (!isset($comments)) {
             $entity_query = \Drupal::entityQuery('comment');
-            $entity_query->condition('entity_id', (int) $node->id());
+            $entity_query->condition('entity_id', (int)$node->id());
             $entity_query->condition('entity_type', 'node');
             $comment_ids = $entity_query->execute();
             /** @var \Drupal\comment\CommentInterface[] $comments */
@@ -496,8 +496,7 @@ function search_api_search_api_index_update(IndexInterface $index) {
         if ($new_config[$setting]['default']) {
           $tasks[$insert_task][$setting] = $newly_unselected;
           $tasks[$delete_task][$setting] = $newly_selected;
-        }
-        else {
+        } else {
           $tasks[$insert_task][$setting] = $newly_selected;
           $tasks[$delete_task][$setting] = $newly_unselected;
         }
