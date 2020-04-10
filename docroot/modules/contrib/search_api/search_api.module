@@ -73,6 +73,8 @@ function search_api_cron() {
     return;
   }
 
+  \Drupal::service('logger.channel.search_api')->info('Executing Task manager loop');
+
   // Add items to the tracking system for all indexes for which this hasn't
   // happened yet.
   $task_manager = \Drupal::getContainer()->get('search_api.task_manager');
@@ -89,6 +91,9 @@ function search_api_cron() {
       unset($indexes[$index_id]);
     }
   }
+  \Drupal::service('logger.channel.search_api')->info('Executed Task manager loop');
+
+
 
   // Now index items.
   // Remember servers which threw an exception.
@@ -117,6 +122,7 @@ function search_api_cron() {
       $num = 0;
       if ($limit) {
         try {
+          \Drupal::service('logger.channel.search_api')->info('Loading $num variable on 123');
           $num = $index->indexItems($limit);
           if ($num) {
             $variables = [
