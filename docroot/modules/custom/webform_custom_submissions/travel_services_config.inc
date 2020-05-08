@@ -31,7 +31,7 @@ $BASE_URL = "https://jira.ord.epa.gov";
 $REST_URL = $BASE_URL."/rest/api/2";
 $CREATE_ISSUE_URL = $REST_URL."/issue/";
 
-$USERNAME = base64_encode("travel-forms:t0Mangen");
+$USERNAME = "travel-forms:t0Mangen";
 
 $SERVER = '';
 

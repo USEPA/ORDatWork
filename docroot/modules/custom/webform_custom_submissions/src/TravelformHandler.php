@@ -28,7 +28,7 @@ class TravelformHandler {
     $this->domestic_project = $DOMESTIC_PROJECT;
     $this->international_project = $INTERNATIONAL_PROJECT;
     $this->submission_client = new Client(['base_uri' => $CREATE_ISSUE_URL]);
-    $this->username = $USERNAME;
+    $this->username = explode(':', $USERNAME);
     $this->vouchers_project = $VOUCHERS_PROJECT;
   }
 
@@ -258,22 +258,32 @@ class TravelformHandler {
   }
 
 //Builds and sends cURL request for the form POST data
+
+  /**
+   * @param $jsonData
+   * @return Exception|\Psr\Http\Message\ResponseInterface
+   */
   function sendPOSTData($jsonData) {
     try {
       $header = array(
         "Authorization: Basic " . $this->username,
         "Content-Type: application/json"
       );
-      $curlSession = curl_init();
-      curl_setopt($curlSession, CURLOPT_HTTPHEADER, $header);
-      curl_setopt($curlSession, CURLOPT_URL, $this->create_issue_url);
-      curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, TRUE);
-      curl_setopt($curlSession, CURLOPT_POSTFIELDS, $jsonData);
-      $response = curl_exec($curlSession);
-      curl_close($curlSession);
+      //$curlSession = curl_init();
+      //curl_setopt($curlSession, CURLOPT_HTTPHEADER, $header);
+      //curl_setopt($curlSession, CURLOPT_URL, $this->create_issue_url);
+      //curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, TRUE);
+      //curl_setopt($curlSession, CURLOPT_POSTFIELDS, $jsonData);
+      //$response = curl_exec($curlSession);
+      //curl_close($curlSession);
+      $response = $this->submission_client->request('POST',
+        $this->create_issue_url,
+        ['json' => $jsonData, 'Content-Type' => "application/json",
+          'auth' => ["{$this->username[0]}", "{$this->username[1]}"]]);
+
       return $response;
     } catch (Exception $e) {
-      throw new Exception($e->getMessage());
+      return new Exception($e->getMessage());
     }
   }
 
@@ -297,8 +307,8 @@ class TravelformHandler {
     $url = $this->create_issue_url . $id . '/attachments/';
 
     $header = array(
-      "Authorization: Basic " . $this->username,
-      "X-Atlassian-Token: nocheck"
+      'auth' => ["{$this->username[0]}", "{$this->username[1]}"],
+      'X-Atlassian-Token' => "nocheck"
     );
 
     $fileNames = array();
@@ -327,18 +337,28 @@ class TravelformHandler {
         unset($response);
       }
 
-      $file = array('file' => new CURLFile($fileData['tmp_name'], $fileData['mime'], $fileData['name']));
+      //$file = array('file' => new CURLFile($fileData['tmp_name'], $fileData['mime'], $fileData['name']));
       if ($fileData['size'] > 0) {
-        $curlSession = curl_init();
-        curl_setopt($curlSession, CURLINFO_HEADER_OUT, TRUE);
-        curl_setopt($curlSession, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($curlSession, CURLOPT_URL, $url);
-        curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($curlSession, CURLOPT_POSTFIELDS, $file);
-        curl_setopt($curlSession, CURLOPT_SAFE_UPLOAD, TRUE);
-        $response = curl_exec($curlSession);
+        //$curlSession = curl_init();
+        //curl_setopt($curlSession, CURLINFO_HEADER_OUT, TRUE);
+        //curl_setopt($curlSession, CURLOPT_HTTPHEADER, $header);
+        //curl_setopt($curlSession, CURLOPT_URL, $url);
+        //curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, TRUE);
+        //curl_setopt($curlSession, CURLOPT_POSTFIELDS, $file);
+        //curl_setopt($curlSession, CURLOPT_SAFE_UPLOAD, TRUE);
+        //$response = curl_exec($curlSession);
+        //$decodedResponse = json_decode($response, TRUE);
+        //curl_close($curlSession);
+
+        $response = $this->submission_client->request('POST',
+          $url,
+          ['headers' => $header,
+            'multipart' => [
+              'name' => $fileData['tmp_name'],
+              'contents' => $fileData['mime'],
+              'filename' => $fileData['name']
+            ]]);
         $decodedResponse = json_decode($response, TRUE);
-        curl_close($curlSession);
         \Drupal::logger('Travel Services File Response')->notice($response);
         if (sizeof($decodedResponse) > 0) {
           $fileNames[] = $$fileData['name'];
