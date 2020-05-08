@@ -6,6 +6,61 @@ namespace Drupal\webform_custom_submissions;
 // Used to declutter the handler service by providing mappings here
 class FieldHelper {
 
+  public function is_checkbox_field($key) {
+    return ($key == 'customfield_10411' ||
+    $key == 'customfield_10415' ||
+    $key == 'customfield_10150' ||
+    $key == 'customfield_10149' ||
+    $key == 'customfield_10148' ||
+    $key == 'customfield_10151' ||
+    $key == 'customfield_10278' ||
+    $key == 'customfield_10280' ||
+    $key == 'customfield_10103');
+  }
+
+
+  public function get_dropdown_fields() {
+    return array(
+      'customfield_10093',
+      'customfield_10098',
+      'customfield_10112',
+      'customfield_10120',
+      'customfield_10140',
+      'customfield_10190',
+      'customfield_10191',
+      'customfield_10193',
+      'customfield_10199',
+      'customfield_10246',
+      'customfield_10262',
+      'customfield_10263',
+      'customfield_10269',
+      'customfield_10277',
+      'customfield_10294',
+      'customfield_10297',
+      'customfield_10302',
+      'customfield_10304',
+      'customfield_10315',
+      'customfield_10316',
+      'customfield_10318',
+      'customfield_10320',
+      'customfield_10322',
+      'customfield_10324',
+      'customfield_10423',
+      'customfield_10424',
+      'customfield_10426',
+      'customfield_10427',
+      'customfield_10428',
+      'customfield_10431',
+      'customfield_10435',
+      'customfield_10501',
+      'customfield_10922',
+      'customfield_11424',
+      'customfield_11428',
+      'customfield_11826',
+      'customfield_11827',
+    );
+  }
+
   public function travel_voucher_form_fields() {
     return array('proxy' => 'Completing for someone else?', 'customfield_10092' => 'Your @epa.gov Email', 'customfield_10090' => 'Your Name', 'customfield_10091' => 'Your Telephone',
       'customfield_10093' => 'Traveler L/C/O', 'customfield_10501' => 'Traveler division or equivalent', 'customfield_10095' => 'Departure Date',

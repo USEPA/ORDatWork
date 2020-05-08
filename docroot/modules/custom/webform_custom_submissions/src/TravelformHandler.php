@@ -2,6 +2,8 @@
 
 namespace Drupal\webform_custom_submissions;
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\webformSubmissionInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use \Exception;
@@ -38,27 +40,20 @@ class TravelformHandler {
    * Script for getting, formatting and submitting travel services form data to JIRA
    */
 
-  public function submitToJira($form, &$form_state) {
+  public function submitToJira(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission) {
     try {
-      $postData = $this->compilePOSTData();
+      $form_data = $webform_submission->getData();
+      $postData = $this->compilePOSTData($form_data);
       $postResponse = $this->sendPOSTData($postData);
-
-      //Uncomment to show full repsonse in broswer
-      //drupal_set_message(json_decode(var_export($postResponse, true)));
-      //var_export($_POST,true);
-
-      //dpm($_POST);
-      //drupal_set_message($postData, 'error');
-      //drupal_set_message($postResponse, 'error');
-      $decoded = json_decode($postResponse, TRUE);
-      if (isset($decoded['id'])) {
+      $decoded_response = json_decode($postResponse, TRUE);
+      if (isset($decoded_response['id'])) {
         $page = explode('/', \Drupal::service('path.current')->getPath());
         \Drupal::logger('Travel Services Response ' . $page[sizeof($page) - 1])->notice($postResponse);
         $issueId = $this->getIssueId($postResponse);
 
-        $filesUploaded = $this->attachFiles($issueId, $form_state);
-        $this->parseIssueResponse($postResponse, $filesUploaded, $_POST['formTitle'], $postData, $_FILES);
-      } elseif (isset($decoded['errorMessages'])) {
+        $filesUploaded = $this->attachFiles($issueId, $form_state, $form_data);
+        $this->parseIssueResponse($postResponse, $filesUploaded, $form_data['formTitle'], $postData, $_FILES);
+      } elseif (isset($decoded_response['errorMessages'])) {
         \Drupal::logger('Travel Services Error')->notice($postResponse);
         drupal_set_message(t('There was an error processing your request. Code-0001'), 'error');
         mail('zerihun.tegegn@cgifederal.com', 'TravelServices Error', $postResponse);
@@ -69,57 +64,18 @@ class TravelformHandler {
     } catch (Exception $e) {
       \Drupal::logger('Travel Services Exception')->notice($e->getMessage());
       drupal_set_message(t('Unable to process request at this time, please try again later.'), 'error');
-      //drupal_set_message($e->getMessage());
     }
-  }//end submitToJira
+  }
 
-//Compiles POST data and returns the data formatted as JSON
-  protected function compilePOSTData() {
+  //Compiles POST data and returns the data formatted as JSON
+  protected function compilePOSTData($form_data) {
 
-    $dropDowns = array(
-      'customfield_10093',
-      'customfield_10098',
-      'customfield_10112',
-      'customfield_10120',
-      'customfield_10140',
-      'customfield_10190',
-      'customfield_10191',
-      'customfield_10193',
-      'customfield_10199',
-      'customfield_10246',
-      'customfield_10262',
-      'customfield_10263',
-      'customfield_10269',
-      'customfield_10277',
-      'customfield_10294',
-      'customfield_10297',
-      'customfield_10302',
-      'customfield_10304',
-      'customfield_10315',
-      'customfield_10316',
-      'customfield_10318',
-      'customfield_10320',
-      'customfield_10322',
-      'customfield_10324',
-      'customfield_10423',
-      'customfield_10424',
-      'customfield_10426',
-      'customfield_10427',
-      'customfield_10428',
-      'customfield_10431',
-      'customfield_10435',
-      'customfield_10501',
-      'customfield_10922',
-      'customfield_11424',
-      'customfield_11428',
-      'customfield_11826',
-      'customfield_11827',
-    );
+    $dropDowns = $this->field_helper->get_dropdown_fields();
 
     $data = array('fields' => array());
 
     //Add POST variables to the array
-    foreach ($_POST as $key => $val) {
+    foreach ($form_data as $key => $val) {
       // ignore file uploads, we are handling these later
       if (isset($val['fid'])) {
         continue;
@@ -128,10 +84,8 @@ class TravelformHandler {
       if ($key == 'customfield_10191') {
         $data['fields'][$key] = array('value' => $val);
         switch ($val) {
-          case 'Domestic':
-            $data['fields']['project'] = array('id' => $this->domestic_project);
-            break;
           case 'Invitational (Non-EPA)':
+          case 'Domestic':
             $data['fields']['project'] = array('id' => $this->domestic_project);
             break;
           case 'International':
@@ -147,28 +101,6 @@ class TravelformHandler {
       } //Capture Traveler L/C/O and set Project ID
       elseif ($key == 'customfield_10093') {
         $data['fields'][$key] = array('value' => $val);
-
-        /*switch ($val) {
-          case 'NHSRC':
-          case 'NRMRL':
-            $data['fields']['project'] = array('id' => $CIN_PROJECT);
-            break;
-          case 'IOAA':
-          case 'OPARM':
-          case 'OSA':
-          case 'OSP':
-          case 'NCER':
-          case 'NCEA':
-            $data['fields']['project'] = array('id' => $DC_PROJECT);
-            break;
-          case 'NERL':
-          case 'NCCT':
-          case 'NHEERL':
-          case 'OSIM':
-          case 'OARS':
-            $data['fields']['project'] = array('id' => $RTP_PROJECT);
-            break;
-        }*/
       } //Capture IssueType
       elseif ($key == 'issuetype') {
         $data['fields']['issuetype'] = array('id' => $val);
@@ -187,16 +119,7 @@ class TravelformHandler {
           $data['fields'][$key] = array('value' => $val);
         }
       } //Capture Checkboxes and turn them into arrays
-      elseif ($key == 'customfield_10411' ||
-        $key == 'customfield_10415' ||
-        $key == 'customfield_10150' ||
-        $key == 'customfield_10149' ||
-        $key == 'customfield_10148' ||
-        $key == 'customfield_10151' ||
-        $key == 'customfield_10278' ||
-        $key == 'customfield_10280' ||
-        $key == 'customfield_10103'
-      ) {
+      elseif ($this->field_helper->is_checkbox_field($key)) {
         $checkboxArray = array();
         foreach ($val as $field2 => $value2) {
           array_push($checkboxArray, array('value' => $value2));
@@ -246,12 +169,12 @@ class TravelformHandler {
     }//end foreach
 
     //Set the Summary field
-    if ($_POST['proxy'] == 'Yes')
-      $data['fields']['summary'] = $_POST['formTitle'] . ': ' . $data['fields']['customfield_10331'];
-    else if ($_POST['proxy'] == 'No')
-      $data['fields']['summary'] = $_POST['formTitle'] . ': ' . $data['fields']['customfield_10090'];
+    if ($form_data['proxy'] == 'Yes')
+      $data['fields']['summary'] = $form_data['formTitle'] . ': ' . $data['fields']['customfield_10331'];
+    else if ($form_data['proxy'] == 'No')
+      $data['fields']['summary'] = $form_data['formTitle'] . ': ' . $data['fields']['customfield_10090'];
 
-    if ($_POST['customfield_10431a'] == 'Yes' || $_POST['customfield_10431b'] == 'Yes')
+    if ($form_data['customfield_10431a'] == 'Yes' || $form_data['customfield_10431b'] == 'Yes')
       $data['fields']['customfield_10431'] = array('value' => 'Yes');
 
     $jsonData = json_encode($data);
@@ -259,9 +182,8 @@ class TravelformHandler {
     return $jsonData;
   }
 
-//Builds and sends cURL request for the form POST data
-
   /**
+   * Builds and sends cURL request for the form POST data
    * @param $jsonData
    * @return Exception|\Psr\Http\Message\ResponseInterface
    */
@@ -289,7 +211,7 @@ class TravelformHandler {
     }
   }
 
-//Extracts the issue id from the server response so we can submit file attachment
+  //Extracts the issue id from the server response so we can submit file attachment
   protected function getIssueId($serverReponse) {
     $responseArray = json_decode($serverReponse);
     try {
@@ -304,8 +226,8 @@ class TravelformHandler {
     }
   }
 
-//Attaches files to issue
-  protected function attachFiles($id, $form_state) {
+  //Attaches files to issue
+  protected function attachFiles($id, $form_state, $form_data) {
     $url = $this->create_issue_url . $id . '/attachments/';
 
     $header = array(
@@ -314,7 +236,7 @@ class TravelformHandler {
     );
 
     $fileNames = array();
-    foreach ($_POST as $key => $value) {
+    foreach ($form_data as $key => $value) {
       if (!isset($value['fid'])) {
         continue;
       }
@@ -382,13 +304,10 @@ class TravelformHandler {
 
     if ($data['key'] != '') {
       $ticket = $data['key'];
-      //$id = $data['id'];
-      //$url = $data['self'];
       $drupalMessage = 'Request successfully processed.<br/>' .
         'Ticket Number: ' . $ticket;
       $drupalMessage .= $fileList;
       drupal_set_message(t($drupalMessage));
-
 
       switch ($formTitle) {
         case 'Travel Voucher':
@@ -480,7 +399,6 @@ class TravelformHandler {
       $drupalMessage = 'There was an error processing your request. Code-0003';
       drupal_set_message(t($drupalMessage), 'error');
       drupal_set_message(t(var_export($issueResponse, TRUE)), 'error');
-
     }
   }
 }
