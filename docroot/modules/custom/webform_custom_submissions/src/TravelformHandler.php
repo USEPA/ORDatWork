@@ -2,26 +2,44 @@
 
 namespace Drupal\webform_custom_submissions;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use \Exception;
 
+require_once('../travel_services_config.inc');
 
 class TravelformHandler {
+
+  protected $create_issue_url;
+  protected $domestic_project;
+  protected $international_project;
+  protected $submission_client;
+  protected $username;
+  protected $vouchers_project;
+
+  public function __construct() {
+    global $CREATE_ISSUE_URL;
+    global $DOMESTIC_PROJECT;
+    global $INTERNATIONAL_PROJECT;
+    global $USERNAME;
+    global $VOUCHERS_PROJECT;
+
+    $this->create_issue_url = $CREATE_ISSUE_URL;
+    $this->domestic_project = $DOMESTIC_PROJECT;
+    $this->international_project = $INTERNATIONAL_PROJECT;
+    $this->submission_client = new Client(['base_uri' => $CREATE_ISSUE_URL]);
+    $this->username = $USERNAME;
+    $this->vouchers_project = $VOUCHERS_PROJECT;
+  }
 
   /*
    * Script for getting, formatting and submitting travel services form data to JIRA
    */
 
   function submitToJira($form, &$form_state) {
-
-    global $BASE_URL;
-    global $REST_URL;
-    global $CREATE_ISSUE_URL;
-    global $USERNAME;
-
     try {
       $postData = $this->compilePOSTData();
-      $postResponse = $this->sendPOSTData($postData, $USERNAME, $CREATE_ISSUE_URL);
+      $postResponse = $this->sendPOSTData($postData);
 
       //Uncomment to show full repsonse in broswer
       //drupal_set_message(json_decode(var_export($postResponse, true)));
@@ -36,7 +54,7 @@ class TravelformHandler {
         \Drupal::logger('Travel Services Response ' . $page[sizeof($page) - 1])->notice($postResponse);
         $issueId = $this->getIssueId($postResponse);
 
-        $filesUploaded = $this->attachFiles($issueId, $CREATE_ISSUE_URL, $USERNAME, $form_state);
+        $filesUploaded = $this->attachFiles($issueId, $form_state);
         $this->parseIssueResponse($postResponse, $filesUploaded, $_POST['formTitle'], $postData, $_FILES);
       } elseif (isset($decoded['errorMessages'])) {
         \Drupal::logger('Travel Services Error')->notice($postResponse);
@@ -55,12 +73,6 @@ class TravelformHandler {
 
 //Compiles POST data and returns the data formatted as JSON
   function compilePOSTData() {
-    global $DC_PROJECT;
-    global $CIN_PROJECT;
-    global $RTP_PROJECT;
-    global $DOMESTIC_PROJECT;
-    global $INTERNATIONAL_PROJECT;
-    global $VOUCHERS_PROJECT;
 
     $dropDowns = array(
       'customfield_10093',
@@ -115,20 +127,20 @@ class TravelformHandler {
         $data['fields'][$key] = array('value' => $val);
         switch ($val) {
           case 'Domestic':
-            $data['fields']['project'] = array('id' => $DOMESTIC_PROJECT);
+            $data['fields']['project'] = array('id' => $this->domestic_project);
             break;
           case 'Invitational (Non-EPA)':
-            $data['fields']['project'] = array('id' => $DOMESTIC_PROJECT);
+            $data['fields']['project'] = array('id' => $this->domestic_project);
             break;
           case 'International':
-            $data['fields']['project'] = array('id' => $INTERNATIONAL_PROJECT);
+            $data['fields']['project'] = array('id' => $this->international_project);
             break;
         }
       } elseif ($key == 'formTitle') {
         if ($val == 'Traveler ID' || $val == 'Concur Routing' || $val == 'Travel Question' || $val == 'Traveler Profile') {
-          $data['fields']['project'] = array('id' => $DOMESTIC_PROJECT);
+          $data['fields']['project'] = array('id' => $this->domestic_project);
         } else if ($val == 'Travel Voucher') {
-          $data['fields']['project'] = array('id' => $VOUCHERS_PROJECT);
+          $data['fields']['project'] = array('id' => $this->vouchers_project);
         }
       } //Capture Traveler L/C/O and set Project ID
       elseif ($key == 'customfield_10093') {
@@ -246,15 +258,15 @@ class TravelformHandler {
   }
 
 //Builds and sends cURL request for the form POST data
-  function sendPOSTData($jsonData, $user, $url) {
+  function sendPOSTData($jsonData) {
     try {
       $header = array(
-        "Authorization: Basic " . $user,
+        "Authorization: Basic " . $this->username,
         "Content-Type: application/json"
       );
       $curlSession = curl_init();
       curl_setopt($curlSession, CURLOPT_HTTPHEADER, $header);
-      curl_setopt($curlSession, CURLOPT_URL, $url);
+      curl_setopt($curlSession, CURLOPT_URL, $this->create_issue_url);
       curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, TRUE);
       curl_setopt($curlSession, CURLOPT_POSTFIELDS, $jsonData);
       $response = curl_exec($curlSession);
@@ -281,11 +293,11 @@ class TravelformHandler {
   }
 
 //Attaches files to issue
-  function attachFiles($id, $restURL, $user, $form_state) {
-    $url = $restURL . $id . '/attachments/';
+  function attachFiles($id, $form_state) {
+    $url = $this->create_issue_url . $id . '/attachments/';
 
     $header = array(
-      "Authorization: Basic " . $user,
+      "Authorization: Basic " . $this->username,
       "X-Atlassian-Token: nocheck"
     );
 
@@ -327,7 +339,7 @@ class TravelformHandler {
         $response = curl_exec($curlSession);
         $decodedResponse = json_decode($response, TRUE);
         curl_close($curlSession);
-        watchdog('Travel Services File Response', $response);
+        \Drupal::logger('Travel Services File Response')->notice($response);
         if (sizeof($decodedResponse) > 0) {
           $fileNames[] = $$fileData['name'];
         }
