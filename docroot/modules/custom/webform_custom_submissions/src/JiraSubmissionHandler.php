@@ -3,14 +3,11 @@
 namespace Drupal\webform_custom_submissions;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\webform\webformSubmissionInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use \Exception;
 
-require_once('../travel_services_config.inc');
-
-class TravelformHandler {
+class JiraSubmissionHandler {
 
   protected $create_issue_url;
   protected $domestic_project;
@@ -38,10 +35,9 @@ class TravelformHandler {
    * Script for getting, formatting and submitting travel services form data to JIRA
    */
 
-  public function submitToJira(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission) {
+  public function submitToJira(FormStateInterface $form_state, $webform_data) {
     try {
-      $form_data = $webform_submission->getData();
-      $postData = $this->compilePOSTData($form_data);
+      $postData = $this->compilePOSTData($webform_data);
       $postResponse = $this->sendPOSTData($postData);
       $decoded_response = json_decode($postResponse, TRUE);
       if (isset($decoded_response['id'])) {
@@ -49,8 +45,8 @@ class TravelformHandler {
         \Drupal::logger('Travel Services Response ' . $page[sizeof($page) - 1])->notice($postResponse);
         $issueId = $this->getIssueId($postResponse);
 
-        $filesUploaded = $this->attachFiles($issueId, $form_state, $form_data);
-        $this->parseIssueResponse($postResponse, $filesUploaded, $form_data['formTitle'], $postData, $_FILES);
+        $filesUploaded = $this->attachFiles($issueId, $form_state, $webform_data);
+        $this->parseIssueResponse($postResponse, $filesUploaded, $webform_data['formTitle'], $postData, $_FILES);
       } elseif (isset($decoded_response['errorMessages'])) {
         \Drupal::logger('Travel Services Error')->notice($postResponse);
         drupal_set_message(t('There was an error processing your request. Code-0001'), 'error');
