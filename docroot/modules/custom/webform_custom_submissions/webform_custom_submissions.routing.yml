@@ -6,5 +6,3 @@ webform_custom_submissions.webform_custom_submissions_form:
   description: 'Configure Travel Services settings'
   requirements:
     _permission: 'administer site configuration'
-  options:
-    _admin_route: TRUE
