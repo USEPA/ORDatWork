@@ -73,12 +73,12 @@ class TravelServicesForm extends ConfigFormBase {
     ];
     $form['SUBMIT_MESSAGE'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Server'),
+      '#title' => $this->t('Submit Message'),
       '#default_value' => $config->get('SUBMIT_MESSAGE'),
     ];
     $form['OPTIONS'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Server'),
+      '#type' => 'textarea',
+      '#title' => $this->t('Options'),
       '#default_value' => $config->get('OPTIONS'),
     ];
     $form['DOMESTIC_PROJECT'] = [
@@ -107,7 +107,7 @@ class TravelServicesForm extends ConfigFormBase {
       ->set('RTP_PROJECT', $form_state->getValue('RTP_PROJECT'))
       ->set('BASE_URL', $form_state->getValue('BASE_URL'))
       ->set('REST_URL', $form_state->getValue('REST_URL'))
-      ->set('CREATE_ISSUE', $form_state->getValue('CREATE_ISSUE'))
+      ->set('CREATE_ISSUE_URL', $form_state->getValue('CREATE_ISSUE_URL'))
       ->set('USERNAME', $form_state->getValue('USERNAME'))
       ->set('SERVER', $form_state->getValue('SERVER'))
       ->set('SUBMIT_MESSAGE', $form_state->getValue('SUBMIT_MESSAGE'))

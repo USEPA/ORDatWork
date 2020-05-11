@@ -20,19 +20,17 @@ class TravelformHandler {
   protected $vouchers_project;
   protected $field_helper;
 
-  public function __construct() {
-    global $CREATE_ISSUE_URL;
-    global $DOMESTIC_PROJECT;
-    global $INTERNATIONAL_PROJECT;
-    global $USERNAME;
-    global $VOUCHERS_PROJECT;
+  public function __construct($config) {
+    $travel_services_config = $config->get('webform_custom_submissions.form');
+    $raw_username = $travel_services_config->get('USERNAME');
+    $issue_creation_url = $travel_services_config->get('CREATE_ISSUE_URL');
 
-    $this->create_issue_url = $CREATE_ISSUE_URL;
-    $this->domestic_project = $DOMESTIC_PROJECT;
-    $this->international_project = $INTERNATIONAL_PROJECT;
-    $this->submission_client = new Client(['base_uri' => $CREATE_ISSUE_URL]);
-    $this->username = explode(':', $USERNAME);
-    $this->vouchers_project = $VOUCHERS_PROJECT;
+    $this->create_issue_url = $travel_services_config->get('CREATE_ISSUE_URL');
+    $this->domestic_project = $travel_services_config->get('DOMESTIC_PROJECT');
+    $this->international_project = $travel_services_config->get('INTERNATIONAL_PROJECT');
+    $this->submission_client = new Client(['base_uri' => $issue_creation_url]);
+    $this->username = explode(':', $raw_username);
+    $this->vouchers_project = $travel_services_config->get('VOUCHERS_PROJECT');
     $this->field_helper = new FieldHelper();
   }
 
