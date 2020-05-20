@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Blizz Dynamic Entitylist module file.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function blizz_dynamic_entitylist_help($route_name, RouteMatchInterface $route_match) {
+  // Intentionally left blank since this module only incorporates
+  // AJAX routes containing autocomplete content.
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function blizz_dynamic_entitylist_entity_insert(EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    blizz_dynamic_entitylist_invalidate_cachetags([
+      sprintf(
+        'dynamic_entity_list:%1$s:%2$s',
+        $entity->getEntityTypeId(),
+        $entity->bundle()
+      ),
+    ]);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function blizz_dynamic_entitylist_entity_update(EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    blizz_dynamic_entitylist_invalidate_cachetags([
+      sprintf(
+        'dynamic_entity_list:%1$s:%2$s',
+        $entity->getEntityTypeId(),
+        $entity->bundle()
+      ),
+    ]);
+  }
+}
+
+/**
+ * Invalidates the given cache tags.
+ *
+ * @param string[] $tags
+ *   The chache tags to be invalidated.
+ */
+function blizz_dynamic_entitylist_invalidate_cachetags(array $tags = []) {
+  /* @var Drupal\Core\Cache\CacheTagsInvalidatorInterface $cacheTagInvalidatorService */
+  $cacheTagInvalidatorService = \Drupal::service('cache_tags.invalidator');
+  $cacheTagInvalidatorService->invalidateTags($tags);
+}
