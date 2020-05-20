@@ -175,14 +175,14 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
 
     // If there is only a single bundle to choose from, pre-select this bundle
     // and set the widget to automatically trigger the next widget step.
-    if (count($bundles) == 1 && !$raw) {
-      // Determine the value of the available option.
-      $optionvalue = array_keys($bundles);
-      $optionvalue = array_shift($optionvalue);
-      $elem['bundleselect']['#default_value'] = [$optionvalue => $optionvalue];
-      $elem['bundleselect']['#attributes']['checked'] = 'checked';
-      $elem['bundleselect']['#attributes']['data-trigger-next-step'] = 1;
-    }
+    // if (count($bundles) == 1 && !$raw) {
+    //   // Determine the value of the available option.
+    //   $optionvalue = array_keys($bundles);
+    //   $optionvalue = array_shift($optionvalue);
+    //   $elem['bundleselect']['#default_value'] = [$optionvalue => $optionvalue];
+    //   $elem['bundleselect']['#attributes']['checked'] = 'checked';
+    //   $elem['bundleselect']['#attributes']['data-trigger-next-step'] = 1;
+    // }
 
     // If we're in an ajax call, we need to simulate a normal
     // form build procedure, otherwise (multiple) checkboxes won't
