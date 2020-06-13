@@ -407,8 +407,8 @@ class FieldHelper {
    * @param $value
    */
   private function mapDataToJiraFields($key, $value) {
-    $jira_mapping = $this->form_to_jira_mapping[$key];
-    if (!empty($jira_mapping)) {
+    if (isset($this->form_to_jira_mapping[$key])) {
+      $jira_mapping = $this->form_to_jira_mapping[$key];
       if ($this->isMultiCityFlight($key)) {
         $this->addMultiFlightField($value);
       } else if ($this->isMultiFieldset($jira_mapping)) {

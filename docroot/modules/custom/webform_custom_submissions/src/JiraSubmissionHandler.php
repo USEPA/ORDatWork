@@ -22,7 +22,7 @@ class JiraSubmissionHandler {
 
   public function __construct($config) {
     $this->travel_services_config = $config->get('webform_custom_submissions.form');
-     $system_config = $config->get('system.passwords');
+    $system_config = $config->get('system.passwords');
     $this->username = $this->travel_services_config->get('USERNAME');
     $this->password = $system_config->get('jira');
     $issue_creation_url = $this->travel_services_config->get('CREATE_ISSUE_URL');
@@ -47,7 +47,14 @@ class JiraSubmissionHandler {
       $fieldHelper->prepareJiraData();
       $jira_data = $fieldHelper->getJiraData();
       $postData = $this->compilePOSTData($jira_data);
-      $issueId = $this->createIssueAndReturnID($postData);
+
+      try {
+        $issueId = $this->createIssueAndReturnID($postData);
+      } catch (Exception $e) {
+        \Drupal::logger('Travel Services File Upload Exception')->error($e->getMessage());
+        drupal_set_message(t($e->getMessage()), 'error');
+      }
+
       if (isset($issueId)) {
         try {
           $this->attachFiles($issueId, $jira_data);
@@ -56,12 +63,12 @@ class JiraSubmissionHandler {
           \Drupal::logger('Travel Services File Upload Exception')->error($e->getMessage());
         }
       } else {
-        drupal_set_message(t('There was an error processing your request. Code-0002'), 'error');
         \Drupal::logger('Travel Services Error')->error('Unidentified Error: JIRA Response did not return Issue ID');
       }
     } catch (Exception $e) {
       \Drupal::logger('Travel Services Exception')->error($e->getMessage());
-      drupal_set_message(t('Unable to process request at this time, please try again later.'), 'error');
+      drupal_set_message(t($e->getMessage()), 'error');
+
     }
   }
 
@@ -70,7 +77,7 @@ class JiraSubmissionHandler {
 
     $dropDowns = $this->field_helper->get_dropdown_fields();
 
-    $data = array('fields' => array());
+    $data = ['fields' => []];
 
     //Add POST variables to the array
     foreach ($form_data as $key => $val) {
@@ -137,6 +144,7 @@ class JiraSubmissionHandler {
    * Builds and sends cURL request for the form POST data
    * @param $jsonData
    * @return StreamInterface|Exception Returns the body as a stream.
+   * @throws $e
    *
    */
   protected function createIssueAndReturnID($jsonData) {
@@ -154,8 +162,7 @@ class JiraSubmissionHandler {
         \Drupal::logger('Travel Services Response')->info('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
       }
     } catch (Exception $e) {
-      \Drupal::logger('Travel Services Response')->error($e->getMessage());
-      drupal_set_message(t('There was an error processing your request. Code-0001'), 'error');
+      throw $e;
     }
     return $issue_id;
   }
@@ -194,10 +201,14 @@ class JiraSubmissionHandler {
       ];
 
       if ($fileData['size'] > 0) {
-        $response = $this->submission_client->post(
-          $url,
-          $payload
-        );
+        try {
+          $response = $this->submission_client->post(
+            $url,
+            $payload
+          );
+        } catch (Exception $e) {
+          throw $e;
+        }
         if ($response->getStatusCode() == 200) {
           $decodedResponse = $response->getBody();
           \Drupal::logger('Travel Services Response')->info('<pre><code>' . print_r($decodedResponse, TRUE) . '</code></pre>');
