@@ -43,9 +43,9 @@ content:
         view_mode: media_block
       field_widget_remove: true
       field_widget_replace: true
-      open: true
       selection_mode: selection_append
       field_widget_edit: false
+      open: false
     region: content
     third_party_settings: {  }
   field_usa_media_block_text:
