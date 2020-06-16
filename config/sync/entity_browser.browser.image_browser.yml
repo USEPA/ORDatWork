@@ -27,7 +27,7 @@ widgets:
       submit_text: Select
       target_bundles: {  }
       form_mode: media_browser
-      return_file: false
+      return_file: true
       upload_validators: {  }
     uuid: 44d52e51-9627-43b5-a637-3b0462041d1c
     weight: -9
@@ -43,14 +43,3 @@ widgets:
     weight: -10
     label: Library
     id: view
-  9401520e-f309-49b0-a577-089bf7e31a29:
-    settings:
-      submit_text: Select
-      target_bundles: {  }
-      form_mode: media_browser
-      return_file: false
-      upload_validators: {  }
-    uuid: 9401520e-f309-49b0-a577-089bf7e31a29
-    weight: 2
-    label: Upload
-    id: file_upload

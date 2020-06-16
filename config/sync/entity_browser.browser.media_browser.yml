@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - views.view.media
+    - views.view.media_browser
   module:
     - lightning_media
     - views
@@ -44,8 +44,8 @@ widgets:
     id: file_upload
   a7416904-7c73-483e-a919-a8f28cd77802:
     settings:
-      view: media
-      view_display: entity_browser_1
+      view: media_browser
+      view_display: media_entity_browser
       submit_text: Place
       auto_select: false
     uuid: a7416904-7c73-483e-a919-a8f28cd77802
