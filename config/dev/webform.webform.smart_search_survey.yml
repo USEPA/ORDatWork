@@ -1,18 +1,17 @@
-uuid: f8957422-96c4-4675-b36a-981cfac13b83
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 5
+uid: 6
 template: false
 archive: false
-id: request_a_new_web_area_in_ord_wo
-title: 'Request a New Web Area In ORD@Work'
-description: 'Use the form to request a new web area.'
-category: 'Web Guide'
-elements: "full_title:\n  '#type': textfield\n  '#title': 'Full Title'\n  '#description': 'This is the web area name. It will appear as the title on the homepage of the web area and will be used as the URL pattern for all content in the web area.'\nrequester_information:\n  '#type': webform_name\n  '#title': 'Requester Information'\n  '#description': |\n    <br />\n    Please provide information so we can contact you if needed.\n    \n  '#title__access': false\n  '#middle__access': false\n  '#suffix__access': false\n  '#degree__access': false\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\nphone_number:\n  '#type': tel\n  '#title': 'Phone number'\nhave_you_notified_your_communications_representative_that_you_ar:\n  '#type': select\n  '#title': 'Have you notified your Communications representative that you are ready to submit this request?'\n  '#options': yes_no\naudiences_and_tasks:\n  '#type': webform_custom_composite\n  '#title': 'Audiences and Tasks (max 3)'\n  '#multiple': 3\n  '#multiple__header': false\n  '#multiple__sorting': false\n  '#multiple__operations': false\n  '#element':\n    audience:\n      '#type': textfield\n      '#title': Audience\n    task_1:\n      '#type': textfield\n      '#title': 'Top Task  1'\n    task_2:\n      '#type': textfield\n      '#title': 'Top Task  2'\n    task_3:\n      '#type': textfield\n      '#title': 'Top Task  3'\nroles:\n  '#type': fieldset\n  '#title': Roles\n  '#description': 'Provide the user ID of the people you would like to work in the web area and the role you would like them to be in. Your user ID is the ID you use to log into the LAN when you first turn on your computer.&nbsp;'\n  add_as_authors:\n    '#type': textfield\n    '#title': 'Add as authors'\n    '#description': 'Provide the user ID of anyone you would like to add to the web area in this role. People in this role can not publish without going through a review process.'\n  add_as_editors:\n    '#type': textfield\n    '#title': 'Add as editors'\n    '#description': 'Provide the user ID of anyone you would like to add to the web area in this role. People in this role can publish to the web site without going through additional review processes.'"
+id: smart_search_survey
+title: 'SMaRT Search Survey'
+description: ''
+category: IT
+elements: "were_you_able_to_find_what_you_were_looking_for_:\n  '#type': radios\n  '#title': 'Were you able to find what you were looking for?'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n3_what_would_you_recommend_we_change_to_make_this_page_better_:\n  '#type': textarea\n  '#title': 'Please elaborate'\n  '#format_items': comma\non_a_scale_of_1_star_to_5_stars_how_easy_was_smart_search_to_use:\n  '#type': webform_rating\n  '#title': 'On a scale of 1 star to 5 stars how easy was SMaRT Search to use?'\n  '#min': 1\n  '#max': 6\n5_please_share_any_remaining_general_comments:\n  '#type': textarea\n  '#title': 'Please share any remaining general comments'\n  '#format_items': comma\nyour_name_leave_this_blank_if_you_wish_this_feedback_to_be_anony:\n  '#type': textfield\n  '#title': 'Your Name (leave this blank if you wish this feedback to be anonymous)'\n  '#format_items': comma\n"
 css: ''
 javascript: ''
 settings:
@@ -178,3 +177,4 @@ access:
     permissions: {  }
 handlers: {  }
 variants: {  }
+uuid: b5fbc1cb-beab-4c53-b084-ef1802372429

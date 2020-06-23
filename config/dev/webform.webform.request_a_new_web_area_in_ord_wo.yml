@@ -1,18 +1,17 @@
-uuid: c2cd7b5b-9787-4bf6-a0c3-06a09cf7c8b4
 langcode: en
-status: closed
+status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 6
+uid: 5
 template: false
 archive: false
-id: all_managers_meeting_2019_lunch_
-title: 'All Managers Meeting 2019 Lunch Form'
-description: ''
-category: 'About ORD'
-elements: "monday_lunch_selection_:\n  '#type': radios\n  '#title': 'Monday Lunch Selection: '\n  '#options':\n    'Southwestern Chicken Wrap': 'Southwestern Chicken Wrap -- avocado crème, black bean salsa, pepper jack cheese, shredded iceberg'\n    'Shaved Turkey Wrap': 'Shaved Turkey Wrap -- goat cheese, spinach, cherry-ginger chutney'\n    'Grilled Vegetable Wrap': 'Grilled Vegetable Wrap'\n  '#options_randomize': true\n  '#required': true\nwednesday_lunch_selection_:\n  '#type': radios\n  '#title': 'Wednesday Lunch Selection: '\n  '#options':\n    'Chickpea Fritter Wrap': 'Chickpea Fritter Wrap -- tabbouleh, arugula, feta, lemon tahini aioli (v)'\n    'Chicken Salad Wrap': 'Chicken Salad Wrap -- shaved iceberg, tomato, red grapes, fresh herbs'\n    Pastrami: 'Pastrami -- pickled red onion, marinated tomato, horseradish-thyme aioli, marble rye'\n  '#options_randomize': true\n  '#required': true\nfullname:\n  '#type': webform_name\n  '#title': Name\n  '#required': true\n  '#first__required': true\n  '#middle__access': false\n  '#last__required': true\n  '#degree__access': false\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true"
+id: request_a_new_web_area_in_ord_wo
+title: 'Request a New Web Area In ORD@Work'
+description: 'Use the form to request a new web area.'
+category: 'Web Guide'
+elements: "full_title:\n  '#type': textfield\n  '#title': 'Full Title'\n  '#description': 'This is the web area name. It will appear as the title on the homepage of the web area and will be used as the URL pattern for all content in the web area.'\nrequester_information:\n  '#type': webform_name\n  '#title': 'Requester Information'\n  '#description': |\n    <br />\n    Please provide information so we can contact you if needed.\n    \n  '#title__access': false\n  '#middle__access': false\n  '#suffix__access': false\n  '#degree__access': false\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\nphone_number:\n  '#type': tel\n  '#title': 'Phone number'\nhave_you_notified_your_communications_representative_that_you_ar:\n  '#type': select\n  '#title': 'Have you notified your Communications representative that you are ready to submit this request?'\n  '#options': yes_no\naudiences_and_tasks:\n  '#type': webform_custom_composite\n  '#title': 'Audiences and Tasks (max 3)'\n  '#multiple': 3\n  '#multiple__header': false\n  '#multiple__sorting': false\n  '#multiple__operations': false\n  '#element':\n    audience:\n      '#type': textfield\n      '#title': Audience\n    task_1:\n      '#type': textfield\n      '#title': 'Top Task  1'\n    task_2:\n      '#type': textfield\n      '#title': 'Top Task  2'\n    task_3:\n      '#type': textfield\n      '#title': 'Top Task  3'\nroles:\n  '#type': fieldset\n  '#title': Roles\n  '#description': 'Provide the user ID of the people you would like to work in the web area and the role you would like them to be in. Your user ID is the ID you use to log into the LAN when you first turn on your computer.&nbsp;'\n  add_as_authors:\n    '#type': textfield\n    '#title': 'Add as authors'\n    '#description': 'Provide the user ID of anyone you would like to add to the web area in this role. People in this role can not publish without going through a review process.'\n  add_as_editors:\n    '#type': textfield\n    '#title': 'Add as editors'\n    '#description': 'Provide the user ID of anyone you would like to add to the web area in this role. People in this role can publish to the web site without going through additional review processes.'"
 css: ''
 javascript: ''
 settings:
@@ -25,7 +24,7 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_admin_theme: false
-  form_title: source_entity_webform
+  form_title: both
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -176,77 +175,6 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email:
-    id: email
-    label: 'sender Email'
-    handler_id: email
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: '[webform_submission:values:email:raw]'
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: 'All mangers Meeting: Lunch Selection Received'
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
-  email_1:
-    id: email
-    label: clarke.robin@epa.gov
-    handler_id: email_1
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: clarke.robin@epa.gov
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: _default
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
+handlers: {  }
 variants: {  }
+uuid: f8957422-96c4-4675-b36a-981cfac13b83

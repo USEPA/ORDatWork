@@ -1,18 +1,17 @@
-uuid: 45426c96-11c3-4974-89f0-209e3f3c8ce9
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 5
+uid: 7
 template: false
 archive: false
-id: hazardous_waste_disposal_request
-title: 'Hazardous Waste Disposal Request Form'
+id: it_service_request
+title: 'IT Service Request'
 description: ''
-category: Duluth-SHEM-EMS
-elements: "requestor:\n  '#type': webform_contact\n  '#title': Requestor\n  '#required': true\n  '#company__access': false\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\ndisposal_item:\n  '#type': webform_custom_composite\n  '#title': 'Disposal Item'\n  '#required': true\n  '#multiple__header': false\n  '#multiple__sorting': false\n  '#multiple__operations': false\n  '#multiple__add_more_input_label': 'more disposal items'\n  '#element':\n    location:\n      '#type': textfield\n      '#required': true\n      '#title': 'Location (Room Number)'\n    containers:\n      '#type': textfield\n      '#required': true\n      '#title': 'Number of Containers'\n    volume:\n      '#type': textfield\n      '#required': true\n      '#title': 'Total Volume (Gal or Liter)'\n    description:\n      '#type': textarea\n      '#title': 'Description of Waste'"
+category: IT
+elements: "email_address:\n  '#type': email\n  '#title': 'Email Address'\n  '#required': true\nbrief_summary_of_work_request:\n  '#type': textarea\n  '#title': 'Brief Summary of Work Request'\n  '#required': true\ntype_of_support:\n  '#type': select\n  '#title': 'Type of Support'\n  '#options':\n    'Document Services': 'Document Services'\n    'Graphics/ Media': 'Graphics/ Media'\n  '#required': true\npriority:\n  '#type': select\n  '#title': Priority\n  '#options':\n    Normal: Normal\n    High: High\n  '#required': true\non_behalf_of:\n  '#type': textfield\n  '#title': 'On Behalf Of'\nsite_lco:\n  '#type': select\n  '#title': 'Site LCO'\n  '#options':\n    'site 1': 'site 1'\n    'site 2': 'site 2'\n  '#required': true\ndate_due:\n  '#type': date\n  '#title': 'Date Due'\n  '#required': true\n  '#datepicker': true\ndetailed_description_of_work_request:\n  '#type': textarea\n  '#title': 'Detailed Description of Work Request'\n  '#required': true\nadditional_information_or_special_instructions:\n  '#type': textarea\n  '#title': 'Additional Information or Special Instructions'\n  '#required': true\nattachment_s_:\n  '#type': managed_file\n  '#title': Attachment(s)\n  '#multiple': true\n  '#max_filesize': '8'"
 css: ''
 javascript: ''
 settings:
@@ -179,7 +178,7 @@ access:
 handlers:
   email:
     id: email
-    label: 'Email to'
+    label: Email
     handler_id: email
     status: true
     conditions: {  }
@@ -187,7 +186,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'mead.eric@epa.gov, pascocello.anita@epa.gov'
+      to_mail: '[webform_submission:values:email_address:raw]'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -196,7 +195,7 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: _default
+      subject: "\tForm submission from: IT Service Request Form"
       body: _default
       excluded_elements: {  }
       ignore_access: false
@@ -214,3 +213,4 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
+uuid: a7dd1e73-6b02-4c4b-92fb-38a093f25462

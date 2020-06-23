@@ -1,18 +1,17 @@
-uuid: 1b1a8605-007c-4e65-8d89-e608881bda6d
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 33
+uid: 131
 template: false
 archive: false
-id: gemmd_interlibrary_loan_request
-title: 'GEMMD INTERLIBRARY LOAN REQUEST'
-description: ''
-category: CEMM-GEMMD
-elements: "your_name_:\n  '#type': webform_name\n  '#title': 'Your Name:'\n  '#title__access': false\n  '#title__title': Instructions\n  '#title__description': 'GEMMD employees may use this form to request journal articles, book chapters, etc..  Please don not abbreviate; incomplete or inaccurate citations may delay your request.'\n  '#title__title_display': before\n  '#title__type': textfield\n  '#first__title': 'Your Full Name:'\n  '#first__placeholder': 'First Name, Last Name'\n  '#first__title_display': inline\n  '#first__required': true\n  '#middle__access': false\n  '#last__access': false\n  '#suffix__access': false\n  '#degree__access': false\nemail_:\n  '#type': email\n  '#title': 'Email:'\n  '#required': true\nbranch_:\n  '#type': select\n  '#title': 'Branch:'\n  '#options':\n    BEPRB: BEPRB\n    EAB: EAB\n    EDEB: EDEB\n    OD: OD\n    POS: POS\n  '#required': true\ndate_:\n  '#type': date\n  '#title': 'Date:'\nstatus_:\n  '#type': radios\n  '#title': 'Status:'\n  '#options':\n    'EPA Employee': 'EPA Employee'\n    'SSC contractor': 'SSC contractor'\n    'Intern or other': 'Intern or other'\n  '#required': true\ncitation_s_copy_paste_in_the_area_below_or_enter_the_data_in_the:\n  '#type': textarea\n  '#title': 'Citation(s): (copy/paste in the area below or enter the data in the fields that follow)'\nmentor_s_name_:\n  '#type': textfield\n  '#title': 'Mentor''s Name:'\n  '#description': '(Required for SSCs, contractors, interns, etc.)'\n  '#description_display': after\nauthor_s_editor_s_:\n  '#type': textfield\n  '#title': Author(s)/Editor(s)\nbook_title_document_title_or_journal:\n  '#type': textfield\n  '#title': 'Book Title, Document Title, or Journal'\narticle_title_or_chapter_title:\n  '#type': textfield\n  '#title': 'Article Title or Chapter Title'\narticle_volume_:\n  '#type': textfield\n  '#title': 'Article Volume:'\narticle_issue:\n  '#type': textfield\n  '#title': 'Article Issue'\npage_number_s_:\n  '#type': textfield\n  '#title': 'Page Number(s):'\nreport_number:\n  '#type': textfield\n  '#title': 'Report Number'\npublisher_name:\n  '#type': textfield\n  '#title': 'Publisher Name'\nyear_of_edition_publication:\n  '#type': number\n  '#title': 'Year of Edition/Publication'\n  '#min': 0\n  '#max': 9999\nsource_s_:\n  '#type': textfield\n  '#title': Source(s)\nacknowledgement2_:\n  '#type': checkbox\n  '#title': 'I have read and acknowledge the rules of copyright.'\n  '#description': '<strong>COPY STATEMENT:</strong>&nbsp; The Copyright Law of the United States (Title 17 USC) governs the making of photocopies or other reproductions of copyrighted material. Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the photocopy or other reproduction is not to be &quot;used for any purpose other than private study, scholarship or research.&quot; If a user makes a request for, or later uses, a photocopy or reproduction for purposes in excess of &quot;fair use,&quot; that user may be liable for copyright infringement. The US EPA interlibrary loan services for the Gulf Ecology Division reserves the right to refuse to accept a copying order if, in its judgment, fulfillment of the order would involve violation of copyright.'\n  '#description_display': before\n  '#required': true\n"
+id: cemm_suggestion_form
+title: 'CEMM Suggestion Form'
+description: 'Form for submitting suggestions.'
+category: 'Admin Forms'
+elements: "name:\n  '#type': textfield\n  '#title': 'Name (optional)'\ndivision_branch:\n  '#type': textfield\n  '#title': 'Division/Branch (optional)'\ntopic_summary_optional_:\n  '#type': textfield\n  '#title': 'Topic Summary (optional)'\nmessage_to_cemm_management:\n  '#type': textarea\n  '#title': 'Message to CEMM Management'"
 css: ''
 javascript: ''
 settings:
@@ -100,8 +99,8 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Your Submission Has Been Received'
+  confirmation_message: 'Thank you for your submission.&nbsp; It will be reviewed and directed to the most appropriate CEMM manager for follow up.'
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -179,7 +178,7 @@ access:
 handlers:
   email:
     id: email
-    label: Email
+    label: 'Email to Brad Autry'
     handler_id: email
     status: true
     conditions: {  }
@@ -187,7 +186,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'doten.sonya@epa.gov,soderlind.paul@epa.gov'
+      to_mail: autrey.brad@epa.gov
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -213,4 +212,41 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
+  email_1:
+    id: email
+    label: 'BCC to David H.'
+    handler_id: email_1
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: hollandsworth.david@epa.gov
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: 'Submission from the CEMM Suggestion Box'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
+uuid: d727ada4-9234-48ab-aa87-ddbcfc380298

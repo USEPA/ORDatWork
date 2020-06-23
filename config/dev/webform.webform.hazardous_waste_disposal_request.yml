@@ -1,18 +1,17 @@
-uuid: b5fbc1cb-beab-4c53-b084-ef1802372429
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 6
+uid: 5
 template: false
 archive: false
-id: smart_search_survey
-title: 'SMaRT Search Survey'
+id: hazardous_waste_disposal_request
+title: 'Hazardous Waste Disposal Request Form'
 description: ''
-category: IT
-elements: "were_you_able_to_find_what_you_were_looking_for_:\n  '#type': radios\n  '#title': 'Were you able to find what you were looking for?'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n3_what_would_you_recommend_we_change_to_make_this_page_better_:\n  '#type': textarea\n  '#title': 'Please elaborate'\n  '#format_items': comma\non_a_scale_of_1_star_to_5_stars_how_easy_was_smart_search_to_use:\n  '#type': webform_rating\n  '#title': 'On a scale of 1 star to 5 stars how easy was SMaRT Search to use?'\n  '#min': 1\n  '#max': 6\n5_please_share_any_remaining_general_comments:\n  '#type': textarea\n  '#title': 'Please share any remaining general comments'\n  '#format_items': comma\nyour_name_leave_this_blank_if_you_wish_this_feedback_to_be_anony:\n  '#type': textfield\n  '#title': 'Your Name (leave this blank if you wish this feedback to be anonymous)'\n  '#format_items': comma\n"
+category: Duluth-SHEM-EMS
+elements: "requestor:\n  '#type': webform_contact\n  '#title': Requestor\n  '#required': true\n  '#company__access': false\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\ndisposal_item:\n  '#type': webform_custom_composite\n  '#title': 'Disposal Item'\n  '#required': true\n  '#multiple__header': false\n  '#multiple__sorting': false\n  '#multiple__operations': false\n  '#multiple__add_more_input_label': 'more disposal items'\n  '#element':\n    location:\n      '#type': textfield\n      '#required': true\n      '#title': 'Location (Room Number)'\n    containers:\n      '#type': textfield\n      '#required': true\n      '#title': 'Number of Containers'\n    volume:\n      '#type': textfield\n      '#required': true\n      '#title': 'Total Volume (Gal or Liter)'\n    description:\n      '#type': textarea\n      '#title': 'Description of Waste'"
 css: ''
 javascript: ''
 settings:
@@ -176,5 +175,42 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    label: 'Email to'
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: 'mead.eric@epa.gov, pascocello.anita@epa.gov'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
+uuid: 45426c96-11c3-4974-89f0-209e3f3c8ce9

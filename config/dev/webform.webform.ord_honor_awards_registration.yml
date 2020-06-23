@@ -1,4 +1,3 @@
-uuid: bc7c8883-ef5b-4194-9d1a-c773b1ae00a3
 langcode: en
 status: open
 dependencies: {  }
@@ -8,11 +7,11 @@ weight: 0
 uid: 5
 template: false
 archive: false
-id: coronavirus_covid_19_questions
-title: 'Coronavirus (COVID-19) Questions'
+id: ord_honor_awards_registration
+title: 'ORD Honor Awards Registration'
 description: ''
-category: 'About ORD'
-elements: "question:\n  '#type': textarea\n  '#title': Question\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#description': 'If you wish to receive a personal response, please include your email address.'"
+category: Awards
+elements: "first_name:\n  '#type': textfield\n  '#title': 'First Name'\nlast_name:\n  '#type': textfield\n  '#title': 'Last Name'\n  '#required': true\njob_title:\n  '#type': textfield\n  '#title': 'Job Title'\nphone:\n  '#type': tel\n  '#title': Phone\nemail:\n  '#type': email\n  '#title': Email\ncenter_office:\n  '#type': select\n  '#title': Center/Office\n  '#options':\n    IOAA: IOAA\n    CCTE: CCTE\n    CEMM: CEMM\n    CESER: CESER\n    CPHEA: CPHEA\n    ORM: ORM\n    OSAPE: OSAPE\n    OSIM: OSIM\n    Other: Other\norganization:\n  '#type': textfield\n  '#title': 'Non-ORD Organization'\n  '#states':\n    visible:\n      ':input[name=\"center_office\"]':\n        value: Other\nlocation_you_will_be_attending:\n  '#type': select\n  '#title': 'Location you will be attending'\n  '#options':\n    Ada: Ada\n    Athens: Athens\n    Cincinnati: Cincinnati\n    Corvallis: Corvallis\n    Duluth: Duluth\n    Edison: Edison\n    'Gulf Breeze': 'Gulf Breeze'\n    Narragansett: Narragansett\n    Newport: Newport\n    RTP: RTP\n    'Washington DC': 'Washington DC'\ndo_you_require_special_assistance_:\n  '#type': select\n  '#title': 'Do you require special assistance?'\n  '#options': yes_no\nif_yes_please_describe:\n  '#type': textfield\n  '#title': 'If Yes, please describe'\n  '#states':\n    visible:\n      ':input[name=\"do_you_require_special_assistance_\"]':\n        value: 'Yes'"
 css: ''
 javascript: ''
 settings:
@@ -179,7 +178,7 @@ access:
 handlers:
   email:
     id: email
-    label: Email
+    label: Hollandsworth.David@epa.gov
     handler_id: email
     status: true
     conditions: {  }
@@ -213,40 +212,5 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
-  email_1:
-    id: email
-    label: Email
-    handler_id: email_1
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: 'gibbons.dayna@epa.gov,hubbard.carolyn@epa.gov'
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: _default
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
 variants: {  }
+uuid: 518eedbf-4d17-4d1a-8480-64063f273986

@@ -1,18 +1,18 @@
-uuid: d727ada4-9234-48ab-aa87-ddbcfc380298
+uuid: 42e9101c-baaa-421e-907c-c0e76c2f5a10
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 131
+uid: 1
 template: false
 archive: false
-id: cemm_suggestion_form
-title: 'CEMM Suggestion Form'
-description: 'Form for submitting suggestions.'
-category: 'Admin Forms'
-elements: "name:\n  '#type': textfield\n  '#title': 'Name (optional)'\ndivision_branch:\n  '#type': textfield\n  '#title': 'Division/Branch (optional)'\ntopic_summary_optional_:\n  '#type': textfield\n  '#title': 'Topic Summary (optional)'\nmessage_to_cemm_management:\n  '#type': textarea\n  '#title': 'Message to CEMM Management'"
+id: ben_test
+title: 'Ben Test'
+description: ''
+category: 'Travel Forms'
+elements: "first_element:\n  '#type': checkbox\n  '#title': 'First Element'\n  '#description': Testing\n  '#required': true"
 css: ''
 javascript: ''
 settings:
@@ -100,8 +100,8 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_title: 'Your Submission Has Been Received'
-  confirmation_message: 'Thank you for your submission.&nbsp; It will be reviewed and directed to the most appropriate CEMM manager for follow up.'
+  confirmation_title: ''
+  confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -176,77 +176,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email:
-    id: email
-    label: 'Email to Brad Autry'
-    handler_id: email
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: autrey.brad@epa.gov
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: _default
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
-  email_1:
-    id: email
-    label: 'BCC to David H.'
-    handler_id: email_1
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: hollandsworth.david@epa.gov
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: 'Submission from the CEMM Suggestion Box'
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
+handlers: {  }
 variants: {  }

@@ -1,23 +1,22 @@
-uuid: 1b460486-4d78-45f8-b6e8-56ab75620f24
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 7
+uid: 5
 template: false
 archive: false
-id: licensed_software_consultation_f
-title: 'Licensed Software Consultation Form'
+id: quality_assurance_orientation_do
+title: 'Quality Assurance Orientation Documentation'
 description: ''
-category: IT
-elements: "software_basic_information:\n  '#type': webform_section\n  '#title': 'Software Basic Information'\n  software_name:\n    '#type': textfield\n    '#title': 'Software Name'\n    '#required': true\n  software_version:\n    '#type': textfield\n    '#title': 'Software Version'\n  software_vendor:\n    '#type': textfield\n    '#title': 'Software Vendor'\n  software_website:\n    '#type': textfield\n    '#title': 'Software Website'\ndescription_of_intended_use:\n  '#type': textarea\n  '#title': 'Description of Intended Use'\n  '#description': 'Please explain how you are going to use this software. How will it work with your projects?'\n  '#required': true\nsoftware_cost_information:\n  '#type': webform_section\n  '#title': 'Software Cost Information'\n  software_cost:\n    '#type': textfield\n    '#title': 'Software Cost'\n    '#required': true\n  frequency_of_required_payment_:\n    '#type': textfield\n    '#title': 'Frequency of Required Payment '\n    '#description': 'How often must the payment be made? Is it a one-time, annual, monthly, etc. fee?'\n    '#required': true\nsoftware_owner:\n  '#type': textfield\n  '#title': 'Software Owner'\n  '#required': true\nmachine_name:\n  '#type': textfield\n  '#title': 'Machine Name'\n  '#description': 'The name of the machine where the software will be installed'\n  '#required': true\nsupporting_documentation:\n  '#type': webform_document_file\n  '#title': 'Supporting Documentation'\n  '#file_placeholder': 'Upload supporting documentation'\n  '#max_filesize': '2'"
+category: CESER
+elements: "employee_name:\n  '#type': webform_name\n  '#title': 'Employee Name'\n  '#required': true\n  '#title__access': false\n  '#middle__access': false\n  '#degree__access': false\ndivision_branch:\n  '#type': select\n  '#title': 'Division / Branch'\n  '#options':\n    POS: IO-POS\n    RPIS: IO-RPIS\n    GCRD-SRB: GCRD-SRB\n    GCRD-TSERB: GCRD-TSERB\n    HSMMD-DCB: HSMMD-DCB\n    HSMMD-STMMB: HSMMD-STMMB\n    HSMMD-WIDB: HSMMD-WIDB\n    LRTD-CSSB: LRTD-CSSB\n    LRTD-ECTB: LRTD-ECTB\n    LRTD-EDAB: LRTD-EDAB\n    TSCD: TSCD\n    WID-DWMB: WID-DWMB\n    WID-SMB: WID-SMB\n    WID-BCB: WID-BCB\n    WID-CMTB: WID-CMTB\npostion_duties:\n  '#type': textfield\n  '#title': 'Postion / Duties'\naffiliation:\n  '#type': webform_select_other\n  '#title': Affiliation\n  '#options':\n    EPA: EPA\n    NRC/ORISE: NRC/ORISE\n    Student: Student\n  '#empty_option': Other\nbranch_chief_supervisor:\n  '#type': textfield\n  '#title': 'Branch Chief / Supervisor (or designee)'\nqa_orientation:\n  '#type': fieldset\n  '#title': 'QA Orientation'\n  course_title:\n    '#type': select\n    '#title': 'Course Title'\n    '#options':\n      intro_websites: 'Introduction to the CESER and ORD QA websites'\n      intro_data: 'Introduction to data quality (videos)'\n  source_content_of_orientation_provided:\n    '#type': textfield\n    '#title': 'Source / Content of Orientation Provided'\n  date_completed:\n    '#type': date\n    '#title': 'Date Completed'"
 css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: ''
+  ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
@@ -176,41 +175,6 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email:
-    id: email
-    label: 'Submission Email'
-    handler_id: email
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: ORD_Software_Consultation@epa.gov
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: ordatwork@EPA.gov
-      from_options: {  }
-      from_name: ORD@Work
-      subject: 'Form submission from: Licensed Software Consultation Form'
-      body: _default
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
+handlers: {  }
 variants: {  }
+uuid: 854b465c-b07f-44e0-a62b-b29ce80e31b6

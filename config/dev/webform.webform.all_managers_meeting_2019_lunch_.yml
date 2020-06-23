@@ -1,23 +1,22 @@
-uuid: 66683ab4-f56a-48c0-8e8c-331563241db9
 langcode: en
-status: open
+status: closed
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 78
+uid: 6
 template: false
 archive: false
-id: request_for_facility_support
-title: 'Request for Facility Support'
-description: 'Please complete the form below. Your responses will be routed to the Facility/Safety Manager.'
-category: 'Admin Forms'
-elements: "requested_by:\n  '#type': webform_contact\n  '#title': 'Requested By'\n  '#name__required': true\n  '#company__access': false\n  '#email__required': true\n  '#address__title': Building\n  '#address__required': true\n  '#address_2__title': Room\n  '#address_2__required': true\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\ndescription_of_work_requested:\n  '#type': textarea\n  '#title': 'Description of Work Requested'\nwork_priority_information2:\n  '#type': textarea\n  '#title': 'Work Priority Information'"
+id: all_managers_meeting_2019_lunch_
+title: 'All Managers Meeting 2019 Lunch Form'
+description: ''
+category: 'About ORD'
+elements: "monday_lunch_selection_:\n  '#type': radios\n  '#title': 'Monday Lunch Selection: '\n  '#options':\n    'Southwestern Chicken Wrap': 'Southwestern Chicken Wrap -- avocado crème, black bean salsa, pepper jack cheese, shredded iceberg'\n    'Shaved Turkey Wrap': 'Shaved Turkey Wrap -- goat cheese, spinach, cherry-ginger chutney'\n    'Grilled Vegetable Wrap': 'Grilled Vegetable Wrap'\n  '#options_randomize': true\n  '#required': true\nwednesday_lunch_selection_:\n  '#type': radios\n  '#title': 'Wednesday Lunch Selection: '\n  '#options':\n    'Chickpea Fritter Wrap': 'Chickpea Fritter Wrap -- tabbouleh, arugula, feta, lemon tahini aioli (v)'\n    'Chicken Salad Wrap': 'Chicken Salad Wrap -- shaved iceberg, tomato, red grapes, fresh herbs'\n    Pastrami: 'Pastrami -- pickled red onion, marinated tomato, horseradish-thyme aioli, marble rye'\n  '#options_randomize': true\n  '#required': true\nfullname:\n  '#type': webform_name\n  '#title': Name\n  '#required': true\n  '#first__required': true\n  '#middle__access': false\n  '#last__required': true\n  '#degree__access': false\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true"
 css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: ''
+  ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
@@ -25,7 +24,7 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_admin_theme: false
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -99,12 +98,12 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
-  confirmation_title: 'Received your request'
-  confirmation_message: 'Thank you for your request, someone will be in touch with you shortly.'
-  confirmation_url: 'https://intranet.ord.epa.gov/cphea/pacific-ecological-systems-division-pesd'
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
   confirmation_attributes: {  }
-  confirmation_back: false
+  confirmation_back: true
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
   confirmation_exclude_query: false
@@ -179,7 +178,7 @@ access:
 handlers:
   email:
     id: email
-    label: 'Primo Knight'
+    label: 'sender Email'
     handler_id: email
     status: true
     conditions: {  }
@@ -187,15 +186,51 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: knight.primo@epa.gov
+      to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
-      cc_mail: olowu.oyepero@epa.gov
+      cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: '[webform_submission:values:requested_by:email:raw]'
+      from_mail: _default
       from_options: {  }
-      from_name: '[webform_submission:values:requested_by:name:raw]'
+      from_name: _default
+      subject: 'All mangers Meeting: Lunch Selection Received'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  email_1:
+    id: email
+    label: clarke.robin@epa.gov
+    handler_id: email_1
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: clarke.robin@epa.gov
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -214,3 +249,4 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
+uuid: c2cd7b5b-9787-4bf6-a0c3-06a09cf7c8b4
