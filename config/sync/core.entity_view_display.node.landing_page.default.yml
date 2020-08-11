@@ -63,6 +63,7 @@ third_party_settings:
         'Lists (Views)':
           - 'views_block:articles-blogs_by_group'
           - 'views_block:articles-group_articles_block'
+          - 'views_block:weekly_compass-compass_block_recent'
         Menus: {  }
         'Moderation Dashboard': {  }
         System: {  }
