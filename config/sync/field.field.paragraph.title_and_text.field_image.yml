@@ -12,7 +12,7 @@ field_name: field_image
 entity_type: paragraph
 bundle: title_and_text
 label: 'Header Image'
-description: ''
+description: 'Header images are displayed below the box title and above the box content. Do <strong>NOT</strong> use a header image with <em>Special One Item</em> box.'
 required: false
 translatable: false
 default_value: {  }
