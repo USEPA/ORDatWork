@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.slide_show
     - paragraphs.paragraphs_type.title_and_text
     - paragraphs.paragraphs_type.uswds_accordion
+    - paragraphs.paragraphs_type.uswds_card_set
   module:
     - entity_reference_revisions
 id: node.page.field_custom_text
@@ -34,6 +35,7 @@ settings:
       rich_text: rich_text
       list_of_link: list_of_link
       slide_show: slide_show
+      uswds_card_set: uswds_card_set
     target_bundles_drag_drop:
       dynamic_list:
         enabled: true
@@ -43,6 +45,9 @@ settings:
         enabled: false
       heading_title_and_text:
         weight: -32
+        enabled: false
+      hero_carousel:
+        weight: 24
         enabled: false
       list_of_link:
         enabled: true
@@ -71,6 +76,12 @@ settings:
       uswds_accordion_item:
         weight: -30
         enabled: false
+      uswds_card:
+        weight: 34
+        enabled: false
+      uswds_card_set:
+        enabled: true
+        weight: 36
       uswds_column:
         weight: -25
         enabled: false
