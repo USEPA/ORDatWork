@@ -28,15 +28,11 @@
  */
 #}
 
-<div {{ attributes.addClass("usa-card__container cta") }}>
+<div {{ attributes }}>
   {{ title_prefix }}
-  <header class="usa-card__header">
-    <h2 class="font-heading-xl margin-y-0">{{ content.field_usa_section_heading }}</h2>
-  </header>
+  <h2 class="font-heading-xl margin-y-0">{{ content.field_usa_section_heading }}</h2>
   {{ title_suffix }}
-  <div class="usa-card__body">
-    <p class="usa-intro">{{ content.field_usa_intro_text|field_value }}</p>
-    <a class="usa-button usa-button--big"
-       href="{{ content.field_usa_cta_button[0]['#url'] }}">{{ content.field_usa_cta_button[0]['#title'] }}</a>
-  </div>
+  <p class="usa-intro">{{ content.field_usa_intro_text|field_value }}</p>
+  <a class="usa-button usa-button--big"
+     href="{{ content.field_usa_cta_button[0]['#url'] }}">{{ content.field_usa_cta_button[0]['#title'] }}</a>
 </div>
