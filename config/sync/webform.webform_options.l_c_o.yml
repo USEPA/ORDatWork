@@ -1,0 +1,9 @@
+uuid: 0f757111-41bb-4092-8362-52ae68f5520a
+langcode: en
+status: true
+dependencies: {  }
+id: l_c_o
+label: L/C/O
+category: 'Region 9'
+likert: false
+options: "CCTE: CCTE\nCEMM: CEMM\nCESER: CESER\nCPHEA: CPHEA\nIOAA: IOAA\nORM: ORM\nOSAPE: OSAPE\nOSIM: OSIM"
