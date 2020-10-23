@@ -608,6 +608,10 @@ div.usa-alert--slim {
   font-size: 1rem;
 }
 
+.cover-object-fit {
+  object-fit: cover;
+}
+
 .staff-fixed-height-grid {
   min-height: 280px;
 }
