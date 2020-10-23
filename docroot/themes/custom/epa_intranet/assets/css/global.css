@@ -157,6 +157,17 @@ svg.ext, svg.mailto {
   vertical-align: baseline;
 }
 
+.usa-button svg.ext,
+.usa-button svg.mailto {
+  fill: white;
+}
+
+.usa-button svg.ext path,
+.usa-button svg.mailto path {
+  stroke: white;
+  stroke-width: 3;
+}
+
 div.usa-media-block__body a.ext {
   display: -webkit-box;
 }
