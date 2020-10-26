@@ -206,6 +206,8 @@ class FieldHelper {
     'epa_office_division_branch' => 'customfield_10093',
     'traveler_division' => 'customfield_11520',
     'your_division' => 'customfield_11520',
+    'region_8_traveler_division' => 'customfield_10820',
+    'region_8_your_division' => 'customfield_10820',
     'region_travel_description' => 'customfield_10920',
     'receipts' => 'file',
     'required_receipts' => 'file',
@@ -260,7 +262,8 @@ class FieldHelper {
       'customfield_11826',
       'customfield_11827',
       'customfield_12020',
-      'customfield_11520'
+      'customfield_11520',
+      'customfield_10820',
     );
   }
 
