@@ -58,9 +58,51 @@
 
 </header>
 
-{% if node.field_hero %}
-    {{ bamboo_render_entity('paragraph', node.field_hero.target_id) }}
+{% if false %}
+  {{ bamboo_render_entity('paragraph', node.field_hero.target_id) }}
 {% endif %}
+
+
+{% if node.field_hero %}
+  <div class="centered">
+    <p>
+      hey guys. Node hero.
+    </p>
+  </div>
+{% endif %}
+
+<ol>
+  {% for key, value in _context %}
+    <li>{{ key }}</li>
+  {% endfor %}
+</ol>
+
+<ol>
+  {% for key, value in node %}
+    <li>{{ key }}</li>
+  {% endfor %}
+</ol>
+
+<ol>
+  {% for key, value in page %}
+    <li>{{ key }}</li>
+  {% endfor %}
+</ol>
+
+<ol>
+  {% for key, value in page.hero %}
+    <li>{{ key }}</li>
+  {% endfor %}
+</ol>
+
+{% if page.hero %}
+  <div class="centered">
+    <p>
+      hey guys. Page hero.
+    </p>
+  </div>
+{% endif %}
+
 
 <main class="usa-section">
     <div class="{{ main_class }}">
