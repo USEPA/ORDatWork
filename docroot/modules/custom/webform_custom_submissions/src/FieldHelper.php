@@ -203,7 +203,7 @@ class FieldHelper {
     'cost_of_atm_fees_rr' => 'customfield_12045',
     'cost_of_supplies_rr' => 'customfield_12046',
     'cost_of_other_expenses_rr' => 'customfield_12047',
-    'epa_office_division_branch' => 'customfield_10093',
+    'epa_office_division_branch' => 'customfield_10330',
     'traveler_division' => 'customfield_11520',
     'your_division' => 'customfield_11520',
     'region_8_traveler_division' => 'customfield_10820',
