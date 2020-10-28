@@ -1,0 +1,64 @@
+Select2:
+  remote: https://select2.org/
+  version: 4.0.6
+  license:
+    name: MIT
+    url: https://github.com/select2/select2/blob/master/LICENSE.md
+    gpl-compatible: false
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js: { type: external, minified: true }
+  css:
+    component:
+      https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+jQuery.Easing:
+  remote: https://github.com/gdsmith/jquery.easing
+  version: 1.4.0
+  license:
+    name: BSD
+    url: https://github.com/gdsmith/jquery.easing/blob/v1.4.0/LICENSE
+    gpl-compatible: false
+  js:
+    https://cdn.rawgit.com/gdsmith/jquery.easing/v1.4.0/jquery.easing.min.js: { type: external, minified: true }
+
+SwitchButton:
+  remote: https://github.com/olance/jQuery-switchButton
+  license:
+    name: MIT
+    url: https://github.com/olance/jQuery-switchButton/blob/master/README.md
+    gpl-compatible: false
+  js:
+    https://cdn.rawgit.com/olance/jQuery-switchButton/master/jquery.switchButton.js: { type: external, minified: false }
+  css:
+    component:
+      https://cdn.rawgit.com/olance/jQuery-switchButton/master/jquery.switchButton.css: { type: external, minified: false }
+  dependencies:
+    - blizz_dynamic_entitylist/jQuery.Easing
+
+BlizzDynamicEntitylistAdminWidget:
+  version: 1.0
+  js:
+    js/BlizzDynamicEntitylistAdminWidget.js: { minified: false }
+  css:
+    component:
+      css/BlizzDynamicEntitylistAdminWidget.css: { minified: false }
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+BlizzDynamicEntitylistWidget:
+  version: 1.0
+  js:
+    js/BlizzDynamicEntitylistWidget.js: { minified: false }
+  css:
+    component:
+      css/BlizzDynamicEntitylistWidget.css: { minified: false }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - blizz_dynamic_entitylist/Select2
+    - blizz_dynamic_entitylist/SwitchButton

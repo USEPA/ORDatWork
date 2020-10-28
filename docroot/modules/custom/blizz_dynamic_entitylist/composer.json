@@ -1,0 +1,9 @@
+{
+  "name": "drupal/blizz_dynamic_entitylist",
+  "type": "drupal-module",
+  "description": "Provides a field type that lets you define automatic lists of entities based upon selection criteria.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": { }
+}
