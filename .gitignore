@@ -15,8 +15,6 @@
 /docroot/libraries/*
 /docroot/sites/*
 
-!/docroot/modules/contrib/blizz_dynamic_entitylist
-
 .idea
 acquia-pipelines.yml
 # Ignore Composer-managed dependencies.

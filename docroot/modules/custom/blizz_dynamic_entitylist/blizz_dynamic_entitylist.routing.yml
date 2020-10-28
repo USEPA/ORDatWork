@@ -1,0 +1,37 @@
+blizz_dynamic_entitylist.ajax-bundlelist:
+  path: '/blizz_dynamic_entitylist/ajax/entitybundlelist/{field_id}/{entity_type}'
+  defaults:
+    _controller: 'blizz_dynamic_entitylist.field_widget_service:widgetStage2'
+  options:
+    no_cache: TRUE
+    _admin_route: TRUE
+  requirements:
+    _permission: 'use blizz_bulk_creator ajax autocomplete'
+blizz_dynamic_entitylist.ajax-viewmodelist:
+  path: '/blizz_dynamic_entitylist/ajax/entityviewmodelist/{field_id}/{entity_type}/{bundle}'
+  defaults:
+    _controller: 'blizz_dynamic_entitylist.field_widget_service:widgetStage3'
+  options:
+    no_cache: TRUE
+    _admin_route: TRUE
+  requirements:
+    _permission: 'use blizz_bulk_creator ajax autocomplete'
+blizz_dynamic_entitylist.ajax-autocomplete:
+  path: '/blizz_dynamic_entitylist/ajax/autocomplete/{entity_type}/{bundle}'
+  defaults:
+    _controller: 'blizz_dynamic_entitylist.field_widget_service:handleAutocomplete'
+  options:
+    no_cache: TRUE
+    _admin_route: TRUE
+  requirements:
+    _permission: 'use blizz_bulk_creator ajax autocomplete'
+blizz_dynamic_entitylist.ajax-preview:
+  path: '/blizz_dynamic_entitylist/ajax/preview'
+  defaults:
+    _controller: 'blizz_dynamic_entitylist.field_widget_service:getListPreviewByAjax'
+  methods: [POST]
+  options:
+    no_cache: TRUE
+    _admin_route: TRUE
+  requirements:
+    _permission: 'use blizz_bulk_creator ajax autocomplete'
