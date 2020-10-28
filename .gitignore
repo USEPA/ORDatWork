@@ -15,7 +15,7 @@
 /docroot/libraries/*
 /docroot/sites/*
 
-!*/blizz_dynamic_entitylist
+!/docroot/modules/contrib/blizz_dynamic_entitylist
 
 .idea
 acquia-pipelines.yml
