@@ -68,8 +68,8 @@
 
 </header>
 
-{% if hero_target_id %}
-    {{ bamboo_render_entity('paragraph', hero_target_id) }}
+{% if hero_field %}
+    {{ hero_field|field_value }}
 {% endif %}
 
 <main class="usa-section">
