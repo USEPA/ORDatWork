@@ -136,6 +136,10 @@ div.usa-media-block a:hover, div.usa-media-block__body a:hover {
   text-decoration: underline !important;
 }
 
+.usa-card__body > :last-child.usa-button {
+  padding-bottom: 1rem;
+}
+
 a.ext:not('usa-button'), a.mailto:not('usa-button') {
   color: #005ea2;
   text-decoration: underline;
@@ -151,6 +155,17 @@ svg.ext, svg.mailto {
   height: 16px;
   padding-left: 0.2em;
   vertical-align: baseline;
+}
+
+.usa-button svg.ext,
+.usa-button svg.mailto {
+  fill: white;
+}
+
+.usa-button svg.ext path,
+.usa-button svg.mailto path {
+  stroke: white;
+  stroke-width: 3;
 }
 
 div.usa-media-block__body a.ext {
@@ -184,6 +199,7 @@ div.usa-card__media div.field__item article {
 div.usa-card__media img {
   height: 100%;
   object-fit: cover;
+  border-radius: 0.25rem;
 }
 
 .usa-card--header-first .usa-card__media {
@@ -591,6 +607,10 @@ div.usa-alert--slim {
 
 .view-grouping-content .sort-link {
   font-size: 1rem;
+}
+
+.cover-object-fit {
+  object-fit: cover;
 }
 
 .staff-fixed-height-grid {

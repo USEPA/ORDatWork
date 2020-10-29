@@ -14,6 +14,8 @@ class FieldHelper {
   private $vouchers_project;
   private $international_project;
   private $domestic_project;
+  private $region8_project;
+  private $region9_project;
   private const FLYING_OUT_OF_COUNTRY = 'customfield_11826';
   private const CHECKBOX_FIELDS = [
     'customfield_10411',
@@ -90,7 +92,7 @@ class FieldHelper {
     'destination_country_contact_s_org' => 'customfield_10357',
     'hosting_organization_point_of_contact' => 'customfield_10357',
     'is_someone_else_paying_for_a_portion_or_all_of_the_travel_' => 'customfield_10199',
-    'who_is_paying_' => 'customfield_11424',
+    'who_is_paying_' => 'customfield_10200',
     'epa_office_paying' => 'customfield_11425',
     'cross_funding_label_' => 'customfield_10491',
     'agency_name' => 'customfield_11426',
@@ -201,6 +203,12 @@ class FieldHelper {
     'cost_of_atm_fees_rr' => 'customfield_12045',
     'cost_of_supplies_rr' => 'customfield_12046',
     'cost_of_other_expenses_rr' => 'customfield_12047',
+    'epa_office_division_branch' => 'customfield_10330',
+    'traveler_division' => 'customfield_11520',
+    'your_division' => 'customfield_11520',
+    'region_8_traveler_division' => 'customfield_10820',
+    'region_8_your_division' => 'customfield_10820',
+    'region_travel_description' => 'customfield_10920',
     'receipts' => 'file',
     'required_receipts' => 'file',
     'daily_itinerary' => 'file',
@@ -253,7 +261,9 @@ class FieldHelper {
       'customfield_11428',
       'customfield_11826',
       'customfield_11827',
-      'customfield_12020'
+      'customfield_12020',
+      'customfield_11520',
+      'customfield_10820',
     );
   }
 
@@ -268,6 +278,14 @@ class FieldHelper {
       $is_international = strpos($this->jira_data['customfield_10191'], 'International') !== false;
     }
     return $is_international;
+  }
+
+  function isRegion9() {
+    return strpos($this->webform_id, 'region9') !== false;
+  }
+
+  function isRegion8() {
+    return strpos($this->webform_id, 'region8') !== false;
   }
 
   function isVoucher() {
@@ -292,7 +310,8 @@ class FieldHelper {
     $this->domestic_project = $config->get('DOMESTIC_PROJECT');
     $this->international_project = $config->get('INTERNATIONAL_PROJECT');
     $this->vouchers_project = $config->get('VOUCHERS_PROJECT');
-
+    $this->region8_project = $config->get('REGION8_PROJECT');
+    $this->region9_project = $config->get('REGION9_PROJECT');
     $this->form_data = $webform_submission->getData();
     $this->webform_id = $webform_submission->getWebform()->getOriginalId();
     $this->webform_title = $webform_submission->getWebform()->get('title');
@@ -303,18 +322,18 @@ class FieldHelper {
   }
 
   public function setIssueType() {
-    $mapping = [
-      'travel_amendment' => '32',
-      'travel_cancellation' => '33',
-      'travel_profile' => '34',
-      'travel_concur_routing' => '10100',
-      'travel_question' => '37',
-      'travel_authorization' => '23',
-      'travel_voucher' => '24',
-      'travel_id_information' => '35',
-    ];
-
-    $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$this->webform_id]];
+      $webform_type = str_replace(["region9_", "region8_"], '', $this->webform_id);
+      $mapping = [
+        'travel_amendment' => '32',
+        'travel_cancellation' => '33',
+        'travel_profile' => '34',
+        'travel_concur_routing' => '10100',
+        'travel_question' => '37',
+        'travel_authorization' => '23',
+        'travel_voucher' => '24',
+        'travel_id_information' => '35',
+      ];
+      $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$webform_type]];
   }
 
   public function isComposite($field_name) {
@@ -332,13 +351,7 @@ class FieldHelper {
       }
     }
     $this->setFlyingOutOfCountry();
-    if ($this->isInternational()) {
-      $this->setProjectID($this->international_project);
-    } else if ($this->isVoucher()) {
-      $this->setProjectID($this->vouchers_project);
-    } else {
-      $this->setProjectID($this->domestic_project);
-    }
+    $this->setProjectBasedOnType();
     $this->setIssueType();
     $this->addSummary();
   }
@@ -502,6 +515,22 @@ class FieldHelper {
 
   private function isMulti($jira_mapping) {
     return isset($jira_mapping['multi']);
+  }
+
+  public function setProjectBasedOnType(): void {
+    if ($this->isRegion9()) {
+      $this->setProjectID($this->region9_project);
+    } else if ($this->isRegion8()) {
+      $this->setProjectID($this->region8_project);
+    } else {
+      if ($this->isInternational()) {
+        $this->setProjectID($this->international_project);
+      } else if ($this->isVoucher()) {
+        $this->setProjectID($this->vouchers_project);
+      } else {
+        $this->setProjectID($this->domestic_project);
+      }
+    }
   }
 
 }

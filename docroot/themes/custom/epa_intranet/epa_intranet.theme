@@ -77,6 +77,19 @@ function epa_intranet_preprocess_views_view_table(&$variables) {
   }
 }
 
+function epa_intranet_preprocess_page(&$variables) {
+//   Load correct Hero revision for page
+  if (isset($variables['node'])) {
+    $node = $variables['node'];
+    if (is_numeric($node)) {
+      $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($node_revision);
+    }
+    if (in_array('field_hero', array_keys($node->getFields()))) {
+      $variables['hero_field'] = $node->get('field_hero')->view();
+    }
+  }
+}
 
 function epa_intranet_preprocess_views_view__staff_order(&$variables) {
   $view = $variables['view'];

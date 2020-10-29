@@ -71,6 +71,16 @@ class TravelServicesForm extends ConfigFormBase {
       '#title' => $this->t('Vouchers Project ID'),
       '#default_value' => $config->get('VOUCHERS_PROJECT'),
     ];
+    $form['REGION8_PROJECT'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Region 8 Project ID'),
+      '#default_value' => $config->get('REGION8_PROJECT'),
+    ];
+    $form['REGION9_PROJECT'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Region 9 Project ID'),
+      '#default_value' => $config->get('REGION9_PROJECT'),
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -85,6 +95,8 @@ class TravelServicesForm extends ConfigFormBase {
       ->set('DOMESTIC_PROJECT', $form_state->getValue('DOMESTIC_PROJECT'))
       ->set('INTERNATIONAL_PROJECT', $form_state->getValue('INTERNATIONAL_PROJECT'))
       ->set('VOUCHERS_PROJECT', $form_state->getValue('VOUCHERS_PROJECT'))
+      ->set('REGION8_PROJECT', $form_state->getValue('REGION8_PROJECT'))
+      ->set('REGION9_PROJECT', $form_state->getValue('REGION9_PROJECT'))
       ->save();
   }
 }
