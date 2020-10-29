@@ -190,7 +190,14 @@ class BlizzDynamicEntitylistFormatter extends FormatterBase implements Container
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
 
-    $listdefinition = $this->entitylistWidgetServices->getListDefinition($items->get(0)->getValue());
+    $listdefinition = [];
+
+     if (!empty($items)) {
+       $possible_list_definition = $items->get(0);
+       if (!empty($possible_list_definition)) {
+         $listdefinition = $this->entitylistWidgetServices->getListDefinition($items->get(0)->getValue());
+       }
+     }
 
     if (!empty($listdefinition)) {
 
