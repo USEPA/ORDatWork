@@ -726,7 +726,7 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
     // Sorting.
     if (isset($entity_bundle_fields['field_event_date'])) {
       // Order the list to show newest entities first.
-      $query->sort('field_event_date', 'ASC');
+      $query->sort('field_event_date', 'DESC');
     } else if (isset($entity_bundle_fields['created'])) {
       // Order the list to show newest entities first.
       $query->sort('created', 'DESC');
