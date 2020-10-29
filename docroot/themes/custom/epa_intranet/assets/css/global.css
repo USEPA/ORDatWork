@@ -219,6 +219,38 @@ div.field--name-field-uswds-button .usa-legend {
   display: block;
 }
 
+.block-field-blocknodepagefield-custom-text .usa-card--flag div.usa-card__media img
+{
+  width: 75%;
+}
+
+@media (min-width: 40em) {
+  .block-field-blocknodepagefield-custom-text .usa-card--flag.usa-card--media-right .usa-card__media {
+    text-align: right;
+  }
+  .block-field-blocknodepagefield-custom-text .usa-card--flag.usa-card--media-right .usa-card__media article {
+    display: block;
+  }
+
+  .block-field-blocknodepagefield-custom-text .usa-card--flag .usa-card__header,
+  .block-field-blocknodepagefield-custom-text .usa-card--flag .usa-card__body,
+  .block-field-blocknodepagefield-custom-text .usa-card--flag .usa-card__footer {
+    margin-left: 11.25rem;
+    margin-right: 0;
+  }
+
+  .block-field-blocknodepagefield-custom-text .usa-card--flag.usa-card--media-right .usa-card__header,
+  .block-field-blocknodepagefield-custom-text .usa-card--flag.usa-card--media-right .usa-card__body,
+  .block-field-blocknodepagefield-custom-text .usa-card--flag.usa-card--media-right .usa-card__footer {
+    margin-left: 0;
+    margin-right: 11.25rem;
+  }
+
+}
+
+
+
+
 .slick-arrow {
   width: auto;
 }
