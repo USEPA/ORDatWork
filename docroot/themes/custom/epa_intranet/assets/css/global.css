@@ -199,6 +199,7 @@ div.usa-card__media div.field__item article {
 div.usa-card__media img {
   height: 100%;
   object-fit: cover;
+  border-radius: 0.25rem;
 }
 
 .usa-card--header-first .usa-card__media {
