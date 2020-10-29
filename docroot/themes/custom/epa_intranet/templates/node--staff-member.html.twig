@@ -97,9 +97,11 @@
           {% if content.field_staff_photo|render is not empty %}
             {{ content.field_staff_photo }}
           {% else %}
-            <img class="align-center cover-object-fit" src="/sites/default/files/avatar-1577909_1280.png" alt="No Staff Member Picture"
-                 width="110"
-                 height="150"/>
+            <div class="staff-photo">
+              <img class="align-center cover-object-fit" src="/sites/default/files/avatar-1577909_1280.png" alt="No Staff Member Picture"
+                   width="110"
+                   height="150"/>
+            </div>
           {% endif %}
         </div>
         <div class="grid-col">
