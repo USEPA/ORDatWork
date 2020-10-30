@@ -760,8 +760,12 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
 
     // @TODO: check entity bundle for a field from even node types
     // Then examine each result for an rrule property
-    // If it contains recurring nature, check the dates and only display nearest occurrence
-    // or even just replace it all with "Every x day of week at 8:00-9:00 or something
+    // If it contains recurring nature, check the dates and only display first
+    if ($result) {
+      $cd = "champ";
+    }
+
+
 
     // If we're not in preview mode, feed the entity ids
     // determined to the id cache (if configured).
