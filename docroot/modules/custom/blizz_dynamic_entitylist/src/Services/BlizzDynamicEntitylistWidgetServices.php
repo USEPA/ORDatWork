@@ -711,8 +711,13 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
     );
 
     // Apply any filters defined, but only if the fields actually exist.
+    // If event filter is applied, don't worry about whether or not events are checked as display on calendar
+    $event_host_filter_flag = false;
     if (!empty($listdefinition['filters'])) {
       foreach ($listdefinition['filters'] as $field => $value) {
+        if ($field == "field_event_host" && !empty($value)) {
+          $event_host_filter_flag = true;
+        }
         if (isset($entity_bundle_fields[$field]) && !empty($value)) {
           $query->condition(
             $field,
@@ -721,6 +726,13 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
           );
         }
       }
+    }
+
+    if (!$event_host_filter_flag) {
+      // Filter out events that are not calendar-listed if event host filter is not used
+      $query->condition(
+        'field_show_on_ord_calendar',
+        TRUE);
     }
 
     // Sorting.
