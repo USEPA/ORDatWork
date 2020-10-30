@@ -758,15 +758,6 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
     // Execute the query.
     $result = $query->execute();
 
-    // @TODO: check entity bundle for a field from even node types
-    // Then examine each result for an rrule property
-    // If it contains recurring nature, check the dates and only display first
-    if ($result) {
-      $cd = "champ";
-    }
-
-
-
     // If we're not in preview mode, feed the entity ids
     // determined to the id cache (if configured).
     $no_entity_registration = isset($listdefinition['options']->no_entity_registration) && $listdefinition['options']->no_entity_registration;
