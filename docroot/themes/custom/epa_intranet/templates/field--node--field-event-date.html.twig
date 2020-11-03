@@ -24,26 +24,20 @@
 
 {% if view_mode == 'list' %}
   {% if items|length > 1 %}
-    <div class="details-wrapper">
-      <ul>
-        {% for item in items %}
-          <li>
-            {{ item.content }}
-          </li>
-          <em> {{ item.content.start.date }}</em>
-          <em> why {{ 'now'|date('Y-m-d') }}</em>d
-          <em> god {{ 'item.content.start.date'|date('Y-m-d\\TH:i:sP')}}</em>
-          {% if 'now'|date('Y-m-d') < item.content.start.date %}
-            <em> conditional is true </em>
-          {% endif %}
-          <ol>
-            {% for key, value in item.content.start %}
-              <li>{{ key }}</li>
+    <em>
+      <details open>
+        <summary>{{ 'Event Dates'|t }}</summary>
+        <div class="details-wrapper">
+          <ul>
+            {% for item in items %}
+              <li>
+                {{ item.content }}
+              </li>
             {% endfor %}
-          </ol>
-        {% endfor %}
-      </ul>
-    </div>
+          </ul>
+        </div>
+      </details>
+    </em>
   {% else %}
     {% for item in items %}
       <em>{{ item.content }}</em>
