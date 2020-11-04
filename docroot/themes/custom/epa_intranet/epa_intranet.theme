@@ -55,11 +55,23 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   // Examine the date items and remove them if they are in the past
   if ($elements['#field_name'] === 'field_event_date' && $elements['#bundle'] === 'event') {
     if ($elements['#view_mode'] === 'list' && count($variables['items']) > 1) {
+      // If it is a list, and ALL of the events are in the past, we still want to display one date
+      // so keep track of the index and flag if any events have been included
+      $final_element_index = count($variables['items']) - 1;
+      $all_past_dates_flag = true;
+
       $current_date = time();
       foreach ($elements['#items'] as $key => $item) {
         $event_start_date = $item->getValue()['value'];
         if ($event_start_date < $current_date) {
-          unset($variables['items'][$key]);
+          // If we are on the final element AND no other dates are in the future, do not unset the final item.
+          if ($key == $final_element_index && $all_past_dates_flag) {
+            continue;
+          } else {
+            unset($variables['items'][$key]);
+          }
+        } else {
+          $all_past_dates_flag = false;
         }
       }
     }
