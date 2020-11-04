@@ -1,12 +1,12 @@
 <div class="recurring-output--wrapper">
   <div class="rule-text">{{ rule_text }}</div>
   {% if past_display %}
-  <details>
-    <summary>{{ 'Recent'|t }}</summary>
-    <div class="details-wrapper">
-      {{ past_display }}
-    </div>
-  </details>
+    <details>
+      <summary>{{ 'Recent'|t }}</summary>
+      <div class="details-wrapper">
+        {{ past_display }}
+      </div>
+    </details>
   {% endif %}
   {% if upcoming_display %}
     <details>

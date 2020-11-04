@@ -51,6 +51,19 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
     $variables['attributes']['class'][] = 'align-center';
   }
 
+  // Multi-date events that appear in dynamic lists will not have their past dates appear
+  // Examine the date items and remove them if they are in the past
+  if ($elements['#field_name'] === 'field_event_date' && $elements['#bundle'] === 'event') {
+    if ($elements['#view_mode'] === 'list' && count($variables['items']) > 1) {
+      $current_date = time();
+      foreach ($elements['#items'] as $key => $item) {
+        $event_start_date = $item->getValue()['value'];
+        if ($event_start_date < $current_date) {
+          unset($variables['items'][$key]);
+        }
+      }
+    }
+  }
 }
 
 
