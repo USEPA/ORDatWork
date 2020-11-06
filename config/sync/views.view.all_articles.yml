@@ -318,9 +318,35 @@ display:
             label: ''
           granularity: second
       title: 'ORD News Articles'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<h1>ORD News</h1>'
+            format: full_html
+          plugin_id: text
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'There are no published news articles at this time.'
+            format: simple_text
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
