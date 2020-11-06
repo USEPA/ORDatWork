@@ -264,6 +264,7 @@ class FieldHelper {
       'customfield_11951',
       'customfield_11520',
       'customfield_10820',
+      'customfield_11922',
     );
   }
 
