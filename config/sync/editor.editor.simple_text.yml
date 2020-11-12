@@ -42,6 +42,7 @@ settings:
           items:
             - epaBoxButton
             - epaNewButton
+            - HorizontalRule
         -
           name: Tools
           items:
