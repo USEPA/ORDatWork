@@ -2,8 +2,5 @@ ignored_config_entities:
   - 'system.menu.*'
   - system.site
   - 'webform_composite.*'
-  - 'webform.*'
-  - webform_custom_submissions.form
-  - 'core.entity_view_display.node.webform.*'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
