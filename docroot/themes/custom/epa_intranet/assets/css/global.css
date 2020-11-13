@@ -23,6 +23,33 @@ h2.highlight, h3.highlight, h4.highlight, h5.highlight, h6.highlight {
   padding: 0.5rem 1rem;
 }
 
+/* Pipeline list styling */
+.list--pipeline {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list--pipeline > li {
+  border-right: 1px solid #71767a;
+  display: block;
+  float: left;
+  margin-right: 0.75em;
+  padding-left: 0;
+  padding-right: 0.75em;
+}
+
+.list--pipeline > li:last-child {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.list--pipeline::after {
+  clear: both;
+  content: "";
+  display: block;
+}
 
 /* Provides spacing between the calendar toolbar and the filter */
 .fc-toolbar {
