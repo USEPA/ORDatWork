@@ -51,6 +51,50 @@ h2.highlight, h3.highlight, h4.highlight, h5.highlight, h6.highlight {
   display: block;
 }
 
+/* Pull quote styling */
+blockquote {
+  font-family: Merriweather Web,Georgia,Cambria,Times New Roman, Times, serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;;
+}
+
+blockquote p {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.pull-quote {
+  background-color: #fff;
+  border-left: 0.5rem solid #00bde3;
+  clear: both;
+  margin-bottom:  1.5rem;
+  padding: 1.25rem 0 1.25rem 1.25rem;
+}
+
+.pull-quote > :last-child {
+  margin-bottom: 0;
+}
+
+.u-align-right {
+  float: right;
+  margin-left: 2.5rem;
+}
+
+.u-align-left {
+  float: left;
+  margin-right: 2.5rem;
+}
+
+.pull-quote.u-align-left, .pull-quote.u-align-right {
+  margin-top: 0;
+  max-width: calc(50% - 2.5rem);
+}
+
 /* Provides spacing between the calendar toolbar and the filter */
 .fc-toolbar {
   margin-top: 1em;
