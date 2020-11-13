@@ -298,9 +298,12 @@ class FieldHelper {
 
   public function addSummary() {
     $name = '';
+    // Traveler
     if (!empty($this->jira_data['customfield_10090'])) {
       $name = $this->jira_data['customfield_10090'];
-    } else if (!empty($this->jira_data['customfield_10331'])) {
+    }
+    // Traveler if filling for someone else
+    if (!empty($this->jira_data['customfield_10331'])) {
       $name = $this->jira_data['customfield_10331'];
     }
     $this->jira_data['fields']['summary'] = $this->webform_title . ': ' . $name;
@@ -322,18 +325,18 @@ class FieldHelper {
   }
 
   public function setIssueType() {
-      $webform_type = str_replace(["region9_", "region8_"], '', $this->webform_id);
-      $mapping = [
-        'travel_amendment' => '32',
-        'travel_cancellation' => '33',
-        'travel_profile' => '34',
-        'travel_concur_routing' => '10100',
-        'travel_question' => '37',
-        'travel_authorization' => '23',
-        'travel_voucher' => '24',
-        'travel_id_information' => '35',
-      ];
-      $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$webform_type]];
+    $webform_type = str_replace(["region9_", "region8_"], '', $this->webform_id);
+    $mapping = [
+      'travel_amendment' => '32',
+      'travel_cancellation' => '33',
+      'travel_profile' => '34',
+      'travel_concur_routing' => '10100',
+      'travel_question' => '37',
+      'travel_authorization' => '23',
+      'travel_voucher' => '24',
+      'travel_id_information' => '35',
+    ];
+    $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$webform_type]];
   }
 
   public function isComposite($field_name) {
