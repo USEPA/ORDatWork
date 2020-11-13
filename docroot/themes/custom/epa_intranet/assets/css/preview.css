@@ -9,6 +9,11 @@ h2.highlight, h3.highlight, h4.highlight, h5.highlight, h6.highlight {
   padding: 0.5rem 1rem;
 }
 
+span.warning {
+  color: #d54309;
+  font-weight: bold;
+}
+
 blockquote {
   font-family: Merriweather Web,Georgia,Cambria,Times New Roman, Times, serif;
   font-size: 1.1rem;
