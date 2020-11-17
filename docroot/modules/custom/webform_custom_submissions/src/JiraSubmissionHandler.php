@@ -48,12 +48,10 @@ class JiraSubmissionHandler {
    */
   public function submitToJira(WebformSubmissionInterface $webform_submission) {
     try {
-      $fieldHelper = new FieldHelper();
-
-      $fieldHelper->prepareCustomFieldMappings($this->jira_custom_fields_config);
-      $fieldHelper->prepareFormData($this->jira_services_config, $webform_submission);
-      $fieldHelper->prepareJiraData();
-      $jira_data = $fieldHelper->getJiraData();
+      $this->field_helper->prepareCustomFieldMappings($this->jira_custom_fields_config);
+      $this->field_helper->prepareFormData($this->jira_services_config, $webform_submission);
+      $this->field_helper->prepareJiraData();
+      $jira_data = $this->field_helper->getJiraData();
       $postData = $this->compilePOSTData($jira_data);
       $jira_api_response_body = $this->createIssueAndResponse($postData);
 
@@ -129,11 +127,9 @@ class JiraSubmissionHandler {
           array_push($checkboxArray, array('value' => $value2));
         }
         $data['fields'][$key] = $checkboxArray;
-      }
-      elseif ($key == 'customfield_10431') {
+      } elseif ($key == 'customfield_10431') {
         $data['fields']['customfield_10431'] = array('value' => $val);
-      }
-      else {
+      } else {
         $data['fields'][$key] = $val;
       }
     }
