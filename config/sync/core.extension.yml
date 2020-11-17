@@ -161,7 +161,6 @@ module:
   slick_ui: 0
   smart_date: 0
   smart_date_recur: 0
-  syslog: 0
   system: 0
   tablefield: 0
   tablefield_cellspan: 0
@@ -191,8 +190,6 @@ module:
   webform_analysis: 0
   webform_attachment: 0
   webform_composite: 0
-  webform_config_ignore: 0
-  webform_custom_submissions: 0
   webform_image_select: 0
   webform_node: 0
   webform_submission_export_import: 0
