@@ -728,15 +728,19 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
       }
     }
 
-    if (!$event_host_filter_flag) {
-      // Filter out events that are not calendar-listed if event host filter is not used
-      $query->condition(
-        'field_show_on_ord_calendar',
-        TRUE);
-    }
-
     // Sorting.
     if (isset($entity_bundle_fields['field_event_date'])) {
+      // ---- Processing of fields based on date and calendar checkbox-----
+
+      if (!$event_host_filter_flag) {
+        // Filter out events that are not calendar-listed if event host filter is not used
+        $query->condition(
+          'field_show_on_ord_calendar',
+          TRUE);
+      }
+      // ----- END processing --------
+
+
       // Order the list to show newest entities first.
       $query->sort('field_event_date', 'DESC');
     } else if (isset($entity_bundle_fields['created'])) {
