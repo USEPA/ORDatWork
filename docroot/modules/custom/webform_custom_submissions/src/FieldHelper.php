@@ -74,8 +74,8 @@ class FieldHelper {
   }
 
   public function prepareCustomFieldMappings($custom_mapping_config) {
-    $this->checkbox_fields = explode(PHP_EOL, $custom_mapping_config->get('checkbox_fields'));
-    $this->dropdown_fields = explode(PHP_EOL, $custom_mapping_config->get('dropdown_fields'));
+    $this->checkbox_fields = explode('|', $custom_mapping_config->get('checkbox_fields'));
+    $this->dropdown_fields = explode('|', $custom_mapping_config->get('dropdown_fields'));
     $this->form_to_jira_mapping = json_decode($custom_mapping_config->get('form_to_jira_mapping'), TRUE);
 
     $this->flying_out_the_country = $custom_mapping_config->get('flying_out_the_country');
