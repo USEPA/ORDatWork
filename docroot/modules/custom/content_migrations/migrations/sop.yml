@@ -16,7 +16,7 @@ source:
   #    Accept: 'application/json; charset=utf-8'
   #    Content-Type: 'application/json'
   # One or more URLs from which to fetch the source data.
-  urls: C:\ADAMS\docroot\sites\feeds_xmls\sop.xml
+  urls: https://qatrack.epa.gov/sop_tab/feed
   # For JSON, item_selector is the xpath used to select
   # our source items (tags in this case).
   item_selector: /rss/channel/item
