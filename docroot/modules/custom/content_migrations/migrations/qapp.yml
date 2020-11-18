@@ -102,6 +102,7 @@ process:
     default_value: qapp
   field_body: field_body
   field_qa_activity_number: field_qa_activity_number
+  field_qapp_guid: field_qapp_guid
   field_qapp_project_type: field_qapp_project_type
   field_qapp_approval_date: field_qapp_approval_date
   field_qapp_project_lead: field_qapp_project_lead
