@@ -5,68 +5,68 @@
  */
 #}
 
-{% if page.header_top or government_banner %}
-    {{ government_banner }}
-{% endif %}
-
-<div class="usa-overlay"></div>
-
-{% if page.header_top %}
-    <div class="grid-container">
-        {{ page.header_top }}
-    </div>
-{% endif %}
-
-<header class="{{ header_classes }}" role="banner">
-    {% if header_basic %}
-    <div class="usa-nav-container">
-        {% endif %}
-        <div class="usa-navbar">
-            {{ page.header }}
-            <button class="usa-menu-btn">{{ 'Menu'|t }}</button>
-        </div>
-
-        <nav class="usa-nav" role="navigation">
-            <button class="usa-nav__close">
-                <img src="{{ active_theme_path }}/assets/img/close.svg" alt="close"/>
-            </button>
-            {% if header_extended %}
-            <div class="usa-nav__inner">
-                {% endif %}
-
-                {% if page.primary_menu %}
-                    {{ page.primary_menu }}
-                {% endif %}
-
-                {% if page.secondary_menu %}
-                    <div class="usa-nav__secondary">
-                        {{ page.secondary_menu }}
-                        <form action="https://intrasearch.epa.gov/epasearch" class="usa-search usa-search--small"
-                              method="GET" data-drupal-form-fields="extended-mega-search-field-small">
-                            <div role="search"><label class="usa-sr-only" for="extended-mega-search-field-small">Search
-                                    small</label> <input name="typeofsearch" type="hidden" value="area"> <input
-                                        name="inmeta" type="hidden" value="URL:intranet.ord.epa.gov|webx.ord.epa.gov">
-                                <input name="areaname" type="hidden" value="ORD@Work"> <input class="usa-input"
-                                                                                              id="extended-mega-search-field-small"
-                                                                                              name="querytext"
-                                                                                              type="search">
-                                <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                {% endif %}
-
-                {% if header_extended %}
-            </div>
-            {% endif %}
-        </nav>
-
-        {% if header_basic %}
-    </div>
+    {% if page.header_top or government_banner %}
+        {{ government_banner }}
     {% endif %}
 
-</header>
+    <div class="usa-overlay"></div>
+
+    {% if page.header_top %}
+        <div class="grid-container">
+            {{ page.header_top }}
+        </div>
+    {% endif %}
+
+    <header class="{{ header_classes }}" role="banner">
+        {% if header_basic %}
+        <div class="usa-nav-container">
+            {% endif %}
+            <div class="usa-navbar">
+                {{ page.header }}
+                <button class="usa-menu-btn">{{ 'Menu'|t }}</button>
+            </div>
+
+            <nav class="usa-nav" role="navigation">
+                <button class="usa-nav__close">
+                    <img src="{{ active_theme_path }}/assets/img/close.svg" alt="close"/>
+                </button>
+                {% if header_extended %}
+                <div class="usa-nav__inner">
+                    {% endif %}
+
+                    {% if page.primary_menu %}
+                        {{ page.primary_menu }}
+                    {% endif %}
+
+                    {% if page.secondary_menu %}
+                        <div class="usa-nav__secondary">
+                            {{ page.secondary_menu }}
+                            <form action="https://intrasearch.epa.gov/epasearch" class="usa-search usa-search--small"
+                                  method="GET" data-drupal-form-fields="extended-mega-search-field-small">
+                                <div role="search"><label class="usa-sr-only" for="extended-mega-search-field-small">Search
+                                        small</label> <input name="typeofsearch" type="hidden" value="area"> <input
+                                        name="inmeta" type="hidden" value="URL:intranet.ord.epa.gov|webx.ord.epa.gov">
+                                    <input name="areaname" type="hidden" value="ORD@Work"> <input class="usa-input"
+                                                                                                  id="extended-mega-search-field-small"
+                                                                                                  name="querytext"
+                                                                                                  type="search">
+                                    <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    {% endif %}
+
+                    {% if header_extended %}
+                </div>
+                {% endif %}
+            </nav>
+
+            {% if header_basic %}
+        </div>
+        {% endif %}
+
+    </header>
 
 {% if hero_field %}
     {{ hero_field|field_value }}

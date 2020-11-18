@@ -1,4 +1,4 @@
-uuid: 3a04bc73-76b9-49e5-ac61-13abfb713ee4
+uuid: 52912e8c-4e5a-49e6-b342-1e5622cd62d4
 langcode: en
 status: true
 dependencies:
@@ -6,30 +6,23 @@ dependencies:
     - system
   theme:
     - epa_intranet
-_core:
-  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: epa_intranet_branding
+id: region8_sitebranding
 theme: epa_intranet
 region: header
-weight: -8
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Site branding'
+  label: 'Region 8'
   provider: system
   label_display: '0'
   use_site_logo: true
   use_site_name: true
   use_site_slogan: true
 visibility:
-  and_or:
-    id: and_or
-    all: or
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
-    pages: "*region8*\r\n*region9*"
-    negate: true
+    pages: '*region8*'
+    negate: false
     context_mapping: {  }
