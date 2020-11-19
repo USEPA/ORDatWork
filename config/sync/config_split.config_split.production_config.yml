@@ -7,10 +7,10 @@ label: 'Production config'
 description: 'Config settings for production environment'
 folder: ../config/production
 module:
-  webform_custom_submissions: 0
   simplesamlphp_auth: 0
 theme: {  }
 blacklist:
+  - webform_custom_submissions.form
   - webform_custom_submissions.jira_custom_fields
   - system.performance
 graylist: {  }
