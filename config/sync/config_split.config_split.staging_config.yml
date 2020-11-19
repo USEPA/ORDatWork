@@ -7,11 +7,11 @@ label: 'Staging config'
 description: 'Config settings for staging environment'
 folder: ../config/staging
 module:
-  webform_custom_submissions: 0
   simplesamlphp_auth: 0
   stage_file_proxy: 0
 theme: {  }
 blacklist:
+  - webform_custom_submissions.form
   - webform_custom_submissions.jira_custom_fields
   - system.performance
 graylist: {  }

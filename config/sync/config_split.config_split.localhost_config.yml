@@ -7,13 +7,13 @@ label: 'Localhost config'
 description: 'Config settings for localhost environment'
 folder: ../config/localhost
 module:
-  webform_custom_submissions: 0
   devel: 0
   devel_generate: 0
 theme: {  }
 blacklist:
-  - webform_custom_submissions.jira_custom_fields
   - system.performance
+  - webform_custom_submissions.form
+  - webform_custom_submissions.jira_custom_fields
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
