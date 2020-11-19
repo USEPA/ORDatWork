@@ -17,25 +17,26 @@ class JiraSubmissionHandler {
   protected $username;
   protected $vouchers_project;
   protected $field_helper;
-  protected $travel_services_config;
+  protected $jira_services_config;
+  protected $jira_custom_fields_config;
   protected $password;
   protected $submitted_ticket;
   protected $uploaded_file_names;
   protected $base_url;
 
   public function __construct($config) {
-    $this->travel_services_config = $config->get('webform_custom_submissions.form');
+    $this->jira_services_config = $config->get('webform_custom_submissions.form');
+    $this->jira_custom_fields_config = $config->get('webform_custom_submissions.jira_custom_fields');
     $system_config = $config->get('system.passwords');
-    $this->username = $this->travel_services_config->get('USERNAME');
+    $this->username = $this->jira_services_config->get('USERNAME');
     $this->password = $system_config->get('jira');
-    $issue_creation_url = $this->travel_services_config->get('CREATE_ISSUE_URL');
-
-    $this->create_issue_url = $this->travel_services_config->get('CREATE_ISSUE_URL');
-    $this->base_url = $this->travel_services_config->get('BASE_URL');
-    $this->domestic_project = $this->travel_services_config->get('DOMESTIC_PROJECT');
-    $this->international_project = $this->travel_services_config->get('INTERNATIONAL_PROJECT');
+    $issue_creation_url = $this->jira_services_config->get('CREATE_ISSUE_URL');
+    $this->create_issue_url = $this->jira_services_config->get('CREATE_ISSUE_URL');
+    $this->base_url = $this->jira_services_config->get('BASE_URL');
+    $this->domestic_project = $this->jira_services_config->get('DOMESTIC_PROJECT');
+    $this->international_project = $this->jira_services_config->get('INTERNATIONAL_PROJECT');
     $this->submission_client = new Client(['base_uri' => $issue_creation_url]);
-    $this->vouchers_project = $this->travel_services_config->get('VOUCHERS_PROJECT');
+    $this->vouchers_project = $this->jira_services_config->get('VOUCHERS_PROJECT');
 
     $this->field_helper = new FieldHelper();
   }
@@ -47,11 +48,10 @@ class JiraSubmissionHandler {
    */
   public function submitToJira(WebformSubmissionInterface $webform_submission) {
     try {
-      $fieldHelper = new FieldHelper();
-
-      $fieldHelper->prepareFormData($this->travel_services_config, $webform_submission);
-      $fieldHelper->prepareJiraData();
-      $jira_data = $fieldHelper->getJiraData();
+      $this->field_helper->prepareCustomFieldMappings($this->jira_custom_fields_config);
+      $this->field_helper->prepareFormData($this->jira_services_config, $webform_submission);
+      $this->field_helper->prepareJiraData();
+      $jira_data = $this->field_helper->getJiraData();
       $postData = $this->compilePOSTData($jira_data);
       $jira_api_response_body = $this->createIssueAndResponse($postData);
 
@@ -127,24 +127,12 @@ class JiraSubmissionHandler {
           array_push($checkboxArray, array('value' => $value2));
         }
         $data['fields'][$key] = $checkboxArray;
-      }
-      //Drupal 7 FAPI #states property does not currently support 'OR'
-      //This workaround allows us to hide, show elements on 'OR' - These are fields in Travel Authorization
-      elseif ($key == 'customfield_10431') {
+      } elseif ($key == 'customfield_10431') {
         $data['fields']['customfield_10431'] = array('value' => $val);
-      }
-      //Drupal 7 FAPI #states property does not currently support 'OR'
-      //This workaround allows us to hide, show elements on 'OR' - These are fields in Travel Authorization
-      elseif ($key == 'customfield_10105a' ||
-        $key == 'customfield_10105b' ||
-        $key == 'customfield_10105c' && $val != ''
-      ) {
-        $data['fields']['customfield_10105'] = $val;
-      } //Capture the rest of the customfield POST variables
-      else {
+      } else {
         $data['fields'][$key] = $val;
       }
-    }//end foreach
+    }
 
     if (isset($form_data['customfield_10431']) && $form_data['customfield_10431'] == 'Yes') {
       $data['fields']['customfield_10431'] = array('value' => 'Yes');
