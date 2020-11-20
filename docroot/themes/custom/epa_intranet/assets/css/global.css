@@ -66,12 +66,28 @@ blockquote {
   margin: 0 0 1.5rem;;
 }
 
+cite {
+  color: #565c65;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.93rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.025rem;
+  line-height: 1.6;
+}
+
 blockquote p {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+}
+
+blockquote cite {
+  display: block;
+  margin: 1rem 0;
+  text-align: right;
 }
 
 .pull-quote {
@@ -84,6 +100,10 @@ blockquote p {
 
 .pull-quote > :last-child {
   margin-bottom: 0;
+}
+
+.pull-quote__cite {
+  text-align: left;
 }
 
 .u-align-right {
