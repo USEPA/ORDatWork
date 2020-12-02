@@ -1,6 +1,6 @@
 uuid: 6e147ea8-e19b-468d-918b-2ed9276c0846
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - webform.webform.elmstar_idea_implementation_inpu
