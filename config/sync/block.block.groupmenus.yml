@@ -40,6 +40,6 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: /elms/elmstar-ideas
+    pages: "/elms/elmstar-ideas\r\n/elms/elmstar-projects"
     negate: true
     context_mapping: {  }
