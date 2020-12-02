@@ -102,7 +102,7 @@
                 "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2018-12-19/group-2774827-41-gnode-tokens.patch",
                 "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                 "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
-                "2906085: Content moderation integration: transition permissions and latest version access": "https://www.drupal.org/files/issues/2019-11-26/group-2906085-55.patch"
+                "2906085: Content moderation integration: transition permissions and latest version access new": "https://www.drupal.org/files/issues/2020-04-28/group--2906085--59.patch"
             },
             "drupal/groupmenu": {
                 "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",
