@@ -134,6 +134,11 @@ blockquote cite {
   color: white;
 }
 
+iframe {
+  border-width: 0px;
+  border-style: none;
+}
+
 /* overriding links to apply uswds standards */
 ol.usa-list a, ul.usa-list a,
 ol.uswds-breadcrumbs a, ul.uswds-breadcrumbs a {
