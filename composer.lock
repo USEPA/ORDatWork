@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "172f9054369011257abe90f44b535cc3",
+    "content-hash": "0a507a08e08cccde036abe282260187b",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -233,7 +233,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -8667,7 +8667,7 @@
                     }
                 },
                 "patches_applied": {
-                    "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-01-02/simplesamlphp_auth-return-to-destination-parameter-2983154-8-D8.patch"
+                    "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-10-27/simplesamlphp_auth-return-to-destination-parameter-2983154-13.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
