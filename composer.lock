@@ -8666,7 +8666,7 @@
                     }
                 },
                 "patches_applied": {
-                    "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-01-02/simplesamlphp_auth-return-to-destination-parameter-2983154-8-D8.patch"
+                    "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-10-27/simplesamlphp_auth-return-to-destination-parameter-2983154-13.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
