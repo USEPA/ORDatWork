@@ -111,12 +111,12 @@ class FieldHelper {
     $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$webform_type]];
   }
 
-  public function isComposite($field_name) {
-    $composite_fields = [
-      'dates_of_approved_leave', 'emergency_contact_information', 'hotel_preference', 'reservation_information', 'provided_meals',
-      'emergency_contact_information_new', 'airline_preference', 'address_of_meeting_s_'
+  public function isCompositeToMerge($field_name) {
+    $composite_fields_to_merge_into_textarea = [
+      'dates_of_approved_leave', 'emergency_contact_information', 'reservation_information', 'provided_meals',
+      'emergency_contact_information_new', 'address_of_meeting_s_'
     ];
-    return in_array($field_name, $composite_fields);
+    return in_array($field_name, $composite_fields_to_merge_into_textarea);
   }
 
   public function prepareJiraData() {
@@ -271,7 +271,7 @@ class FieldHelper {
           $this->addMultiFieldsets($value, $jira_mapping);
         } else if ($this->isMulti($jira_mapping)) {
           $this->addMultiFields($value, $jira_mapping[$key]);
-        } else if ($this->isComposite($key)) {
+        } else if ($this->isCompositeToMerge($key)) {
           $this->jira_data[$jira_mapping] = $this->parseCompositeIntoSingleField($this->form_data[$key]);
         } else if ($this->isFile($jira_mapping)) {
           $this->setFileIds($value);
