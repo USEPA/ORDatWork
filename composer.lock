@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8263adf5bcb02c8e6f54389b68cd3727",
+    "content-hash": "9d8fb83c1c80229f7c928085e9447247",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5087,30 +5087,27 @@
         },
         {
             "name": "drupal/groupmedia",
-            "version": "2.0.0-alpha4",
+            "version": "2.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/groupmedia.git",
-                "reference": "8.x-2.0-alpha4"
+                "reference": "8.x-2.0-alpha7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/groupmedia-8.x-2.0-alpha4.zip",
-                "reference": "8.x-2.0-alpha4",
-                "shasum": "a44bde252d2edd4a8371afd01c1a53c5a9318048"
+                "url": "https://ftp.drupal.org/files/projects/groupmedia-8.x-2.0-alpha7.zip",
+                "reference": "8.x-2.0-alpha7",
+                "shasum": "fe2b40d9b34be0d4d4d5efcd59ecdbf49cc2eddd"
             },
             "require": {
-                "drupal/core": "*",
-                "drupal/group": "^1.0.0-rc3"
+                "drupal/core": "^8.8 || ^9",
+                "drupal/group": "^1.2"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-2.0-alpha4",
-                    "datestamp": "1567499285",
+                    "version": "8.x-2.0-alpha7",
+                    "datestamp": "1607698335",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5119,18 +5116,24 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "a.dmitriiev",
-                    "homepage": "https://www.drupal.org/user/3235287"
+                    "name": "Artem Dmitriiev",
+                    "homepage": "https://www.drupal.org/u/admitriiev",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "pablolc",
+                    "homepage": "https://www.drupal.org/user/3618770"
                 }
             ],
-            "description": "Enables Group functionality for the Media module",
-            "homepage": "https://www.drupal.org/project/groupmedia",
+            "description": "This module allows you to integrate media entity into group functionality",
+            "homepage": "http://drupal.org/project/groupmedia",
             "support": {
-                "source": "https://git.drupalcode.org/project/groupmedia"
+                "source": "https://git.drupalcode.org/project/groupmedia",
+                "issues": "https://drupal.org/project/issues/groupmedia"
             }
         },
         {
