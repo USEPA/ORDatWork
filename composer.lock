@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d8fb83c1c80229f7c928085e9447247",
+    "content-hash": "ca55f4d8b4f610e58b87888182e14cad",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5013,7 +5013,7 @@
                 },
                 "patches_applied": {
                     "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2020-11-18/group-support_string_entity_ids-2797793-239.patch",
-                    "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2018-12-19/group-2774827-41-gnode-tokens.patch",
+                    "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2020-11-17/group-gnode_tokens-2774827-74.patch",
                     "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                     "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
                     "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch"
