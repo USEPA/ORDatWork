@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca55f4d8b4f610e58b87888182e14cad",
+    "content-hash": "23fadb4c5b8c84502e87f08825786049",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -8263,6 +8263,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "2991423: Redirecting content with a lang code should now be consistent with the site ": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
