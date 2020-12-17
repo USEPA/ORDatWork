@@ -124,9 +124,6 @@
             "drupal/tablefield": {
                 "3002948: tablefield_cellspan module throwing error": "https://www.drupal.org/files/issues/2019-11-26/warning_fix-3002948-6.patch"
             },
-            "drupal/redirect": {
-                "2991423: Redirecting content with a lang code should now be consistent with the site ":"https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
-            },
             "drupal/simplesamlphp_auth": {
                 "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-10-27/simplesamlphp_auth-return-to-destination-parameter-2983154-13.patch"
             },
