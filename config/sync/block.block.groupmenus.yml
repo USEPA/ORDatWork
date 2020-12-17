@@ -5,6 +5,7 @@ dependencies:
   module:
     - ctools
     - groupmenu_block
+    - system
   theme:
     - epa_intranet
 id: groupmenus
@@ -37,3 +38,8 @@ visibility:
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/elms/employee-ideas\r\n/elms/deployment-projects"
+    negate: true
+    context_mapping: {  }
