@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca55f4d8b4f610e58b87888182e14cad",
+    "content-hash": "a2757eab68409e3f25c7a6299559ab5c",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -8159,26 +8159,26 @@
         },
         {
             "name": "drupal/r4032login",
-            "version": "1.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/r4032login.git",
-                "reference": "8.x-1.1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/r4032login-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "dd9dc2daf8e4b960d2be1fe58e19a8ec4fbf30f1"
+                "url": "https://ftp.drupal.org/files/projects/r4032login-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "cc9bfeba14b4057eb5a9eafbca9ca6b4055dd6c8"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1533913684",
+                    "version": "2.0.0",
+                    "datestamp": "1602327392",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8219,7 +8219,7 @@
                     "homepage": "https://www.drupal.org/user/216580"
                 },
                 {
-                    "name": "mikesmullin",
+                    "name": "ms2011",
                     "homepage": "https://www.drupal.org/user/108440"
                 },
                 {
