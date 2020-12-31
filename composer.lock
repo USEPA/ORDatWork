@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca723748ca3711e1cda28eb7e69b6f57",
+    "content-hash": "b809f1e8ce5f7629a8bba1ba158cb23b",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -251,7 +251,7 @@
             "version": "v1.8.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kenwheeler/slick.git",
+                "url": "git@github.com:kenwheeler/slick.git",
                 "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
             },
             "dist": {
@@ -10034,32 +10034,36 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.19.0",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "8.x-5.19"
+                "reference": "6.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.19.zip",
-                "reference": "8.x-5.19",
-                "shasum": "90a2084c2647bca791cc8b18a7e2a3b49f3da7ea"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.0.0.zip",
+                "reference": "6.0.0",
+                "shasum": "2528636c9e90fe1623544eee433f102faa0f1b57"
             },
             "require": {
-                "drupal/core": "^8.8"
+                "drupal/core": "^8.8 || ^9"
             },
             "require-dev": {
                 "drupal/address": "~1.0",
                 "drupal/bootstrap": "~3.0",
                 "drupal/captcha": "~1.0",
-                "drupal/chosen": "~2.0",
+                "drupal/chosen": "~3.0",
                 "drupal/clientside_validation": "~3.0",
                 "drupal/clientside_validation_jquery": "*",
                 "drupal/devel": "~3.0",
+                "drupal/entity": "~1.0",
                 "drupal/entity_print": "~2.0",
                 "drupal/gnode": "*",
-                "drupal/group": "~1.0",
+                "drupal/group": "1.0",
+                "drupal/jquery_ui": "~1.0",
+                "drupal/jquery_ui_checkboxradio": "~1.0",
+                "drupal/jquery_ui_datepicker": "~1.0",
                 "drupal/lingotek": "~3.0",
                 "drupal/mailsystem": "~4.0",
                 "drupal/paragraphs": "~1.0",
@@ -10068,6 +10072,7 @@
                 "drupal/styleguide": "~1.0",
                 "drupal/telephone_validation": "~2.0",
                 "drupal/token": "~1.0",
+                "drupal/variationcache": "~1.0",
                 "drupal/webform_access": "*",
                 "drupal/webform_attachment": "*",
                 "drupal/webform_clientside_validation": "*",
@@ -10080,11 +10085,15 @@
                 "drupal/webform_share": "*",
                 "drupal/webform_ui": "*"
             },
+            "suggest": {
+                "drupal/jquery_ui_checkboxradio": "Provides jQuery UI Checkboxradio library. Required by the Webform jQueryUI Buttons module. The Webform jQueryUI Buttons module is deprecated because jQueryUI is no longer maintained.",
+                "drupal/jquery_ui_datepicker": "Provides jQuery UI Datepicker library. Required to support datepickers. The Webform jQueryUI Datepicker module is deprecated because jQueryUI is no longer maintained."
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.19",
-                    "datestamp": "1596102131",
+                    "version": "6.0.0",
+                    "datestamp": "1608855845",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10156,17 +10165,17 @@
         },
         {
             "name": "drupal/webform_access",
-            "version": "5.19.0",
+            "version": "6.0.0",
             "require": {
-                "drupal/core": "^8.8",
-                "drupal/webform": "self.version",
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "*",
                 "drupal/webform_node": "*"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.19",
-                    "datestamp": "1596102131",
+                    "version": "6.0.0",
+                    "datestamp": "1608855845",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10365,16 +10374,16 @@
         },
         {
             "name": "drupal/webform_node",
-            "version": "5.19.0",
+            "version": "6.0.0",
             "require": {
-                "drupal/core": "^8.8",
-                "drupal/webform": "self.version"
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "*"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.19",
-                    "datestamp": "1596102131",
+                    "version": "6.0.0",
+                    "datestamp": "1608855845",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10435,16 +10444,16 @@
         },
         {
             "name": "drupal/webform_ui",
-            "version": "5.19.0",
+            "version": "6.0.0",
             "require": {
-                "drupal/core": "^8.8",
-                "drupal/webform": "self.version"
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "*"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.19",
-                    "datestamp": "1596102131",
+                    "version": "6.0.0",
+                    "datestamp": "1608855845",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10505,27 +10514,27 @@
         },
         {
             "name": "drupal/webform_views",
-            "version": "5.0.0-alpha7",
+            "version": "5.0.0-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform_views.git",
-                "reference": "8.x-5.0-alpha7"
+                "reference": "8.x-5.0-alpha8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_views-8.x-5.0-alpha7.zip",
-                "reference": "8.x-5.0-alpha7",
-                "shasum": "6c9bb51735a106729dcfa08372e987ebf95d38f2"
+                "url": "https://ftp.drupal.org/files/projects/webform_views-8.x-5.0-alpha8.zip",
+                "reference": "8.x-5.0-alpha8",
+                "shasum": "110cf10ed151c1954fe4b7fee5c4f5fb9b81f99b"
             },
             "require": {
-                "drupal/core": "^8",
-                "drupal/webform": "*"
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "^6"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.0-alpha7",
-                    "datestamp": "1557288185",
+                    "version": "8.x-5.0-alpha8",
+                    "datestamp": "1594941454",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
