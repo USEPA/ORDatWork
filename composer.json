@@ -96,7 +96,7 @@
                 "2980335: Establish class attribute as array instead of string.": "https://www.drupal.org/files/issues/2018-06-18/2980335_2_define_classes_as_array.patch"
             },
             "drupal/draggableviews": {
-                "3153830: Fix sorting issue for 2.0": "https://www.drupal.org/files/issues/2020-06-26/draggableviews-sorting-issue-for-2.0.patch"
+                "3153830: Fix sorting issue for 2.0": "https://www.drupal.org/files/issues/2020-10-27/draggableviews-not_working_after_update_to_2.0.0-3153830-33.patch"
             },
             "drupal/group": {
                 "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2020-11-18/group-support_string_entity_ids-2797793-239.patch",

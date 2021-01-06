@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05a10c1c7e693e033721a112ac356117",
+    "content-hash": "8a7d9d9137735fae7d44e6648e029824",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -3553,7 +3553,7 @@
                     }
                 },
                 "patches_applied": {
-                    "3153830: Fix sorting issue for 2.0": "https://www.drupal.org/files/issues/2020-06-26/draggableviews-sorting-issue-for-2.0.patch"
+                    "3153830: Fix sorting issue for 2.0": "https://www.drupal.org/files/issues/2020-10-27/draggableviews-not_working_after_update_to_2.0.0-3153830-33.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
