@@ -29,10 +29,6 @@ function epa_intranet_preprocess_image(&$variables) {
       $variables['attributes']['width'] = 'auto';
       $variables['attributes']['height'] = 150;
     }
-    if ($variables['style_name'] == 'uswds_card') {
-      $variables['attributes']['width'] = 740;
-      $variables['attributes']['height'] = 'auto';
-    }
   }
 }
 
