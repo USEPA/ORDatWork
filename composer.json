@@ -269,7 +269,8 @@
     "scripts": {
         "install.ord": [
             "composer install",
-            "rm -f docroot/web.config"
+            "rm -f docroot/web.config",
+            "rm -f docroot/core/install.php"
         ],
         "post-install-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-update-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
