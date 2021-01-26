@@ -83,7 +83,8 @@
         "jquery/inputmask": "^5.0",
         "drupal/jquery_countdown_timer": "^1.2",
         "drupal/paragraph_view_mode": "^1.6",
-        "drupal/entity_print": "^2.2"
+        "drupal/entity_print": "^2.2",
+        "dompdf/dompdf": " 0.8.5"
     },
     "require-dev": {
         "drush/drush": "^9.0"
