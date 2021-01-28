@@ -216,6 +216,16 @@ class BlizzDynamicEntitylistFormatter extends FormatterBase implements Container
         // Load the actual entities.
         $entities = $this->entityServices->loadEntities($listdefinition['entity_type_id'], $entity_ids);
 
+        $xd = 'whoa';
+        // Perform specific sorting for event lists. This is to handle multiple and recurring events sorting properly
+        // the by the closest future date
+        if ($listdefinition['bundle'][0] === 'event') {
+          foreach ($entities as $entity) {
+            // find the first date value that exceeds the current date and set it as a field
+            // if there is no date, just grab the very last date value
+          }
+          // THEN sort all entities by that new field
+        }
         // If we are in a preview mode we'll simply render
         // a table containing the entity labels.
         if ($preview_mode) {
@@ -254,7 +264,6 @@ class BlizzDynamicEntitylistFormatter extends FormatterBase implements Container
             $listdefinition['viewmode']->{$bundle}
           );
         }
-
         // Get the view builder of the entity type defined.
         $viewbuilder = $this->entityServices->getEntityViewbuilder($listdefinition['entity_type_id']);
 

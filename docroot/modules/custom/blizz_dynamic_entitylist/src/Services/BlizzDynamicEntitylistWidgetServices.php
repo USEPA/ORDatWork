@@ -746,8 +746,7 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
     } else if (isset($entity_bundle_fields['created'])) {
       // Order the list to show newest entities first.
       $query->sort('created', 'DESC');
-    }
-    else {
+    } else {
       // If the entity type does not feature a "created" timestamp, we'll
       // sort the list based upon the entity label.
       $query->sort(
@@ -802,6 +801,8 @@ class BlizzDynamicEntitylistWidgetServices implements BlizzDynamicEntitylistWidg
 
     $ids = $this->getListEntities($listdefinition, FALSE,TRUE);
     $entities = $this->entityServices->loadEntities($listdefinition['entity_type_id'], $ids);
+
+    $xd = 'whoa';
 
     return $this->listPreview($_POST['entity_type_id'], $_POST['bundle'], $entities);
   }

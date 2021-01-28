@@ -71,13 +71,19 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
             unset($variables['items'][$key]);
           }
         } else {
-          $all_past_dates_flag = false;
+          if ($all_past_dates_flag) {
+            $all_past_dates_flag = false;
+            $variables['element']['#upcoming_date'] = $event_start_date;
+          }
         }
       }
     }
   }
 }
 
+function sort_events(&$elements) {
+
+}
 
 function epa_intranet_preprocess_media(&$variables) {
   if ($variables['view_mode'] == 'slideshow') {
