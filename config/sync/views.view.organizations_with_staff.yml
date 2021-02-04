@@ -15,7 +15,6 @@ dependencies:
     - taxonomy.vocabulary.locations
     - taxonomy.vocabulary.organization
   module:
-    - entity_print_views
     - node
     - taxonomy
     - telephone
@@ -1292,19 +1291,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      header:
-        area_entity_print_views:
-          id: area_entity_print_views
-          table: views
-          field: area_entity_print_views
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          export_type: pdf
-          link_text: 'View PDF'
-          display_id: main_page
-          plugin_id: entity_print_views_link
+      header: {  }
       footer: {  }
       empty:
         view:
