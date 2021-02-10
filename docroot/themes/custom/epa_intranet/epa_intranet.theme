@@ -132,13 +132,6 @@ function epa_intranet_preprocess_menu(&$variables) {
       $key['url'] = $newUrl;
     }
   }
-}function custom_preprocess_menu(&$variables) {
-  if ($variables['menu_name'] == 'account') {
-    $variables['#cache']['contexts'][] = 'url.query_args:destination';
-    $renderer = \Drupal::service('renderer');
-    $renderer->addCacheableDependency($variables, \Drupal::service('path.current')->getPath());
-  }
-
 }
 
 function epa_intranet_preprocess_page(&$variables) {
