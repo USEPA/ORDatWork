@@ -51,6 +51,8 @@ module:
   entity_browser_block: 0
   entity_browser_entity_form: 0
   entity_embed: 0
+  entity_print: 0
+  entity_print_views: 0
   entity_reference: 0
   entity_reference_revisions: 0
   entity_reference_tree: 0
@@ -97,7 +99,6 @@ module:
   layout_discovery: 0
   layout_library: 0
   libraries: 0
-  lightning_api: 0
   lightning_banner_block: 0
   lightning_contact_form: 0
   lightning_core: 0
@@ -159,8 +160,6 @@ module:
   serialization: 0
   shortcut: 0
   simple_gmap: 0
-  simple_oauth: 0
-  simple_oauth_extras: 0
   slick: 0
   slick_entityreference: 0
   slick_paragraphs: 0

@@ -82,7 +82,9 @@
         "drupal/dblog_filter": "^2.1",
         "jquery/inputmask": "^5.0",
         "drupal/jquery_countdown_timer": "^1.2",
-        "drupal/paragraph_view_mode": "^1.6"
+        "drupal/paragraph_view_mode": "^1.6",
+        "drupal/entity_print": "^2.2",
+        "dompdf/dompdf": " 0.8.5"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -136,7 +138,8 @@
                 "2949017: There is no way to delete or update file entities of other users incl. user/1": "https://www.drupal.org/files/issues/2020-01-13/2949017-62.patch",
                 "3035113: JSON API": "https://www.drupal.org/files/issues/2019-10-21/LatestRevisionCheck-13092187-24.patch",
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-01-20/2985882-53.patch",
-                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2020-02-11/block_visibility_has_wrong_logic-923934-14-reroll-32-drupal-8.8.2.patch"
+                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2020-02-11/block_visibility_has_wrong_logic-923934-14-reroll-32-drupal-8.8.2.patch",
+                "2016739: Prevent '@' from triggering email detection unless suffix is included": "https://www.drupal.org/files/issues/2020-09-25/2016739-86.patch"
             },
             "merge-plugin": {
                 "include": [
@@ -268,7 +271,8 @@
     "scripts": {
         "install.ord": [
             "composer install",
-            "rm -f docroot/web.config"
+            "rm -f docroot/web.config",
+            "rm -f docroot/core/install.php"
         ],
         "post-install-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-update-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",

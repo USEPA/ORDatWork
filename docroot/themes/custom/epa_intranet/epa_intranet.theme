@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Url;
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
  * @param array $suggestions
@@ -98,6 +100,36 @@ function epa_intranet_preprocess_views_view_table(&$variables) {
           $variables['sort_view_link'] = '/staff/staff-order/' . $tid;
         }
       }
+    }
+  }
+}
+
+
+/**
+ * Overwrite login links to include the current destination
+ * @param $variables
+ */
+function epa_intranet_preprocess_menu(&$variables) {
+  $routes = [
+    'user.login',
+    'user.logout'
+  ];
+  $variables['#cache']['contexts'][] = 'url.query_args:destination';
+  $renderer = \Drupal::service('renderer');
+  $renderer->addCacheableDependency($variables, \Drupal::service('path.current')->getPath());
+  foreach ($variables['items'] as &$key) {
+    $url = $key['url'];
+    if ($url->isRouted() && in_array($url->getRouteName(), $routes)) {
+      $base = \Drupal::request()->getSchemeAndHttpHost();
+      // Get current path.
+      $current = \Drupal::service('path.current')->getPath();
+      if ($url->getRouteName() == 'user.login') {
+        $uriString = $base . '/user/login?destination=' . $current;
+      } else {
+        $uriString = $base . '/user/logout?destination=' . $current;
+      }
+      $newUrl = Url::fromUri($uriString);
+      $key['url'] = $newUrl;
     }
   }
 }
