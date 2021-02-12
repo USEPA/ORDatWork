@@ -123,10 +123,19 @@ function epa_intranet_preprocess_menu(&$variables) {
       $base = \Drupal::request()->getSchemeAndHttpHost();
       // Get current path.
       $current = \Drupal::service('path.current')->getPath();
-      if ($url->getRouteName() == 'user.login') {
-        $uriString = $base . '/user/login?destination=' . $current;
+      $envConfig = \Drupal::config('config_split.config_split.production_config');
+      if ($envConfig->get('status')) {
+        if ($url->getRouteName() == 'user.login') {
+          $uriString = $base . '/saml_login?destination=' . $current;
+        } else {
+          $uriString = $base . '/user/logout?destination=' . $current;
+        }
       } else {
-        $uriString = $base . '/user/logout?destination=' . $current;
+        if ($url->getRouteName() == 'user.login') {
+          $uriString = $base . '/user/login?destination=' . $current;
+        } else {
+          $uriString = $base . '/user/logout?destination=' . $current;
+        }
       }
       $newUrl = Url::fromUri($uriString);
       $key['url'] = $newUrl;
