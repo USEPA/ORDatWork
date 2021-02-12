@@ -123,9 +123,9 @@ function epa_intranet_preprocess_menu(&$variables) {
       $base = \Drupal::request()->getSchemeAndHttpHost();
       // Get current path.
       $current = \Drupal::service('path.current')->getPath();
-      $envConfig = \Drupal::config('config_split.config_split.production_config');
-      if ($envConfig->get('status')) {
+      if (\Drupal::config('allow.default_login')) {
         if ($url->getRouteName() == 'user.login') {
+          //@todo update /saml_login to use the path from route: simplesamlphp_auth.saml_login
           $uriString = $base . '/saml_login?destination=' . $current;
         } else {
           $uriString = $base . '/user/logout?destination=' . $current;
