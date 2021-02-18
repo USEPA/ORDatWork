@@ -38,6 +38,9 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_accolades: true
   field_compass_upcoming_webinars: true
   field_custom_section: true

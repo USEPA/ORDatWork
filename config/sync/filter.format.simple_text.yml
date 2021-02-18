@@ -101,7 +101,9 @@ filters:
       allowed_media_types:
         image: image
         remote_video: remote_video
+        tweet: tweet
       allowed_view_modes:
+        embedded: embedded
         full_width: full_width
         half_width: half_width
         original: original
