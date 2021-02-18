@@ -7,6 +7,7 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.remote_video
+    - media.type.tweet
     - taxonomy.vocabulary.tags
   module:
     - group
@@ -814,6 +815,7 @@ display:
             document: document
             image: image
             remote_video: remote_video
+            tweet: tweet
           group: 1
           exposed: true
           expose:
@@ -858,7 +860,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: ''
+          value: '0'
           group: 1
           exposed: true
           expose:

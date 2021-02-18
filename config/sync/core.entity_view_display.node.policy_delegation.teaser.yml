@@ -40,6 +40,9 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_additional_policy_role: true
   field_agency_delegation_link: true
   field_delegated_to: true
