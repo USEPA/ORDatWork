@@ -193,6 +193,7 @@ handlers:
   email:
     id: email
     label: 'Completer Confirmation Email'
+    notes: ''
     handler_id: email
     status: true
     conditions: {  }
@@ -229,6 +230,7 @@ handlers:
   completer_confirmation_email:
     id: email
     label: 'Non-completer Confirmation Email'
+    notes: ''
     handler_id: completer_confirmation_email
     status: true
     conditions: {  }
@@ -265,9 +267,17 @@ handlers:
   travelform_submission_handler:
     id: webform_custom_submissions
     label: 'Travelform Submission Handler'
-    handler_id: travelform_submission_handler
+    notes: ''
+    handler_id: null
     status: true
     conditions: {  }
-    weight: 2
-    settings: {  }
+    weight: null
+    settings:
+      id: webform_custom_submissions
+      label: 'Travelform Submission Handler'
+      handler_id: travelform_submission_handler
+      status: true
+      conditions: {  }
+      weight: 2
+      settings: {  }
 variants: {  }

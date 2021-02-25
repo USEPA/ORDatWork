@@ -1,8 +1,8 @@
-uuid: 8e536b68-1419-450d-969c-0975273ca3f6
+uuid: f009c2d2-5c74-462d-96d3-d03fe7ca9556
 langcode: en
 status: true
 dependencies: {  }
 id: group-1-menu
-label: 'Web Guide menu'
-description: 'Menu for Web Guide'
+label: 'Testing menu'
+description: 'Menu for Testing'
 locked: false
