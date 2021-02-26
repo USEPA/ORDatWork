@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_add_to_calendar_button
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_description
     - field.field.node.event.field_event_host
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.event.field_show_on_ord_calendar
     - node.type.event
   module:
+    - addtocalendar
     - content_moderation
     - entity_reference_tree
     - field_group
@@ -46,10 +48,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_to_calendar_button:
+    type: add_to_calendar_widget_type
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_event_date:
     weight: 8
     settings:
       modal: false
+      default_duration: 60
+      default_duration_increments: "30\n60|1 hour\n90\n120|2 hours\ncustom"
+      show_extra: true
     third_party_settings: {  }
     type: smartdate_default
     region: content
@@ -161,7 +172,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,0 +1,57 @@
+uuid: b21a2f3f-2d2e-4226-842a-055812da81ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_add_to_calendar_button
+    - node.type.event
+  module:
+    - addtocalendar
+id: node.event.field_add_to_calendar_button
+field_name: field_add_to_calendar_button
+entity_type: node
+bundle: event
+label: 'Add To Calendar Button'
+description: 'Add event to your personal calendar'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Add to Calendar'
+  off_label: 'Add to Calendar Disabled'
+  addtocalendar_show: 1
+  addtocalendar_settings:
+    style: blue
+    atc_title:
+      field: title
+      tokenized: Title
+    atc_description:
+      field: field_event_description
+      tokenized: Description
+    atc_location:
+      field: field_event_location
+      tokenized: Location
+    atc_organizer:
+      field: token
+      tokenized: ORD@Work
+    atc_organizer_email:
+      field: token
+      tokenized: ordatwork@epa.gov
+    atc_date_start:
+      field: field_event_date
+      tokenized: ''
+    atc_date_end:
+      field: field_event_date
+      tokenized: ''
+    atc_privacy: public
+    data_secure: auto
+    data_calendars:
+      iCalendar: iCalendar
+      'Google Calendar': 'Google Calendar'
+      Outlook: Outlook
+      'Outlook Online': 'Outlook Online'
+      'Yahoo! Calendar': 'Yahoo! Calendar'
+field_type: add_to_calendar_field

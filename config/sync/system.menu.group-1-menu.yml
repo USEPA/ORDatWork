@@ -1,8 +1,8 @@
-uuid: f009c2d2-5c74-462d-96d3-d03fe7ca9556
+uuid: 3ce7c434-8626-4772-a6f8-f044a4595cdc
 langcode: en
 status: true
 dependencies: {  }
 id: group-1-menu
-label: 'Testing menu'
-description: 'Menu for Testing'
+label: 'IT menu'
+description: 'Menu for IT'
 locked: false

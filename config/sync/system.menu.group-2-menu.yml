@@ -1,8 +1,8 @@
-uuid: 0cb8b0dd-69b0-4a79-961a-1fd072bac646
+uuid: b131d13a-a507-4a58-bba7-2b576d469ace
 langcode: en
 status: true
 dependencies: {  }
 id: group-2-menu
-label: 'Another Group menu'
-description: 'Menu for Another Group'
+label: 'Web area group yo menu'
+description: 'Menu for Web area group yo'
 locked: false

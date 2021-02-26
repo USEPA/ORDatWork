@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_add_to_calendar_button
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_description
     - field.field.node.event.field_event_host
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.event.field_show_on_ord_calendar
     - node.type.event
   module:
+    - addtocalendar
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
@@ -44,12 +46,66 @@ third_party_settings:
                 settings:
                   timezone_override: ''
                   format: default
-                third_party_settings: {  }
+                  force_chronological: false
+                  add_classes: 0
+                third_party_settings:
+                  addtocalendar:
+                    addtocalendar_show: 0
+                    addtocalendar_settings:
+                      style: blue
+                      display_text: 'Add to Calendar'
+                      atc_title:
+                        field: token
+                        tokenized: Title
+                      atc_description:
+                        field: token
+                        tokenized: Description
+                      atc_location:
+                        field: token
+                        tokenized: Location
+                      atc_organizer:
+                        field: token
+                        tokenized: ORD@Work
+                      atc_organizer_email:
+                        field: token
+                        tokenized: ordatwork@epa.gov
+                      atc_date_end:
+                        field: token
+                        tokenized: ''
+                      atc_privacy: public
+                      data_secure: auto
+                      data_calendars:
+                        iCalendar: iCalendar
+                        'Google Calendar': 'Google Calendar'
+                        Outlook: Outlook
+                        'Outlook Online': 'Outlook Online'
+                        'Yahoo! Calendar': 'Yahoo! Calendar'
+                      multiple_value: '2'
+                      delta: '0'
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
             additional:
               layout_builder_styles_style: ''
             weight: 0
+          398549fc-a9d2-4448-b29c-ce6094b6dd2c:
+            uuid: 398549fc-a9d2-4448-b29c-ce6094b6dd2c
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_add_to_calendar_button'
+              label: 'Add To Calendar Button'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: add_to_calendar
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -117,11 +173,21 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_blocks: {  }
       allowed_layouts: {  }
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories: {  }
 id: node.event.default
 targetEntityType: node
 bundle: event
 mode: default
 content:
+  field_add_to_calendar_button:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: add_to_calendar
+    region: content
   field_event_date:
     weight: 113
     label: above
