@@ -17,3 +17,5 @@ permissions:
   - 'create webform'
   - 'delete own webform'
   - 'edit own webform'
+  - 'use text format rich_text'
+  - 'use text format simple_text'

@@ -1,6 +1,6 @@
 uuid: 26305e0b-4005-4ad8-afdb-aec9173613a0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.card

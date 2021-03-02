@@ -7,8 +7,8 @@ dependencies:
     - media
 third_party_settings:
   lightning_core:
-    description: ''
+    description: 'Formally half_width'
 id: media.half_width
-label: Half-width
+label: Medium
 targetEntityType: media
 cache: true
