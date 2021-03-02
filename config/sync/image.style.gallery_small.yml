@@ -1,0 +1,17 @@
+uuid: bef80361-bcdc-47b3-b62b-fc6f5301cb73
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: gallery_small
+label: 'Small Gallery (320 x 180)'
+effects:
+  ba916f18-ae5f-4c7d-baa0-ed7f0de9c6b8:
+    uuid: ba916f18-ae5f-4c7d-baa0-ed7f0de9c6b8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 180
+      crop_type: focal_point

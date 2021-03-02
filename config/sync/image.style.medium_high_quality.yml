@@ -1,0 +1,23 @@
+uuid: ef8ba9c8-3ba4-445d-8215-6820de3a1877
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: medium_high_quality
+label: 'Medium (640px): High Quality'
+effects:
+  847d1b0c-9b1a-4f47-98cb-c9e5159c470f:
+    uuid: 847d1b0c-9b1a-4f47-98cb-c9e5159c470f
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 90
+  5df6f654-b5e5-4068-8c50-7b84a5aff915:
+    uuid: 5df6f654-b5e5-4068-8c50-7b84a5aff915
+    id: image_scale
+    weight: 2
+    data:
+      width: 640
+      height: null
+      upscale: false
