@@ -1,0 +1,17 @@
+uuid: bfb62f5b-345e-444a-adda-4433d9d92d53
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: featured_gallery
+label: 'Featured Gallery (960x350)'
+effects:
+  2f48c06c-c84d-4a95-ae5e-d039d7ed2ab0:
+    uuid: 2f48c06c-c84d-4a95-ae5e-d039d7ed2ab0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 350
+      crop_type: focal_point

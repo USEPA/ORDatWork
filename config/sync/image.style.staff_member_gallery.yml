@@ -1,0 +1,17 @@
+uuid: abc096da-f233-40fb-9b01-b62c19de8965
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: staff_member_gallery
+label: 'Staff Member Gallery (100x150)'
+effects:
+  090d3eeb-cdf9-4bbc-bcdb-df89688d273d:
+    uuid: 090d3eeb-cdf9-4bbc-bcdb-df89688d273d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 150
+      crop_type: focal_point
