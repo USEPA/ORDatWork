@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.field_add_to_calendar_button
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_description
     - field.field.node.event.field_event_host
@@ -13,7 +12,6 @@ dependencies:
     - field.field.node.event.field_show_on_ord_calendar
     - node.type.event
   module:
-    - addtocalendar
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
@@ -88,24 +86,6 @@ third_party_settings:
             additional:
               layout_builder_styles_style: ''
             weight: 0
-          398549fc-a9d2-4448-b29c-ce6094b6dd2c:
-            uuid: 398549fc-a9d2-4448-b29c-ce6094b6dd2c
-            region: content
-            configuration:
-              id: 'field_block:node:event:field_add_to_calendar_button'
-              label: 'Add To Calendar Button'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: add_to_calendar
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 2
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -181,13 +161,6 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
-  field_add_to_calendar_button:
-    weight: 115
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: add_to_calendar
-    region: content
   field_event_date:
     weight: 113
     label: above
