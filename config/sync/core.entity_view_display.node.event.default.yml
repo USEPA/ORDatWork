@@ -29,32 +29,7 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
-        components:
-          d85c9582-7126-4288-a154-3981c572676f:
-            uuid: d85c9582-7126-4288-a154-3981c572676f
-            region: content
-            configuration:
-              id: 'field_block:node:event:field_event_date'
-              label: 'Event Date'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: above
-                type: addtocal_view
-                settings:
-                  timezone_override: ''
-                  date_format: 'D, M j Y, g:ia'
-                  event_title: '[node:title]'
-                  location: '[node:field_event_location]'
-                  description: '[node:field_event_description]'
-                  past_events: true
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional:
-              layout_builder_styles_style: ''
-            weight: 0
+        components: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -78,7 +53,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 0
+            weight: 1
           2649052a-3c2d-4d5e-bab2-6f4cab35bea9:
             uuid: 2649052a-3c2d-4d5e-bab2-6f4cab35bea9
             region: second
@@ -115,6 +90,31 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+          d85c9582-7126-4288-a154-3981c572676f:
+            uuid: d85c9582-7126-4288-a154-3981c572676f
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_event_date'
+              label: 'Event Date'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: addtocal_view
+                settings:
+                  timezone_override: ''
+                  date_format: 'D, M j Y, g:ia'
+                  event_title: '[node:title]'
+                  location: '[node:field_event_location]'
+                  description: '[node:field_event_description]'
+                  past_events: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional:
+              layout_builder_styles_style: ''
+            weight: 0
         third_party_settings: {  }
   layout_library:
     enable: false
