@@ -1,0 +1,15 @@
+uuid: eae5948f-646c-4df5-a17c-e259f03be55f
+langcode: en
+status: true
+dependencies: {  }
+name: huge
+label: 'Huge (1280px)'
+effects:
+  ffd7ee4d-7951-4fb1-817d-6d34c9da0c5c:
+    uuid: ffd7ee4d-7951-4fb1-817d-6d34c9da0c5c
+    id: image_scale
+    weight: 1
+    data:
+      width: 1280
+      height: null
+      upscale: false

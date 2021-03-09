@@ -1,0 +1,23 @@
+uuid: 5de80fd7-fe31-484f-9ec2-2fcd4f26cd94
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: small_high_quality
+label: 'Small (320px): High Quality'
+effects:
+  27641416-cda8-4d3d-a3d4-b49c9e55b4a9:
+    uuid: 27641416-cda8-4d3d-a3d4-b49c9e55b4a9
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 90
+  57891d08-2fc3-44e2-8b44-473bca079358:
+    uuid: 57891d08-2fc3-44e2-8b44-473bca079358
+    id: image_scale
+    weight: 2
+    data:
+      width: 320
+      height: null
+      upscale: false

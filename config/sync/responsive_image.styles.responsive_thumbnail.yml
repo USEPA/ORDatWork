@@ -1,0 +1,21 @@
+uuid: 6a536039-74a1-4d04-ae4c-8249bcf0d863
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.small
+    - image.style.thumbnail
+id: responsive_thumbnail
+label: 'Responsive Thumbnail'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(max-width: 160px) calc(100vw - 2rem), 160px'
+      sizes_image_styles:
+        - small
+        - thumbnail
+breakpoint_group: responsive_image
+fallback_image_style: thumbnail

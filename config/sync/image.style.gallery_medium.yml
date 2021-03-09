@@ -1,0 +1,17 @@
+uuid: f3ca5d23-42fb-40e2-bad1-7706e63c04d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: gallery_medium
+label: 'Medium Gallery (640 x 360)'
+effects:
+  3ac72d17-61f4-4f66-8a91-f74ca9ed9522:
+    uuid: 3ac72d17-61f4-4f66-8a91-f74ca9ed9522
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 360
+      crop_type: focal_point

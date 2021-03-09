@@ -1,4 +1,4 @@
-uuid: 63d91988-10d1-4ba1-b864-6e0878ab0535
+uuid: 3ba0d400-8e1e-4b6b-86e9-abef4876c535
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,8 @@ dependencies:
     - media
 third_party_settings:
   lightning_core:
-    description: 'Style for images in card blocks. Deprecated in favor of USWDS Card'
-id: media.card
-label: xCard
+    description: ''
+id: media.small
+label: Small
 targetEntityType: media
 cache: true
