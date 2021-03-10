@@ -62,7 +62,10 @@
     {% if not label_hidden %}
       <div class="card-header m-0 font-weight-bold">{{ label }}</div>
     {% endif %}
-    <div class="card-body py-1">
+    <div class="card-body py-1 display-grid">
+      <p>
+        If this is a recurring event, only the first event will be listed in the event that gets added to you calendar of choice.
+      </p>
       {% for item in items %}
         <p{{ item.attributes }}>{{ item.content }}</p>
       {% endfor %}

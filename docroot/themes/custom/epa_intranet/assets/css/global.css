@@ -12,6 +12,10 @@ h1 {
   line-height: 1.2;
 }
 
+.display-grid {
+  display: grid;
+}
+
 h2, h3, h4, h5, h6 {
   font-family: Merriweather Web,Georgia,Cambria,Times New Roman,Times,serif;
   color: #1b1b1b;
