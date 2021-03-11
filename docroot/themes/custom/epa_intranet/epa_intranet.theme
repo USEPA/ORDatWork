@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Url;
 
 /**
@@ -51,6 +52,24 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   }
   if ($elements['#field_name'] === 'image' && $elements['#view_mode'] == 'staff_member_card') {
     $variables['attributes']['class'][] = 'align-center';
+  }
+
+  if ($elements['#field_name'] === 'field_event_date') {
+    $xd = 'hi';
+    $display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
+    //\Drupal::service('renderer')->renderRoot($variables['node']->field_event_date->view($display));
+    //$variables['element']->view($display);
+    /*
+    $elements->setDisplayOptions('view',
+      ['type' => 'smartdate_recurring',
+      'settings' =>
+      ['past_display' => '2',
+        'upcoming_display' => '2',
+        'show_next' => FALSE,
+        'format' => 'default',
+        'force_chronological' => 0,
+        'add_classes' => 0,
+        'format_type' => 'medium']]); */
   }
 
   // Multi-date events that appear in dynamic lists will not have their past dates appear
@@ -142,6 +161,32 @@ function epa_intranet_preprocess_menu(&$variables) {
     }
   }
 }
+//
+//function epa_intranet_preprocess_node(&$variables) {
+//  if (isset($variables['node'])) {
+//    $node = $variables['node'];
+//    // only if node is recurring (rrule?). Leave regular events alone.
+//    if (true) {
+//      // if $variables['node']->field_event_date->getValue()[0]['rrule'] == 1;
+//      $display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
+//      $variables['node']->field_event_date->view($display);
+//      /*
+//      $variables['node']->field_event_date->view(
+//        ['type' => 'smartdate_recurring',
+//          'label' => 'hidden',
+//          'region' => 'content',
+//          'weight' => 0,
+//          'third_party_settings' => [],
+//          'settings' =>
+//            ['timezone_override' => [],
+//              'past_display' => '2',
+//              'upcoming_display' => '2',
+//              'format' => 'compact',
+//              'force_chronological' => false,
+//              'format_type' => 'medium']]);*/
+//    }
+//  }
+//}
 
 function epa_intranet_preprocess_page(&$variables) {
   //   Load correct Hero revision for page
