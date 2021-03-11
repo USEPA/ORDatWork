@@ -1,6 +1,8 @@
 <?php
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Url;
 
 /**
@@ -35,6 +37,17 @@ function epa_intranet_preprocess_image(&$variables) {
   }
 }
 
+function epa_intranet_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'event') {
+    $ji= 'wef';
+//    $settings = [
+//      'type' => 'pdf_special_formatter',
+//      'settings' => $build['field_pdf']['#items']->getSettings(),
+//    ];$display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
+//    $build['pdf_alternate_display'] = $build['field_pdf']['#items']->view($settings);
+  }
+}
+
 function epa_intranet_preprocess_field(&$variables, $hook) {
   $elements = $variables['element'];
   if ($elements['#field_name'] == 'field_caption') {
@@ -55,8 +68,13 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   }
 
   if ($elements['#field_name'] === 'field_event_date') {
-    $xd = 'hi';
-    $display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
+    if ($elements['#object']->field_event_date->getValue()[0]['rrule'] == 1) {
+      $xd = 'hi';
+      $display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
+      $variables['element'] = $elements['#object']->field_event_date->view($display);
+      $elements = $variables['element'];
+      $pause = 'wekfjw';
+    }
     //\Drupal::service('renderer')->renderRoot($variables['node']->field_event_date->view($display));
     //$variables['element']->view($display);
     /*
