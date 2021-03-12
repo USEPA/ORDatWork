@@ -15,8 +15,15 @@
  * @ingroup themeable
  */
 #}
+
+{%
+    set classes = [
+    'usa-button',
+    'usa-button--outline',
+]
+%}
 <div{{ attributes }}>
-    <button{{ button_attributes.addClass('usa-button--outline') }}>{{ button_text }}</button>
+    <button{{ button_attributes.addClass(classes).removeClass('addtocal') }}>{{ button_text }}</button>
     <div{{ menu_attributes }}>
         <ul class="addtocal-links">
                 {% for type, item in items %}

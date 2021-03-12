@@ -1,6 +1,5 @@
 <?php
 
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Url;
 
 /**
