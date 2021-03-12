@@ -23,7 +23,7 @@
 ]
 %}
 <div{{ attributes }}>
-    <button{{ button_attributes.addClass(classes).removeClass('addtocal') }}>{{ button_text }}</button>
+    <button{{ button_attributes.addClass(classes) }}>{{ button_text }}</button>
     <div{{ menu_attributes }}>
         <ul class="addtocal-links">
                 {% for type, item in items %}

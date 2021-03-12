@@ -54,6 +54,8 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   }
 
   if ($elements['#field_name'] === 'field_event_date') {
+    $variables['showEventDate'] = false;
+    $variables['showRecurring'] = false;
     $variables['formatter'] = $variables['element']['#formatter'];
     if (isset($variables['items'])) {
       foreach ($variables['items'] as $index => $item) {
@@ -62,6 +64,14 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
         } catch (Exception $e) {
           // Unable to grab rrule
           $recurring = false;
+        }
+
+        // Flag if there is at least one recurring or not recurring to show the appropriate sections
+        if (!$recurring) {
+          $variables['showEventDate'] = true;
+        }
+        if ($recurring) {
+          $variables['showRecurring'] = true;
         }
         $item['recurring'] = $recurring;
         $variables['items'][$index] = $item;
