@@ -16,14 +16,14 @@
  */
 #}
 <div{{ attributes }}>
-  <button{{ button_attributes.addClass('usa-button--outline') }}>{{ button_text }}</button>
-  <div{{ menu_attributes }}>
-    <ul class="addtocal-links">
-      {% for type, item in items %}
-        <li class="addtocal-link" data-addtocal-type="{{ type }}">
+    <button{{ button_attributes.addClass('usa-button--outline') }}>{{ button_text }}</button>
+    <div{{ menu_attributes }}>
+        <ul class="addtocal-links">
+                {% for type, item in items %}
+                    <li class="addtocal-link" data-addtocal-type="{{ type }}">
           <a href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item['aria-label'] }}">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+                    </li>
+                {% endfor %}
+        </ul>
+    </div>
 </div>

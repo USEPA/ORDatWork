@@ -14,28 +14,3 @@ function epa_core_views_plugins_style_alter(array &$plugins) {
   $plugins['fullcalendar_view_display']['even empty'] = true;
 }
 
-function epa_intranet_preprocess_node(&$variables) {
-  if (isset($variables['node'])) {
-    $node = $variables['node'];
-    // only if node is recurring (rrule?). Leave regular events alone.
-    if (true) {
-      // if $variables['node']->field_event_date->getValue()[0]['rrule'] == 1;
-      $display = EntityViewDisplay::load('node.event.list')->getComponent('field_event_date');
-      $variables['node']->field_event_date->view($display);
-      /*
-      $variables['node']->field_event_date->view(
-        ['type' => 'smartdate_recurring',
-          'label' => 'hidden',
-          'region' => 'content',
-          'weight' => 0,
-          'third_party_settings' => [],
-          'settings' =>
-            ['timezone_override' => [],
-              'past_display' => '2',
-              'upcoming_display' => '2',
-              'format' => 'compact',
-              'force_chronological' => false,
-              'format_type' => 'medium']]);*/
-    }
-  }
-}
