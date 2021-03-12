@@ -5,7 +5,6 @@
  * Contains misc features for EPA intranet.
  */
 
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
 
 /**
  * Implements hook_views_plugins_style_alter() to show empty calendar when not events exist.
