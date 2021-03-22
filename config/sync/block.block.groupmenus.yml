@@ -40,6 +40,6 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "/elms/employee-ideas\r\n/elms/deployment-projects"
+    pages: "/elms/employee-ideas\r\n/elms/deployment-projects\r\n/page-not-found"
     negate: true
     context_mapping: {  }
