@@ -2837,7 +2837,7 @@ display:
             utf8_bom: '0'
             use_serializer_encode_only: false
       path: staff_export.csv
-      filename: ''
+      filename: staff_export.csv
       automatic_download: false
       store_in_public_file_directory: false
       redirect_to_display: none
@@ -2851,10 +2851,10 @@ display:
       display_description: ''
       displays:
         main_page: main_page
+        table: table
         default: '0'
         card: '0'
         grid: '0'
-        table: '0'
       filters:
         status:
           value: '1'
