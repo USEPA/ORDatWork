@@ -86,7 +86,8 @@
         "drupal/entity_print": "^2.2",
         "dompdf/dompdf": " 0.8.5",
         "drupal/addtocal": "^2.0@beta",
-        "drupal/image_style_quality": "^1.4"
+        "drupal/image_style_quality": "^1.4",
+        "drupal/anchor_link": "^2.0"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -96,6 +97,9 @@
     },
     "extra": {
         "patches": {
+            "drupal/anchor_link": {
+                "2958532: Provide Linkit support with anchor_link": "https://www.drupal.org/files/issues/2020-08-04/anchor_link-linkit-support_2958532_0.patch"
+            },
             "drupal/addtocal": {
                 "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch"
             },
@@ -282,6 +286,9 @@
             "rm -f docroot/web.config",
             "rm -f docroot/core/install.php"
         ],
+        "install.patches": [
+            "git apply -v --ignore-space-change --ignore-whitespace patches/spatie_ics_html_format.patch"
+        ],
         "post-install-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-update-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-create-project-cmd": "rm -r -f .travis.yml behat.yml .travis-ci",
@@ -291,8 +298,7 @@
             "php docroot/core/scripts/drupal quick-start lightning --no-interaction"
         ],
         "post-drupal-scaffold-cmd": [
-            "cd docroot && git apply -v --ignore-space-change --ignore-whitespace ../patches/robots_update.patch",
-            "git apply -v --ignore-space-change --ignore-whitespace patches/spatie_ics_html_format.patch"
+            "cd docroot && git apply -v --ignore-space-change --ignore-whitespace ../patches/robots_update.patch"
         ]
     }
 }
