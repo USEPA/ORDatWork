@@ -15067,6 +15067,11 @@
                 "vimeo/psalm": "^4.1"
             },
             "type": "library",
+            "extra": {
+                "patches_applied": {
+                    "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\CalendarLinks\\": "src"

@@ -97,6 +97,9 @@
     },
     "extra": {
         "patches": {
+            "spatie/calendar-links": {
+                "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
+            },
             "drupal/anchor_link": {
                 "2958532: Provide Linkit support with anchor_link": "https://www.drupal.org/files/issues/2020-08-04/anchor_link-linkit-support_2958532_0.patch"
             },
@@ -285,9 +288,6 @@
             "composer install",
             "rm -f docroot/web.config",
             "rm -f docroot/core/install.php"
-        ],
-        "install.patches": [
-            "git apply -v --ignore-space-change --ignore-whitespace patches/spatie_ics_html_format.patch"
         ],
         "post-install-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-update-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
