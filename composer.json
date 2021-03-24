@@ -96,6 +96,9 @@
     },
     "extra": {
         "patches": {
+            "spatie/calendar-links": {
+                "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
+            },
             "drupal/addtocal": {
                 "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch"
             },
@@ -291,8 +294,7 @@
             "php docroot/core/scripts/drupal quick-start lightning --no-interaction"
         ],
         "post-drupal-scaffold-cmd": [
-            "cd docroot && git apply -v --ignore-space-change --ignore-whitespace ../patches/robots_update.patch",
-            "git apply -v --ignore-space-change --ignore-whitespace patches/spatie_ics_html_format.patch"
+            "cd docroot && git apply -v --ignore-space-change --ignore-whitespace ../patches/robots_update.patch"
         ]
     }
 }
