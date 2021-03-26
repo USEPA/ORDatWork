@@ -1,0 +1,7 @@
+name: "CKEditor Anchor"
+description: "Add anchor support to CKEditor and possibility to select from existing anchors."
+type: module
+core_version_requirement: ^8.8 || ^9
+
+dependencies:
+  - fakeobjects

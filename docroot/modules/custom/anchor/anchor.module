@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function anchor_form_editor_link_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter only the form with ID 'editor_link_dialog'.
+  if ($form_id !== 'editor_link_dialog') {
+    return;
+  }
+
+  $form['#attached']['library'][] = 'anchor/link-anchors';
+  // Create dummy select. Backend doesn't need to use it (at least for now)
+  $form['anchors'] = [
+    '#type' => 'container',
+  ];
+  $form['anchors']['anchors_title'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'label',
+    '#attributes' => [
+      'for' => 'anchors-list',
+    ],
+    '#value' => \Drupal\Core\Render\Markup::create( t('Anchor:')),
+  ];
+  $form['anchors']['anchors_list'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'select',
+    '#attributes' => [
+      'id' => 'anchors-list',
+    ],
+    '#value' => \Drupal\Core\Render\Markup::create('<option value="">' . t('- Select -') . '</option>'),
+  ];
+  $form['anchors']['anchors_description'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#attributes' => [
+      'class' => 'description',
+    ],
+    '#value' => \Drupal\Core\Render\Markup::create( t('Select an anchor if you wish to link to a specific spot on this page.')),
+  ];
+}

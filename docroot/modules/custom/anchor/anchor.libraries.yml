@@ -1,0 +1,6 @@
+link-anchors:
+  js:
+    js/anchor.link.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
