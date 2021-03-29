@@ -1,0 +1,29 @@
+uuid: e0cdd58a-cf35-483a-99d7-9d74b3f1f7ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_center_or_office
+    - node.type.policy_delegation_auth_action
+    - taxonomy.vocabulary.centers_and_offices
+id: node.policy_delegation_auth_action.field_center_or_office
+field_name: field_center_or_office
+entity_type: node
+bundle: policy_delegation_auth_action
+label: 'Center or Office'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      centers_and_offices: centers_and_offices
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,71 @@
+uuid: 630de28f-5d34-47dd-8db9-41bd1c0d1f93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.policy_delegation_auth_action.field_center_or_office
+    - field.field.node.policy_delegation_auth_action.field_policy_delegation_action
+    - node.type.policy_delegation_auth_action
+  module:
+    - node
+id: policy_del_auth_action_import
+label: 'Policy Delgation Authority Action Import'
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _delete
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: policy_delegation_auth_action
+custom_sources:
+  action:
+    label: Action
+    value: Action
+    machine_name: action
+  co:
+    label: CO
+    value: CO
+    machine_name: co
+mappings:
+  -
+    target: field_policy_delegation_action
+    map:
+      target_id: action
+    settings:
+      language: ''
+      reference_by: tid
+      feeds_item: guid
+      autocreate: 0
+  -
+    target: field_center_or_office
+    map:
+      target_id: co
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: title
+    map:
+      value: 'parent:title'
+    unique: {  }
+    settings:
+      language: null

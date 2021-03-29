@@ -1,0 +1,21 @@
+uuid: f2aa241b-b7d3-42a0-bd1b-f16a2655d05f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_co_director
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_co_director
+field_name: field_policy_co_director
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Center/Office Director'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

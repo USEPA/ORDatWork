@@ -47,6 +47,7 @@ settings:
           items:
             - DrupalLink
             - DrupalUnlink
+            - Anchor
             - DrupalInlineMedia
             - '-'
         -
@@ -60,7 +61,6 @@ settings:
         -
           name: Tools
           items:
-            - DrupalFontAwesome
             - ShowBlocks
             - Source
   plugins:

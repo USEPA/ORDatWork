@@ -1,0 +1,21 @@
+uuid: 88572b38-f001-47a2-83da-7f166991ba28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_branch_chief
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_branch_chief
+field_name: field_policy_branch_chief
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Branch Chief'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

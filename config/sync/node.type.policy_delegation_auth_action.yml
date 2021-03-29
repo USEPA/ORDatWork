@@ -1,0 +1,20 @@
+uuid: 38025fcd-f5d8-462d-8fb7-432ff10344d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_workflow
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  lightning_workflow:
+    workflow: editorial
+name: 'Policy Delegation Authority Actions'
+type: policy_delegation_auth_action
+description: 'Use a <em>Policy Delegation Authority Action</em> for Delegation Authorization Authorities.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

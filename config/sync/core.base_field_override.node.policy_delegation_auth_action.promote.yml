@@ -1,0 +1,22 @@
+uuid: 37bd2e90-4072-471e-bb4c-33d45f73c8ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.policy_delegation_auth_action
+id: node.policy_delegation_auth_action.promote
+field_name: promote
+entity_type: node
+bundle: policy_delegation_auth_action
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
