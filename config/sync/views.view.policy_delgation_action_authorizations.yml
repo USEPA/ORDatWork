@@ -10,12 +10,16 @@ dependencies:
     - field.storage.taxonomy_term.field_policy_delegation_category
     - field.storage.taxonomy_term.field_policy_topic
     - node.type.policy_delegation_auth_action
+    - taxonomy.vocabulary.centers_and_offices
+    - taxonomy.vocabulary.policy_delegation_action_categor
+    - taxonomy.vocabulary.policy_topics
   module:
     - entity_reference_revisions
     - node
     - taxonomy
     - text
     - user
+    - vefl
 id: policy_delgation_action_authorizations
 label: 'Policy Delgation Action Authorizations'
 module: views
@@ -46,15 +50,28 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: vefl_basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          layout:
+            layout_id: layout_threecol_section
+            change: Change
+            widget_region:
+              field_center_or_office_target_id: first
+              field_policy_topic_target_id: second
+              field_policy_delegation_category_target_id: third
+              sort_by: first
+              sort_order: first
+              items_per_page: first
+              offset: first
+              submit: first
+              reset: first
       pager:
         type: full
         options:
@@ -283,7 +300,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<h2>{{ field_policy_delegation_action }}</h2>\r\n<p><strong>Topic:</strong> {{ field_policy_topic }}\r\n<strong>Category:</strong> {{ field_policy_delegation_category }} </p>\r\n"
+            text: "<strong>{{ field_policy_delegation_action }}</strong><br />\r\n<strong>Topic:</strong> {{ field_policy_topic }}  \r\n<strong>Category:</strong> {{ field_policy_delegation_category }} \r\n"
             make_link: false
             path: ''
             absolute: false
@@ -436,7 +453,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: h3
+          element_label_type: strong
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -550,6 +567,151 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
+        field_center_or_office_target_id:
+          id: field_center_or_office_target_id
+          table: node__field_center_or_office
+          field: field_center_or_office_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_center_or_office_target_id_op
+            label: Center/Office
+            description: ''
+            use_operator: false
+            operator: field_center_or_office_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_center_or_office_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: centers_and_offices
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_policy_topic_target_id:
+          id: field_policy_topic_target_id
+          table: taxonomy_term__field_policy_topic
+          field: field_policy_topic_target_id
+          relationship: field_policy_delegation_action
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_policy_topic_target_id_op
+            label: Topic
+            description: ''
+            use_operator: false
+            operator: field_policy_topic_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_policy_topic_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: policy_topics
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_policy_delegation_category_target_id:
+          id: field_policy_delegation_category_target_id
+          table: taxonomy_term__field_policy_delegation_category
+          field: field_policy_delegation_category_target_id
+          relationship: field_policy_delegation_action
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_policy_delegation_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: field_policy_delegation_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_policy_delegation_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: policy_delegation_action_categor
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         created:
           id: created
@@ -566,7 +728,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Policy Delgation Action Authorizations'
+      title: 'Policy Delgation Authority'
       header: {  }
       footer: {  }
       empty: {  }
@@ -582,12 +744,18 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -610,7 +778,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
