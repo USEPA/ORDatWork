@@ -1,0 +1,42 @@
+uuid: 27ccf681-4355-4148-9de9-acf39bf0389f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.policy_delegation_auth_action.body
+    - field.field.node.policy_delegation_auth_action.feeds_item
+    - field.field.node.policy_delegation_auth_action.field_center_or_office
+    - field.field.node.policy_delegation_auth_action.field_policy_delegation_action
+    - field.field.node.policy_delegation_auth_action.field_policy_delegation_party
+    - node.type.policy_delegation_auth_action
+  module:
+    - text
+    - user
+id: node.policy_delegation_auth_action.teaser
+targetEntityType: node
+bundle: policy_delegation_auth_action
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_center_or_office: true
+  field_policy_delegation_action: true
+  field_policy_delegation_party: true

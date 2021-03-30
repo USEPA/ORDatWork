@@ -1,0 +1,21 @@
+uuid: 55fa3a0e-bb1f-40df-834e-95d0c1b7be1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_daa
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_daa
+field_name: field_policy_daa
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'DAA for Management'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

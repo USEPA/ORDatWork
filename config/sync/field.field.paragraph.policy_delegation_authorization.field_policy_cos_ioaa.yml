@@ -1,0 +1,21 @@
+uuid: 9aff77a9-4f8b-405e-9dd0-caf76776d8c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_cos_ioaa
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_cos_ioaa
+field_name: field_policy_cos_ioaa
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Chief of Staff/IOAA'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

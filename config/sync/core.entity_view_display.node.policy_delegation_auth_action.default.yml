@@ -1,0 +1,63 @@
+uuid: 8a8e73a8-0155-4d62-a584-3bb8ef860cd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.policy_delegation_auth_action.body
+    - field.field.node.policy_delegation_auth_action.feeds_item
+    - field.field.node.policy_delegation_auth_action.field_center_or_office
+    - field.field.node.policy_delegation_auth_action.field_policy_delegation_action
+    - field.field.node.policy_delegation_auth_action.field_policy_delegation_party
+    - node.type.policy_delegation_auth_action
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.policy_delegation_auth_action.default
+targetEntityType: node
+bundle: policy_delegation_auth_action
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_center_or_office:
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_policy_delegation_action:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_policy_delegation_party:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true

@@ -1,0 +1,23 @@
+uuid: 14721f83-9115-48aa-899e-a45d14265588
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.policy_delegation_auth_action
+  module:
+    - feeds
+id: node.policy_delegation_auth_action.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: policy_delegation_auth_action
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

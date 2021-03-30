@@ -1,0 +1,66 @@
+uuid: 17835740-31a9-4906-9740-7b8f14ec40f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_actions
+  module:
+    - path
+    - text
+id: taxonomy_term.policy_delegation_actions.default
+targetEntityType: taxonomy_term
+bundle: policy_delegation_actions
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_policy_delegation_category:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_policy_topic:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+hidden: {  }

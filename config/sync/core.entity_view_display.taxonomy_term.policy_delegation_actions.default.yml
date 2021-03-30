@@ -1,0 +1,42 @@
+uuid: dc132aed-a96b-4427-bcee-fbc6732d4e08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_actions
+  module:
+    - text
+id: taxonomy_term.policy_delegation_actions.default
+targetEntityType: taxonomy_term
+bundle: policy_delegation_actions
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_policy_delegation_category:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_policy_topic:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

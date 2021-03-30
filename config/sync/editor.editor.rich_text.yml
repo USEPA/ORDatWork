@@ -60,7 +60,6 @@ settings:
         -
           name: Tools
           items:
-            - DrupalFontAwesome
             - ShowBlocks
             - Source
   plugins:
