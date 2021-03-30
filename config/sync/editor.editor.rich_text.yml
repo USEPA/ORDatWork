@@ -47,7 +47,6 @@ settings:
           items:
             - DrupalLink
             - DrupalUnlink
-            - Anchor
             - DrupalInlineMedia
             - '-'
         -
