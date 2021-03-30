@@ -10,9 +10,9 @@ dependencies:
     - node
 id: policy_del_auth_action_import
 label: 'Policy Delgation Authority Action Import'
-description: ''
+description: 'Import policy delegation actions by authority'
 help: ''
-import_period: 3600
+import_period: -1
 fetcher: upload
 fetcher_configuration:
   allowed_extensions: csv

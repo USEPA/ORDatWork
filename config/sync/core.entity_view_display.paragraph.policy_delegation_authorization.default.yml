@@ -22,63 +22,63 @@ mode: default
 content:
   field_policy_assoc_director:
     weight: 7
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_branch_chief:
     weight: 5
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_co_cos:
     weight: 8
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_co_deputy_director:
     weight: 3
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_co_director:
     weight: 2
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_cos_ioaa:
     weight: 6
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_daa:
     weight: 1
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_division_directors:
     weight: 4
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_sro:
     weight: 0
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default

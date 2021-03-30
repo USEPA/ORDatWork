@@ -46,6 +46,7 @@ visibility:
       photos_of_the_week: photos_of_the_week
       policy: policy
       policy_delegation: policy_delegation
+      policy_delegation_auth_action: policy_delegation_auth_action
       qapp: qapp
       quiz: quiz
       sop: sop
@@ -58,6 +59,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      policy_delegation_auth_action: policy_delegation_auth_action
       article: article
       blog_post: blog_post
       event: event

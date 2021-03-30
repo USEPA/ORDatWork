@@ -24,9 +24,9 @@ content:
     type: text_textarea_with_summary
     weight: 4
     settings:
-      rows: 9
-      summary_rows: 3
+      rows: 5
       placeholder: ''
+      summary_rows: 3
       show_summary: false
     third_party_settings: {  }
     region: content
@@ -47,7 +47,7 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
+      size: 100
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
@@ -56,12 +56,12 @@ content:
     type: entity_reference_paragraphs
     weight: 3
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: 'Authorization Authority'
+      title_plural: 'Authorization Authorities'
       edit_mode: open
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: policy_delegation_authorization
     third_party_settings: {  }
     region: content
   moderation_state:

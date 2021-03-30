@@ -11,9 +11,9 @@ third_party_settings:
     parent: ''
   lightning_workflow:
     workflow: editorial
-name: 'Policy Delegation Authority Actions'
+name: 'Policy Delegation Authorities'
 type: policy_delegation_auth_action
-description: 'Use a <em>Policy Delegation Authority Action</em> for Delegation Authorization Authorities.'
+description: 'Use a <em>Policy Delegation Authorities</em> to identify the authorization authority for delegated actions.'
 help: ''
 new_revision: true
 preview_mode: 0
