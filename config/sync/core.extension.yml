@@ -40,6 +40,8 @@ module:
   dblog: 0
   dblog_filter: 0
   depth_taxonomy_view_lookup: 0
+  devel: 0
+  devel_generate: 0
   diff: 0
   draggableviews: 0
   dropzonejs: 0
@@ -163,12 +165,14 @@ module:
   serialization: 0
   shortcut: 0
   simple_gmap: 0
+  simplesamlphp_auth: 0
   slick: 0
   slick_entityreference: 0
   slick_paragraphs: 0
   slick_ui: 0
   smart_date: 0
   smart_date_recur: 0
+  stage_file_proxy: 0
   syslog: 0
   system: 0
   tablefield: 0
@@ -205,6 +209,7 @@ module:
   webform_image_select: 0
   webform_node: 0
   webform_submission_export_import: 0
+  webform_submission_log: 0
   webform_ui: 0
   webform_views: 0
   workflows: 0
