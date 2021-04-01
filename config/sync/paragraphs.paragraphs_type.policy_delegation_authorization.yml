@@ -1,0 +1,10 @@
+uuid: 56b3f10f-2b97-49d4-99ab-5f570e5cdcae
+langcode: en
+status: true
+dependencies: {  }
+id: policy_delegation_authorization
+label: 'Policy Delegation Authorization Authority'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

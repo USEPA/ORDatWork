@@ -1,0 +1,21 @@
+uuid: c87bb9bd-9d25-4402-80ec-d36d6206919f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_co_cos
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_co_cos
+field_name: field_policy_co_cos
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Center/Office Chief of Staff'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

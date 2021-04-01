@@ -1,0 +1,21 @@
+uuid: d8ee6649-140e-4bb3-82c9-d3bc62cc5d34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_division_directors
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_division_directors
+field_name: field_policy_division_directors
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Division Director'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

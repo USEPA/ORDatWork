@@ -1,0 +1,21 @@
+uuid: d4e326bf-7114-43a8-a389-846bf121ee3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_assoc_director
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_assoc_director
+field_name: field_policy_assoc_director
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Associate Director'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

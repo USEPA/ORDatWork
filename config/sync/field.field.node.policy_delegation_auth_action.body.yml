@@ -1,0 +1,23 @@
+uuid: 8b33bd60-c8a6-40ef-8e1f-9fcafb1b2bcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.policy_delegation_auth_action
+  module:
+    - text
+id: node.policy_delegation_auth_action.body
+field_name: body
+entity_type: node
+bundle: policy_delegation_auth_action
+label: Comments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

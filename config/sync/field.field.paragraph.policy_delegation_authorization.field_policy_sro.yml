@@ -1,0 +1,21 @@
+uuid: 85f10ca8-8e50-487b-b79b-a2495e8fa759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_sro
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_sro
+field_name: field_policy_sro
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Senior Resources Official'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
