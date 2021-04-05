@@ -24,7 +24,6 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
-  - 'access webform submission log'
   - 'addrow tablefield'
   - 'cancel smart date recur instances'
   - 'configure editable landing_page node layout overrides'

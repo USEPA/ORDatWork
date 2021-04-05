@@ -14,7 +14,6 @@ is_admin: null
 permissions:
   - 'access webform help'
   - 'access webform overview'
-  - 'access webform submission log'
   - 'create webform'
   - 'delete own webform'
   - 'edit own webform'
