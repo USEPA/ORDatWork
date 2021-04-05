@@ -76,10 +76,12 @@ third_party_settings:
         - layout_threecol_section
       whitelisted_blocks:
         'Content fields': {  }
+        Devel: {  }
         'Entity Block':
           - 'entity_block:node'
           - 'entity_block:media'
         'Entity Browser': {  }
+        'Entity Print': {  }
         'Fixed custom': {  }
         Forms: {  }
         Group: {  }
@@ -101,25 +103,23 @@ third_party_settings:
           - 'entity_view:node'
           - 'entity_view:user'
         'Custom block types':
+          - alert
           - banner
           - card_with_image
           - google_map
-        'Custom blocks':
-          - 'block_content:e841ddc9-4e65-4f8c-bed4-ffd53f7d7221'
-          - 'block_content:5ea3ec0a-53cd-4615-b1e0-e18fb4608341'
         'Inline blocks':
+          - 'inline_block:alert'
           - 'inline_block:banner'
           - 'inline_block:card_with_image'
           - 'inline_block:google_map'
-        'SimpleSAMLphp Authentication':
-          - simplesamlphp_auth_block
     allowed_block_categories:
       - 'Chaos Tools'
       - 'Content fields'
       - 'Custom block types'
-      - 'Custom blocks'
+      - Devel
       - 'Entity Block'
       - 'Entity Browser'
+      - 'Entity Print'
       - 'Fixed custom'
       - Forms
       - Group
@@ -129,7 +129,6 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - 'Moderation Dashboard'
-      - 'SimpleSAMLphp Authentication'
       - System
       - Views
       - Webform

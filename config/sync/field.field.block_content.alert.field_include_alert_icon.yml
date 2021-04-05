@@ -1,0 +1,23 @@
+uuid: 38e7f124-4b62-4fe8-a94b-00a3dc9c66ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.alert
+    - field.storage.block_content.field_include_alert_icon
+id: block_content.alert.field_include_alert_icon
+field_name: field_include_alert_icon
+entity_type: block_content
+bundle: alert
+label: 'Remove alert icon'
+description: 'Check the box if you do NOT want the alert icon displayed inside the alert block. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Remove
+  off_label: Show
+field_type: boolean

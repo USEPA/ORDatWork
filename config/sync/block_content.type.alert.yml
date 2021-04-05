@@ -1,0 +1,8 @@
+uuid: 3dabff10-97f6-4e97-b49e-ff133e246d53
+langcode: en
+status: true
+dependencies: {  }
+id: alert
+label: Alert
+revision: 0
+description: 'An alert keeps users informed of important and sometimes time-sensitive changes.'
