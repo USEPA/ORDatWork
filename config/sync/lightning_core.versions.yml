@@ -2,7 +2,6 @@ action: 8.8.1
 address: 1.7.0
 addtocal: 2.0.0-beta3
 admin_toolbar: 1.27.0
-anchor_link: 2.5.0
 auto_entitylabel: 3.0.0-beta1
 bamboo_twig: 4.1.0
 bamboo_twig_extensions: 4.1.0
@@ -66,7 +65,6 @@ epa_core: 0.0.0
 epa_wysiwyg: 0.0.0
 extends_feeds_cron: 0.0.0
 extlink: 1.1.0
-fakeobjects: 1.1.0
 feeds: 3.0.0-alpha6
 feeds_ex: 1.0.0-alpha2
 field: 8.7.3
@@ -224,6 +222,7 @@ webform_custom_submissions: 0.0.0
 webform_image_select: 5.19.0
 webform_node: 5.4.0
 webform_submission_export_import: 5.19.0
+webform_submission_log: 6.0.2
 webform_ui: 5.4.0
 webform_views: 5.0.0-alpha7
 workflows: 8.7.3
