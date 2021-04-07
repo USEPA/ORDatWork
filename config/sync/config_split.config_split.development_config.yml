@@ -8,7 +8,6 @@ description: 'Config settings for development environment'
 folder: ../config/dev
 module:
   devel: 0
-  devel_generate: 0
   simplesamlphp_auth: 0
   stage_file_proxy: 0
 theme: {  }
