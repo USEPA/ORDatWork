@@ -160,19 +160,18 @@ function epa_intranet_preprocess_menu(&$variables) {
       $base = \Drupal::request()->getSchemeAndHttpHost();
       // Get current path.
       $current = \Drupal::service('path.current')->getPath();
-      if (!\Drupal::config('simplesamlphp_auth.settings')->get('allow.default_login')) {
-        if ($url->getRouteName() == 'user.login') {
+      if ($url->getRouteName() == 'user.login') {
+
+        $productionSplitConfig = \Drupal::config('config_split.config_split.production_config');
+        // Check if we are in Production
+        if (isset($productionSplitConfig) && $productionSplitConfig->get('status')) {
           //@todo update /saml_login to use the path from route: simplesamlphp_auth.saml_login
           $uriString = $base . '/saml_login?destination=' . $current;
         } else {
-          $uriString = $base . '/user/logout?destination=' . $current;
+          $uriString = $base . '/user/login?destination=' . $current;
         }
       } else {
-        if ($url->getRouteName() == 'user.login') {
-          $uriString = $base . '/user/login?destination=' . $current;
-        } else {
-          $uriString = $base . '/user/logout?destination=' . $current;
-        }
+        $uriString = $base . '/user/logout?destination=' . $current;
       }
       $newUrl = Url::fromUri($uriString);
       $key['url'] = $newUrl;
