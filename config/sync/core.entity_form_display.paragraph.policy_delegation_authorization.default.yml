@@ -1,0 +1,77 @@
+uuid: 04754204-a46e-4206-8889-d49a4a45f9fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.policy_delegation_authorization.field_policy_assoc_director
+    - field.field.paragraph.policy_delegation_authorization.field_policy_branch_chief
+    - field.field.paragraph.policy_delegation_authorization.field_policy_co_cos
+    - field.field.paragraph.policy_delegation_authorization.field_policy_co_deputy_director
+    - field.field.paragraph.policy_delegation_authorization.field_policy_co_director
+    - field.field.paragraph.policy_delegation_authorization.field_policy_cos_ioaa
+    - field.field.paragraph.policy_delegation_authorization.field_policy_daa
+    - field.field.paragraph.policy_delegation_authorization.field_policy_division_directors
+    - field.field.paragraph.policy_delegation_authorization.field_policy_sro
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+id: paragraph.policy_delegation_authorization.default
+targetEntityType: paragraph
+bundle: policy_delegation_authorization
+mode: default
+content:
+  field_policy_assoc_director:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_branch_chief:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_co_cos:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_co_deputy_director:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_co_director:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_cos_ioaa:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_daa:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_division_directors:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_policy_sro:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+hidden:
+  created: true
+  status: true

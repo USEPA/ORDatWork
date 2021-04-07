@@ -1,0 +1,94 @@
+uuid: 0cd24452-8e7b-4b7b-8ec8-311d14b29d85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_policy_delegation_party
+    - node.type.policy_delegation_auth_action
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - entity_reference_revisions
+id: node.policy_delegation_auth_action.field_policy_delegation_party
+field_name: field_policy_delegation_party
+entity_type: node
+bundle: policy_delegation_auth_action
+label: Party
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      policy_delegation_authorization: policy_delegation_authorization
+    target_bundles_drag_drop:
+      dynamic_list:
+        weight: 23
+        enabled: false
+      governing_authorities:
+        weight: 24
+        enabled: false
+      heading_title_and_text:
+        weight: 25
+        enabled: false
+      hero_carousel:
+        weight: 26
+        enabled: false
+      list_of_link:
+        weight: 27
+        enabled: false
+      policy_delegation_authorization:
+        enabled: true
+        weight: 28
+      policy_roles:
+        weight: 29
+        enabled: false
+      question_and_answer:
+        weight: 30
+        enabled: false
+      rich_text:
+        weight: 31
+        enabled: false
+      slide:
+        weight: 32
+        enabled: false
+      slide_show:
+        weight: 33
+        enabled: false
+      title_and_text:
+        weight: 34
+        enabled: false
+      uswds_accordion:
+        weight: 35
+        enabled: false
+      uswds_accordion_item:
+        weight: 36
+        enabled: false
+      uswds_card:
+        weight: 37
+        enabled: false
+      uswds_card_set:
+        weight: 38
+        enabled: false
+      uswds_column:
+        weight: 39
+        enabled: false
+      uswds_graphic_list:
+        weight: 40
+        enabled: false
+      uswds_grid:
+        weight: 41
+        enabled: false
+      uswds_hero:
+        weight: 42
+        enabled: false
+      uswds_media_block:
+        weight: 43
+        enabled: false
+      uswds_text:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

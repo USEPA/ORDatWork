@@ -1,0 +1,21 @@
+uuid: e99d3410-000c-40b8-9e7e-e4d017cf60a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_co_deputy_director
+    - paragraphs.paragraphs_type.policy_delegation_authorization
+  module:
+    - options
+id: paragraph.policy_delegation_authorization.field_policy_co_deputy_director
+field_name: field_policy_co_deputy_director
+entity_type: paragraph
+bundle: policy_delegation_authorization
+label: 'Center/Office Deputy Director'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

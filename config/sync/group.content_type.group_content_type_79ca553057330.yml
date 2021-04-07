@@ -1,0 +1,20 @@
+uuid: 1f48c189-6890-4276-a76a-3a9952c79ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.policy
+    - node.type.policy_delegation_auth_action
+  module:
+    - gnode
+    - node
+id: group_content_type_79ca553057330
+label: 'Policy: Group node (Policy Delegation Authority Actions)'
+description: 'Adds <em class="placeholder">Policy Delegation Authority Actions</em> content to groups both publicly and privately.'
+group_type: policy
+content_plugin: 'group_node:policy_delegation_auth_action'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false
+  node_form_group_menu: 0

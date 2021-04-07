@@ -1,0 +1,8 @@
+uuid: edbe4688-4337-4707-a547-1829ab399387
+langcode: en
+status: true
+dependencies: {  }
+name: 'Policy Delegation Actions'
+vid: policy_delegation_actions
+description: 'Actions for Policy Delegation Authorities'
+weight: 0

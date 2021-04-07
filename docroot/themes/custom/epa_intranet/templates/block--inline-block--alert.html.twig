@@ -1,0 +1,117 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{% if "info" in content.field_alert_type %}
+    {% if "Slim" in content.field_slim_alert.0 %}
+        {% set classes = [
+        'usa alert usa-alert--info usa-alert--slim'
+        ] 
+    %}
+    {% elseif "Remove" in content.field_include_alert_icon.0 %}
+        {% set classes = [
+        'usa alert usa-alert--info usa-alert--no-icon'
+        ]
+    %}
+    {% else %}  
+    {% set classes = [  
+    'usa-alert usa-alert--info'
+    ] %}
+    {% endif %}
+
+{% elseif "warning" in content.field_alert_type %}
+    {% if "Slim" in content.field_slim_alert.0 %}
+        {% set classes = [
+        'usa alert usa-alert--warning usa-alert--slim'
+        ] 
+    %}
+    {% elseif "Remove" in content.field_include_alert_icon.0 %}
+        {% set classes = [
+        'usa alert usa-alert--warning usa-alert--no-icon'
+        ]
+    %}
+    {% else %}  
+    {% set classes = [  
+    'usa-alert usa-alert--warning'
+    ] %}
+    {% endif %}
+
+{% elseif "error" in content.field_alert_type %}
+    {% if "Slim" in content.field_slim_alert.0 %}
+        {% set classes = [
+        'usa alert usa-alert--error usa-alert--slim'
+        ] 
+    %}
+    {% elseif "Remove" in content.field_include_alert_icon.0 %}
+        {% set classes = [
+        'usa alert usa-alert--error usa-alert--no-icon'
+        ]
+    %}
+    {% else %}  
+    {% set classes = [  
+    'usa-alert usa-alert--error'
+    ] %}
+    {% endif %}
+
+{% elseif "success" in content.field_alert_type %}
+    {% if "Slim" in content.field_slim_alert.0 %}
+        {% set classes = [
+        'usa alert usa-alert--success usa-alert--slim'
+        ] 
+    %}
+    {% elseif "Remove" in content.field_include_alert_icon.0 %}
+        {% set classes = [
+        'usa alert usa-alert--success usa-alert--no-icon'
+        ]
+    %}
+    {% else %}  
+    {% set classes = [  
+    'usa-alert usa-alert--success'
+    ] %}
+    {% endif %}
+
+{% else %}  
+    {% set classes = [  
+    'usa-alert usa-alert--info'
+    ] %}
+
+{% endif %}
+
+
+<div {{ attributes.addClass(classes) }}>
+     <div class="usa-alert__body">
+        <span class="usa-alert__heading">
+        {{ content.field_alert_heading }}
+        </span>
+        <p class="usa-alert__text">{{ content.field_alert_text }}   
+        </p>
+    </div>
+</div>
+        

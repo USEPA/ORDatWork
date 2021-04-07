@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: card
-label: 'Card (320 x 180)'
+label: 'xCard (320 x 180)'
 effects:
   935deac1-73d1-4b29-af85-e419f1db79e1:
     uuid: 935deac1-73d1-4b29-af85-e419f1db79e1

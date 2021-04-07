@@ -1,0 +1,11 @@
+uuid: fb6f9176-9771-44dc-92dd-31a2b82a52b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_update_fields
+id: bulk_update_fields_on_print_engine
+label: 'Bulk Update Print Engine Fields'
+type: print_engine
+plugin: bulk_update_fields_action_base
+configuration: {  }

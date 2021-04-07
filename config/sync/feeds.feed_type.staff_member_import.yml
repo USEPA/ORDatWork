@@ -1,0 +1,163 @@
+uuid: 463cfcf1-c724-412b-ba98-372f8764420f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.staff_member.field_email
+    - field.field.node.staff_member.field_first_name
+    - field.field.node.staff_member.field_last_name
+    - field.field.node.staff_member.field_location
+    - field.field.node.staff_member.field_organization
+    - field.field.node.staff_member.field_phone
+    - field.field.node.staff_member.field_research_program_area
+    - field.field.node.staff_member.field_staff_biography
+    - field.field.node.staff_member.field_staff_position
+    - field.field.node.staff_member.field_staff_secondary_location
+    - node.type.staff_member
+  module:
+    - node
+id: staff_member_import
+label: 'Staff Member Import'
+description: 'Used to import staff member content'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 8
+  authorize: false
+  skip_hash_check: false
+  values:
+    type: staff_member
+custom_sources:
+  email:
+    label: email
+    value: email
+    machine_name: email
+  firstname:
+    label: firstname
+    value: firstname
+    machine_name: firstname
+  lastname:
+    label: lastname
+    value: lastname
+    machine_name: lastname
+  position:
+    label: position
+    value: position
+    machine_name: position
+  phone:
+    label: phone
+    value: phone
+    machine_name: phone
+  location:
+    label: location
+    value: location
+    machine_name: location
+  secondary:
+    label: secondary
+    value: secondary
+    machine_name: secondary
+  organization:
+    label: organization
+    value: organization
+    machine_name: organization
+  rpa:
+    label: rpa
+    value: rpa
+    machine_name: rpa
+  bio:
+    label: bio
+    value: bio
+    machine_name: bio
+mappings:
+  -
+    target: field_email
+    map:
+      value: email
+    unique:
+      value: '1'
+    settings:
+      language: null
+      defuse: false
+  -
+    target: field_first_name
+    map:
+      value: firstname
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_last_name
+    map:
+      value: lastname
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_staff_position
+    map:
+      value: position
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_phone
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_location
+    map:
+      target_id: location
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_staff_secondary_location
+    map:
+      value: secondary
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_organization
+    map:
+      target_id: organization
+    settings:
+      language: ''
+      reference_by: tid
+      feeds_item: guid
+      autocreate: 0
+  -
+    target: field_research_program_area
+    map:
+      target_id: rpa
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_staff_biography
+    map:
+      value: bio
+    settings:
+      language: null
+      format: plain_text

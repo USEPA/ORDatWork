@@ -1,0 +1,15 @@
+uuid: 3edbde7d-0fe0-4726-9d51-0afb2253c3d5
+langcode: en
+status: true
+dependencies: {  }
+name: colossal
+label: 'Colossal (1920px)'
+effects:
+  58865a49-f02e-4367-b1ce-a90622de3b71:
+    uuid: 58865a49-f02e-4367-b1ce-a90622de3b71
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

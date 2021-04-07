@@ -1,6 +1,8 @@
 action: 8.8.1
 address: 1.7.0
+addtocal: 2.0.0-beta3
 admin_toolbar: 1.27.0
+anchor_link: 2.5.0
 auto_entitylabel: 3.0.0-beta1
 bamboo_twig: 4.1.0
 bamboo_twig_extensions: 4.1.0
@@ -54,6 +56,8 @@ entity_browser: 2.1.0
 entity_browser_block: 1.0.0
 entity_browser_entity_form: 2.1.0
 entity_embed: 1.0.0
+entity_print: 2.2.0
+entity_print_views: 2.2.0
 entity_reference: 8.7.3
 entity_reference_revisions: 1.6.0
 entity_reference_tree: 1.8.0
@@ -62,6 +66,7 @@ epa_core: 0.0.0
 epa_wysiwyg: 0.0.0
 extends_feeds_cron: 0.0.0
 extlink: 1.1.0
+fakeobjects: 1.1.0
 feeds: 3.0.0-alpha6
 feeds_ex: 1.0.0-alpha2
 field: 8.7.3
@@ -70,6 +75,7 @@ field_ui: 8.7.3
 file: 8.7.3
 filter: 8.7.3
 fixed_block_content: 1.0.0
+focal_point: 1.5.0
 fontawesome: 2.14.0
 fullcalendar_view: 2.2.0
 gcontent_moderation: 0.0.0
@@ -88,10 +94,12 @@ hal: 8.7.8
 help: 8.7.3
 history: 8.7.3
 image: 8.7.3
+image_style_quality: 1.4.0
 image_widget_crop: 2.2.0
 imagick: 1.2.0
 inline_entity_form: 1.0.0-rc1
 jquery_countdown_timer: 1.2.0
+jquery_ui: 1.4.0
 jsonapi: 0.0.0
 layout_builder: 8.7.3
 layout_builder_restrictions: 2.1.0
@@ -216,6 +224,7 @@ webform_custom_submissions: 0.0.0
 webform_image_select: 5.19.0
 webform_node: 5.4.0
 webform_submission_export_import: 5.19.0
+webform_submission_log: 6.0.2
 webform_ui: 5.4.0
 webform_views: 5.0.0-alpha7
 workflows: 8.7.3

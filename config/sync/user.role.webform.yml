@@ -12,7 +12,11 @@ label: Webform
 weight: -8
 is_admin: null
 permissions:
+  - 'access webform help'
   - 'access webform overview'
+  - 'access webform submission log'
   - 'create webform'
   - 'delete own webform'
   - 'edit own webform'
+  - 'use text format rich_text'
+  - 'use text format simple_text'

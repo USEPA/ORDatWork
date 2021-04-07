@@ -33,6 +33,9 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_blog_image: true
   field_blog_post_author: true
   field_comment: true

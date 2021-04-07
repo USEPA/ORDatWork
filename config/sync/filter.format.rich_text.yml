@@ -7,6 +7,8 @@ dependencies:
     - core.entity_view_mode.media.full_width
     - core.entity_view_mode.media.half_width
     - core.entity_view_mode.media.link
+    - core.entity_view_mode.media.original
+    - core.entity_view_mode.media.small
     - core.entity_view_mode.media.thumbnail
   module:
     - blazy
@@ -102,9 +104,13 @@ filters:
       allowed_media_types:
         image: image
         remote_video: remote_video
+        tweet: tweet
       allowed_view_modes:
+        embedded: embedded
         full_width: full_width
         half_width: half_width
+        original: original
+        small: small
         thumbnail: thumbnail
   blazy_filter:
     id: blazy_filter

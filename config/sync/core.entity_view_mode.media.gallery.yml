@@ -1,0 +1,14 @@
+uuid: 8c52cb21-5223-48a4-9400-78cff5c92b66
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.gallery
+label: Gallery
+targetEntityType: media
+cache: true

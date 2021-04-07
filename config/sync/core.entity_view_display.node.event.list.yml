@@ -36,13 +36,16 @@ content:
       format: compact
       past_display: '0'
       upcoming_display: '4'
-      force_chronological: 0
+      force_chronological: false
       format_type: medium
     third_party_settings: {  }
     type: smartdate_recurring
     region: content
 hidden:
   content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_event_description: true
   field_event_host: true
   field_event_location: true

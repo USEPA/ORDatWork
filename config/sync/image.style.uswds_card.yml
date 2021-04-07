@@ -1,0 +1,15 @@
+uuid: 09c51f5b-a747-4d9c-9896-c8b2b02898d8
+langcode: en
+status: true
+dependencies: {  }
+name: uswds_card
+label: 'USWDS Card'
+effects:
+  5e933bd5-da96-4130-a778-1fd6c390a7bc:
+    uuid: 5e933bd5-da96-4130-a778-1fd6c390a7bc
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 375
+      height: 250
+      anchor: center-center

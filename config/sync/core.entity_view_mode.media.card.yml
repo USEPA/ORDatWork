@@ -7,8 +7,8 @@ dependencies:
     - media
 third_party_settings:
   lightning_core:
-    description: 'Style for images in card blocks.'
+    description: 'Style for images in card blocks. Deprecated in favor of USWDS Card'
 id: media.card
-label: Card
+label: xCard
 targetEntityType: media
 cache: true

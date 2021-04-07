@@ -1,8 +1,8 @@
-uuid: a0a9b02a-05e4-4caa-823a-03ea184d3d1c
+uuid: 0cb8b0dd-69b0-4a79-961a-1fd072bac646
 langcode: en
 status: true
 dependencies: {  }
 id: group-2-menu
-label: 'ORD menu'
-description: 'Menu for ORD'
+label: 'Another Group menu'
+description: 'Menu for Another Group'
 locked: false

@@ -1,0 +1,42 @@
+uuid: 323203ca-e90b-4826-82d3-ebbcdf783616
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.gallery
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_keywords
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - field.field.media.image.layout_builder__translation
+    - media.type.image
+  module:
+    - layout_builder
+    - media_inline_embed
+third_party_settings:
+  media_inline_embed:
+    embed_inline: false
+  layout_builder:
+    allow_custom: false
+    enabled: false
+_core:
+  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
+id: media.image.gallery
+targetEntityType: media
+bundle: image
+mode: gallery
+content: {  }
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_caption: true
+  field_keywords: true
+  field_media_in_library: true
+  image: true
+  layout_builder__translation: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
