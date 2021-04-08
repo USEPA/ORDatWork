@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.profile
+    - field.field.node.staff_member.feeds_item
     - field.field.node.staff_member.field_email
     - field.field.node.staff_member.field_first_name
     - field.field.node.staff_member.field_last_name
@@ -80,6 +81,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  feeds_item: true
   field_email: true
   field_location: true
   field_organization: true

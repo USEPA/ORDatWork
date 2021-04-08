@@ -1,0 +1,33 @@
+uuid: 25c5e292-13de-4dcb-b759-4fce851e7c45
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_alert_type
+field_name: field_alert_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: info
+      label: Informative
+    -
+      value: warning
+      label: Warning
+    -
+      value: error
+      label: Error
+    -
+      value: success
+      label: Success
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

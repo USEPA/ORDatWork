@@ -1,0 +1,18 @@
+uuid: c72e0e71-7286-409f-a637-ac32d364cce3
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_slim_alert
+field_name: field_slim_alert
+entity_type: block_content
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

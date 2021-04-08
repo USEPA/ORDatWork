@@ -1,0 +1,40 @@
+uuid: fe70790c-82de-437b-b5ac-f39a1ba8c7a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.alert
+    - field.field.block_content.alert.field_alert_heading
+    - field.field.block_content.alert.field_alert_text
+    - field.field.block_content.alert.field_alert_type
+    - field.field.block_content.alert.field_include_alert_icon
+    - field.field.block_content.alert.field_slim_alert
+  module:
+    - text
+id: block_content.alert.default
+targetEntityType: block_content
+bundle: alert
+mode: default
+content:
+  field_alert_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_alert_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_alert_type: true
+  field_include_alert_icon: true
+  field_slim_alert: true

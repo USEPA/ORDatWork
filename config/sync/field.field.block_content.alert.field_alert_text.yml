@@ -1,0 +1,21 @@
+uuid: f69167c7-f17b-433a-bc74-258f768b8647
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.alert
+    - field.storage.block_content.field_alert_text
+  module:
+    - text
+id: block_content.alert.field_alert_text
+field_name: field_alert_text
+entity_type: block_content
+bundle: alert
+label: 'Alert Text'
+description: 'Enter the text of the alert.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
