@@ -20,4 +20,3 @@ permissions:
   - 'edit own webform'
   - 'use text format rich_text'
   - 'use text format simple_text'
-  - 'view any webform submission'
