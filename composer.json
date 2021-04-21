@@ -86,7 +86,8 @@
         "drupal/entity_print": "^2.2",
         "dompdf/dompdf": " 0.8.5",
         "drupal/addtocal": "^2.0@beta",
-        "drupal/image_style_quality": "^1.4"
+        "drupal/image_style_quality": "^1.4",
+        "drupal/cache_control_override": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^9.0"
