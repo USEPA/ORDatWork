@@ -29,7 +29,7 @@
 #}
 
 
-{% if "info" in content.field_alert_type %}
+{% if "info" in content.field_alert_type.0 %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
         'usa alert usa-alert--info usa-alert--slim'
@@ -46,7 +46,7 @@
     ] %}
     {% endif %}
 
-{% elseif "warning" in content.field_alert_type %}
+{% elseif "warning" in content.field_alert_type.0 %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
         'usa alert usa-alert--warning usa-alert--slim'
@@ -63,7 +63,7 @@
     ] %}
     {% endif %}
 
-{% elseif "error" in content.field_alert_type %}
+{% elseif "error" in content.field_alert_type.0 %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
         'usa alert usa-alert--error usa-alert--slim'
@@ -80,7 +80,7 @@
     ] %}
     {% endif %}
 
-{% elseif "success" in content.field_alert_type %}
+{% elseif "success" in content.field_alert_type.0 %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
         'usa alert usa-alert--success usa-alert--slim'
@@ -99,7 +99,7 @@
 
 {% else %}  
     {% set classes = [  
-    'usa-alert usa-alert--info'
+    'usa-alert usa-alert--warning'
     ] %}
 
 {% endif %}
