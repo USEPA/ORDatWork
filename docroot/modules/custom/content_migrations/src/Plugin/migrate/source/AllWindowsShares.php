@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Drupal\mymodule\Plugin\migrate\source;
+namespace Drupal\content_migrations\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
