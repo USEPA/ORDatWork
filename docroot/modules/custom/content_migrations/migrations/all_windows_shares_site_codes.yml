@@ -1,0 +1,16 @@
+id: all_windows_shares_site_codes
+label: 'All Windows Shares Migration'
+source:
+  plugin: all_windows_shares
+  # specify the database with the key
+  key: migrate
+  ids:
+    tid:
+      type: integer
+process:
+  tid: tid
+  name: site_code
+  description: owner_and_size
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: all_windows_shares

@@ -1,0 +1,22 @@
+id: all_windows_shares
+label: 'All Windows Shares Migration'
+source:
+  plugin: all_windows_shares
+  # specify the database with the key
+  key: migrate
+  ids:
+    tid:
+      type: integer
+process:
+  tid: tid
+  name: user_folder
+  parent:
+    plugin: migration_lookup
+    migration: all_windows_shares_site_codes
+    source: site_code
+migration_dependencies:
+  required:
+    - all_windows_shares_site_codes
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: all_windows_shares
