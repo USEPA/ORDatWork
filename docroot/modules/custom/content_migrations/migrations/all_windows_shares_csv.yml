@@ -1,0 +1,40 @@
+id: all_windows_shares_csv
+label: 'All Windows Shares Migration'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+  include_raw_data: true
+  item_selector: 0
+  urls: 'public://AllWindowsSharesSmall.json'
+  fields:
+    - selector: tid
+      name: tid
+      label: 'Term ID'
+    - name: name
+      label: 'Name'
+      selector: UserFolder
+    - name: description
+      label: 'description'
+      selector: OwnerADAccount
+    - name: parent
+      label: 'Parent'
+      selector: SiteId
+  ids:
+    tid:
+      type: integer
+  track_changes: true
+process:
+  tid: tid
+  name: name
+  description: description
+  parent:
+    plugin: migration_lookup
+    migration: all_windows_shares_site_codes_csv
+    source: parent
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: all_windows_shares
