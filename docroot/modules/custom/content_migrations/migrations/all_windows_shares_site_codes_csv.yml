@@ -5,15 +5,17 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   include_raw_data: true
-  urls: 'public://AllWindowsSharesSmall.json'
+  urls: 'public://AllWindowsSharesSiteCode.json'
   track_changes: true
   item_selector: 0
   headers:
     Accept: 'application/json; charset=utf-8'
     Content-Type: 'application/json'
-  ids:
-    - tid
+  keys:
     - name
+  ids:
+    tid:
+      type: integer
   fields:
     - name: name
       label: 'Name'
