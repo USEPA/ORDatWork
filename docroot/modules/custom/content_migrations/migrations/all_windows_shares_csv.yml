@@ -20,9 +20,9 @@ source:
     - name: description
       label: 'description'
       selector: OwnerADAccount
-    - name: parent
+    - name: parent_map
       label: 'Parent'
-      selector: SiteId
+      selector: parent_id
   ids:
     tid:
       type: integer
@@ -34,7 +34,7 @@ process:
   parent:
     plugin: migration_lookup
     migration: all_windows_shares_site_codes_csv
-    source: parent
+    source: parent_map
 destination:
   plugin: entity:taxonomy_term
   default_bundle: all_windows_shares
