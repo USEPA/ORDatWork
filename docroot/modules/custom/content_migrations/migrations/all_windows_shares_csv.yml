@@ -1,4 +1,4 @@
-id: all_windows_shares_csv
+id: all_windows_shares_csv_new2
 label: 'All Windows Shares Migration'
 source:
   plugin: url
@@ -11,30 +11,29 @@ source:
   item_selector: 0
   urls: 'public://AllWindowsSharesSmall.json'
   fields:
-    - selector: tid
-      name: tid
-      label: 'Term ID'
     - name: name
       label: 'Name'
       selector: UserFolder
-    - name: description
-      label: 'description'
+    - name: site_code
+      label: 'SiteCode'
+      selector: SiteCode
+    - name: owner_ad_account
+      label: 'OwnerADAccount'
       selector: OwnerADAccount
-    - name: parent_map
-      label: 'Parent'
-      selector: parent_id
+    - name: fsrm_quota_size_gb
+      label: 'FSRMQuotaSizeGB'
+      selector: FSRMQuotaSizeGB
   ids:
-    tid:
-      type: integer
+    name:
+      type: string
   track_changes: true
 process:
-  tid: tid
   name: name
-  description: description
+  description: owner_and_size
   parent:
     plugin: migration_lookup
-    migration: all_windows_shares_site_codes_csv
-    source: parent_map
+    migration: all_windows_shares_site_codes_csv_new
+    source: parent_id
 destination:
   plugin: entity:taxonomy_term
-  default_bundle: all_windows_shares
+  default_bundle: all_windows_shares_new

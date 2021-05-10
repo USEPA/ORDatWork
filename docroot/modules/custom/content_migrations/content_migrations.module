@@ -35,9 +35,39 @@ function content_migrations_migrate_prepare_row(Row $row, MigrateSourceInterface
     format_smart_date($row);
   } else if ($migration->id() === 'staff_member') {
     create_file_and_media($row);
-  } else if ($migration->id() === 'all_windows_shares_site_codes_csv.yml') {
-
+  } else if ($migration->id() === 'all_windows_shares_csv_new2') {
+    process_windows_shares_row($row);
   }
+}
+
+/**
+ * @param Row $row
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ * https://webx.ord.epa.gov/sites/default/files/blog/2018/03/laraphelps.jpg
+ */
+function process_windows_shares_row(Row $row): void {
+  /** @var \Drupal\taxonomy\Entity\Term $term */
+  $parent_name = $row->getSourceProperty('parent_map');
+  $term = taxonomy_term_load_multiple_by_name($parent_name);
+  $row->setSourceProperty('parent_id', $term['id']);
+
+  $owner = $row->getSourceProperty('owner_ad_account');
+  $quota_size = $row->getSourceProperty('fsrm_quota_size_gb');
+  $owner_and_size = 'N/A';
+  $owner_email = 'N/A';
+  if (!isset($quota_size)) {
+    $quota_size = 'N/A';
+  }
+  if (isset($owner) && $owner != 'N/A') {
+    $rawExplodedArray = explode('=', $owner, 3); // splits into 'CN', 'Last,First,OU', rest of the string
+    $rawExplodedString = $rawExplodedArray[1];
+    $rawNameArray = explode(',', $rawExplodedString); // splits into 'First', 'Last', rest of string
+    $owner = $rawNameArray[0] . ', ' . $rawNameArray[1];
+    $owner_and_size = $owner . ' - ' . $quota_size . 'gb';
+    //  CN = Carson, David,OU = AdmDiv - ORD - CIN - O
+  }
+  $row->setSourceProperty('owner_and_size', $owner_and_size);
+  $row->setSourceProperty('owner_email', $owner_email);
 }
 
 /**
