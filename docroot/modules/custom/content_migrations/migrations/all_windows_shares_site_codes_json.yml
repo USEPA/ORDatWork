@@ -1,4 +1,4 @@
-id: all_windows_shares_site_codes_csv
+id: all_windows_shares_site_codes_json
 label: 'All Windows Shares Site Codes Migration'
 source:
   plugin: url

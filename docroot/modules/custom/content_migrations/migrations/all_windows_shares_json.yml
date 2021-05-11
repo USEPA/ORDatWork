@@ -1,4 +1,4 @@
-id: all_windows_shares_csv
+id: all_windows_shares_json
 label: 'All Windows Shares Migration'
 source:
   plugin: url
@@ -32,7 +32,7 @@ process:
   description: owner_and_size
   parent:
     plugin: migration_lookup
-    migration: all_windows_shares_site_codes_csv
+    migration: all_windows_shares_site_codes_json
     source: parent_id
 destination:
   plugin: entity:taxonomy_term
