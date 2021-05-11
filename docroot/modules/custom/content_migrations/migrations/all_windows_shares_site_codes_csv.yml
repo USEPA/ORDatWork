@@ -1,4 +1,4 @@
-id: all_windows_shares_site_codes_csv_new
+id: all_windows_shares_site_codes_csv
 label: 'All Windows Shares Site Codes Migration'
 source:
   plugin: url
@@ -22,4 +22,4 @@ process:
   name: name
 destination:
   plugin: entity:taxonomy_term
-  default_bundle: all_windows_shares_new
+  default_bundle: all_windows_shares

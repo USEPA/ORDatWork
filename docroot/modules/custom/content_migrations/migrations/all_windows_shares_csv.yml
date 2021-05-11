@@ -1,4 +1,4 @@
-id: all_windows_shares_csv_new2
+id: all_windows_shares_csv
 label: 'All Windows Shares Migration'
 source:
   plugin: url
@@ -9,7 +9,7 @@ source:
     Content-Type: 'application/json'
   include_raw_data: true
   item_selector: 0
-  urls: 'public://AllWindowsSharesSmall.json'
+  urls: 'public://AllWindowsShares.json'
   fields:
     - name: name
       label: 'Name'
@@ -32,8 +32,8 @@ process:
   description: owner_and_size
   parent:
     plugin: migration_lookup
-    migration: all_windows_shares_site_codes_csv_new
+    migration: all_windows_shares_site_codes_csv
     source: parent_id
 destination:
   plugin: entity:taxonomy_term
-  default_bundle: all_windows_shares_new
+  default_bundle: all_windows_shares
