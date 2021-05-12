@@ -1,25 +1,26 @@
 id: all_windows_shares_site_codes_json
-label: 'All Windows Shares Site Codes Migration'
-source:
-  plugin: url
-  data_fetcher_plugin: file
-  data_parser_plugin: json
-  include_raw_data: true
-  urls: 'public://AllWindowsSharesSiteCode.json'
-  track_changes: true
-  item_selector: 0
-  headers:
-    Accept: 'application/json; charset=utf-8'
-    Content-Type: 'application/json'
-  ids:
-    name:
-      type: string
-  fields:
-    - name: name
-      label: 'Name'
-      selector: SiteCode
-process:
-  name: name
-destination:
-  plugin: entity:taxonomy_term
-  default_bundle: all_windows_shares
+#Keeping file as an example connecting to local files
+#label: 'All Windows Shares Site Codes Migration'
+#source:
+#  plugin: url
+#  data_fetcher_plugin: file
+#  data_parser_plugin: json
+#  include_raw_data: true
+#  urls: 'public://AllWindowsSharesSiteCode.json' This file is saved to docroot/sites/default/files
+#  track_changes: true
+#  item_selector: 0
+#  headers:
+#    Accept: 'application/json; charset=utf-8'
+#    Content-Type: 'application/json'
+#  ids:
+#    name:
+#      type: string
+#  fields:
+#    - name: name
+#      label: 'Name'
+#      selector: SiteCode
+#process:
+#  name: name
+#destination:
+#  plugin: entity:taxonomy_term
+#  default_bundle: all_windows_shares
