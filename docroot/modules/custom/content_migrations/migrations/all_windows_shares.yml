@@ -12,7 +12,8 @@ source:
   key: migrate
   sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB
               from AllWindowsShares
-              where SiteCode is not null'
+              where SiteCode is not null
+              and UserFolder is not null'
   keys:
     - UserFolder
     - SiteCode
