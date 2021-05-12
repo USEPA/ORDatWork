@@ -15,6 +15,7 @@ source:
               where SiteCode is not null'
   keys:
     - UserFolder
+    - SiteCode
 process:
   name: UserFolder
   description: owner_and_size
