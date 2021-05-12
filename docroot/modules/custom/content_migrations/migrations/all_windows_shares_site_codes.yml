@@ -7,7 +7,7 @@ source:
   # specify the database with the key
   key: migrate
   sql_query: 'select distinct SiteCode
-              from AllWindowsShares where SiteCode is not null'
+              from AllWindowsShares where SiteCode != '' '''
   keys:
     - SiteCode
 process:
