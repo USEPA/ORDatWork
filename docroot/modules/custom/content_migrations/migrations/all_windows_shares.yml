@@ -1,32 +1,28 @@
-id: all_windows_shares
-#label: 'All Windows Shares Migration'
-#migration_tags: null
-#migration_group: migrate_content
-#source:
-#  plugin: all_windows_shares
-#  # specify the database with the key
-#  key: migrate
-#  fields:
-#    - name: name
-#      label: 'Name'
-#    - name: description
-#      label: 'Description'
-#    - name: parent
-#      label: 'Parent'
-#  ids:
-#    tid:
-#      type: integer
-#process:
-#  tid: tid
-#  name: user_folder
-#  description: owner_and_size
-#  parent:
-#    plugin: migration_lookup
-#    migration: all_windows_shares_site_codes
-#    source: site_code
-#migration_dependencies:
-#  required:
-#    - all_windows_shares_site_codes
-#destination:
-#  plugin: entity:taxonomy_term
-#  default_bundle: all_windows_shares
+id: all_windows_shares2
+label: 'All Windows Shares Migration'
+migration_tags: null
+migration_group: all_windows_shares
+migration_dependencies:
+  required:
+    - all_windows_shares_site_codes1
+    #parental dependency ensures that terms are tied to parents
+source:
+  plugin: custom_sql_query
+  # specify the database with the key
+  key: migrate
+  sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB
+              from AllWindowsShares
+              where SiteCode is not null
+              limit 5'
+  keys:
+    - UserFolder
+process:
+  name: UserFolder
+  description: owner_and_size
+  parent:
+    plugin: migration_lookup
+    migration: all_windows_shares_site_codes1
+    source: SiteCode
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: all_windows_shares

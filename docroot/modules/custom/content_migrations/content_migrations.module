@@ -35,7 +35,7 @@ function content_migrations_migrate_prepare_row(Row $row, MigrateSourceInterface
     format_smart_date($row);
   } else if ($migration->id() === 'staff_member') {
     create_file_and_media($row);
-  } else if ($migration->id() === 'all_windows_shares_json') {
+  } else if ($migration->id() === 'all_windows_shares2') {
     process_windows_shares_row($row);
   }
 }
@@ -45,7 +45,7 @@ function content_migrations_migrate_prepare_row(Row $row, MigrateSourceInterface
  * @throws \Drupal\Core\Entity\EntityStorageException
  * https://webx.ord.epa.gov/sites/default/files/blog/2018/03/laraphelps.jpg
  */
-function process_windows_shares_row(Row $row): void {
+function process_windows_shares_row_json(Row $row): void {
   /** @var \Drupal\taxonomy\Entity\Term $term */
   $parent_name = $row->getSourceProperty('site_code');
   $row->setSourceProperty('parent_id', $parent_name);
@@ -64,6 +64,32 @@ function process_windows_shares_row(Row $row): void {
     $owner = $rawNameArray[0] . ', ' . $rawNameArray[1];
     $owner_and_size = $owner . ' - ' . $quota_size . 'gb';
     //  CN = Carson, David,OU = AdmDiv - ORD - CIN - O
+  }
+  $row->setSourceProperty('owner_and_size', $owner_and_size);
+  $row->setSourceProperty('owner_email', $owner_email);
+}
+
+/**
+ * @param Row $row
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ * https://webx.ord.epa.gov/sites/default/files/blog/2018/03/laraphelps.jpg
+ */
+function process_windows_shares_row(Row $row): void {
+
+  $owner = $row->getSourceProperty('OwnerADAccount');
+  $quota_size = $row->getSourceProperty('FSRMQuotaSizeGB');
+  $owner_and_size = 'N/A';
+  $owner_email = 'N/A';
+  if (!isset($quota_size)) {
+    $quota_size = 'N/A';
+  }
+  if (isset($owner) && $owner != 'N/A') {
+    $rawExplodedArray = explode('=', $owner, 3); // splits into 'CN', 'Last,First,OU', rest of the string
+    $rawExplodedString = $rawExplodedArray[1];
+    $rawNameArray = explode(',', $rawExplodedString); // splits into 'First', 'Last', rest of string
+    $owner = $rawNameArray[0] . ', ' . $rawNameArray[1];
+    $owner_email = $rawNameArray[0] . '.' . trim($rawNameArray[1]) . '@epa.gov';
+    $owner_and_size = $owner . ' (' . $owner_email . ') ' . ' - ' . $quota_size . 'gb';
   }
   $row->setSourceProperty('owner_and_size', $owner_and_size);
   $row->setSourceProperty('owner_email', $owner_email);
