@@ -4,7 +4,7 @@ migration_tags: null
 migration_group: all_windows_shares
 migration_dependencies:
   required:
-    - all_windows_shares_site_codes1
+    - all_windows_shares_site_codes
     #parental dependency ensures that terms are tied to parents
 source:
   plugin: custom_sql_query
