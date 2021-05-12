@@ -1,4 +1,4 @@
-id: all_windows_shares2
+id: all_windows_shares
 label: 'All Windows Shares Migration'
 migration_tags: null
 migration_group: all_windows_shares
@@ -21,7 +21,7 @@ process:
   description: owner_and_size
   parent:
     plugin: migration_lookup
-    migration: all_windows_shares_site_codes1
+    migration: all_windows_shares_site_codes
     source: SiteCode
 destination:
   plugin: entity:taxonomy_term
