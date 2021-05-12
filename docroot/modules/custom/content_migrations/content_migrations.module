@@ -115,34 +115,3 @@ function format_smart_date(Row $row): void {
   $smart_date_field['duration'] = $duration;
   $row->setSourceProperty('field_event_date', $smart_date_field);
 }
-
-/**
- * CURRENTLY NOT IN USE
- * SERVES AS AN EXAMPLE OF ALTERING AND
- * @param Row $row
- * @throws \Drupal\Core\Entity\EntityStorageException
- * https://webx.ord.epa.gov/sites/default/files/blog/2018/03/laraphelps.jpg
- */
-function process_windows_shares_row_json(Row $row): void {
-  /** @var \Drupal\taxonomy\Entity\Term $term */
-  $parent_name = $row->getSourceProperty('site_code');
-  $row->setSourceProperty('parent_id', $parent_name);
-
-  $owner = $row->getSourceProperty('owner_ad_account');
-  $quota_size = $row->getSourceProperty('fsrm_quota_size_gb');
-  $owner_and_size = 'N/A';
-  $owner_email = 'N/A';
-  if (!isset($quota_size)) {
-    $quota_size = 'N/A';
-  }
-  if (isset($owner) && $owner != 'N/A') {
-    $rawExplodedArray = explode('=', $owner, 3); // splits into 'CN', 'Last,First,OU', rest of the string
-    $rawExplodedString = $rawExplodedArray[1];
-    $rawNameArray = explode(',', $rawExplodedString); // splits into 'First', 'Last', rest of string
-    $owner = $rawNameArray[0] . ', ' . $rawNameArray[1];
-    $owner_email = $rawNameArray[0] . '.' . trim($rawNameArray[1]) . '@epa.gov';
-    $owner_and_size = $owner . ' - ' . $quota_size . 'gb';
-  }
-  $row->setSourceProperty('owner_and_size', $owner_and_size);
-  $row->setSourceProperty('owner_email', $owner_email);
-}
