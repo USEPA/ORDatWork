@@ -37,6 +37,7 @@ contextual: 8.7.3
 crop: 2.0.0-rc1
 csv_serialization: 1.4.0
 ctools: 3.0.0
+custom_sql_migrate_source_plugin: 1.2.0
 datetime: 8.7.3
 datetime_range: 8.7.3
 dblog: 8.7.3
