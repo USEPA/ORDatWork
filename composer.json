@@ -89,7 +89,8 @@
         "drupal/image_style_quality": "^1.4",
         "drupal/cache_control_override": "^1.0@alpha",
         "drupal/editoria11y": "^1.0",
-        "drupal/custom_sql_migrate_source_plugin": "^1.2"
+        "drupal/custom_sql_migrate_source_plugin": "^1.2",
+        "drupal/cshs": "^1.7"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -157,6 +158,9 @@
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-01-20/2985882-53.patch",
                 "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2020-02-11/block_visibility_has_wrong_logic-923934-14-reroll-32-drupal-8.8.2.patch",
                 "2016739: Prevent '@' from triggering email detection unless suffix is included": "https://www.drupal.org/files/issues/2020-09-25/2016739-86.patch"
+            },
+            "drupal/cshs": {
+                "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch"
             },
             "merge-plugin": {
                 "include": [

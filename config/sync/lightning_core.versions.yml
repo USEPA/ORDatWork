@@ -35,6 +35,7 @@ content_migrations: 0.0.0
 content_moderation: 8.7.3
 contextual: 8.7.3
 crop: 2.0.0-rc1
+cshs: 1.7.0
 csv_serialization: 1.4.0
 ctools: 3.0.0
 custom_sql_migrate_source_plugin: 1.2.0
@@ -179,6 +180,7 @@ search_api: 1.13.0
 search_api_db: 1.13.0
 serialization: 8.7.3
 shortcut: 8.7.3
+shs: 1.0.0-alpha5
 simple_gmap: 1.4.0
 simple_oauth: 3.16.0
 simple_oauth_extras: 3.16.0
