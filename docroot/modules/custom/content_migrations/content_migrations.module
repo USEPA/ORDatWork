@@ -58,10 +58,11 @@ function process_windows_shares_row(Row $row): void {
     $rawExplodedArray = explode('=', $owner, 3); // splits into 'CN', 'Last,First,OU', rest of the string
     $rawExplodedString = $rawExplodedArray[1];
     $rawNameArray = explode(',', $rawExplodedString); // splits into 'First', 'Last', rest of string
-    $owner = $rawNameArray[0] . ', ' . $rawNameArray[1];
-    $owner_email = $rawNameArray[0] . '.' . trim($rawNameArray[1]) . '@epa.gov';
+    $owner = trim($rawNameArray[0]) . ', ' . trim($rawNameArray[1]);
+    $owner_email = trim($rawNameArray[0]) . '.' . trim($rawNameArray[1]) . '@epa.gov';
     $owner_and_size = $owner . ' (' . $owner_email . ') ' . ' - ' . $quota_size . 'gb';
   }
+  $row->setSourceProperty('owner_name', $owner);
   $row->setSourceProperty('owner_and_size', $owner_and_size);
   $row->setSourceProperty('owner_email', $owner_email);
 }

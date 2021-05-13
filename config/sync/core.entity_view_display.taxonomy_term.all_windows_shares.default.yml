@@ -1,0 +1,50 @@
+uuid: 22ab44cc-f773-4b14-a639-c4da7f2c62ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.all_windows_shares.field_window_email
+    - field.field.taxonomy_term.all_windows_shares.field_window_owner
+    - field.field.taxonomy_term.all_windows_shares.field_window_quota_size
+    - taxonomy.vocabulary.all_windows_shares
+  module:
+    - text
+id: taxonomy_term.all_windows_shares.default
+targetEntityType: taxonomy_term
+bundle: all_windows_shares
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_window_email:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_window_owner:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_window_quota_size:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
