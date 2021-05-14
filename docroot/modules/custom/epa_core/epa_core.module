@@ -30,7 +30,7 @@ function epa_core_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_
             }
           } else {
             if ($element['#type'] == 'cshs') {
-              $form['#attached']['library'][] = 'epa_core/HierarchySelectHandler';
+              $form['#attached']['library'][] = 'epa_core/hierarchy-handler';
             }
           }
         }
