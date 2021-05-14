@@ -1,0 +1,6 @@
+hierarchy-handler:
+  version: 1.x
+  js:
+    js/HierarchySelectHandler.js: {}
+  dependencies:
+    - core/jquery
