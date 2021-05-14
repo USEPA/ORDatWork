@@ -13,15 +13,20 @@
  */
 #}
 <br/>
-<select{{ attributes.addClass('usa-select') }}>
+<select{{ attributes.addClass('usa-select cshs-custom-select') }}>
   {% for option in options %}
     {% if option.value %}
-    <option value="{{ option.value }}" data-parent="{{ option.parent }}"{{ option.selected ? ' selected="selected"' }}>
-      {{ option.label }}
-    </option>
+      <option value="{{ option.value }}"
+              data-parent="{{ option.parent }}"{{ option.selected ? ' selected="selected"' }}>
+        {{ option.label }}
+      </option>
     {% endif %}
-{#    {% if option.selected %}#}
-{#      {% set owner =  %}#}
-{#    {% endif %}#}
+    {#    {% if option.selected %}#}
+    {#      {% set owner =  %}#}
+    {#    {% endif %}#}
   {% endfor %}
 </select>
+<br/>
+<div class="cshs-custom-select-additions">
+  Owner Name - Quota Size
+</div>
