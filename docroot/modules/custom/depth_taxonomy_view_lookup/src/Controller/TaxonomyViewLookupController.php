@@ -111,7 +111,7 @@ class TaxonomyViewLookupController extends ControllerBase {
    */
   public function standardLookup($term_id = null){
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_id);
-    return new JsonResponse(['owner' => $term->get('field_window_owner')->value, 'email' => $term->get('field_window_email'), 'size' => $term->get('field_window_quota_size')->value]);
+    return new JsonResponse(['owner' => $term->get('field_window_owner')->value, 'email' => $term->get('field_window_email')->value, 'size' => $term->get('field_window_quota_size')->value]);
   }
 
 }
