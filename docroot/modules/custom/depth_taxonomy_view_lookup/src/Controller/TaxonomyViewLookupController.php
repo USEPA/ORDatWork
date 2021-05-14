@@ -110,8 +110,23 @@ class TaxonomyViewLookupController extends ControllerBase {
    * @param $term_id
    */
   public function standardLookup($term_id = null){
+    $owner = 'Owner Name';
+    $email = 'N/A';
+    $quota = 'Quota Size';
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_id);
-    return new JsonResponse(['owner' => $term->get('field_window_owner')->value, 'email' => $term->get('field_window_email')->value, 'size' => $term->get('field_window_quota_size')->value]);
+
+    if ($term != null) {
+      if ($term->get('field_window_owner') != null) {
+        $owner = $term->get('field_window_owner')->value;
+      }
+      if ($term->get('field_window_email') != null) {
+        $email = $term->get('field_window_email')->value;
+      }
+      if ($term->get('field_window_quota_size') != null) {
+        $quota = $term->get('field_window_quota_size')->value;
+      }
+    }
+    return new JsonResponse(['owner' => $owner, 'email' => $email, 'size' => $quota]);
   }
 
 }

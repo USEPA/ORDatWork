@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f63bf19d3ca572aee60bb2143eb102ab",
+    "content-hash": "fb0dc3c56e718fa85457b5fa90ed84ae",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -3250,7 +3250,8 @@
                     }
                 },
                 "patches_applied": {
-                    "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch"
+                    "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
+                    "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
