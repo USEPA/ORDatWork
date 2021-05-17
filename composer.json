@@ -162,7 +162,7 @@
             "drupal/cshs": {
                 "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
                 "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch",
-                "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview_fix.patch"
+                "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview.patch"
             },
             "merge-plugin": {
                 "include": [
