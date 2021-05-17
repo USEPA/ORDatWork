@@ -1,7 +1,7 @@
 diff --git a/src/Plugin/WebformElement/WebformCshsSelect.php b/src/Plugin/WebformElement/WebformCshsSelect.php
 index ba2292d..0347f15 100644
 --- a/src/Plugin/WebformElement/WebformCshsSelect.php
-+++ b//src/Plugin/WebformElement/WebformCshsSelect.php
++++ b/src/Plugin/WebformElement/WebformCshsSelect.php
 @@ -63,7 +63,10 @@ public function getSettings() {
     * {@inheritdoc}
     */
