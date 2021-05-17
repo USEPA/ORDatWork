@@ -1,0 +1,17 @@
+diff --git a/src/Element/CshsElement.php b/src/Element/CshsElement.php
+index 41127d9..0bb1130 100644
+--- a/src/Element/CshsElement.php
++++ b/src/Element/CshsElement.php
+@@ -73,9 +73,9 @@ public static function processElement(array $element): array {
+    * {@inheritdoc}
+    */
+   public static function preRender(array $element): array {
+-    $element['#options'] = static::formatOptions($element);
+-
+-    return $element;
++    //$element['#options'] = static::formatOptions($element);
++    //this breaks all of the selections when 'Show Preview' is enabled. Return blank now to disable it
++    return [];
+   }
+ 
+   /**
