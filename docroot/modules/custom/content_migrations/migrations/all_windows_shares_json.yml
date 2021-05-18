@@ -1,0 +1,40 @@
+id: all_windows_shares_json
+#Keeping file as an example connecting to local files
+#label: 'All Windows Shares Migration'
+#source:
+#  plugin: url
+#  data_fetcher_plugin: file
+#  data_parser_plugin: json
+#  headers:
+#    Accept: 'application/json; charset=utf-8'
+#    Content-Type: 'application/json'
+#  include_raw_data: true
+#  item_selector: 0
+#  urls: 'public://AllWindowsShares.json' This file is saved to docroot/sites/default/files
+#  fields:
+#    - name: name
+#      label: 'Name'
+#      selector: UserFolder
+#    - name: site_code
+#      label: 'SiteCode'
+#      selector: SiteCode
+#    - name: owner_ad_account
+#      label: 'OwnerADAccount'
+#      selector: OwnerADAccount
+#    - name: fsrm_quota_size_gb
+#      label: 'FSRMQuotaSizeGB'
+#      selector: FSRMQuotaSizeGB
+#  ids:
+#    name:
+#      type: string
+#  track_changes: true
+#process:
+#  name: name
+#  description: owner_and_size
+#  parent:
+#    plugin: migration_lookup
+#    migration: all_windows_shares_site_codes_json
+#    source: parent_id
+#destination:
+#  plugin: entity:taxonomy_term
+#  default_bundle: all_windows_shares

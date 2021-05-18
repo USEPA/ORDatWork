@@ -34,8 +34,10 @@ module:
   content_moderation: 0
   contextual: 0
   crop: 0
+  cshs: 0
   csv_serialization: 0
   ctools: 0
+  custom_sql_migrate_source_plugin: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
@@ -46,6 +48,7 @@ module:
   dropzonejs: 0
   easy_breadcrumb: 0
   editor: 0
+  editoria11y: 0
   embed: 0
   entity: 0
   entity_block: 0
