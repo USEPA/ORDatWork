@@ -27,7 +27,6 @@
         "drupal/address": "~1.9",
         "drupal/layout_builder_styles": "^1.0@beta",
         "drupal/devel": "^4.0",
-        "drupal/block_blacklist": "^1.0",
         "drupal/path_file": "^1.0",
         "drupal/linkit": "^6.0",
         "drupal/views_bulk_operations": "^3.9",
@@ -90,7 +89,8 @@
         "drupal/cache_control_override": "^1.0@alpha",
         "drupal/editoria11y": "^1.0",
         "drupal/custom_sql_migrate_source_plugin": "^1.2",
-        "drupal/cshs": "^1.7"
+        "drupal/cshs": "^1.7",
+        "drupal/block_list_override": "^1.0"
     },
     "require-dev": {
         "drush/drush": "^9.0"
