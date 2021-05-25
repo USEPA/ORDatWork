@@ -13,6 +13,7 @@ module:
   block: 0
   block_blacklist: 0
   block_content: 0
+  block_list_override: 0
   block_style_plugins: 0
   breakpoint: 0
   bulk_update_fields: 0
