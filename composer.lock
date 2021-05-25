@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f6c6ba4a2b8159ece62b4caa9a77d1d",
+    "content-hash": "404be6578561c09c21f97a6dcbe8836d",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -4686,6 +4686,63 @@
             "homepage": "https://www.drupal.org/project/entity_reference_tree",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_tree"
+            }
+        },
+        {
+            "name": "drupal/entityreference_filter",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entityreference_filter.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entityreference_filter-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "6492ba68418c42a10fdb560ae6b9891504f0ed50"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1620486711",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Maxim Podorov",
+                    "homepage": "https://www.drupal.org/user/2463262",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Maxim Kashuba",
+                    "homepage": "https://www.drupal.org/user/515310",
+                    "email": "mkashuba85@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides views-based filter for entity reference and entity id fields in views.",
+            "homepage": "http://drupal.org/project/entityreference_filter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/entityreference_filter",
+                "issues": "https://www.drupal.org/project/issues/entityreference_filter"
             }
         },
         {
@@ -10498,6 +10555,69 @@
             "homepage": "https://www.drupal.org/project/views_taxonomy_term_name_into_id",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_taxonomy_term_name_into_id"
+            }
+        },
+        {
+            "name": "drupal/viewsreference",
+            "version": "2.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/viewsreference.git",
+                "reference": "8.x-2.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta2.zip",
+                "reference": "8.x-2.0-beta2",
+                "shasum": "146bf8c68e6cbb3805b4368b508d43931fe77c67"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "conflict": {
+                "drupal/viewsreferennce": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta2",
+                    "datestamp": "1597243219",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "New Zeal",
+                    "homepage": "https://www.drupal.org/user/93571"
+                },
+                {
+                    "name": "jasonawant",
+                    "homepage": "https://www.drupal.org/user/589890"
+                },
+                {
+                    "name": "joekers",
+                    "homepage": "https://www.drupal.org/user/2229066"
+                },
+                {
+                    "name": "seanB",
+                    "homepage": "https://www.drupal.org/user/545912"
+                }
+            ],
+            "description": "Views reference",
+            "homepage": "http://drupal.org/project/viewsreference",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/viewsreference",
+                "issues": "https://www.drupal.org/project/issues/viewsreference"
             }
         },
         {
@@ -19673,6 +19793,57 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2021-04-09T00:54:41+00:00"
         },
         {
             "name": "symfony/finder",
