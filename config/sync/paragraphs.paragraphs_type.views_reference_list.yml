@@ -1,0 +1,10 @@
+uuid: c9579d94-fdd1-41ff-8613-d62c317e9b0b
+langcode: en
+status: true
+dependencies: {  }
+id: views_reference_list
+label: 'Views Reference List'
+icon_uuid: null
+icon_default: null
+description: 'Replacement for dynamic lists.'
+behavior_plugins: {  }
