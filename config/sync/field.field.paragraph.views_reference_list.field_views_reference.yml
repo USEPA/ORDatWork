@@ -33,6 +33,8 @@ settings:
     embed: 0
   preselect_views:
     articles_list: articles_list
+    blog_post_list: blog_post_list
+    events_list: events_list
     admin_update_staff: 0
     all_articles: 0
     articles: 0
