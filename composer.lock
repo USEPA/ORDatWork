@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "404be6578561c09c21f97a6dcbe8836d",
+    "content-hash": "133ca86f19a83234b6a9705ec1b4a51c",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -4686,63 +4686,6 @@
             "homepage": "https://www.drupal.org/project/entity_reference_tree",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_tree"
-            }
-        },
-        {
-            "name": "drupal/entityreference_filter",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/entityreference_filter.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entityreference_filter-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "6492ba68418c42a10fdb560ae6b9891504f0ed50"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1620486711",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Maxim Podorov",
-                    "homepage": "https://www.drupal.org/user/2463262",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Maxim Kashuba",
-                    "homepage": "https://www.drupal.org/user/515310",
-                    "email": "mkashuba85@gmail.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Provides views-based filter for entity reference and entity id fields in views.",
-            "homepage": "http://drupal.org/project/entityreference_filter",
-            "support": {
-                "source": "http://cgit.drupalcode.org/entityreference_filter",
-                "issues": "https://www.drupal.org/project/issues/entityreference_filter"
             }
         },
         {
@@ -10163,6 +10106,87 @@
             }
         },
         {
+            "name": "drupal/views-views",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views.git",
+                "reference": "4e9693774b9ede35c5539c666554d38e0f397dfe"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.x-dev",
+                    "datestamp": "1339863455",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "Lendude",
+                    "homepage": "https://www.drupal.org/user/690914"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "damiankloip",
+                    "homepage": "https://www.drupal.org/user/1037976"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                },
+                {
+                    "name": "esmerel",
+                    "homepage": "https://www.drupal.org/user/164022"
+                },
+                {
+                    "name": "merlinofchaos",
+                    "homepage": "https://www.drupal.org/user/26979"
+                },
+                {
+                    "name": "tim.plunkett",
+                    "homepage": "https://www.drupal.org/user/241634"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/views",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views"
+            },
+            "time": "2012-10-22T03:07:01+00:00"
+        },
+        {
             "name": "drupal/views_add_button",
             "version": "1.6.0",
             "source": {
@@ -10618,6 +10642,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/viewsreference",
                 "issues": "https://www.drupal.org/project/issues/viewsreference"
+            }
+        },
+        {
+            "name": "drupal/viewsreference_filter",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/viewsreference_filter.git",
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewsreference_filter-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "3a8881dc074544c982da99ef1696f4f7fdc07fa4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/views-views": "*",
+                "drupal/viewsreference": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.2",
+                    "datestamp": "1610747853",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "patches_applied": {
+                    "3201294: Allows editing of autocompleted taxonomy filters": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-3201294-6.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "roborew",
+                    "homepage": "https://www.drupal.org/user/1931814"
+                }
+            ],
+            "description": "Expose filters for editors to configure views",
+            "homepage": "https://www.drupal.org/project/viewsreference_filter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/viewsreference_filter",
+                "issues": "https://www.drupal.org/project/issues/viewsreference_filter"
             }
         },
         {
