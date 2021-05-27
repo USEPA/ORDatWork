@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.title_and_text
     - paragraphs.paragraphs_type.uswds_accordion
     - paragraphs.paragraphs_type.uswds_card_set
+    - paragraphs.paragraphs_type.views_reference_list
   module:
     - entity_reference_revisions
 id: node.page.field_custom_text
@@ -36,6 +37,7 @@ settings:
       list_of_link: list_of_link
       slide_show: slide_show
       uswds_card_set: uswds_card_set
+      views_reference_list: views_reference_list
     target_bundles_drag_drop:
       dynamic_list:
         enabled: true
@@ -52,6 +54,9 @@ settings:
       list_of_link:
         enabled: true
         weight: -33
+      policy_delegation_authorization:
+        weight: 29
+        enabled: false
       policy_roles:
         weight: -26
         enabled: false
@@ -100,4 +105,7 @@ settings:
       uswds_text:
         weight: -20
         enabled: false
+      views_reference_list:
+        enabled: true
+        weight: 46
 field_type: entity_reference_revisions

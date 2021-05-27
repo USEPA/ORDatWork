@@ -199,6 +199,8 @@ module:
   views_infinite_scroll: 0
   views_taxonomy_term_name_into_id: 0
   views_ui: 0
+  viewsreference: 0
+  viewsreference_filter: 0
   webform: 0
   webform_access: 0
   webform_analysis: 0
