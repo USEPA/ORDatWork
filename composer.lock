@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "133ca86f19a83234b6a9705ec1b4a51c",
+    "content-hash": "33b567ceac16272ce3d6544b9abc9909",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -233,7 +233,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -10610,6 +10610,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "3166490: Fixes missing display upon first adding a list": "https://www.drupal.org/files/issues/2021-01-15/viewsreference-ajax_after_display_selection-3166490-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

@@ -41,21 +41,21 @@
 
 {% set isPage = paragraph.getParentEntity().bundle() == 'page' %}
 {% set classes = [
-    isPage ? 'card',
-    'mt-2',
+  isPage ? 'card',
+  'mt-2',
 ] %}
 
 {% block paragraph %}
-    <div {{ attributes.addClass(classes) }}>
-        <div class=" {{ isPage ? 'card-header' }} m-0 font-weight-bold">
-            {{ content.field_list_header }}
-        </div>
-        <div class="{{ isPage ? 'card-body' }}  py-1">
-          <ul class="usa-list">
-            {{ content.field_views_reference }}
-          </ul>
-        </div>
+  <div {{ attributes.addClass(classes) }}>
+    <div class="{{ isPage ? 'site-preview-heading' : 'm-0 font-weight-bold'}}">
+      {{ content.field_list_header }}
     </div>
+    <article class="{{ isPage ? 'card-body' }}  py-1">
+      <ul class="usa-collection">
+        {{ content.field_views_reference }}
+      </ul>
+    </article>
+  </div>
 {% endblock paragraph %}
 
 
