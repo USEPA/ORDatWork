@@ -4,3 +4,8 @@ hierarchy-handler:
     js/HierarchySelectHandler.js: {}
   dependencies:
     - core/jquery
+admin-forms:
+  version: 1.x
+  css:
+    theme:
+      css/admin_forms.css: {}
