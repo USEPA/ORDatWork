@@ -92,7 +92,8 @@
         "drupal/cshs": "^1.7",
         "drupal/block_list_override": "^1.0",
         "drupal/viewsreference": "^2.0",
-        "drupal/viewsreference_filter": "^1.0"
+        "drupal/viewsreference_filter": "^1.0",
+        "drupal/node_export": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^9.0"
