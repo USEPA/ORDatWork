@@ -1,0 +1,13 @@
+domain_redirects:
+  'intranet:ord:epa:gov':
+    -
+      sub_path: '/releasing-manuscripts-and-data/*'
+      destination: work.epa.gov/pamd
+    -
+      sub_path: /one-epa/elevate-critical-public-health-issue
+      destination: work.epa.gov/epa/identify-unaddressed-significant-public-health-or-environmental-risk
+    -
+      sub_path: /releasing-manuscripts-and-data
+      destination: work.epa.gov/pamd
+_core:
+  default_config_hash: CgXLPQkHCGerCdDtMO8wK9Er4j6iy1iMOyalk8iRgrE
