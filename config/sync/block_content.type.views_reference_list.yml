@@ -1,0 +1,8 @@
+uuid: 61f5fc3f-6f1d-4824-863e-69224b9cc665
+langcode: en
+status: true
+dependencies: {  }
+id: views_reference_list
+label: 'Dynamic List'
+revision: 0
+description: 'Makes use of Views Reference, acts as a replacement for blizz dynamic lists'

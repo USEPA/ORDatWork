@@ -82,7 +82,8 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   // Multi-date events that appear in dynamic lists will not have their past dates appear
   // Examine the date items and remove them if they are in the past
   if ($elements['#field_name'] === 'field_event_date' && $elements['#bundle'] === 'event') {
-    if ($elements['#view_mode'] === 'list' && count($variables['items']) > 1) {
+    if (($elements['#view_mode'] === 'reference_list' || $elements['#view_mode'] === 'list')
+      && count($variables['items']) > 1) {
       // If it is a list, and ALL of the events are in the past, we still want to display one date
       // so keep track of the index and flag if any events have been included
       $final_element_index = count($variables['items']) - 1;
@@ -106,6 +107,19 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   }
 }
 
+// Determine final date value for recurring dates and make vals accessible via twig
+function epa_intranet_preprocess_node__event(&$variables) {
+  if ($variables['view_mode'] == 'reference_list') {
+    $final_index = count($variables['elements']['field_event_date']['#items'])-1;
+    $last_element = $variables['elements']['field_event_date']['#items'][$final_index];
+    foreach($variables['elements']['field_event_date']['#items'] as $key => $item) {
+      $event_start_date = $item->getValue()['value'];
+      $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
+      $variables['displayMonth'] = date("M", $event_start_date);
+      $variables['displayDay'] = date("d", $event_start_date);
+    }
+  }
+}
 
 function epa_intranet_preprocess_media(&$variables) {
   if ($variables['view_mode'] == 'slideshow') {
