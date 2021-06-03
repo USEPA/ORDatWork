@@ -21,4 +21,5 @@ function epa_core_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_
   if (str_contains($form_id, 'webform') && $form_id != "webform_source_form") {
     $form['#attached']['library'][] = 'epa_core/hierarchy-handler';
   }
+  $form['#attached']['library'][] = 'epa_core/admin-forms';
 }
