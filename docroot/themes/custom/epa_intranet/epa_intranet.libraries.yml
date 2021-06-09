@@ -24,3 +24,8 @@ datatables:
     assets/js/datatableInitialization.js: {}
   dependencies:
     - core/jquery
+  
+ckeditor-templates:
+  version: 4.16.1
+  js:
+  ../../../libraries/templates/plugin.js: {}
