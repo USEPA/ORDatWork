@@ -39,7 +39,7 @@
         "drupal/extlink": "^1.5",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/uswds_paragraphs": "^1.0@beta",
-        "drupal/bamboo_twig": "^4.1",
+        "drupal/bamboo_twig": "^5.0@alpha",
         "drupal/redirect": "^1.5",
         "drupal/webform": "^6.0",
         "drupal/webform_config_ignore": "^1.0",
@@ -69,7 +69,7 @@
         "drupal/group_taxonomy": "^1.0",
         "drupal/moderated_content_bulk_publish": "^2.0",
         "drupal/bulk_update_fields": "^2.0",
-        "drupal/draggableviews": "1.2",
+        "drupal/draggableviews": "^2.0",
         "drupal/focal_point": "^1.5",
         "drupal/h5p": "^1.0",
         "drupal/r4032login": "^2.0",
@@ -94,7 +94,8 @@
         "drupal/viewsreference": "^2.0",
         "drupal/viewsreference_filter": "^1.0",
         "drupal/node_export": "^1.0@alpha",
-        "drupal/uswds_ckeditor_integration": "^1.0@beta"
+        "drupal/uswds_ckeditor_integration": "^1.0@beta",
+        "drupal/csv_serialization": "^2.0"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -109,6 +110,9 @@
             },
             "drupal/webform": {
                 "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"
+            },
+            "drupal/draggableviews": {
+                "3216090: Fix psql error": "https://www.drupal.org/files/issues/2021-06-02/draggableviews-isnull-sql-error-3216090.patch"
             },
             "drupal/viewsreference": {
                 "3166490: Fixes missing display upon first adding a list": "https://www.drupal.org/files/issues/2021-01-15/viewsreference-ajax_after_display_selection-3166490-6.patch"
