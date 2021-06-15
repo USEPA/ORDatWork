@@ -87,7 +87,8 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
   // Multi-date events that appear in dynamic lists will not have their past dates appear
   // Examine the date items and remove them if they are in the past
   if ($elements['#field_name'] === 'field_event_date' && $elements['#bundle'] === 'event') {
-    if (($elements['#view_mode'] === 'reference_list' || $elements['#view_mode'] === 'list' || $elements['#view_mode'] === 'teaser')
+    if (($elements['#view_mode'] === 'reference_list' || $elements['#view_mode'] === 'list'
+        || $elements['#view_mode'] === 'teaser' || $elements['#view_mode'] === 'sidebar_teaser')
       && count($variables['items']) > 1) {
       // If it is a list, and ALL of the events are in the past, we still want to display one date
       // so keep track of the index and flag if any events have been included
@@ -114,7 +115,7 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
 
 // Determine final date value for recurring dates and make vals accessible via twig
 function epa_intranet_preprocess_node__event(&$variables) {
-  if ($variables['view_mode'] == 'reference_list' || $variables['view_mode'] == 'teaser') {
+  if ($variables['view_mode'] == 'reference_list' || $variables['view_mode'] == 'teaser' || $variables['view_mode'] == 'sidebar_teaser') {
     $final_index = count($variables['elements']['field_event_date']['#items']) - 1;
     $last_element = $variables['elements']['field_event_date']['#items'][$final_index];
     foreach ($variables['elements']['field_event_date']['#items'] as $key => $item) {
