@@ -72,32 +72,36 @@
  * @ingroup themeable
  */
 #}
-
-<li class="usa-collection__item">
+<p>
+<li {{ attributes.addClass('usa-collection__item') }}>
+  <div class="usa-collection__calendar-date">
+    <time datetime="{{ rawDateTime }}">
+      <span class="usa-collection__calendar-date-month">{{ displayMonth }}</span>
+      <span class="usa-collection__calendar-date-day">{{ displayDay }}</span>
+    </time>
+  </div>
   <div class="usa-collection__body">
     {{ title_prefix }}
-    {{ title_attributes }}
-    <span class="usa-collection__heading font-weight-bold">
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </span>
+    {% if label and not page %}
+      {{ title_attributes }}
+      <span class="usa-collection__heading font-weight-bold">
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </span>
+    {% endif %}
     {{ title_suffix }}
     <div class="usa-collection__description">
-      {{ content.body|field_value }}
+      {{ content.field_event_date }}
+    </div>
+    <div class="usa-collection__description">
+      {{ content.field_event_description|field_value }}
       <span>...</span>
     </div>
     <ul class="usa-collection__meta">
-      <li class="usa-collection__meta-item">
-        <span>By </span>
-        {{ content.field_blog_post_author|field_value }}
-      </li>
-      <li class="usa-collection__meta-item">
-        {{ node.created.value|date('F d, Y') }}
-      </li>
-      {% for keyword in content.field_keywords|field_value %}
         <li class="usa-collection__meta-item usa-tag">
-          {{ keyword }}
+          {{ content.field_event_host|field_value }}
         </li>
-      {% endfor %}
     </ul>
   </div>
+
 </li>
+</p>

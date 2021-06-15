@@ -74,6 +74,7 @@
 #}
 
 <li class="usa-collection__item">
+  {{ content.field_article_image }}
   <div class="usa-collection__body">
     {{ title_prefix }}
     {{ title_attributes }}
@@ -81,15 +82,12 @@
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </span>
     {{ title_suffix }}
+
     <div class="usa-collection__description">
       {{ content.body|field_value }}
       <span>...</span>
     </div>
     <ul class="usa-collection__meta">
-      <li class="usa-collection__meta-item">
-        <span>By </span>
-        {{ content.field_blog_post_author|field_value }}
-      </li>
       <li class="usa-collection__meta-item">
         {{ node.created.value|date('F d, Y') }}
       </li>
