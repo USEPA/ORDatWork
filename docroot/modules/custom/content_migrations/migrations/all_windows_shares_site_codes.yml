@@ -3,6 +3,7 @@ label: 'All Windows Shares Site Codes Migration'
 migration_tags: null
 migration_group: all_windows_shares
 source:
+  track_changes: true
   plugin: custom_sql_query
   # specify the database with the key
   key: migrate

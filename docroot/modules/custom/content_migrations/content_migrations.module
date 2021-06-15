@@ -37,7 +37,10 @@ function content_migrations_migrate_prepare_row(Row $row, MigrateSourceInterface
     create_file_and_media($row);
   } else if ($migration->id() === 'all_windows_shares') {
     process_windows_shares_row($row);
+  } else if ($migration->id() === 'all_windows_shares_json') {
+    process_windows_shares_row($row);
   }
+
 }
 
 /**
