@@ -22,7 +22,7 @@ content:
     type: text_summary_or_trimmed
     weight: 1
     settings:
-      trim_length: 300
+      trim_length: 160
     third_party_settings: {  }
     region: content
   field_article_image:
