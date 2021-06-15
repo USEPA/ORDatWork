@@ -7,6 +7,7 @@ migration_dependencies:
     - all_windows_shares_site_codes
     #parental dependency ensures that terms are tied to parents
 source:
+  track_changes: true
   plugin: custom_sql_query
   # specify the database with the key
   key: migrate
