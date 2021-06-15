@@ -10,18 +10,18 @@ id: all_windows_shares_json
 #    Content-Type: 'application/json'
 #  include_raw_data: true
 #  item_selector: 0
-#  urls: 'public://AllWindowsShares.json' This file is saved to docroot/sites/default/files
+#  urls: 'public://AllWindowsShares.json' #This file is saved to docroot/sites/default/files
 #  fields:
 #    - name: name
 #      label: 'Name'
 #      selector: UserFolder
-#    - name: site_code
+#    - name: SiteCode
 #      label: 'SiteCode'
 #      selector: SiteCode
-#    - name: owner_ad_account
+#    - name: OwnerADAccount
 #      label: 'OwnerADAccount'
 #      selector: OwnerADAccount
-#    - name: fsrm_quota_size_gb
+#    - name: FSRMQuotaSizeGB
 #      label: 'FSRMQuotaSizeGB'
 #      selector: FSRMQuotaSizeGB
 #  ids:
@@ -31,10 +31,13 @@ id: all_windows_shares_json
 #process:
 #  name: name
 #  description: owner_and_size
+#  field_window_email: owner_email
+#  field_window_owner: owner_name
+#  field_window_quota_size: FSRMQuotaSizeGB
 #  parent:
 #    plugin: migration_lookup
 #    migration: all_windows_shares_site_codes_json
-#    source: parent_id
+#    source: SiteCode
 #destination:
 #  plugin: entity:taxonomy_term
 #  default_bundle: all_windows_shares
