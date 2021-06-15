@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.reference_list
+    - core.entity_view_mode.node.sidebar_teaser
     - core.entity_view_mode.node.teaser
     - node.type.article
     - node.type.blog_post
@@ -421,6 +422,40 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_5:
+    display_plugin: block
+    id: block_5
+    display_title: 'Sidebar Teaser'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: sidebar_teaser
     cache_metadata:
       max-age: -1
       contexts:

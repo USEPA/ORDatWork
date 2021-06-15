@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.reference_list
+    - core.entity_view_mode.node.sidebar_teaser
+    - core.entity_view_mode.node.teaser
     - node.type.event
     - taxonomy.vocabulary.event_host
     - taxonomy.vocabulary.event_tags
@@ -79,7 +80,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: reference_list
+          view_mode: teaser
       fields:
         title:
           id: title
@@ -380,7 +381,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: List
+    display_title: Teaser
     position: 2
     display_options:
       display_extenders: {  }
@@ -399,7 +400,7 @@ display:
   block_2:
     display_plugin: block
     id: block_2
-    display_title: 'Archive/All Items - List'
+    display_title: 'Archive/All Items - Teaser'
     position: 2
     display_options:
       display_extenders: {  }
@@ -427,6 +428,40 @@ display:
           quantity: 5
       defaults:
         pager: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_3:
+    display_plugin: block
+    id: block_3
+    display_title: 'Sidebar Teaser'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: sidebar_teaser
     cache_metadata:
       max-age: -1
       contexts:
