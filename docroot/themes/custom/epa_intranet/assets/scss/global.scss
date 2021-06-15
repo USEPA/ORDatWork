@@ -520,7 +520,7 @@ section.comment-wrapper {
   padding: 0 10px;
 }
 
-div.field--name-field-keywords {
+*:not(li.usa-tag) > div.field--name-field-keywords {
   display: flex;
   margin-bottom: 1.5rem;
 }
