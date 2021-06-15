@@ -616,22 +616,18 @@ display:
           summary: ''
           description: ''
           columns:
-            webform_submission_bulk_form: webform_submission_bulk_form
             sid: sid
-            in_draft: in_draft
-            sticky: sticky
-            locked: locked
+            operations: operations
+            webform_submission_value: webform_submission_value
             created: created
-            completed: completed
-            remote_addr: remote_addr
-            view_webform_submission: view_webform_submission
-            edit_webform_submission: view_webform_submission
+            webform_submission_value_6: webform_submission_value_6
+            webform_submission_value_4: webform_submission_value_4
+            webform_submission_value_5: webform_submission_value_5
+            webform_submission_value_7: webform_submission_value_7
+            webform_submission_value_3: webform_submission_value_3
+            webform_submission_value_2: webform_submission_value_2
+            webform_submission_value_1: webform_submission_value_1
           info:
-            webform_submission_bulk_form:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             sid:
               sortable: true
               default_sort_order: desc
@@ -639,21 +635,12 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            in_draft:
-              sortable: true
-              default_sort_order: asc
+            operations:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            sticky:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            locked:
+            webform_submission_value:
               sortable: true
               default_sort_order: asc
               align: ''
@@ -667,28 +654,49 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            completed:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            remote_addr:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            view_webform_submission:
+            webform_submission_value_6:
               sortable: false
               default_sort_order: asc
               align: ''
-              separator: ' '
+              separator: ''
               empty_column: false
               responsive: ''
-            edit_webform_submission:
+            webform_submission_value_4:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_5:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_7:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_3:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_2:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_1:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -937,7 +945,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
+            date_format: short
             custom_date_format: ''
             timezone: ''
           group_column: value
@@ -1338,6 +1346,48 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: webform_submission_value_2
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_select_filter
+        webform_submission_value_3:
+          id: webform_submission_value_3
+          table: webform_submission_field_shared_folder_requests_request_type
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_3_op
+            label: 'Request Type'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_3_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_3
             required: false
             remember: false
             multiple: false
