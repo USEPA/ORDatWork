@@ -93,8 +93,7 @@
         "drupal/block_list_override": "^1.0",
         "drupal/viewsreference": "^2.0",
         "drupal/viewsreference_filter": "^1.0",
-        "drupal/node_export": "^1.0@alpha",
-        "drupal/uswds_ckeditor_integration": "^1.0@beta"
+        "drupal/node_export": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^9.0"

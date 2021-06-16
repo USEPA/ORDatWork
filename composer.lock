@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9720461f5d61d35b9f1789dde1e0a903",
+    "content-hash": "331be635b72c3d385ca5fbb669f5d7d3",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -233,7 +233,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -2465,99 +2465,6 @@
             "homepage": "https://www.drupal.org/project/cache_control_override",
             "support": {
                 "source": "https://git.drupalcode.org/project/cache_control_override"
-            }
-        },
-        {
-            "name": "drupal/ckeditor_templates",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_templates.git",
-                "reference": "8.x-1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_templates-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "4957f9d3b1d817433432f00518c18f52980a5376"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1601232517",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "lucaslg",
-                    "homepage": "https://www.drupal.org/user/3128975"
-                },
-                {
-                    "name": "mandclu",
-                    "homepage": "https://www.drupal.org/user/52136"
-                }
-            ],
-            "description": "Integrates the CKEditor templates plugin.",
-            "homepage": "https://www.drupal.org/project/ckeditor_templates",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_templates"
-            }
-        },
-        {
-            "name": "drupal/ckeditor_templates_ui",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_templates_ui.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_templates_ui-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "9ad3716df4c99f84aa5acd56702238b8043b39c5"
-            },
-            "require": {
-                "drupal/ckeditor_templates": "*",
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1602169160",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Anas_maw",
-                    "homepage": "https://www.drupal.org/user/3258840"
-                }
-            ],
-            "description": "Provide ui for adding ckeditor templates",
-            "homepage": "https://www.drupal.org/project/ckeditor_templates_ui",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_templates_ui"
             }
         },
         {
@@ -10055,58 +9962,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/uswds",
                 "issues": "https://www.drupal.org/project/issues/uswds?categories=All"
-            }
-        },
-        {
-            "name": "drupal/uswds_ckeditor_integration",
-            "version": "1.0.0-beta3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/uswds_ckeditor_integration.git",
-                "reference": "1.0.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/uswds_ckeditor_integration-1.0.0-beta3.zip",
-                "reference": "1.0.0-beta3",
-                "shasum": "37d71d615dbeab5149f48b84467d58f770d20fa6"
-            },
-            "require": {
-                "drupal/ckeditor_templates": "^1.2",
-                "drupal/ckeditor_templates_ui": "^1.4",
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-beta3",
-                    "datestamp": "1614301211",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Mustgrave (smustgrave)",
-                    "homepage": "https://www.drupal.org/u/smustgrave",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "smustgrave",
-                    "homepage": "https://www.drupal.org/user/3252890"
-                }
-            ],
-            "description": "Helps integrate some USWDS components into the ckeditor.",
-            "homepage": "https://www.drupal.org/project/uswds_ckeditor_integration",
-            "support": {
-                "source": "https://git.drupalcode.org/project/uswds_ckeditor_integration",
-                "issues": "https://www.drupal.org/project/issues/uswds_ckeditor_integration"
             }
         },
         {
@@ -20330,8 +20185,7 @@
         "drupal/groupmedia": 15,
         "drupal/addtocal": 10,
         "drupal/cache_control_override": 15,
-        "drupal/node_export": 15,
-        "drupal/uswds_ckeditor_integration": 10
+        "drupal/node_export": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
