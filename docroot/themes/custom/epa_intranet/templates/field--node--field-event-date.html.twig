@@ -21,10 +21,10 @@
  */
 #}
 {% set view_mode = element['#view_mode'] %}
-{% if view_mode == 'reference_list' or view_mode == 'list' or view_mode =='teaser' or view_mode =='sidebar_teaser' %}
+{% if view_mode == 'reference_list' or view_mode == 'list' %}
   {% if items|length > 1 %}
     <em>
-      <details>
+      <details open>
         <summary>{{ 'Event Dates'|t }}</summary>
         <div class="details-wrapper">
           <ul>

@@ -21,29 +21,13 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    weight: 101
     settings:
-      trim_length: 160
+      trim_length: 600
     third_party_settings: {  }
     region: content
-  field_blog_post_author:
-    type: entity_reference_label
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-  field_keywords:
-    type: entity_reference_label
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
   links:
-    weight: 0
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -53,4 +37,6 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_blog_image: true
+  field_blog_post_author: true
   field_comment: true
+  field_keywords: true
