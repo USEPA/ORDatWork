@@ -5,7 +5,7 @@ timezone:
   default: America/New_York
   user:
     configurable: true
-    warn: false
-    default: 0
+    warn: true
+    default: 1
 _core:
   default_config_hash: V9UurX2GPT05NWKG9f2GWQqFG2TRG8vczidwjpy7Woo
