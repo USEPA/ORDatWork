@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.event.field_show_on_ord_calendar
     - node.type.event
   module:
-    - smart_date
+    - smart_date_recur
     - text
     - user
 id: node.event.teaser
@@ -22,16 +22,19 @@ bundle: event
 mode: teaser
 content:
   field_event_date:
-    type: smartdate_default
+    type: smartdate_recurring
     weight: 0
     region: content
     label: hidden
     settings:
       timezone_override: ''
-      format: default
-      format_type: medium
+      format: time_only
+      past_display: '0'
+      upcoming_display: '0'
       force_chronological: false
       add_classes: 0
+      show_next: false
+      format_type: medium
     third_party_settings: {  }
   field_event_description:
     type: text_summary_or_trimmed
