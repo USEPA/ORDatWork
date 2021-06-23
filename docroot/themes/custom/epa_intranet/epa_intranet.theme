@@ -115,14 +115,26 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
 
 // Determine final date value for recurring dates and make vals accessible via twig
 function epa_intranet_preprocess_node__event(&$variables) {
-  if ($variables['view_mode'] == 'reference_list' || $variables['view_mode'] == 'teaser' || $variables['view_mode'] == 'sidebar_teaser') {
-    $final_index = count($variables['elements']['field_event_date']['#items']) - 1;
-    $last_element = $variables['elements']['field_event_date']['#items'][$final_index];
-    foreach ($variables['elements']['field_event_date']['#items'] as $key => $item) {
-      $event_start_date = $item->getValue()['value'];
-      $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
-      $variables['displayMonth'] = date("M", $event_start_date);
-      $variables['displayDay'] = date("d", $event_start_date);
+  if (!isset($_SESSION["processed_recurring_dates"])) {
+    $_SESSION["processed_recurring_dates"] = [];
+  }
+  if ($variables['view_mode'] == 'reference_list' || $variables['view_mode'] == 'teaser') {
+    $variables['#cache']['max-age'] = 0;
+    $node = $variables["elements"]["#node"];
+    foreach ($variables["view"]->result as $current_result) {
+      if ($node->id() === $current_result->_entity->id()) {
+        $event_start_date = $current_result->node__field_event_date_field_event_date_value;
+        if (!isset($_SESSION['processed_recurring_dates'][$current_result->_entity->id()])) {
+          $_SESSION['processed_recurring_dates'][$current_result->_entity->id()] = [];
+        }
+        if (!in_array($event_start_date, $_SESSION['processed_recurring_dates'][$current_result->_entity->id()])) {
+          $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
+          $variables['displayMonth'] = date("M", $event_start_date);
+          $variables['displayDay'] = date("d", $event_start_date);
+          $_SESSION['processed_recurring_dates'][$current_result->_entity->id()][] = $event_start_date;
+          break;
+        }
+      }
     }
   }
 }
@@ -137,10 +149,17 @@ function epa_intranet_preprocess_media(&$variables) {
  * Implements hook_preprocess_views_view().
  */
 function epa_intranet_preprocess_views_view(array &$variables) {
+  $view = $variables['view'];
+  $id = $view->storage->id();
   // Move feed icon to the top of the result, instead of buttom.
   if (isset($variables['feed_icons'])) {
     $variables['header'] = array_merge($variables['header'], $variables['feed_icons']);
     unset($variables['feed_icons']);
+  }
+  if ($id == 'events_list') {
+    if ($view->rowPlugin->options["view_mode"] == 'reference_list' || $view->rowPlugin->options["view_mode"] == 'teaser') {
+      unset($_SESSION["processed_recurring_dates"]);
+    }
   }
 }
 
