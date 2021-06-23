@@ -115,36 +115,27 @@ function epa_intranet_preprocess_field(&$variables, $hook) {
 
 // Determine final date value for recurring dates and make vals accessible via twig
 function epa_intranet_preprocess_node__event(&$variables) {
+  if (!isset($_SESSION["processed_recurring_dates"])) {
+    $_SESSION["processed_recurring_dates"] = [];
+  }
   if ($variables['view_mode'] == 'reference_list' || $variables['view_mode'] == 'teaser') {
     $variables['#cache']['max-age'] = 0;
-    $final_index = count($variables['elements']['field_event_date']['#items']) - 1;
-    $last_element = $variables['elements']['field_event_date']['#items'][$final_index];
-    $recurring = false;
     $node = $variables["elements"]["#node"];
-    try {
-      $recurring = (Boolean)$variables['elements']['field_event_date']['#items'][0]->get('rrule')->getValue();
-    } catch (Exception $e) {
-      // Unable to grab rrule
-      $recurring = false;
-    }
-    //$id = explode('-', $eid);;
-    //$rruleindex = $id[4]
     foreach ($variables["view"]->result as $current_result) {
       if ($node->id() === $current_result->_entity->id()) {
         $event_start_date = $current_result->node__field_event_date_field_event_date_value;
-        $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
-        $variables['displayMonth'] = date("M", $event_start_date);
-        $variables['displayDay'] = date("d", $event_start_date);
-        break;
+        if (!isset($_SESSION['processed_recurring_dates'][$current_result->_entity->id()])) {
+          $_SESSION['processed_recurring_dates'][$current_result->_entity->id()] = [];
+        }
+        if (!in_array($event_start_date, $_SESSION['processed_recurring_dates'][$current_result->_entity->id()])) {
+          $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
+          $variables['displayMonth'] = date("M", $event_start_date);
+          $variables['displayDay'] = date("d", $event_start_date);
+          $_SESSION['processed_recurring_dates'][$current_result->_entity->id()][] = $event_start_date;
+          break;
+        }
       }
     }
-//    foreach ($variables['elements']['field_event_date']['#items'] as $key => $item) {
-//      //view result rowindex, grab $row->node__field_event_date_field_event_date_value and then here as the start date
-//      $event_start_date = $item->getValue()['value'];
-//      $variables['rawDateTime'] = date("Y-M-d H:i:s", $event_start_date);
-//      $variables['displayMonth'] = date("M", $event_start_date);
-//      $variables['displayDay'] = date("d", $event_start_date);
-//    }
   }
 }
 
@@ -167,26 +158,7 @@ function epa_intranet_preprocess_views_view(array &$variables) {
   }
   if ($id == 'events_list') {
     if ($view->rowPlugin->options["view_mode"] == 'reference_list' || $view->rowPlugin->options["view_mode"] == 'teaser') {
-      $xd = 'hi';
-      //["#node"]->entityKeys["uuid"] = d3e05bcc-eafe-43fc-b5b3-1ab983ed4f80
-
-
-//      foreach ($view->result as $row) {
-//        //if multiple dates
-//        // Set the row_index property used by advancedRender function.
-//        // date("Y-M-d H:i:s", 1624557600) item #54
-//        //Keep track of previous Row's date
-//
-//        $view->row_index = $row->index;
-//        // Result entity of current row.
-//        $current_entity = $row->_entity;
-//        // Entity id.
-//        $row->node__field_event_date_field_event_date_value;
-//
-//        $eid = $current_entity->id();
-//        $id = explode('-', $eid);
-//        $rruleindex = $id[4];
-//      }
+      unset($_SESSION["processed_recurring_dates"]);
     }
   }
 }
