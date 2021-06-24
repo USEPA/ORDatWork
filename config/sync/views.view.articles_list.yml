@@ -403,7 +403,7 @@ display:
   block_5:
     display_plugin: block
     id: block_5
-    display_title: Teaser
+    display_title: 'Sidebar Teaser'
     position: 2
     display_options:
       display_extenders: {  }
