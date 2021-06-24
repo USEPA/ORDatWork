@@ -350,6 +350,10 @@ section.comment-wrapper div.indented {
   display: flex;
   margin-bottom: 1.5rem; }
 
+.tag-color-scheme {
+  color: white !important;
+  background-color: #565c65 !important; }
+
 section.comment-wrapper ul.links li {
   display: contents;
   font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
