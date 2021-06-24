@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9720461f5d61d35b9f1789dde1e0a903",
+    "content-hash": "acf787d7bca706bb081ebf9c0ab4a3b9",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -200,7 +200,7 @@
             "version": "v2.3.4",
             "source": {
                 "type": "git",
-                "url": "git@github.com:fengyuanchen/cropper.git",
+                "url": "https://github.com/fengyuanchen/cropper.git",
                 "reference": "30c58b29ee21010e17e58ebab165fbd84285c685"
             },
             "dist": {
@@ -233,7 +233,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -322,6 +322,18 @@
                 "html"
             ],
             "time": "2019-02-20T18:52:14+00:00"
+        },
+        {
+            "name": "ckeditor-plugin/templates",
+            "version": "4.16.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/templates/releases/templates_4.16.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.2.0"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "commerceguys/addressing",
@@ -5308,6 +5320,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3168071: Mouse-hover tool-tip option for version since 8.x.4.2": "https://www.drupal.org/files/issues/2020-09-28/3168071-11.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
