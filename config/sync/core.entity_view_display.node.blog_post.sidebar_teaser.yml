@@ -1,9 +1,9 @@
-uuid: e770deb5-85f9-493e-b23b-6168a1152e98
+uuid: cf76a469-2475-47c5-a5b0-989d3e5631db
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.sidebar_teaser
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_post_author
@@ -11,19 +11,24 @@ dependencies:
     - field.field.node.blog_post.field_keywords
     - node.type.blog_post
   module:
+    - layout_builder
     - text
     - user
-id: node.blog_post.teaser
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.blog_post.sidebar_teaser
 targetEntityType: node
 bundle: blog_post
-mode: teaser
+mode: sidebar_teaser
 content:
   body:
     label: hidden
     type: text_summary_or_trimmed
     weight: 1
     settings:
-      trim_length: 160
+      trim_length: 60
     third_party_settings: {  }
     region: content
   field_blog_post_author:
@@ -35,13 +40,13 @@ content:
       link: true
     third_party_settings: {  }
   field_keywords:
-    type: entity_reference_label
     weight: 3
-    region: content
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   links:
     weight: 0
     region: content

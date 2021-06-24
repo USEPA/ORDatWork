@@ -1,4 +1,4 @@
-uuid: d0347289-6a37-45e4-948a-3e7e657fcbaa
+uuid: 9b16fd0d-dbe1-4c6c-85c2-d7176236866d
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,17 @@ dependencies:
     - core.entity_view_mode.node.reference_list
     - core.entity_view_mode.node.sidebar_teaser
     - core.entity_view_mode.node.teaser
+    - node.type.article
     - node.type.blog_post
     - taxonomy.vocabulary.tags
   module:
     - node
     - taxonomy
     - user
-id: blog_post_list
-label: 'Blog Posts'
+id: articles_and_blog_posts
+label: 'Articles and Blog Posts'
 module: views
-description: 'Blog Post view for use in Dynamic Lists'
+description: 'Articles + Blog Posts view for use in Dynamic Lists'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -152,6 +153,7 @@ display:
           admin_label: ''
           operator: in
           value:
+            article: article
             blog_post: blog_post
           group: 1
           exposed: false
@@ -264,6 +266,11 @@ display:
       display_extenders: {  }
       title: ''
       use_ajax: true
+      use_more: false
+      use_more_always: true
+      use_more_text: 'Go to Google with this ''more'' link'
+      link_url: 'https://www.google.com/'
+      link_display: custom_url
     cache_metadata:
       max-age: -1
       contexts:
@@ -356,7 +363,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 9
       defaults:
         pager: false
     cache_metadata:
@@ -414,7 +421,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 9
     cache_metadata:
       max-age: -1
       contexts:
