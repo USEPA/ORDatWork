@@ -1,0 +1,12 @@
+uuid: c0be00da-cdc9-4588-90ad-0311735b5c39
+langcode: en
+status: true
+dependencies: {  }
+id: uswds_summary_box
+label: 'Summary box'
+description: 'A summary box highlights key information from a longer page or displays next steps.'
+html:
+  value: "<div class=\"usa-summary-box\">\r\n<div class=\"usa-summary-box__body\"><span class=\"usa-summary-box__heading\">Key information</span>\r\n<div class=\"usa-summary-box__text\">\r\n<ul class=\"usa-list\">\r\n\t<li>If you are under a winter storm warning, <a class=\"usa-summary-box__link\" href=\"void(0);\">find shelter</a> right away.</li>\r\n\t<li>Sign up for <a class=\"usa-summary-box__link\" href=\"void(0);\">your community’s warning system</a>.</li>\r\n\t<li>Learn the signs of, and basic treatments for, <a class=\"usa-summary-box__link\" href=\"void(0);\">frostbite</a> and <a class=\"usa-summary-box__link\" href=\"void(0);\">hypothermia</a>.</li>\r\n\t<li>Gather emergency supplies for your <a class=\"usa-summary-box__link\" href=\"void(0);\">home</a> and your <a class=\"usa-summary-box__link\" href=\"void(0);\">car</a>.</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<p>&nbsp;</p>\r\n"
+  format: simple_text
+image: 'public://ckeditor-templates/uswds_summary_box.png'
+weight: 1

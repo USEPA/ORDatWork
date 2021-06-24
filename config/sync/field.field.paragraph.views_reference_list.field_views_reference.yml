@@ -32,6 +32,7 @@ settings:
     entity_reference: 0
     embed: 0
   preselect_views:
+    articles_and_blog_posts: articles_and_blog_posts
     articles_list: articles_list
     blog_post_list: blog_post_list
     events_list: events_list
