@@ -94,7 +94,8 @@
         "drupal/viewsreference": "^2.0",
         "drupal/viewsreference_filter": "^1.0",
         "drupal/node_export": "^1.0@alpha",
-        "drupal/uswds_ckeditor_integration": "^1.0@beta"
+        "drupal/uswds_ckeditor_integration": "^1.0@beta",
+        "ckeditor-plugin/templates": "^4.16"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -298,6 +299,21 @@
                 },
                 "require": {
                     "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/templates",
+                "type": "drupal-library",
+                "version": "4.16.1",
+                "dist": {
+                    "url": "https://download.ckeditor.com/templates/releases/templates_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
                 }
             }
         }
