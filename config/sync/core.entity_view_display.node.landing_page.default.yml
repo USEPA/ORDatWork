@@ -76,7 +76,6 @@ third_party_settings:
         - layout_threecol_section
       whitelisted_blocks:
         'Content fields': {  }
-        Devel: {  }
         'Entity Block':
           - 'entity_block:node'
           - 'entity_block:media'
@@ -107,7 +106,9 @@ third_party_settings:
           - alert
           - banner
           - card_with_image
+          - dynamic_list
           - google_map
+          - text
         'Custom blocks':
           - 'block_content:e841ddc9-4e65-4f8c-bed4-ffd53f7d7221'
           - 'block_content:5ea3ec0a-53cd-4615-b1e0-e18fb4608341'
@@ -115,13 +116,14 @@ third_party_settings:
           - 'inline_block:alert'
           - 'inline_block:banner'
           - 'inline_block:card_with_image'
+          - 'inline_block:dynamic_list'
           - 'inline_block:google_map'
+          - 'inline_block:text'
     allowed_block_categories:
       - 'Chaos Tools'
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
-      - Devel
       - 'Entity Block'
       - 'Entity Browser'
       - 'Entity Print'
