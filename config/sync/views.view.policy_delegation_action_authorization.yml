@@ -110,7 +110,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: "<div class=\"usa-card__container\">\r\n<header class=\"usa-card__header\">\r\n<span class=\"usa-card__heading font-lang-lg\">{{ title }}</span>\r\n</header>"
             make_link: false
             path: ''
@@ -201,7 +201,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -365,7 +365,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"usa-card__body font-lang-sm\">\r\n<p>{{ field_policy_topic }} - {{ field_policy_delegation_category }}></p>"
+            text: '<h3>{{ field_policy_topic }} - {{ field_policy_delegation_category }}</h3>'
             make_link: false
             path: ''
             absolute: false
@@ -424,7 +424,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Comments
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -489,7 +489,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: "<p>{{ field_policy_delegation_party }}</p>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
@@ -542,6 +542,55 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<hr>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         status:
           value: '1'
@@ -822,9 +871,9 @@ display:
         - 'config:field.storage.node.field_policy_delegation_party'
         - 'config:field.storage.taxonomy_term.field_policy_delegation_category'
         - 'config:field.storage.taxonomy_term.field_policy_topic'
-  page_1:
+  page:
     display_plugin: page
-    id: page_1
+    id: page
     display_title: Page
     position: 1
     display_options:
