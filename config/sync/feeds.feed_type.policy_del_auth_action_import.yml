@@ -59,7 +59,7 @@ mappings:
       target_id: action
     settings:
       language: ''
-      reference_by: tid
+      reference_by: name
       feeds_item: guid
       autocreate: 0
   -
