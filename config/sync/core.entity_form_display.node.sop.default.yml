@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sop.feeds_item
     - field.field.node.sop.field_date_reviewed
     - field.field.node.sop.field_description
     - field.field.node.sop.field_discipline

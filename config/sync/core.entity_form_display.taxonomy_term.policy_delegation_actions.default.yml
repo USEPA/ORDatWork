@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.policy_delegation_actions.feeds_item
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
     - taxonomy.vocabulary.policy_delegation_actions
@@ -63,4 +64,5 @@ content:
     weight: 5
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  feeds_item: true

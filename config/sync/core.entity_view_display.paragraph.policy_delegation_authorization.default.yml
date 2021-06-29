@@ -14,7 +14,16 @@ dependencies:
     - field.field.paragraph.policy_delegation_authorization.field_policy_sro
     - paragraphs.paragraphs_type.policy_delegation_authorization
   module:
+    - layout_builder
+    - layout_discovery
+    - layout_library
     - options
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_library:
+    enable: false
 id: paragraph.policy_delegation_authorization.default
 targetEntityType: paragraph
 bundle: policy_delegation_authorization

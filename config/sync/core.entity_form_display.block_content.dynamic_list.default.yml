@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.dynamic_list
+    - field.field.block_content.dynamic_list.body
     - field.field.block_content.dynamic_list.field_dynamic_list
     - field.field.block_content.dynamic_list.field_list_footer
     - field.field.block_content.dynamic_list.field_list_header

@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.policy.field_supplemental_documents
     - field.field.node.policy.field_topic_area_of_authority
     - node.type.policy
+    - workflows.workflow.editorial
   module:
     - conditional_fields
     - content_moderation
