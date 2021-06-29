@@ -21,7 +21,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'txt pdf doc docx xls xlsx indd ptox ppt pptx ppsx zip onepkg one'
+  file_extensions: 'txt pdf doc docx dotx xls xlsx indd ptox potx ppt pptx ppsx psd zip onepkg one'
   max_filesize: ''
   description_field: false
   handler: 'default:file'
