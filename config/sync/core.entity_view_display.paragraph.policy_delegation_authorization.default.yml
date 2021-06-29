@@ -15,7 +15,6 @@ dependencies:
     - paragraphs.paragraphs_type.policy_delegation_authorization
   module:
     - layout_builder
-    - layout_discovery
     - layout_library
     - options
 third_party_settings:
