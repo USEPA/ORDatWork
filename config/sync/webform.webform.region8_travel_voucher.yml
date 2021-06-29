@@ -275,9 +275,17 @@ handlers:
     settings:
       id: webform_custom_submissions
       label: 'Travelform Submission Handler'
-      handler_id: travelform_submission_handler
+      notes: ''
+      handler_id: null
       status: true
       conditions: {  }
-      weight: 2
-      settings: {  }
+      weight: null
+      settings:
+        id: webform_custom_submissions
+        label: 'Travelform Submission Handler'
+        handler_id: travelform_submission_handler
+        status: true
+        conditions: {  }
+        weight: 2
+        settings: {  }
 variants: {  }

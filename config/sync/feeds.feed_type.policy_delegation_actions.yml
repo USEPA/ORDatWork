@@ -1,0 +1,75 @@
+uuid: b1258e2d-76ab-443f-92c3-0db21e79b75f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_actions
+  module:
+    - taxonomy
+id: policy_delegation_actions
+label: 'Policy Delegation Actions'
+description: 'import actions with category and topic'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _delete
+  expire: -1
+  skip_hash_check: false
+  values:
+    vid: policy_delegation_actions
+  owner_id: 0
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  action:
+    label: action
+    value: action
+    machine_name: action
+  topic:
+    label: topic
+    value: topic
+    machine_name: topic
+  category:
+    label: category
+    value: category
+    machine_name: category
+mappings:
+  -
+    target: name
+    map:
+      value: action
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_policy_topic
+    map:
+      target_id: topic
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_policy_delegation_category
+    map:
+      target_id: category
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

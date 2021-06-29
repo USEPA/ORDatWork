@@ -1,0 +1,6 @@
+status: 1
+pattern: '[node:field_policy_delegation_action] - [node:field_center_or_office]'
+escape: false
+dependencies:
+  config:
+    - node.type.policy_delegation_auth_action
