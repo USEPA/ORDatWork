@@ -5,9 +5,7 @@ dependencies:
   config:
     - fixed_block_content.fixed_block_content.create_event
   module:
-    - ctools
     - fixed_block_content
-    - node
     - system
   theme:
     - epa_intranet
@@ -24,55 +22,8 @@ settings:
   label_display: '0'
   view_mode: ''
 visibility:
-  and_or:
-    id: and_or
-    all: or
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
     pages: /calendar
     negate: false
     context_mapping: {  }
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      blog_post: blog_post
-      event: event
-      faces_of_ord: faces_of_ord
-      landing_page: landing_page
-      page: page
-      photos_of_the_week: photos_of_the_week
-      policy: policy
-      policy_delegation: policy_delegation
-      qapp: qapp
-      quiz: quiz
-      sop: sop
-      staff_member: staff_member
-      webform: webform
-      weekly_compass: weekly_compass
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      blog_post: blog_post
-      event: event
-      faces_of_ord: faces_of_ord
-      landing_page: landing_page
-      page: page
-      photos_of_the_week: photos_of_the_week
-      policy: policy
-      policy_delegation: policy_delegation
-      qapp: qapp
-      quiz: quiz
-      sop: sop
-      staff_member: staff_member
-      webform: webform
-      weekly_compass: weekly_compass
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
