@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.policy_delegation_auth_action.body
     - field.field.node.policy_delegation_auth_action.field_center_or_office
     - field.field.node.policy_delegation_auth_action.field_policy_delegation_action
     - node.type.policy_delegation_auth_action
@@ -43,6 +44,14 @@ custom_sources:
     label: CO
     value: CO
     machine_name: co
+  title:
+    label: title
+    value: title
+    machine_name: title
+  notes:
+    label: notes
+    value: notes
+    machine_name: notes
 mappings:
   -
     target: field_policy_delegation_action
@@ -50,7 +59,7 @@ mappings:
       target_id: action
     settings:
       language: ''
-      reference_by: tid
+      reference_by: name
       feeds_item: guid
       autocreate: 0
   -
@@ -65,7 +74,15 @@ mappings:
   -
     target: title
     map:
-      value: 'parent:title'
+      value: title
     unique: {  }
     settings:
       language: null
+  -
+    target: body
+    map:
+      value: notes
+      summary: ''
+    settings:
+      language: null
+      format: plain_text

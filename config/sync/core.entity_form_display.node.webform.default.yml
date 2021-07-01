@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.webform.body
     - field.field.node.webform.webform
     - node.type.webform
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - path

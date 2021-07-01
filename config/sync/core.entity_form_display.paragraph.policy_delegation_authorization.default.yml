@@ -19,37 +19,37 @@ bundle: policy_delegation_authorization
 mode: default
 content:
   field_policy_assoc_director:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_policy_branch_chief:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
-  field_policy_co_cos:
     weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
+  field_policy_co_cos:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_policy_co_deputy_director:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_policy_co_director:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_policy_cos_ioaa:
-    weight: 6
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -61,7 +61,7 @@ content:
     type: options_buttons
     region: content
   field_policy_division_directors:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
