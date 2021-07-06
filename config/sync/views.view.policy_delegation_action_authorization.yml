@@ -1300,7 +1300,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: policy/delegation-authority//manage
+      path: policy/delegation-authority/manage
       display_description: ''
       style:
         type: table
