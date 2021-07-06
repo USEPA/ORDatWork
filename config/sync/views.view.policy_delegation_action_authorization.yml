@@ -869,7 +869,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: h2
-          element_class: ''
+          element_class: highlight
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -883,7 +883,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
