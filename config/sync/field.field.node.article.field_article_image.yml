@@ -11,7 +11,7 @@ field_name: field_article_image
 entity_type: node
 bundle: article
 label: Image
-description: 'This is the main image for the <em>Article</em> and will be displayed when collections of articles are displayed on a page.'
+description: 'This is the main image for the <em>Article</em> and will be displayed when collections of articles are displayed on a page. Images, when displayed, are approximately 80 pixels wide.'
 required: false
 translatable: false
 default_value: {  }
