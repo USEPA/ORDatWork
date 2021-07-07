@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
+    - entity_browser.browser.image_browser
     - field.field.node.article.body
     - field.field.node.article.field_article_featured
     - field.field.node.article.field_article_image
@@ -25,9 +25,9 @@ content:
     weight: 10
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
-      show_summary: false
+      summary_rows: 3
+      show_summary: true
     third_party_settings: {  }
     region: content
   created:
@@ -47,7 +47,7 @@ content:
     type: entity_browser_entity_reference
     weight: 9
     settings:
-      entity_browser: media_browser
+      entity_browser: image_browser
       field_widget_display: rendered_entity
       field_widget_display_settings:
         view_mode: thumbnail
