@@ -1,5 +1,5 @@
 check_links_types: 0
-default_url_scheme: 'http://'
+default_url_scheme: 'https://'
 base_path: ''
 extract:
   from_a: true
@@ -30,7 +30,7 @@ check:
   connections_max_per_domain: 2
   disable_link_check_for_urls: "example.com\nexample.net\nexample.org"
   library: core
-  interval: 2419200
+  interval: 172800
   useragent: 'Drupal (+https://drupal.org/)'
 error:
   action_status_code_301: 0
