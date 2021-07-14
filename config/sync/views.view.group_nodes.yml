@@ -12,6 +12,7 @@ dependencies:
     - node.type.photos_of_the_week
     - node.type.policy
     - node.type.policy_delegation
+    - node.type.policy_delegation_auth_action
     - node.type.quiz
     - node.type.staff_member
     - node.type.webform
@@ -903,6 +904,7 @@ display:
             photos_of_the_week: photos_of_the_week
             policy: policy
             policy_delegation: policy_delegation
+            policy_delegation_auth_action: policy_delegation_auth_action
             quiz: quiz
             staff_member: staff_member
             webform: webform
