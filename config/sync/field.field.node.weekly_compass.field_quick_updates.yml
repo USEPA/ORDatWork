@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_quick_updates
     - node.type.weekly_compass
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.weekly_compass.field_quick_updates
 field_name: field_quick_updates
 entity_type: node

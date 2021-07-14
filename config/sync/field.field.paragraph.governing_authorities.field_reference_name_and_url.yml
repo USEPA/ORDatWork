@@ -7,6 +7,11 @@ dependencies:
     - paragraphs.paragraphs_type.governing_authorities
   module:
     - link
+    - linkchecker
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: link_link_extractor
 id: paragraph.governing_authorities.field_reference_name_and_url
 field_name: field_reference_name_and_url
 entity_type: paragraph

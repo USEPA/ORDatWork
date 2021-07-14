@@ -10,6 +10,7 @@ weight: -9
 is_admin: false
 permissions:
   - 'View published Path file entity entities'
+  - 'access broken links report'
   - 'access ckeditor_media_browser entity browser pages'
   - 'access comments'
   - 'access content'
@@ -20,6 +21,7 @@ permissions:
   - 'access in-place editing'
   - 'access media overview'
   - 'access media_browser entity browser pages'
+  - 'access own broken links report'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
   - 'access toolbar'

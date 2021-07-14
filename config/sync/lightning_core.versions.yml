@@ -51,6 +51,7 @@ devel_generate: 2.1.0
 diff: 1.0.0-rc2
 draggableviews: 1.2.0
 dropzonejs: 2.0.0-alpha4
+dynamic_entity_reference: 1.12.0
 easy_breadcrumb: 1.12.0
 editor: 8.7.3
 editor_file: 1.4.0
@@ -141,6 +142,7 @@ lightning_scheduler: 3.7.0
 lightning_search: 4.2.0
 lightning_workflow: 3.7.0
 link: 8.7.3
+linkchecker: 1.0.0-alpha1
 linkit: 4.3.0
 media: 8.7.3
 media_entity_instagram: 2.0.0-alpha2

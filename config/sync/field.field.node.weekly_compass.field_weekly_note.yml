@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_weekly_note
     - node.type.weekly_compass
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.weekly_compass.field_weekly_note
 field_name: field_weekly_note
 entity_type: node

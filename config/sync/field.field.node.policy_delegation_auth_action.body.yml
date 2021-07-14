@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.body
     - node.type.policy_delegation_auth_action
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.policy_delegation_auth_action.body
 field_name: body
 entity_type: node
