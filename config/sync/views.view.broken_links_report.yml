@@ -1199,6 +1199,7 @@ display:
         title: ''
         description: ''
         weight: 0
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
