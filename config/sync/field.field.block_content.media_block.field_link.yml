@@ -7,6 +7,11 @@ dependencies:
     - field.storage.block_content.field_link
   module:
     - link
+    - linkchecker
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: link_link_extractor
 id: block_content.media_block.field_link
 field_name: field_link
 entity_type: block_content

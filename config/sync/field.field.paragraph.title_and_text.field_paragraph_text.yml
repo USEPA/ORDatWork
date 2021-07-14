@@ -6,7 +6,12 @@ dependencies:
     - field.storage.paragraph.field_paragraph_text
     - paragraphs.paragraphs_type.title_and_text
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: paragraph.title_and_text.field_paragraph_text
 field_name: field_paragraph_text
 entity_type: paragraph

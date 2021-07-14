@@ -7,6 +7,11 @@ dependencies:
     - paragraphs.paragraphs_type.list_of_link
   module:
     - link
+    - linkchecker
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: link_link_extractor
 id: paragraph.list_of_link.field_link_list_item
 field_name: field_link_list_item
 entity_type: paragraph

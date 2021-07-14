@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_staff_biography
     - node.type.staff_member
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.staff_member.field_staff_biography
 field_name: field_staff_biography
 entity_type: node

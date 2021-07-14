@@ -7,6 +7,11 @@ dependencies:
     - field.storage.block_content.field_usa_cta_button
   module:
     - link
+    - linkchecker
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: link_link_extractor
 id: block_content.usa_section_cta.field_usa_cta_button
 field_name: field_usa_cta_button
 entity_type: block_content

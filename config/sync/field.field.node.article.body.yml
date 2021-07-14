@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.body
     - node.type.article
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.article.body
 field_name: body
 entity_type: node
@@ -15,7 +20,11 @@ label: Body
 description: ''
 required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    summary: 'Enter a summary of the article.'
+    value: ''
+    format: simple_text
 default_value_callback: ''
 settings:
   display_summary: true

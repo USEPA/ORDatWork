@@ -7,6 +7,11 @@ dependencies:
     - node.type.staff_member
   module:
     - link
+    - linkchecker
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: link_link_extractor
 id: node.staff_member.field_staff_profile
 field_name: field_staff_profile
 entity_type: node

@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_event_description
     - node.type.event
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.event.field_event_description
 field_name: field_event_description
 entity_type: node
