@@ -10,13 +10,10 @@ extract:
   from_object: false
   from_video: false
   filter_blacklist:
+    blazy_filter: blazy_filter
     filter_autop: filter_autop
     filter_align: filter_align
     filter_caption: filter_caption
-    linkit: linkit
-    media_embed: media_embed
-    media_inline_embed: media_inline_embed
-    blazy_filter: '0'
     editor_file_reference: '0'
     entity_embed: '0'
     filter_html_image_secure: '0'
@@ -24,6 +21,9 @@ extract:
     filter_html: '0'
     filter_htmlcorrector: '0'
     filter_html_escape: '0'
+    linkit: '0'
+    media_embed: '0'
+    media_inline_embed: '0'
     filter_table_attributes: '0'
 check:
   connections_max: 8
