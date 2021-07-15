@@ -95,7 +95,8 @@
         "drupal/viewsreference_filter": "^1.0",
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
-        "ckeditor-plugin/templates": "^4.16"
+        "ckeditor-plugin/templates": "^4.16",
+        "drupal/linkchecker": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^9.0"

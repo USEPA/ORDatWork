@@ -6,7 +6,12 @@ dependencies:
     - block_content.type.views_reference_list
     - field.storage.block_content.field_list_footer
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: block_content.views_reference_list.field_list_footer
 field_name: field_list_footer
 entity_type: block_content

@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_policy_statement
     - node.type.policy
   module:
+    - linkchecker
     - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 id: node.policy.field_policy_statement
 field_name: field_policy_statement
 entity_type: node
