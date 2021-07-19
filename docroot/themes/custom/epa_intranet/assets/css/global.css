@@ -499,9 +499,6 @@ li {
   margin-bottom: 0.25em;
   /*max-width:68ex;*/ }
 
-ol:not(.ul-cards), li:last-child {
-  margin-bottom: 0; }
-
 .caption > figcaption {
   font-size: smaller;
   font-style: italic; }
