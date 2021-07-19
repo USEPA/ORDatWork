@@ -49,8 +49,8 @@ h1 {
   display: grid;
 }
 
-.addtocal.usa-button {
-  &.usa-button--outline {
+.addtocal-button {
+  &.addtocal-outline {
     padding: 0.75rem 1.25rem;
     background-color: transparent;
     color: #005ea2;
@@ -210,7 +210,7 @@ iframe {
 
 /* overriding links to apply uswds standards */
 
-ol.usa-list a, ul.usa-list a, ol.uswds-breadcrumbs a, ul.uswds-breadcrumbs a {
+ol.links-list a, ul.links-list a:not(.usa-button), ol.uswds-breadcrumbs a, ul.uswds-breadcrumbs a {
   color: #005ea2 !important;
 }
 
@@ -237,7 +237,7 @@ p a:visited {
 }
 
 @media (min-width: 64em) {
-  .usa-nav__submenu-item a {
+  .nav-text-decoration a {
     color: white !important;
     text-decoration: none !important;
 
@@ -249,16 +249,16 @@ p a:visited {
 }
 
 @media (max-width: 63.99em) {
-  .usa-nav__submenu .usa-nav__submenu-item {
+  .nav-sizing .nav-text-decoration {
     width: 100%;
   }
 
-  .usa-nav__submenu-item:hover > a {
+  .nav-text-decoration:hover > a {
     color: #005ea2;
     text-decoration: none;
   }
 
-  .usa-nav__submenu div.grid-row.grid-gap-4 {
+  .nav-sizing div.grid-row.grid-gap-4 {
     padding-left: 1rem;
     padding-right: 1rem;
 
@@ -266,16 +266,6 @@ p a:visited {
       padding-left: unset;
       padding-right: unset;
     }
-  }
-}
-
-nav a.usa-button {
-  color: white !important;
-  text-decoration: none !important;
-
-  &:visited {
-    color: white !important;
-    text-decoration: none !important;
   }
 }
 
@@ -289,7 +279,7 @@ h2 a {
   }
 }
 
-.usa-footer a {
+.footer-text-decoration a {
   text-decoration: none !important;
 
   &:hover {
@@ -298,19 +288,22 @@ h2 a {
 }
 
 div {
-  &.usa-media-block a, &.usa-media-block__body a {
+  &.media-block-text-decoration a, &.media-block-body-decoration a {
     text-decoration: none !important;
   }
 
-  &.usa-media-block a:hover, &.usa-media-block__body a:hover {
+  &.media-block-text-decoration a:hover, &.media-block-body-decoration a:hover {
     text-decoration: underline !important;
   }
 }
 
-.usa-card__body > :last-child.usa-button {
+.block-card > :last-child.epa-intranet-button,
+.list-card > :last-child.epa-intranet-button,
+.paragraph-card > :last-child.epa-intranet-button {
   padding-bottom: 1rem;
 }
 
+/* Regarding as not an override of a usa style. Treating as 'if ext or mailto appears without usa-button' so leaving as-is*/
 a {
   &.ext:not(.usa-button), &.mailto:not(.usa-button) {
     color: #005ea2;
@@ -332,6 +325,7 @@ svg {
   }
 }
 
+/* Regarding as not an override of a usa style. Treating as 'if svg appears in a usa-button' so leaving as-is*/
 .usa-button svg {
   &.ext, &.mailto {
     fill: white;
@@ -343,7 +337,7 @@ svg {
   }
 }
 
-div.usa-media-block__body a.ext {
+div.media-block-body-decoration a.ext {
   display: -webkit-box;
 
   div.field--name-field-usa-media-block-heading {
@@ -351,7 +345,7 @@ div.usa-media-block__body a.ext {
   }
 }
 
-ul.usa-card-group div {
+ul.ul-cards div {
   &.field__items {
     display: -webkit-box;
 
@@ -365,7 +359,7 @@ ul.usa-card-group div {
   }
 }
 
-div.usa-card__media {
+div.paragraph-card__media {
   align-self: center;
 
   div.field__item article {
@@ -379,12 +373,12 @@ div.usa-card__media {
   }
 }
 
-.usa-card--header-first .usa-card__media {
+.first-card-header .usa-card__media {
   order: 0;
 }
 
 div {
-  &.usa-card__body {
+  &.block-card, &.list-card, &.paragraph-card {
     overflow-wrap: break-word;
   }
 
@@ -394,7 +388,7 @@ div {
   }
 }
 
-.usa-card-group {
+.ul-cards {
   display: block;
 }
 
@@ -520,7 +514,7 @@ section.comment-wrapper {
   padding: 0 10px;
 }
 
-*:not(li.usa-tag) > div.field--name-field-keywords {
+*:not(li.li-tag ) > div.field--name-field-keywords {
   display: flex;
   margin-bottom: 1.5rem;
 }
@@ -659,7 +653,7 @@ section.comment-wrapper ul.links li {
 
 /* remove display block so that label is inline with form element */
 
-.usa-label {
+.usa-sr-label {
   display: inline-block;
   line-height: 1.12707;
   margin-top: 1.5rem;
@@ -675,7 +669,7 @@ section.comment-wrapper ul.links li {
   height: auto;
 }
 
-.usa-table {
+.auto-width {
   width: auto;
 }
 
@@ -732,7 +726,8 @@ li {
   /*max-width:68ex;*/
 }
 
-ol:not(.usa-card-group), li:last-child {
+//may not need this
+ol:not(.ul-cards), li:last-child {
   margin-bottom: 0;
 }
 
@@ -743,17 +738,13 @@ ol:not(.usa-card-group), li:last-child {
 
 /* increase max-width of forms */
 
-.usa-form {
+.full-width-form {
   max-width: none;
 
-  .usa-input, .usa-select {
+  .form-input, .form-select {
     max-width: 20rem;
   }
 }
-
-/* resets max-width of input field */
-
-/* resets max-width of select field */
 
 /* override margin to provide proper spacing between elements*/
 
@@ -764,22 +755,17 @@ fieldset {
   }
 }
 
-/* provides spacing equivalent to uswds standard*/
-
-.usa-sr-label {
-  margin-top: 1.5rem;
-}
 
 /* provides spacing and image size equivalent to uswds standard*/
 
 div {
-  &[class~="usa-alert"]:not(.usa-alert--slim) {
+  &[class~="usa-alert-normalizer"]:not(.usa-alert--slim) {
     margin-top: 1.5rem;
     background-position: 1rem 1rem;
     background-size: 3.5rem;
   }
 
-  &.usa-alert--slim {
+  &.slim-normalizer {
     background-position: 1.4rem 0.70rem;
     background-size: 2.5rem;
   }
@@ -909,6 +895,7 @@ ins {
   text-decoration: none;
 }
 
+/* this class isn't actually part of uswds and does not need to be separated */
 .usa-tag--accent {
   background-color: #97d4ea;
   color: #1a4480;
@@ -922,7 +909,7 @@ ins {
   margin-right: 0.25rem !important;
 }
 
-.usa-tag, .new::before {
+.li-tag, .new::before {
   font-size: 0.93rem;
   text-transform: uppercase;
   border-radius: 2px;

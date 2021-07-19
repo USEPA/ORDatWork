@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_preprocess_input__tel().
+ * Implements hook_preprocess_input__textfield().
  */
-function epa_intranet_preprocess_input__tel(&$variables) {
+function epa_intranet_preprocess_input__textfield(&$variables) {
   $variables['attributes']['class'][] = 'usa-input';
   $variables['attributes']['class'][] = 'form-input';
 }
