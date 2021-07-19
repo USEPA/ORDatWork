@@ -32,74 +32,74 @@
 {% if "info" in content.field_alert_type %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
-        'usa alert usa-alert--info usa-alert--slim'
-        ] 
+        'usa alert usa-alert--info usa-alert--slim slim-normalizer'
+        ]
     %}
     {% elseif "Remove" in content.field_include_alert_icon.0 %}
         {% set classes = [
         'usa alert usa-alert--info usa-alert--no-icon'
         ]
     %}
-    {% else %}  
-    {% set classes = [  
-    'usa-alert usa-alert--info'
+    {% else %}
+    {% set classes = [
+    'usa-alert usa-alert-normalizer usa-alert--info'
     ] %}
     {% endif %}
 
 {% elseif "warning" in content.field_alert_type %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
-        'usa alert usa-alert--warning usa-alert--slim'
-        ] 
+        'usa alert usa-alert--warning usa-alert--slim slim-normalizer'
+        ]
     %}
     {% elseif "Remove" in content.field_include_alert_icon.0 %}
         {% set classes = [
         'usa alert usa-alert--warning usa-alert--no-icon'
         ]
     %}
-    {% else %}  
-    {% set classes = [  
-    'usa-alert usa-alert--warning'
+    {% else %}
+    {% set classes = [
+    'usa-alert usa-alert-normalizer usa-alert--warning'
     ] %}
     {% endif %}
 
 {% elseif "error" in content.field_alert_type %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
-        'usa alert usa-alert--error usa-alert--slim'
-        ] 
+        'usa alert usa-alert--error usa-alert--slim slim-normalizer'
+        ]
     %}
     {% elseif "Remove" in content.field_include_alert_icon.0 %}
         {% set classes = [
         'usa alert usa-alert--error usa-alert--no-icon'
         ]
     %}
-    {% else %}  
-    {% set classes = [  
-    'usa-alert usa-alert--error'
+    {% else %}
+    {% set classes = [
+    'usa-alert usa-alert-normalizer usa-alert--error'
     ] %}
     {% endif %}
 
 {% elseif "success" in content.field_alert_type %}
     {% if "Slim" in content.field_slim_alert.0 %}
         {% set classes = [
-        'usa alert usa-alert--success usa-alert--slim'
-        ] 
+        'usa alert usa-alert--success usa-alert--slim slim-normalizer'
+        ]
     %}
     {% elseif "Remove" in content.field_include_alert_icon.0 %}
         {% set classes = [
         'usa alert usa-alert--success usa-alert--no-icon'
         ]
     %}
-    {% else %}  
-    {% set classes = [  
-    'usa-alert usa-alert--success'
+    {% else %}
+    {% set classes = [
+    'usa-alert usa-alert-normalizer usa-alert--success'
     ] %}
     {% endif %}
 
-{% else %}  
-    {% set classes = [  
-    'usa-alert usa-alert--info'
+{% else %}
+    {% set classes = [
+    'usa-alert usa-alert-normalizer usa-alert--info'
     ] %}
 
 {% endif %}
@@ -110,8 +110,8 @@
         <span class="usa-alert__heading">
         {{ content.field_alert_heading }}
         </span>
-        <p class="usa-alert__text">{{ content.field_alert_text }}   
+        <p class="usa-alert__text">{{ content.field_alert_text }}
         </p>
     </div>
 </div>
-        
+
