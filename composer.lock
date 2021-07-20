@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b25844ce911a3d719fe4b0bdc9eae127",
+    "content-hash": "430405fcd4b70295581204ddbbb491bd",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5661,7 +5661,9 @@
                 "patches_applied": {
                     "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",
                     "3076635: Add max depth option to group menu block": "https://www.drupal.org/files/issues/2019-08-22/group-menu-max-depth-3076635-2.patch",
-                    "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt"
+                    "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt",
+                    "3144604: Drupal 9 readiness": "https://www.drupal.org/files/issues/2020-10-20/groupmenu-drupal9_readiness-3144604-7.patch",
+                    "3206302: Node context error fix": "https://www.drupal.org/files/issues/2021-03-29/3206302-3.diff"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
