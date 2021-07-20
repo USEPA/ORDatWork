@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "430405fcd4b70295581204ddbbb491bd",
+    "content-hash": "0bfbf793efc61b7309bbefa53afb6be1",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -11266,6 +11266,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
