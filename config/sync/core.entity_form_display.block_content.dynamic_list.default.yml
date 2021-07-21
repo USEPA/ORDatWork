@@ -5,23 +5,15 @@ dependencies:
   config:
     - block_content.type.dynamic_list
     - field.field.block_content.dynamic_list.body
-    - field.field.block_content.dynamic_list.field_dynamic_list
     - field.field.block_content.dynamic_list.field_list_footer
     - field.field.block_content.dynamic_list.field_list_header
   module:
-    - blizz_dynamic_entitylist
     - text
 id: block_content.dynamic_list.default
 targetEntityType: block_content
 bundle: dynamic_list
 mode: default
 content:
-  field_dynamic_list:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: blizz_dynamic_entitylist_widget
-    region: content
   field_list_footer:
     weight: 3
     settings:
