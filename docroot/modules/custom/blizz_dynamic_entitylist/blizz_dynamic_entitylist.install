@@ -1,0 +1,168 @@
+<?php
+
+/**
+ * @file
+ * Contains update hooks for the blizz_dynamic_entitylist module.
+ */
+
+/**
+ * Update deprecated field configurations and list definitions.
+ */
+function blizz_dynamic_entitylist_update_8201() {
+
+  // Service method signatures have been changed that are going
+  // to be used in this update hook... so we clear caches to
+  // avoid errors from allegedly faulty method calls.
+  drupal_flush_all_caches();
+
+  // Determine existing field instances.
+  $fields = \Drupal::entityTypeManager()
+    ->getStorage('field_storage_config')
+    ->loadByProperties(['type' => 'blizz_dynamic_entitylist']);
+
+  /*
+   * Update: field configurations.
+   * Prepare needed services.
+   */
+
+  $configFactory = \Drupal::service('config.factory');
+  $entityServices = \Drupal::service('blizz_dynamic_entitylist.entity_services');
+
+  // Determine the machine name of all content entity types.
+  $content_entity_types = array_keys($entityServices->getContentEntityTypeOptions());
+
+  // Process each field separately...
+  foreach ($fields as $field_id => $fieldStorageDefinition) {
+
+    // Get an editable instance of the field storage configuration.
+    $fieldStorageConfig = $configFactory->getEditable(sprintf(
+      'field.storage.%s',
+      $field_id
+    ));
+
+    // Search all entity type bundles of this field definition
+    // for instances of this field.
+    $fieldInstanceConfigurations = [];
+    $hostEntityType = $fieldStorageDefinition->getTargetEntityTypeId();
+    foreach (array_keys($entityServices->getEntityTypeBundleOptions($hostEntityType)) as $hostEntityBundle) {
+      if ($hostEntityBundleFields = $entityServices->getEntityTypeBundleFields($hostEntityType, $hostEntityBundle, ['getType' => 'blizz_dynamic_entitylist'])) {
+        foreach (array_keys($hostEntityBundleFields) as $field_name) {
+          $fieldInstanceConfigurations["{$hostEntityType}:{$hostEntityBundle}:{$field_name}"] = $configFactory->getEditable(sprintf(
+            'field.field.%s.%s.%s',
+            $hostEntityType,
+            $hostEntityBundle,
+            $field_name
+          ));
+        }
+      }
+    }
+
+    // Retrieve the current configuration.
+    $old_settings = $fieldStorageConfig->get('settings');
+
+    // Build an array with the new configuration.
+    $new_settings = [
+      'constraints' => [
+        'entity_types' => $old_settings['entity_types'] ?: [],
+        'bundles' => array_map(
+          function () {
+            return [];
+          },
+          array_flip(array_filter(
+            $content_entity_types,
+            function ($item) use ($old_settings) {
+              return empty($old_settings['entity_types']) || in_array($item, $old_settings['entity_types']);
+            }
+          ))
+        ),
+        'viewmodes' => [],
+      ],
+    ];
+
+    // Create the new configuration sections with empty default data.
+    foreach ($content_entity_types as $entity_type) {
+      $bundles = array_keys($entityServices->getEntityTypeBundleOptions($entity_type));
+      if (empty($old_settings['entity_types']) || in_array($entity_type, $old_settings['entity_types'])) {
+        $new_settings['constraints']['viewmodes'][$entity_type] = array_map(
+          function () {
+            return [];
+          },
+          array_flip($bundles)
+        );
+      }
+    }
+
+    // Flag the new settings with the appropriate setting version.
+    $new_settings['constraints_version'] = 2;
+
+    // Remove the settings from the field storage configuration and save it.
+    $fieldStorageConfig->set('settings', []);
+    $fieldStorageConfig->save();
+
+    // Add the configuration to all field instance configurations.
+    foreach ($fieldInstanceConfigurations as $fieldInstanceConfig) {
+      $fieldInstanceConfig->set('settings', $new_settings);
+      $fieldInstanceConfig->save();
+    }
+
+  }
+
+  /*
+   * Update: list definitions.
+   */
+
+  // Get the database connection.
+  $database = \Drupal::database();
+
+  // Process each field instance separately.
+  foreach ($fields as $field) {
+
+    // Which tables hold the field's data?
+    $tables = [
+      sprintf('%s__%s', $field->getTargetEntityTypeId(), $field->getName()),
+      sprintf('%s_revision__%s', $field->getTargetEntityTypeId(), $field->getName()),
+    ];
+
+    // The name of the data column.
+    $columnname = sprintf('%s_listdefinition', $field->getName());
+
+    // Process each table one by one...
+    foreach ($tables as $table) {
+
+      // Load the currently stored field values.
+      $rows = $database->select($table, 'datatable')
+        ->fields('datatable', ['entity_id', 'revision_id', $columnname])
+        ->execute()
+        ->fetchAll();
+
+      // Update each database record.
+      foreach ($rows as $row) {
+
+        // Unserialize the list definition.
+        // TODO: Fix double serialization issue...
+        $listdefinition = unserialize(unserialize($row->{$columnname}))['listdefinition'];
+
+        // View modes are now stored as an object.
+        $listdefinition['viewmode'] = (object) [
+          $listdefinition['bundle'] => $listdefinition['viewmode'],
+        ];
+
+        // The bundle selection is now a multivalue property.
+        $listdefinition['bundle'] = [$listdefinition['bundle']];
+
+        // Update the current record.
+        $database->update($table)
+          ->fields([
+            $columnname => serialize(serialize(['listdefinition' => $listdefinition])),
+          ])
+          ->condition('entity_id', $row->entity_id, '=')
+          ->condition('revision_id', $row->revision_id, '=')
+          ->execute();
+
+      }
+
+    }
+
+  }
+
+}

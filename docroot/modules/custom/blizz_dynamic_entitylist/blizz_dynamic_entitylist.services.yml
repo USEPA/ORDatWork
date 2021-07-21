@@ -1,0 +1,10 @@
+services:
+  blizz_dynamic_entitylist.api:
+    class: Drupal\blizz_dynamic_entitylist\Services\BlizzDynamicEntitylistApi
+    arguments: []
+  blizz_dynamic_entitylist.entity_services:
+    class: Drupal\blizz_dynamic_entitylist\Services\EntityServices
+    arguments: ['@entity_type.manager', '@entity_type.bundle.info', '@entity_field.manager', '@entity_type.repository', '@entity_display.repository', '@string_translation']
+  blizz_dynamic_entitylist.field_widget_service:
+    class: Drupal\blizz_dynamic_entitylist\Services\BlizzDynamicEntitylistWidgetServices
+    arguments: ['@renderer', '@string_translation', '@current_route_match', '@language_manager', '@blizz_dynamic_entitylist.entity_services', '@config.factory', '@blizz_dynamic_entitylist.api']

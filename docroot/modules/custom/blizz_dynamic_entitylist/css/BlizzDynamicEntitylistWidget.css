@@ -1,0 +1,13 @@
+div.filtercontainer > div {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+div.filtercontainer > .form-type-checkbox {
+  padding-bottom: 8px;
+  margin-left: 10px;
+}
+
+.listoptions > .details-wrapper > div {
+  margin-bottom: 10px;
+}
