@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f5f1082b656754478af4de2e79089a7",
+    "content-hash": "2b8a34e58c3f8365cd4d481f5e33eced",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -218,12 +218,12 @@
             "version": "v5.7.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:enyo/dropzone.git",
+                "url": "https://github.com/dropzone/dropzone.git",
                 "reference": "78424e9c97b569e698cc9175e9bc424168219162"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enyo/dropzone/zipball/78424e9c97b569e698cc9175e9bc424168219162",
+                "url": "https://api.github.com/repos/dropzone/dropzone/zipball/78424e9c97b569e698cc9175e9bc424168219162",
                 "reference": "78424e9c97b569e698cc9175e9bc424168219162"
             },
             "type": "bower-asset"
@@ -233,7 +233,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -19076,60 +19076,6 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2014-10-24T07:27:01+00:00"
-        },
-        {
-            "name": "drupal/blizz_dynamic_entitylist",
-            "version": "2.34.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/blizz_dynamic_entitylist.git",
-                "reference": "8.x-2.34"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/blizz_dynamic_entitylist-8.x-2.34.zip",
-                "reference": "8.x-2.34",
-                "shasum": "9ba0bdadf312fe781a787380128a075dfcc2038d"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.34",
-                    "datestamp": "1529421225",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                },
-                "patches_applied": {
-                    "3128363: Use admin theme for Ajax routes": "https://www.drupal.org/files/issues/2020-04-16/blizz-dynamic-entitylist_use-admin-theme-for-ajax_3128363-2.patch",
-                    "3138556: Remove automatic 'checked' attribute from bundle selection": "https://www.drupal.org/files/issues/2020-05-21/remove_automatic_checked_attribute-3138556.patch"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "CHiLi.HH",
-                    "homepage": "https://www.drupal.org/user/738402"
-                }
-            ],
-            "description": "Provides a field type that lets you define automatic lists of entities based upon selection criteria.",
-            "homepage": "https://www.drupal.org/project/blizz_dynamic_entitylist",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/blizz_dynamic_entitylist"
-            }
         },
         {
             "name": "drupal/chosen",
