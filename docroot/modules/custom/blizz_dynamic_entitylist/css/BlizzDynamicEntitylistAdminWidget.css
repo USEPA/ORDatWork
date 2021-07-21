@@ -1,0 +1,22 @@
+.indented_checkboxes {
+  padding-left: 30px;
+  display: inline-block;
+}
+
+.disabledLabel {
+  color: #cccccc;
+}
+
+.listable a strong:after {
+  content: '(listable)';
+  display: inline-block;
+  margin-left: 5px;
+  color: green;
+}
+
+.notlistable a strong:after {
+  content: '(disabled)';
+  display: inline-block;
+  margin-left: 5px;
+  color: red;
+}

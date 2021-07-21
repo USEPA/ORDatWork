@@ -1,0 +1,11 @@
+name: "Blizz: Dynamic Entitylists"
+description: "Provides a field type that lets you define automatic lists of entities based upon selection criteria."
+type: module
+# core: 8.x
+package: Blizz
+
+# Information added by Drupal.org packaging script on 2018-06-19
+version: '8.x-2.34'
+core: '8.x'
+project: 'blizz_dynamic_entitylist'
+datestamp: 1529421227
