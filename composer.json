@@ -38,8 +38,8 @@
         "drupal/easy_breadcrumb": "^1.12",
         "drupal/extlink": "^1.5",
         "drupal/auto_entitylabel": "^3.0@beta",
-        "drupal/uswds_paragraphs": "^1.0@beta",
-        "drupal/bamboo_twig": "^4.1",
+        "drupal/uswds_paragraphs": "^2.0@beta",
+        "drupal/bamboo_twig": "^5.0@alpha",
         "drupal/redirect": "^1.5",
         "drupal/webform": "^6.0",
         "drupal/webform_config_ignore": "^1.0",
@@ -96,7 +96,8 @@
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
-        "drupal/linkchecker": "^1.0@alpha"
+        "drupal/linkchecker": "^1.0@alpha",
+        "drupal/csv_serialization": "^2.0"
     },
     "require-dev": {
         "drush/drush": "^9.0"
@@ -111,6 +112,9 @@
             },
             "drupal/webform": {
                 "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"
+            },
+            "drupal/webform_analysis": {
+                "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch"
             },
             "drupal/viewsreference": {
                 "3166490: Fixes missing display upon first adding a list": "https://www.drupal.org/files/issues/2021-01-15/viewsreference-ajax_after_display_selection-3166490-6.patch"
@@ -137,7 +141,9 @@
             "drupal/groupmenu": {
                 "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",
                 "3076635: Add max depth option to group menu block": "https://www.drupal.org/files/issues/2019-08-22/group-menu-max-depth-3076635-2.patch",
-                "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt"
+                "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt",
+                "3144604: Drupal 9 readiness": "https://www.drupal.org/files/issues/2020-10-20/groupmenu-drupal9_readiness-3144604-7.patch",
+                "3206302: Node context error fix": "https://www.drupal.org/files/issues/2021-03-29/3206302-3.diff"
             },
             "drupal/h5p": {
                 "2774947: Allow disabling the reset of user data results": "https://www.drupal.org/files/issues/2020-05-14/2774947-keep-user-data-in-sync-with-content-7.patch"
@@ -153,10 +159,6 @@
             },
             "drupal/simplesamlphp_auth": {
                 "2983154: Redirect to original destination after logging in": "https://www.drupal.org/files/issues/2020-10-27/simplesamlphp_auth-return-to-destination-parameter-2983154-13.patch"
-            },
-            "drupal/blizz_dynamic_entitylist": {
-                "3128363: Use admin theme for Ajax routes": "https://www.drupal.org/files/issues/2020-04-16/blizz-dynamic-entitylist_use-admin-theme-for-ajax_3128363-2.patch",
-                "3138556: Remove automatic 'checked' attribute from bundle selection": "https://www.drupal.org/files/issues/2020-05-21/remove_automatic_checked_attribute-3138556.patch"
             },
             "drupal/entity_browser": {
                 "3104901: Entity Browser used in a entity referenced field of a layout builder custom block is not working": "https://www.drupal.org/files/issues/2020-03-25/3104901.patch"
