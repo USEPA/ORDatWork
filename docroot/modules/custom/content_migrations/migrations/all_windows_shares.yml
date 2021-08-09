@@ -11,7 +11,7 @@ source:
   plugin: custom_sql_query
   # specify the database with the key
   key: migrate
-  sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB
+  sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB, EmailAddress
               from AllWindowsShares
               where SiteCode != '' '' and UserFolder != '' '''
   keys:

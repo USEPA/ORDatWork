@@ -103,6 +103,7 @@ filters:
     settings:
       default_view_mode: full_width
       allowed_media_types:
+        audio_file: audio_file
         image: image
         remote_video: remote_video
         tweet: tweet
