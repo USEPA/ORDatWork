@@ -53,7 +53,7 @@ function process_windows_shares_row(Row $row): void {
   $owner = $row->getSourceProperty('OwnerADAccount');
   $quota_size = $row->getSourceProperty('FSRMQuotaSizeGB');
   $owner_and_size = 'N/A';
-  $owner_email = 'N/A';
+  $owner_email = $row->getSourceProperty('EmailAddress');
   if (!isset($quota_size)) {
     $quota_size = 'N/A';
   }
@@ -62,7 +62,6 @@ function process_windows_shares_row(Row $row): void {
     $rawExplodedString = $rawExplodedArray[1];
     $rawNameArray = explode(',', $rawExplodedString); // splits into 'First', 'Last', rest of string
     $owner = trim($rawNameArray[0]) . ', ' . trim($rawNameArray[1]);
-    $owner_email = trim($rawNameArray[0]) . '.' . trim($rawNameArray[1]) . '@epa.gov';
     $owner_and_size = $owner . ' (' . $owner_email . ') ' . ' - ' . $quota_size . 'gb';
   }
   $row->setSourceProperty('owner_name', $owner);
