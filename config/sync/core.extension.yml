@@ -45,6 +45,7 @@ module:
   dblog_filter: 0
   depth_taxonomy_view_lookup: 0
   devel: 0
+  devel_generate: 0
   diff: 0
   draggableviews: 0
   dropzonejs: 0
@@ -217,6 +218,7 @@ module:
   webform_composite: 0
   webform_config_ignore: 0
   webform_custom_submissions: 0
+  webform_devel: 0
   webform_group: 0
   webform_image_select: 0
   webform_node: 0
