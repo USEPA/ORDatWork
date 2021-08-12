@@ -172,12 +172,14 @@ module:
   serialization: 0
   shortcut: 0
   simple_gmap: 0
+  simplesamlphp_auth: 0
   slick: 0
   slick_entityreference: 0
   slick_paragraphs: 0
   slick_ui: 0
   smart_date: 0
   smart_date_recur: 0
+  stage_file_proxy: 0
   syslog: 0
   system: 0
   tablefield: 0
@@ -214,9 +216,11 @@ module:
   webform_composite: 0
   webform_config_ignore: 0
   webform_custom_submissions: 0
+  webform_devel: 0
   webform_group: 0
   webform_image_select: 0
   webform_node: 0
+  webform_node_analysis: 0
   webform_submission_export_import: 0
   webform_submission_log: 0
   webform_ui: 0
