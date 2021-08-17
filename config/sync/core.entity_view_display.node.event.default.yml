@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_description
     - field.field.node.event.field_event_host
+    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_location_logistics
     - field.field.node.event.field_event_recording
     - field.field.node.event.field_event_tags
     - field.field.node.event.field_show_on_ord_calendar
@@ -17,6 +19,7 @@ dependencies:
     - layout_discovery
     - layout_library
     - link
+    - options
     - smart_date
     - text
     - user
@@ -89,7 +92,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: 2
           d85c9582-7126-4288-a154-3981c572676f:
             uuid: d85c9582-7126-4288-a154-3981c572676f
             region: first
@@ -140,6 +143,26 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 1
+          e7c88fb6-2ee5-40bf-a698-b1316d9211a6:
+            uuid: e7c88fb6-2ee5-40bf-a698-b1316d9211a6
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_event_link'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -180,6 +203,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_event_link:
+    weight: 116
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_event_location:
     weight: 107
     label: above
@@ -187,6 +222,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_event_location_logistics:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_event_recording:
     weight: 109
