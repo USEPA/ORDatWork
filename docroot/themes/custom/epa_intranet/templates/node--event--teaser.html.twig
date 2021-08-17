@@ -98,15 +98,14 @@
     </div>
     <div class="usa-collection__description">
       {{ content.field_event_description|field_value }}
-      <span>...</span>
     </div>
     <ul class="usa-collection__meta">
       {% for event_host in content.field_event_host|field_value %}
-      <li class="usa-collection__meta-item usa-tag li-tag tag-color-scheme">
-        {{ content.field_event_host|field_value }}
-      </li>
+        <li class="usa-collection__meta-item usa-tag li-tag tag-color-scheme">
+          {{ event_host }}
+        </li>
       {% endfor %}
-       
+
     </ul>
   </div>
 
