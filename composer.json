@@ -110,6 +110,10 @@
             "spatie/calendar-links": {
                 "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
             },
+            "drupal/draggableviews": {
+                "Drupal 9 compatibility": "patches/draggableviews_compatibility.patch",
+                "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch"
+            },
             "drupal/webform": {
                 "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"
             },
