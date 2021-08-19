@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73f5b2b1dbfdae359a39837c19073882",
+    "content-hash": "16fc64be287aa3b3a5d9b62f921dd1e1",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -11285,7 +11285,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch"
+                    "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch",
+                    "3137161: google charts fix": "https://www.drupal.org/files/issues/2020-06-07/google_charts_version_downgrade-3137161-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
