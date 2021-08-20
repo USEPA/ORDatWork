@@ -639,7 +639,7 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: policy/delegation-authority
+      path: policy/delegation-authority/manage
       display_description: ''
       title: 'Manage ORD Delegation Authorities'
       defaults:
