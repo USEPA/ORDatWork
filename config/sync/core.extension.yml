@@ -99,8 +99,6 @@ module:
   inline_entity_form: 0
   jquery_countdown_timer: 0
   jquery_ui: 0
-  jquery_ui_datepicker: 0
-  jquery_ui_slider: 0
   jsonapi: 0
   layout_builder: 0
   layout_builder_modal: 0
@@ -174,14 +172,12 @@ module:
   serialization: 0
   shortcut: 0
   simple_gmap: 0
-  simplesamlphp_auth: 0
   slick: 0
   slick_entityreference: 0
   slick_paragraphs: 0
   slick_ui: 0
   smart_date: 0
   smart_date_recur: 0
-  stage_file_proxy: 0
   syslog: 0
   system: 0
   tablefield: 0
