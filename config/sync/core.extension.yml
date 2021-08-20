@@ -99,6 +99,8 @@ module:
   inline_entity_form: 0
   jquery_countdown_timer: 0
   jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
   jsonapi: 0
   layout_builder: 0
   layout_builder_modal: 0

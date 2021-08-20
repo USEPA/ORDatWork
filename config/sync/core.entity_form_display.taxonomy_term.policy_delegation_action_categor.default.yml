@@ -1,23 +1,21 @@
-uuid: 17835740-31a9-4906-9740-7b8f14ec40f1
+uuid: 2f5b0d23-e565-458d-a4e6-d8e651be031c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.policy_delegation_actions.feeds_item
-    - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
-    - taxonomy.vocabulary.policy_delegation_actions
+    - field.field.taxonomy_term.policy_delegation_action_categor.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_action_categor
   module:
-    - cshs
     - path
     - text
-id: taxonomy_term.policy_delegation_actions.default
+id: taxonomy_term.policy_delegation_action_categor.default
 targetEntityType: taxonomy_term
-bundle: policy_delegation_actions
+bundle: policy_delegation_action_categor
 mode: default
 content:
   description:
     type: text_textarea
-    weight: 3
+    weight: 2
     region: content
     settings:
       placeholder: ''
@@ -25,15 +23,9 @@ content:
     third_party_settings: {  }
   field_policy_topic:
     weight: 1
-    settings:
-      parent: '0'
-      hierarchy_depth: '0'
-      required_depth: '0'
-      save_lineage: '1'
-      level_labels: 'Topic, Category'
-      force_deepest: false
+    settings: {  }
     third_party_settings: {  }
-    type: cshs
+    type: options_select
     region: content
   name:
     type: string_textfield
@@ -45,7 +37,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -53,8 +45,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 4
     region: content
     third_party_settings: {  }
-hidden:
-  feeds_item: true
+hidden: {  }

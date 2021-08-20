@@ -1,16 +1,15 @@
-uuid: dc132aed-a96b-4427-bcee-fbc6732d4e08
+uuid: d66351ca-c83b-41fc-a162-3f69459a6027
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.policy_delegation_actions.feeds_item
-    - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
-    - taxonomy.vocabulary.policy_delegation_actions
+    - field.field.taxonomy_term.policy_delegation_action_categor.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_action_categor
   module:
     - text
-id: taxonomy_term.policy_delegation_actions.default
+id: taxonomy_term.policy_delegation_action_categor.default
 targetEntityType: taxonomy_term
-bundle: policy_delegation_actions
+bundle: policy_delegation_action_categor
 mode: default
 content:
   description:
@@ -32,4 +31,3 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  feeds_item: true
