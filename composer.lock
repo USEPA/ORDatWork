@@ -20461,8 +20461,7 @@
         "drupal/cache_control_override": 15,
         "drupal/node_export": 15,
         "drupal/uswds_ckeditor_integration": 10,
-        "drupal/linkchecker": 15,
-        "drupal/masquerade": 10
+        "drupal/linkchecker": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
