@@ -111,11 +111,7 @@ module:
   lightning_core: 0
   lightning_install: 0
   lightning_media: 0
-  lightning_media_audio: 0
-  lightning_media_bulk_upload: 0
-  lightning_media_image: 0
   lightning_media_slideshow: 0
-  lightning_media_video: 0
   link: 0
   linkchecker: 0
   linkit: 0
