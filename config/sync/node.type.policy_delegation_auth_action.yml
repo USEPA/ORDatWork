@@ -3,14 +3,11 @@ langcode: en
 status: true
 dependencies:
   module:
-    - lightning_workflow
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-  lightning_workflow:
-    workflow: editorial
 name: 'Policy Delegation Authorities'
 type: policy_delegation_auth_action
 description: 'Use a <em>Policy Delegation Authorities</em> to identify the authorization authority for delegated actions.'
