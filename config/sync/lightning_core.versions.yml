@@ -131,7 +131,7 @@ lightning_media: 3.12.0
 lightning_media_audio: 3.12.0
 lightning_media_bulk_upload: 3.12.0
 lightning_media_document: 3.12.0
-lightning_media_image: 3.12.0
+lightning_media_image: 4.2.0
 lightning_media_instagram: 3.12.0
 lightning_media_slideshow: 3.12.0
 lightning_media_twitter: 3.12.0
