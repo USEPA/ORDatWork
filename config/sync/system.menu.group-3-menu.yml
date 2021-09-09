@@ -1,8 +1,0 @@
-uuid: 05f2acb1-c796-4747-b55d-360229ea0229
-langcode: en
-status: true
-dependencies: {  }
-id: group-3-menu
-label: 'Policy menu'
-description: 'Menu for Policy'
-locked: false

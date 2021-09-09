@@ -1,8 +1,0 @@
-uuid: 4768f8e2-c10a-43e1-8c37-0401240b1d98
-langcode: en
-status: true
-dependencies: {  }
-id: group-2-menu
-label: 'Testing menu'
-description: 'Menu for Testing'
-locked: false

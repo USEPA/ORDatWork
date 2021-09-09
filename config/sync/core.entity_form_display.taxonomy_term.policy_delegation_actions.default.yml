@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.policy_delegation_actions.feeds_item
-    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
     - taxonomy.vocabulary.policy_delegation_actions
   module:
+    - cshs
     - path
     - text
 id: taxonomy_term.policy_delegation_actions.default
@@ -23,25 +23,17 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-  field_policy_delegation_category:
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_policy_topic:
     weight: 1
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      parent: '0'
+      hierarchy_depth: '0'
+      required_depth: '0'
+      level_labels: ''
+      force_deepest: false
+      save_lineage: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: cshs
     region: content
   name:
     type: string_textfield
