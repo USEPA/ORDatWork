@@ -1,0 +1,29 @@
+uuid: 5cdc9cfb-2d39-4a27-85df-2d5b38daa5f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_policy_delegation_category
+    - taxonomy.vocabulary.policy_delegation_action_categor
+    - taxonomy.vocabulary.policy_delegation_actions
+id: taxonomy_term.policy_delegation_actions.field_policy_delegation_category
+field_name: field_policy_delegation_category
+entity_type: taxonomy_term
+bundle: policy_delegation_actions
+label: Category
+description: 'Select the category the action belongs to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      policy_delegation_action_categor: policy_delegation_action_categor
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,11 +1,11 @@
-uuid: 913f66ca-15b6-4f29-b9b9-990bf6310796
+uuid: cc720e98-0635-4548-9949-9145871c230e
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_policy_topic
-field_name: field_policy_topic
+id: taxonomy_term.field_policy_delegation_category
+field_name: field_policy_delegation_category
 entity_type: taxonomy_term
 type: entity_reference
 settings:

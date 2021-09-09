@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
     - taxonomy.vocabulary.policy_delegation_actions
   module:
@@ -58,6 +59,15 @@ mappings:
     target: field_policy_topic
     map:
       target_id: topic
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_policy_delegation_category
+    map:
+      target_id: category
     settings:
       language: null
       reference_by: name
