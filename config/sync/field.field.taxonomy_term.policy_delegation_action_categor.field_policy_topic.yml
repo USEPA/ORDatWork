@@ -1,0 +1,29 @@
+uuid: d2157705-82a8-472e-a1b3-e76137b462c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_policy_topic
+    - taxonomy.vocabulary.policy_delegation_action_categor
+    - taxonomy.vocabulary.policy_topics
+id: taxonomy_term.policy_delegation_action_categor.field_policy_topic
+field_name: field_policy_topic
+entity_type: taxonomy_term
+bundle: policy_delegation_action_categor
+label: Topic
+description: 'Select the topic this category is belongs under.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      policy_topics: policy_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
