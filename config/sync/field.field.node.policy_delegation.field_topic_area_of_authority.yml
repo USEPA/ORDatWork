@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_topic_area_of_authority
     - node.type.policy_delegation
+    - taxonomy.vocabulary.policy_topics
 id: node.policy_delegation.field_topic_area_of_authority
 field_name: field_topic_area_of_authority
 entity_type: node
@@ -16,10 +17,13 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:taxonomy_term'
   handler_settings:
-    view:
-      view_name: policy_topics
-      display_name: entity_reference_1
-      arguments: {  }
+    target_bundles:
+      policy_topics: policy_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
