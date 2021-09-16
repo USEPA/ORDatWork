@@ -17,7 +17,7 @@ dependencies:
     - serialization
     - taxonomy
     - user
-    - vefl
+    - views_autocomplete_filters
     - views_data_export
 id: policy_delegation
 label: 'Policy Delegation'
@@ -49,7 +49,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: vefl_basic
+        type: basic
         options:
           submit_button: Apply
           reset_button: true
@@ -58,18 +58,6 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          layout:
-            layout_id: lightning_threecol_33_34_33
-            change: Change
-            widget_region:
-              title: first
-              tid: second
-              sort_by: first
-              sort_order: first
-              items_per_page: first
-              offset: first
-              submit: first
-              reset: first
       pager:
         type: mini
         options:
