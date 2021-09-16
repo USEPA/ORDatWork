@@ -15,8 +15,8 @@ dependencies:
     - node.type.policy
     - taxonomy.vocabulary.policy_topics
   content:
-    - 'taxonomy_term:policy_topics:7b88e031-364c-4aa2-8a31-92f4ff9270f4'
-    - 'taxonomy_term:policy_topics:e0e74d7e-8bc8-4464-bb33-eea7418db534'
+    - 'taxonomy_term:policy_topics:ad733315-ef40-4069-81d9-267fbb8bd1f2'
+    - 'taxonomy_term:policy_topics:e1326048-6120-4fd5-b2f0-339ebe7d2b21'
   module:
     - csv_serialization
     - datetime
@@ -28,6 +28,7 @@ dependencies:
     - text
     - user
     - vefl
+    - views_autocomplete_filters
     - views_data_export
 id: policy
 label: Policy
@@ -250,7 +251,9 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value: {  }
+          value:
+            1: 1
+            4: 4
           group: 1
           exposed: true
           expose:
@@ -270,7 +273,7 @@ display:
               anonymous: '0'
               webform: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -289,6 +292,12 @@ display:
           vid: policy_topics
           hierarchy: false
           error_message: true
+          parent: 0
+          level_labels: ''
+          force_deepest: false
+          save_lineage: false
+          hierarchy_depth: 0
+          required_depth: 0
           plugin_id: taxonomy_index_tid
         field_rescind_this_policy_value:
           id: field_rescind_this_policy_value
@@ -1183,7 +1192,9 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value: {  }
+          value:
+            1: 1
+            4: 4
           group: 1
           exposed: true
           expose:
@@ -1203,7 +1214,7 @@ display:
               anonymous: '0'
               webform: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -1222,6 +1233,12 @@ display:
           vid: policy_topics
           hierarchy: false
           error_message: true
+          parent: 0
+          level_labels: ''
+          force_deepest: false
+          save_lineage: false
+          hierarchy_depth: 0
+          required_depth: 0
           plugin_id: taxonomy_index_tid
         title:
           id: title
@@ -2357,7 +2374,9 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value: {  }
+          value:
+            1: 1
+            4: 4
           group: 1
           exposed: true
           expose:
@@ -2377,7 +2396,7 @@ display:
               anonymous: '0'
               webform: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -2396,6 +2415,12 @@ display:
           vid: policy_topics
           hierarchy: false
           error_message: true
+          parent: 0
+          level_labels: ''
+          force_deepest: false
+          save_lineage: false
+          hierarchy_depth: 0
+          required_depth: 0
           plugin_id: taxonomy_index_tid
         field_rescind_this_policy_value:
           id: field_rescind_this_policy_value
