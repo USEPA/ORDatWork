@@ -1,8 +1,0 @@
-uuid: e36a81b0-4abc-4192-8f8b-c1ca6e2fb9e6
-langcode: en
-status: true
-dependencies: {  }
-id: group-1-menu
-label: 'Group A menu'
-description: 'Menu for Group A'
-locked: false
