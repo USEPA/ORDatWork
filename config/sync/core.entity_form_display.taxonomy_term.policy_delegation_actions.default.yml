@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.policy_delegation_actions.feeds_item
+    - field.field.taxonomy_term.policy_delegation_actions.field_delegation
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
     - taxonomy.vocabulary.policy_delegation_actions
   module:
@@ -23,6 +24,16 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
+  field_delegation:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_policy_topic:
     weight: 1
     settings:
