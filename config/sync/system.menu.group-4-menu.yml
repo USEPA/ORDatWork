@@ -1,0 +1,8 @@
+uuid: 359f5470-0d97-43c4-a17a-747ecc128ce8
+langcode: en
+status: true
+dependencies: {  }
+id: group-4-menu
+label: 'Group B menu'
+description: 'Menu for Group B'
+locked: false

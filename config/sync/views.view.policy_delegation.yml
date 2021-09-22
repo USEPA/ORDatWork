@@ -59,12 +59,17 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: mini
+        type: full
         options:
           items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -73,9 +78,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
+          quantity: 9
       style:
         type: table
         options:
@@ -590,7 +593,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h1>Delegations</h1>\r\n<p>You've reached ORD's Delegations page! The default display below lists the delegations alphabetically by topic. You can sort them in ascending or descending order chronologically by effective date or alphabetically by title by clicking on the header links. You can also search or filter by title by typing a keyword in the \"Title\" search box or by topic by choosing an option in the drop-down menu. Rescinded delegations are listed on the <a href=\"/policy/rescinded-delegations\">Rescinded Delegations</a> page.</p>"
+            value: "<h1>Delegations</h1>\r\n<p class=\"usa-intro\">Delegations of authority represent the formal assignment or commitment of legal power, usually to subordinate officials, to make decisions and take actions that have legal significance. </p>\r\n<p>Delegations provide basic direction from the Administrator to agency officials to carry out these responsibilities on the Administrator's behalf. Some delegations may be <a href=\"/policy/delegation-authority\">further redelegated</a> to subordinate officials.</p>\r\n\r\n<p>The default display below lists the delegations alphabetically by topic for specific Office/Center. The action is populated either by typing a keyword in the \"Title\" search box or by choosing an option in the drop-down menu.  Rescinded delegations are listed on the <a href=\"/policy/rescinded-delegations\">Rescinded Delegations</a> page.</p<"
             format: full_html
           plugin_id: text
     cache_metadata:
