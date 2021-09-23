@@ -1,8 +1,0 @@
-uuid: 87cf7fe5-9d0c-46dd-a712-cc5975cf2ce3
-langcode: en
-status: true
-dependencies: {  }
-name: 'Policy Delegation Action Categories'
-vid: policy_delegation_action_categor
-description: 'Categories for Policy Delegation Action Authorities'
-weight: 0

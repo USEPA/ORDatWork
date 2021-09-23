@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.policy_delegation_actions.feeds_item
-    - field.field.taxonomy_term.policy_delegation_actions.field_policy_delegation_category
+    - field.field.taxonomy_term.policy_delegation_actions.field_delegation
     - field.field.taxonomy_term.policy_delegation_actions.field_policy_topic
     - taxonomy.vocabulary.policy_delegation_actions
   module:
@@ -21,9 +21,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_policy_delegation_category:
+  field_delegation:
     weight: 2
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -31,7 +31,7 @@ content:
     region: content
   field_policy_topic:
     weight: 1
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }

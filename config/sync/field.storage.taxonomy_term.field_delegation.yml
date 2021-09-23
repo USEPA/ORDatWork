@@ -1,15 +1,16 @@
-uuid: cc720e98-0635-4548-9949-9145871c230e
+uuid: 605551ff-2f26-4426-a0d6-23c8b7cadf19
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-id: taxonomy_term.field_policy_delegation_category
-field_name: field_policy_delegation_category
+id: taxonomy_term.field_delegation
+field_name: field_delegation
 entity_type: taxonomy_term
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: 1

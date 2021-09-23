@@ -1,0 +1,28 @@
+uuid: e7079ce7-bad5-4402-b4a3-68af7cb156c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_delegation
+    - node.type.policy_delegation
+    - taxonomy.vocabulary.policy_delegation_actions
+id: taxonomy_term.policy_delegation_actions.field_delegation
+field_name: field_delegation
+entity_type: taxonomy_term
+bundle: policy_delegation_actions
+label: Delegation
+description: 'Begin typing the title of the appropriate delegation and select the appropriate one from the autocomplete options. If this is a new delegation, you must <a href="/web-area/policy" target="_blank">create the delegation</a> before you can reference from within a Delegation Authority.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      policy_delegation: policy_delegation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
