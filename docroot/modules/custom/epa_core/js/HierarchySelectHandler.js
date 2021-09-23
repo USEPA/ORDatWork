@@ -5,7 +5,12 @@
            var selected_id = $('.cshs-custom-select').val();
            // lookup corresponding drupal term and populate with metadata
            $.get('/taxonomy_depth_lookup_standard/' + selected_id, function(data) {
-             $('.cshs-custom-select-additions').text(data.owner + ' - ' + data.size + '_gb');
+             if (data.owner && data.size) {
+               $('.all-windows-shares-metadata').show();
+               $('.cshs-custom-select-additions').text(data.owner + ' - ' + data.size + '_gb');
+             } else {
+               $('.all-windows-shares-metadata').hide();
+             }
            });
          })
      }
