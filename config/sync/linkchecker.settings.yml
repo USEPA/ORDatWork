@@ -28,7 +28,10 @@ extract:
 check:
   connections_max: 8
   connections_max_per_domain: 2
-  disable_link_check_for_urls: "example.com\nexample.net\nexample.org"
+  disable_link_check_for_urls: |-
+    example.com
+    example.net
+    example.org
   library: core
   interval: 172800
   useragent: 'Drupal (+https://drupal.org/)'
