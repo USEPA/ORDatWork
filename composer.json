@@ -4,8 +4,8 @@
     "description": "Project template for Drupal 8 sites built with the Lightning distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/core": "8.9.18",
-        "drupal/lightning_core": "5.3.0",
+        "drupal/core": "9.2.6",
+        "drupal/lightning_core": "5.9.0",
         "drupal/lightning_media": "4.2.0",
         "drupal/lightning_scheduler": "1.3",
         "cweagans/composer-patches": "^1.6.0",
@@ -24,7 +24,7 @@
         "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.7",
         "drupal/migrate_plus": "^5.0",
-        "drupal/migrate_tools": "^4.3",
+        "drupal/migrate_tools": "^5.0",
         "drupal/address": "~1.9",
         "drupal/layout_builder_styles": "^1.0@beta",
         "drupal/devel": "^4.0",
@@ -73,7 +73,7 @@
         "drupal/bulk_update_fields": "^2.0",
         "drupal/draggableviews": "1.2",
         "drupal/focal_point": "^1.5",
-        "drupal/h5p": "^1.0",
+        "drupal/h5p": "^1.0-rc17",
         "drupal/r4032login": "^2.0",
         "drupal/taxonomy_term_depth": "^2.4",
         "drupal/transliterate_filenames": "^1.4",
@@ -94,7 +94,7 @@
         "drupal/cshs": "^1.7",
         "drupal/block_list_override": "^1.0",
         "drupal/viewsreference": "^2.0",
-        "drupal/viewsreference_filter": "^1.0",
+        "drupal/viewsreference_filter": "^1.0.2",
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
@@ -102,7 +102,7 @@
         "drupal/csv_serialization": "^2.0"
     },
     "require-dev": {
-        "drush/drush": "^9.0"
+        "drush/drush": "^10.0"
     },
     "config": {
         "process-timeout": 0
@@ -154,7 +154,7 @@
             },
             "drupal/h5p": {
                 "2774947: Allow disabling the reset of user data results": "https://www.drupal.org/files/issues/2020-05-14/2774947-keep-user-data-in-sync-with-content-7.patch",
-                "3129142: Drupal 9 compatibility": "https://www.drupal.org/files/issues/2020-04-19/d9-compatibility-3129142-3.patch"
+                "3129142: Drupal 9 compatibility": "https://www.drupal.org/files/issues/2020-07-09/3150110-drupal9_deprecated_report-7.patch"
             },
             "drupal/paragraphs": {
                 "3090200: Fixes permission issues when editing non-published paragraphs": "https://www.drupal.org/files/issues/2020-07-08/access-controll-issue-3090200-22.patch",
@@ -180,7 +180,7 @@
                 "2949017: There is no way to delete or update file entities of other users incl. user/1": "https://www.drupal.org/files/issues/2020-01-13/2949017-62.patch",
                 "3035113: JSON API": "https://www.drupal.org/files/issues/2019-10-21/LatestRevisionCheck-13092187-24.patch",
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-01-20/2985882-53.patch",
-                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2020-02-11/block_visibility_has_wrong_logic-923934-14-reroll-32-drupal-8.8.2.patch",
+                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-09-16/923934-50-d92.patch",
                 "2016739: Prevent '@' from triggering email detection unless suffix is included": "https://www.drupal.org/files/issues/2020-09-25/2016739-86.patch"
             },
             "drupal/cshs": {
@@ -233,6 +233,19 @@
         ]
     },
     "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/viewsreference_filter",
+                "type": "drupal-module",
+                "version": "1.0.2",
+                "source": {
+                    "url": "https://git.drupalcode.org/project/viewsreference_filter.git",
+                    "type": "git",
+                    "reference": "1.0.2"
+                }
+            }
+        },
         {
             "name": "drupal",
             "type": "composer",
@@ -343,9 +356,6 @@
         "quick-start": [
             "composer install",
             "php docroot/core/scripts/drupal quick-start lightning --no-interaction"
-        ],
-        "post-drupal-scaffold-cmd": [
-            "cd docroot && git apply -v --ignore-space-change --ignore-whitespace ../patches/robots_update.patch"
         ]
     }
 }
