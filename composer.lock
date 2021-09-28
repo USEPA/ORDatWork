@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e1db59a27ddd698b6cb623893cfac1a",
+    "content-hash": "23b691a2ac3003ec0b89d13541007d13",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8872,6 +8872,7 @@
                 },
                 "patches_applied": {
                     "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch",
+                    "Drupal 9 submodule compatibility": "patches/webform_node_analysis_compatibility.patch",
                     "3137161: google charts fix": "https://www.drupal.org/files/issues/2020-06-07/google_charts_version_downgrade-3137161-5.patch"
                 }
             },
