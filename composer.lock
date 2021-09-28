@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06be480f8413432414f37b9e09ab03e7",
+    "content-hash": "82026195cea49383bdf7fa13f4905924",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8436,48 +8436,17 @@
         },
         {
             "name": "drupal/viewsreference_filter",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/viewsreference_filter.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/viewsreference_filter-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "44a2607ea477fe4505b3627f61a99188be4b9324"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/viewsreference": "*"
+                "reference": "1.0.2"
             },
             "type": "drupal-module",
             "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1604184431",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
+                "patches_applied": {
+                    "3201294: Allows editing of autocompleted taxonomy filters": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-3201294-6.patch"
                 }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "roborew",
-                    "homepage": "https://www.drupal.org/user/1931814"
-                }
-            ],
-            "description": "Expose filters for editors to configure views",
-            "homepage": "https://www.drupal.org/project/viewsreference_filter",
-            "support": {
-                "source": "http://cgit.drupalcode.org/viewsreference_filter",
-                "issues": "https://www.drupal.org/project/issues/viewsreference_filter"
             }
         },
         {
