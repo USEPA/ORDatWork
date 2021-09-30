@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d6e6b83ae074681e471bdd9349e0933",
+    "content-hash": "596d25b750ac8b6aafb27f34f25e449a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4861,68 +4861,18 @@
         },
         {
             "name": "drupal/h5p",
-            "version": "1.0.0-rc17",
+            "version": "1.0.0-rc18",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/h5p.git",
-                "reference": "8.x-1.0-rc17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/h5p-8.x-1.0-rc17.zip",
-                "reference": "8.x-1.0-rc17",
-                "shasum": "16d9f920e09c082a3b3f2f2ab98902cbc85957db"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "h5p/h5p-core": "1.24.0",
-                "h5p/h5p-editor": "1.24.1"
+                "reference": "8.x-1.0-rc18"
             },
             "type": "drupal-module",
             "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-rc17",
-                    "datestamp": "1572512585",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                },
                 "patches_applied": {
                     "2774947: Allow disabling the reset of user data results": "https://www.drupal.org/files/issues/2020-05-14/2774947-keep-user-data-in-sync-with-content-7.patch",
-                    "3129142: Drupal 9 compatibility": "https://www.drupal.org/files/issues/2020-07-09/3150110-drupal9_deprecated_report-7.patch"
+                    "3129142: Drupal 9 compatibility": "https://www.drupal.org/files/issues/2021-05-28/3150110-drupal9_deprecated_report-27.patch"
                 }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "falcon",
-                    "homepage": "https://www.drupal.org/user/530912"
-                },
-                {
-                    "name": "icc",
-                    "homepage": "https://www.drupal.org/user/823190"
-                },
-                {
-                    "name": "otacke",
-                    "homepage": "https://www.drupal.org/user/3566173"
-                },
-                {
-                    "name": "paalj",
-                    "homepage": "https://www.drupal.org/user/1091732"
-                },
-                {
-                    "name": "thomasmars",
-                    "homepage": "https://www.drupal.org/user/3205159"
-                }
-            ],
-            "description": "Drupal H5P Module.",
-            "homepage": "http://drupal.org/project/h5p",
-            "support": {
-                "source": "https://git.drupalcode.org/project/h5p"
             }
         },
         {
@@ -9615,120 +9565,6 @@
                 "url"
             ],
             "time": "2020-09-30T07:37:11+00:00"
-        },
-        {
-            "name": "h5p/h5p-core",
-            "version": "1.24.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/h5p/h5p-php-library.git",
-                "reference": "55b04018d7def8d2288b768adbcb3cc152fdbd53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/h5p/h5p-php-library/zipball/55b04018d7def8d2288b768adbcb3cc152fdbd53",
-                "reference": "55b04018d7def8d2288b768adbcb3cc152fdbd53",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "h5p.classes.php",
-                    "h5p-development.class.php",
-                    "h5p-file-storage.interface.php",
-                    "h5p-default-storage.class.php",
-                    "h5p-event-base.class.php",
-                    "h5p-metadata.class.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Svein-Tore Griff With",
-                    "email": "with@joubel.com",
-                    "homepage": "http://joubel.com",
-                    "role": "CEO"
-                },
-                {
-                    "name": "Frode Petterson",
-                    "email": "frode.petterson@joubel.com",
-                    "homepage": "http://joubel.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "H5P Core functionality in PHP",
-            "homepage": "https://h5p.org",
-            "keywords": [
-                "content",
-                "h5p",
-                "hvp",
-                "interactive",
-                "quiz"
-            ],
-            "time": "2019-10-30T10:42:15+00:00"
-        },
-        {
-            "name": "h5p/h5p-editor",
-            "version": "1.24.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/h5p/h5p-editor-php-library.git",
-                "reference": "9361892a22ac6ab91e010e0b8a0a0e836f45a16a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/h5p/h5p-editor-php-library/zipball/9361892a22ac6ab91e010e0b8a0a0e836f45a16a",
-                "reference": "9361892a22ac6ab91e010e0b8a0a0e836f45a16a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "h5peditor.class.php",
-                    "h5peditor-file.class.php",
-                    "h5peditor-ajax.class.php",
-                    "h5peditor-storage.interface.php",
-                    "h5peditor-ajax.interface.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Svein-Tore Griff With",
-                    "email": "with@joubel.com",
-                    "homepage": "http://joubel.com",
-                    "role": "CEO"
-                },
-                {
-                    "name": "Frode Petterson",
-                    "email": "frode.petterson@joubel.com",
-                    "homepage": "http://joubel.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "H5P Editor functionality in PHP",
-            "homepage": "https://h5p.org",
-            "keywords": [
-                "content",
-                "editor",
-                "h5p",
-                "hvp",
-                "interactive",
-                "quiz"
-            ],
-            "time": "2019-10-30T14:56:53+00:00"
         },
         {
             "name": "j7mbo/twitter-api-php",
@@ -19400,6 +19236,120 @@
             ],
             "description": "Expands internal property references in a yaml file.",
             "time": "2017-12-16T16:06:03+00:00"
+        },
+        {
+            "name": "h5p/h5p-core",
+            "version": "1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h5p/h5p-php-library.git",
+                "reference": "55b04018d7def8d2288b768adbcb3cc152fdbd53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h5p/h5p-php-library/zipball/55b04018d7def8d2288b768adbcb3cc152fdbd53",
+                "reference": "55b04018d7def8d2288b768adbcb3cc152fdbd53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "h5p.classes.php",
+                    "h5p-development.class.php",
+                    "h5p-file-storage.interface.php",
+                    "h5p-default-storage.class.php",
+                    "h5p-event-base.class.php",
+                    "h5p-metadata.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Svein-Tore Griff With",
+                    "email": "with@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "CEO"
+                },
+                {
+                    "name": "Frode Petterson",
+                    "email": "frode.petterson@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "H5P Core functionality in PHP",
+            "homepage": "https://h5p.org",
+            "keywords": [
+                "content",
+                "h5p",
+                "hvp",
+                "interactive",
+                "quiz"
+            ],
+            "time": "2019-10-30T10:42:15+00:00"
+        },
+        {
+            "name": "h5p/h5p-editor",
+            "version": "1.24.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h5p/h5p-editor-php-library.git",
+                "reference": "9361892a22ac6ab91e010e0b8a0a0e836f45a16a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h5p/h5p-editor-php-library/zipball/9361892a22ac6ab91e010e0b8a0a0e836f45a16a",
+                "reference": "9361892a22ac6ab91e010e0b8a0a0e836f45a16a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "h5peditor.class.php",
+                    "h5peditor-file.class.php",
+                    "h5peditor-ajax.class.php",
+                    "h5peditor-storage.interface.php",
+                    "h5peditor-ajax.interface.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Svein-Tore Griff With",
+                    "email": "with@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "CEO"
+                },
+                {
+                    "name": "Frode Petterson",
+                    "email": "frode.petterson@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "H5P Editor functionality in PHP",
+            "homepage": "https://h5p.org",
+            "keywords": [
+                "content",
+                "editor",
+                "h5p",
+                "hvp",
+                "interactive",
+                "quiz"
+            ],
+            "time": "2019-10-30T14:56:53+00:00"
         },
         {
             "name": "harvesthq/chosen",
