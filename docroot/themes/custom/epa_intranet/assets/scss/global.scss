@@ -418,6 +418,11 @@ div.layout {
 }
 
 /* When editing with background color present */
+table {
+  a {
+    color: #005ea2;
+  }
+}
 
 div {
   &.layout-builder__section div.layout {
