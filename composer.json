@@ -119,7 +119,9 @@
             },
             "drupal/draggableviews": {
                 "Drupal 9 compatibility": "patches/draggableviews_compatibility.patch",
-                "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch"
+                "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch",
+                "Drupal 9 migrate class compatibility": "patches/draggableviews_migrate_compatibility.patch",
+                "Drupal 9 classes compatibility": "patches/draggableviews_classes_compatibility.patch"
             },
             "drupal/webform": {
                 "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"

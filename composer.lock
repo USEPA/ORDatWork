@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4dad58fb735fabd292514d8af76f670d",
+    "content-hash": "b67d30e23e4822e2b116b488c4ecf830",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3236,7 +3236,9 @@
                 },
                 "patches_applied": {
                     "Drupal 9 compatibility": "patches/draggableviews_compatibility.patch",
-                    "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch"
+                    "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch",
+                    "Drupal 9 migrate class compatibility": "patches/draggableviews_migrate_compatibility.patch",
+                    "Drupal 9 classes compatibility": "patches/draggableviews_classes_compatibility.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
