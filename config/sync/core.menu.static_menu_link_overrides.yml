@@ -1,18 +1,18 @@
 definitions:
   user__page:
-    weight: -49
+    weight: -46
     menu_name: secondary-menu
     parent: ''
     enabled: true
     expanded: false
   user__logout:
-    weight: -48
+    weight: -45
     menu_name: secondary-menu
     parent: ''
     expanded: false
     enabled: true
   contact__site_page:
-    enabled: true
+    enabled: false
     menu_name: footer
     parent: ''
     expanded: false
