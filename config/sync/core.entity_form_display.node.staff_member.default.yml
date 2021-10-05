@@ -20,7 +20,9 @@ dependencies:
     - node.type.staff_member
   module:
     - content_moderation
+    - cshs
     - entity_browser
+    - lightning_scheduler
     - link
     - path
     - telephone
@@ -68,9 +70,15 @@ content:
     region: content
   field_organization:
     weight: 15
-    settings: {  }
+    settings:
+      parent: '0'
+      level_labels: ''
+      force_deepest: false
+      save_lineage: false
+      hierarchy_depth: 0
+      required_depth: 0
     third_party_settings: {  }
-    type: options_select
+    type: cshs
     region: content
   field_phone:
     weight: 12
