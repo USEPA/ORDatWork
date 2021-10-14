@@ -36,35 +36,35 @@ content:
     type: list_default
     region: content
   field_policy_branch_chief:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_policy_co_cos:
     weight: 8
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
+  field_policy_co_cos:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_policy_co_deputy_director:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_co_director:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_policy_cos_ioaa:
-    weight: 6
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -78,7 +78,7 @@ content:
     type: list_default
     region: content
   field_policy_division_directors:
-    weight: 4
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
