@@ -581,6 +581,11 @@ section.comment-wrapper ul.links li {
   float: none !important;
 }
 
+/* when embedded on page, Classy automatically applies .d-inline-flex, overwriting its intended display*/
+.staff-profile ~ div .d-inline-flex {
+  display: unset !important;
+}
+
 .layout--twocol-section .layout__region, .layout--onecol-section .layout__region {
   padding: 5px;
 }
