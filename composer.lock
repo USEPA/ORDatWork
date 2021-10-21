@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b67d30e23e4822e2b116b488c4ecf830",
+    "content-hash": "b0adbc165bcf36a94b58dd8a68da0bd2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4877,6 +4877,54 @@
                     "Drupal 9 module compatibility": "patches/h5p_module_compatibility_patch.patch",
                     "Drupal 9 widget compatibility": "patches/h5p_widget_compatibility_patch.patch"
                 }
+            }
+        },
+        {
+            "name": "drupal/hierarchical_term_formatter",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/hierarchical_term_formatter.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/hierarchical_term_formatter-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "e7b3565b6d992df5cda34b6561f976d356581f7c"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1590292343",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "awolfey",
+                    "homepage": "https://www.drupal.org/user/277371"
+                },
+                {
+                    "name": "ibustos",
+                    "homepage": "https://www.drupal.org/user/2476894"
+                }
+            ],
+            "description": "Provides hierarchical term formatters for taxonomy reference fields.",
+            "homepage": "https://www.drupal.org/project/hierarchical_term_formatter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/hierarchical_term_formatter"
             }
         },
         {
@@ -11543,6 +11591,7 @@
                 "facebook",
                 "simplesamlphp"
             ],
+            "abandoned": true,
             "time": "2020-03-13T11:29:21+00:00"
         },
         {
@@ -11689,6 +11738,7 @@
                 "windows",
                 "windowslive"
             ],
+            "abandoned": true,
             "time": "2019-12-03T09:01:13+00:00"
         },
         {
@@ -12406,6 +12456,7 @@
                 "oauth1",
                 "simplesamlphp"
             ],
+            "abandoned": true,
             "time": "2019-12-03T09:22:08+00:00"
         },
         {
