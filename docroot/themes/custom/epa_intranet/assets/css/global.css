@@ -395,11 +395,13 @@ section.comment-wrapper ul.links li {
   height: 150px; }
 
 .staff-profile {
-  float: none !important; }
+  float: none !important;
+  display: inline-grid !important; }
 
 /* when embedded on page, Classy automatically applies .d-inline-flex, overwriting its intended display*/
 .staff-profile ~ div .d-inline-flex {
-  display: unset !important; }
+  display: inline-grid !important;
+  max-width: 250px; }
 
 .layout--twocol-section .layout__region, .layout--onecol-section .layout__region {
   padding: 5px; }
