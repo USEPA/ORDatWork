@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.staff_member.field_staff_secondary_location
     - node.type.staff_member
   module:
+    - cshs
     - layout_builder
     - layout_builder_restrictions
     - layout_library
@@ -54,6 +55,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_organization:
+    type: cshs_full_hierarchy
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      separator: ' » '
+      linked: false
+      reverse: false
+    third_party_settings: {  }
   field_staff_photo:
     type: entity_reference_entity_view
     weight: 1
@@ -64,7 +75,7 @@ content:
     third_party_settings: {  }
     region: content
   field_staff_position:
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
@@ -84,7 +95,6 @@ hidden:
   feeds_item: true
   field_email: true
   field_location: true
-  field_organization: true
   field_phone: true
   field_research_program_area: true
   field_staff_biography: true
