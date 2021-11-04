@@ -839,6 +839,10 @@ div {
   align-items: center;
 }
 
+.align-center.embedded-entity .grid-row {
+  display: block;
+}
+
 .webform-message {
   max-width: 30rem;
 }
