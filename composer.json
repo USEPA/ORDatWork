@@ -105,7 +105,8 @@
         "ckeditor-plugin/templates": "^4.16",
         "drupal/linkchecker": "^1.0@alpha",
         "drupal/csv_serialization": "^2.0",
-        "drupal/hierarchical_term_formatter": "^1.2"
+        "drupal/hierarchical_term_formatter": "^1.2",
+        "sabre/vobject": "^4.2"
     },
     "require-dev": {
         "drush/drush": "^10.0"
