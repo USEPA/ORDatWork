@@ -116,7 +116,7 @@
     "extra": {
         "patches": {
             "spatie/calendar-links": {
-                "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
+                "Fix ICS HTML formatting": "patches/spatie_ics_html_format_and_timezone.patch"
             },
             "drupal/draggableviews": {
                 "Drupal 9 compatibility": "patches/draggableviews_compatibility.patch",
