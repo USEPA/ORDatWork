@@ -29,6 +29,9 @@ function epa_intranet_preprocess_image(&$variables) {
       unset($variables['attributes']['width']);
       unset($variables['attributes']['height']);
     }
+    if ($variables['style_name'] == 'uswds_card') {
+      $variables['attributes']['aria-hidden'] = 'true';
+    }
     if ($variables['style_name'] == 'staff_member_card') {
       $variables['attributes']['width'] = 'auto';
       $variables['attributes']['height'] = 150;
