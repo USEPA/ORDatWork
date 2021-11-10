@@ -8,10 +8,11 @@
             {{ content.field_staff_photo }}
         {% else %}
             <img class="align-center" src="/sites/default/files/avatar-1577909_1280.png" alt="No Staff Member Picture"
-                 width="auto"
+                 width="110"
                  height="150"/>
         {% endif %}</div>
         <div class="align-center"><a href="{{ url }}" rel="bookmark">{{ label }}</a></div>
-        <div class="align-center">{{ content.field_staff_position }}</div>
+       {# output all fields other than first/last name and photo. this way if node display changes, the template should still work #}
+        <div class="align-center">{{ content|without('field_first_name', 'field_last_name', 'field_staff_photo') }}</div>
     </div>
 </div>

@@ -213,6 +213,8 @@ div.media-block-text-decoration a, div.media-block-body-decoration a {
   text-decoration: none !important; }
 div.media-block-text-decoration a:hover, div.media-block-body-decoration a:hover {
   text-decoration: underline !important; }
+div.media-block-text-decoration a:focus, div.media-block-body-decoration a:focus {
+  text-decoration: underline !important; }
 
 .block-card > :last-child.epa-intranet-button,
 .list-card > :last-child.epa-intranet-button,
@@ -579,6 +581,9 @@ div.slim-normalizer {
 .centered {
   display: flex;
   align-items: center; }
+
+.align-center.embedded-entity .grid-row {
+  display: block; }
 
 .webform-message {
   max-width: 30rem; }

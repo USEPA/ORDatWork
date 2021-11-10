@@ -105,7 +105,8 @@
         "ckeditor-plugin/templates": "^4.16",
         "drupal/linkchecker": "^1.0@alpha",
         "drupal/csv_serialization": "^2.0",
-        "drupal/hierarchical_term_formatter": "^1.2"
+        "drupal/hierarchical_term_formatter": "^1.2",
+        "sabre/vobject": "^4.2"
     },
     "require-dev": {
         "drush/drush": "^10.0"
@@ -116,7 +117,7 @@
     "extra": {
         "patches": {
             "spatie/calendar-links": {
-                "Fix ICS HTML formatting": "patches/spatie_ics_html_format.patch"
+                "Fix ICS HTML formatting": "patches/spatie_ics_html_format_and_timezone.patch"
             },
             "drupal/draggableviews": {
                 "Drupal 9 compatibility": "patches/draggableviews_compatibility.patch",
