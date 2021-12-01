@@ -118,7 +118,8 @@
         "drush/drush": "^10.0"
     },
     "config": {
-        "process-timeout": 0
+        "process-timeout": 0,
+        "discard-changes": true
     },
     "extra": {
         "patches": {
