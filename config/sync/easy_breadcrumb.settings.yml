@@ -20,9 +20,10 @@ custom_paths: "/quality-assurance/sops :: Quality Assurance|/quality-assurance :
 segments_separator: null
 title_segment_as_link: false
 use_site_title: false
-add_structured_data_json_ld: 0
+add_structured_data_json_ld: false
 capitalizator_mode: none
-capitalizator_ignored_words: ''
-capitalizator_forced_words: ''
-capitalizator_forced_words_case_sensitivity: 0
-capitalizator_forced_words_first_letter: 0
+capitalizator_ignored_words: {  }
+capitalizator_forced_words: {  }
+capitalizator_forced_words_case_sensitivity: false
+capitalizator_forced_words_first_letter: false
+follow_redirects: true
