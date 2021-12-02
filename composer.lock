@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "719b91f3ca4260b8f6b42b1a9e739dc7",
+    "content-hash": "fc8be86e6f7f50669bf0e2a0a42c1efc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4813,17 +4813,17 @@
         },
         {
             "name": "drupal/group_taxonomy",
-            "version": "1.0.0-beta6",
+            "version": "1.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/group_taxonomy.git",
-                "reference": "8.x-1.0-beta6"
+                "reference": "8.x-1.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/group_taxonomy-8.x-1.0-beta6.zip",
-                "reference": "8.x-1.0-beta6",
-                "shasum": "6702dbd0d17a2543b6e71eb67ff0b20115a7647f"
+                "url": "https://ftp.drupal.org/files/projects/group_taxonomy-8.x-1.0-beta7.zip",
+                "reference": "8.x-1.0-beta7",
+                "shasum": "ceb828218685182e888abc8fe82a58258c8825a1"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -4832,8 +4832,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta6",
-                    "datestamp": "1598595109",
+                    "version": "8.x-1.0-beta7",
+                    "datestamp": "1616376168",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -4858,30 +4858,33 @@
         },
         {
             "name": "drupal/groupmedia",
-            "version": "2.0.0-alpha7",
+            "version": "2.0.0-alpha10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/groupmedia.git",
-                "reference": "8.x-2.0-alpha7"
+                "reference": "8.x-2.0-alpha10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/groupmedia-8.x-2.0-alpha7.zip",
-                "reference": "8.x-2.0-alpha7",
-                "shasum": "fe2b40d9b34be0d4d4d5efcd59ecdbf49cc2eddd"
+                "url": "https://ftp.drupal.org/files/projects/groupmedia-8.x-2.0-alpha10.zip",
+                "reference": "8.x-2.0-alpha10",
+                "shasum": "40748f87feb84a85c73c80671c941862eca7d25c"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
                 "drupal/group": "^1.2"
             },
+            "require-dev": {
+                "drupal/paragraphs": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-alpha7",
-                    "datestamp": "1607698335",
+                    "version": "8.x-2.0-alpha10",
+                    "datestamp": "1626957050",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -4894,10 +4897,6 @@
                     "name": "Artem Dmitriiev",
                     "homepage": "https://www.drupal.org/u/admitriiev",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "pablolc",
-                    "homepage": "https://www.drupal.org/user/3618770"
                 }
             ],
             "description": "This module allows you to integrate media entity into group functionality",
@@ -4909,17 +4908,17 @@
         },
         {
             "name": "drupal/groupmenu",
-            "version": "1.0.0-beta2",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/groupmenu.git",
-                "reference": "8.x-1.0-beta2"
+                "reference": "8.x-1.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/groupmenu-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "2a3e49b3dabf7271e5b04a84c7a95cd6ca1aafbf"
+                "url": "https://ftp.drupal.org/files/projects/groupmenu-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "eee8925917662e4afc8701b6c75f2170c428c4bc"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -4931,8 +4930,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1554443887",
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1630844354",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4940,9 +4939,7 @@
                 },
                 "patches_applied": {
                     "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",
-                    "3076635: Add max depth option to group menu block": "https://www.drupal.org/files/issues/2019-08-22/group-menu-max-depth-3076635-2.patch",
                     "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt",
-                    "3144604: Drupal 9 readiness": "https://www.drupal.org/files/issues/2020-10-20/groupmenu-drupal9_readiness-3144604-7.patch",
                     "3206302: Node context error fix": "https://www.drupal.org/files/issues/2021-03-29/3206302-3.diff"
                 }
             },
