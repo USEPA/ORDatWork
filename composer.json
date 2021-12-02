@@ -102,7 +102,7 @@
         "drupal/cache_control_override": "^1.0@alpha",
         "drupal/editoria11y": "^1.0",
         "drupal/custom_sql_migrate_source_plugin": "^1.2",
-        "drupal/cshs": "^3.5",
+        "drupal/cshs": "^1.7",
         "drupal/block_list_override": "^1.0",
         "drupal/viewsreference": "^2.0",
         "drupal/viewsreference_filter": "^1.0.2",
@@ -198,7 +198,9 @@
                 "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-09-16/923934-50-d92.patch"
             },
             "drupal/cshs": {
-                "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-10-21/webform-compatibility.patch"
+                "3166046: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
+                "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch",
+                "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview.patch"
             },
             "merge-plugin": {
                 "include": [

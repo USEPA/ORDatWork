@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ef854cabec7c059e300e79332b4dfdd",
+    "content-hash": "719b91f3ca4260b8f6b42b1a9e739dc7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2927,34 +2927,36 @@
         },
         {
             "name": "drupal/cshs",
-            "version": "3.5.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/cshs.git",
-                "reference": "8.x-3.5"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cshs-8.x-3.5.zip",
-                "reference": "8.x-3.5",
-                "shasum": "d85d9aa905dd5e836fc93168694d28748d6efe53"
+                "url": "https://ftp.drupal.org/files/projects/cshs-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "3aa2438a7eff0a537ba504a041c4b973432472c5"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
-                "php": ">=7.3.0"
+                "php": ">=7.1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.5",
-                    "datestamp": "1632333917",
+                    "version": "8.x-1.7",
+                    "datestamp": "1612535874",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "patches_applied": {
-                    "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-10-21/webform-compatibility.patch"
+                    "3166046: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
+                    "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch",
+                    "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
