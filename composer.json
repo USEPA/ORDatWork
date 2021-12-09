@@ -4,22 +4,25 @@
     "description": "Project template for Drupal 8 sites built with the Lightning distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/core": "9.2.6",
+        "drupal/core": "9.2.9",
         "drupal/lightning_core": "5.9.0",
         "drupal/lightning_media": "4.2.0",
         "drupal/lightning_scheduler": "1.3",
+        "drupal/media_entity_twitter": "^2.7",
         "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupal/group": "1.3",
         "drupal/groupmenu": "^1.0",
         "drupal/entity_reference_tree": "^2.0",
-        "drupal/fullcalendar_view": "^5.0",
-        "drupal/smart_date": "^3.1",
+        "drupal/fullcalendar_view": "^5.1",
+        "drupal/smart_date": "^3.4",
         "drupal/paragraphs": "^1.11",
         "drupal/simplesamlphp_auth": "^3.2",
-        "drupal/admin_toolbar": "^2.4",
-        "drupal/fontawesome": "^2.15",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/fontawesome": "^2.19",
         "wikimedia/composer-merge-plugin": "^1.4",
+        "drupal/chosen": "^3.0",
+        "drupal/chosen_lib": "^3.0",
         "drupal/config_filter": "^1.5",
         "drupal/config_ignore": "^3.0",
         "drupal/config_split": "^1.7",
@@ -27,27 +30,28 @@
         "drupal/migrate_tools": "^5.0",
         "drupal/address": "~1.9",
         "drupal/layout_builder_styles": "^1.0@beta",
-        "drupal/devel": "^4.0",
+        "drupal/layout_builder_restrictions": "^2.9",
+        "drupal/devel": "^4.1",
         "drupal/path_file": "^1.0",
         "drupal/linkit": "^6.0",
-        "drupal/views_bulk_operations": "^3.9",
-        "drupal/views_add_button": "^1.4",
-        "drupal/views_add_button_group": "^1.4",
+        "drupal/views_bulk_operations": "^4.0",
+        "drupal/views_add_button": "^2.0",
+        "drupal/views_add_button_group": "^2.0",
         "fontawesome/fontawesome": "5.13.1",
         "drupal/twig_field_value": "^2.0",
         "bootstrap/bootstrap": "4.1.3",
-        "drupal/easy_breadcrumb": "^1.12",
-        "drupal/extlink": "^1.5",
+        "drupal/easy_breadcrumb": "^2.0",
+        "drupal/extlink": "^1.6",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/uswds_paragraphs": "^2.0@beta",
         "drupal/uswds": "^2.0",
         "drupal/bamboo_twig": "^5.0@alpha",
         "drupal/redirect": "^1.5",
-        "drupal/webform": "^6.0",
+        "drupal/webform": "^6.1",
         "drupal/webform_config_ignore": "^1.0",
-        "drupal/webform_ui": "^6.0",
-        "drupal/webform_node": "^6.0",
-        "drupal/webform_access": "^6.0",
+        "drupal/webform_ui": "^6.1",
+        "drupal/webform_node": "^6.1",
+        "drupal/webform_access": "^6.1",
         "drupal/webform_views": "^5.0@alpha",
         "drupal/webform_analysis": "^1.0@beta",
         "drupal/webform_composite": "^1.0",
@@ -57,23 +61,24 @@
         "drupal/views_taxonomy_term_name_into_id": "^1.0@alpha",
         "drupal/fixed_block_content": "^1.0",
         "drupal/groupmedia": "^2.0@alpha",
-        "drupal/feeds": "3.0.0-alpha9",
-        "drupal/feeds_ex": "1.0.0-alpha4",
+        "drupal/feeds": "3.0.0-alpha11",
+        "drupal/feeds_ex": "1.0.0-alpha5",
         "drupal/google_analytics": "3.1",
         "drupal/vefl": "3.0",
-        "drupal/field_group": "^3.0",
+        "drupal/field_group": "^3.2",
         "drupal/stage_file_proxy": "^1.1",
         "drupal/tablefield": "^2.2",
-        "drupal/conditional_fields": "^1.0",
-        "drupal/block_style_plugins": "^1.3",
+        "drupal/conditional_fields": "^4.0",
+        "drupal/block_style_plugins": "^1.5",
         "drupal/views_data_export": "^1.0",
         "drupal/taxonomy_manager": "^2.0",
         "drupal/group_taxonomy": "^1.0",
         "drupal/moderated_content_bulk_publish": "^2.0",
+        "drupal/moderation_dashboard": "^1.0@beta",
         "drupal/bulk_update_fields": "^2.0",
         "drupal/draggableviews": "1.2",
         "drupal/focal_point": "^1.5",
-        "drupal/h5p": "^1.0-rc18",
+        "drupal/h5p": "^2.0@alpha",
         "drupal/r4032login": "^2.0",
         "drupal/taxonomy_term_depth": "^2.4",
         "drupal/transliterate_filenames": "^1.4",
@@ -91,6 +96,7 @@
         "drupal/openapi_ui": "^1.0-rc3",
         "drupal/openapi_ui_redoc": "^1.0-rc3",
         "drupal/openapi_ui_swagger": "^1.0-rc4",
+        "drupal/openapi_jsonapi": "^3.0",
         "drupal/addtocal": "^2.0@beta",
         "drupal/image_style_quality": "^1.4",
         "drupal/cache_control_override": "^1.0@alpha",
@@ -103,7 +109,7 @@
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
-        "drupal/linkchecker": "^1.0@alpha",
+        "drupal/linkchecker": "^1.0@beta",
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",
         "sabre/vobject": "^4.2"
@@ -112,7 +118,8 @@
         "drush/drush": "^10.0"
     },
     "config": {
-        "process-timeout": 0
+        "process-timeout": 0,
+        "discard-changes": true
     },
     "extra": {
         "patches": {
@@ -146,7 +153,7 @@
                 "2980335: Establish class attribute as array instead of string.": "https://www.drupal.org/files/issues/2018-06-18/2980335_2_define_classes_as_array.patch"
             },
             "drupal/fullcalendar_view": {
-                "3168071: Mouse-hover tool-tip option for version since 8.x.4.2": "https://www.drupal.org/files/issues/2020-09-28/3168071-11.patch"
+                "3168071: Mouse-hover tool-tip option for version since 8.x.4.2": "https://www.drupal.org/files/issues/2021-03-18/3168071-13.patch"
             },
             "drupal/group": {
                 "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2020-11-18/group-support_string_entity_ids-2797793-239.patch",
@@ -157,17 +164,13 @@
             },
             "drupal/groupmenu": {
                 "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",
-                "3076635: Add max depth option to group menu block": "https://www.drupal.org/files/issues/2019-08-22/group-menu-max-depth-3076635-2.patch",
                 "Active Trail Patch: Add active trail ability to group menu block": "patches/fixing_group_menu_active_trail.patch.txt",
-                "3144604: Drupal 9 readiness": "https://www.drupal.org/files/issues/2020-10-20/groupmenu-drupal9_readiness-3144604-7.patch",
                 "3206302: Node context error fix": "https://www.drupal.org/files/issues/2021-03-29/3206302-3.diff"
             },
             "drupal/h5p": {
                 "2774947: Allow disabling the reset of user data results": "https://www.drupal.org/files/issues/2020-05-14/2774947-keep-user-data-in-sync-with-content-7.patch",
-                "3129142: Drupal 9 compatibility": "https://www.drupal.org/files/issues/2021-05-28/3150110-drupal9_deprecated_report-27.patch",
                 "Drupal 9 module compatibility": "patches/h5p_module_compatibility_patch.patch",
                 "Drupal 9 widget compatibility": "patches/h5p_widget_compatibility_patch.patch"
-
             },
             "drupal/paragraphs": {
                 "3090200: Fixes permission issues when editing non-published paragraphs": "https://www.drupal.org/files/issues/2020-07-08/access-controll-issue-3090200-22.patch",
@@ -183,9 +186,6 @@
             "drupal/entity_browser": {
                 "3104901: Entity Browser used in a entity referenced field of a layout builder custom block is not working": "https://www.drupal.org/files/issues/2020-03-25/3104901.patch"
             },
-            "drupal/media_entity_twitter": {
-                "3155001: Use twitter API in TweetVisibleConstraintValidator": "https://www.drupal.org/files/issues/2020-07-07/3155001-6.patch"
-            },
             "drupal/core": {
                 "3020876: Custom block contextual links": "https://www.drupal.org/files/issues/2020-02-22/contextual_links_layout_builder_0.patch",
                 "2719797: New option for Views page displays to use the admin theme": "https://www.drupal.org/files/issues/2019-06-10/core-88x--views--admin-path-2719797-77.patch",
@@ -193,11 +193,10 @@
                 "2949017: There is no way to delete or update file entities of other users incl. user/1": "https://www.drupal.org/files/issues/2020-01-13/2949017-62.patch",
                 "3035113: JSON API": "https://www.drupal.org/files/issues/2019-10-21/LatestRevisionCheck-13092187-24.patch",
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-01-20/2985882-53.patch",
-                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-09-16/923934-50-d92.patch",
-                "2016739: Prevent '@' from triggering email detection unless suffix is included": "https://www.drupal.org/files/issues/2020-09-25/2016739-86.patch"
+                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-09-16/923934-50-d92.patch"
             },
             "drupal/cshs": {
-                "3166049: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
+                "3166046: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
                 "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch",
                 "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview.patch"
             },
@@ -256,19 +255,6 @@
                     "url": "https://git.drupalcode.org/project/viewsreference_filter.git",
                     "type": "git",
                     "reference": "1.0.2"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupal/h5p",
-                "type": "drupal-module",
-                "version": "1.0.0-rc18",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/h5p.git",
-                    "reference": "8.x-1.0-rc18"
                 }
             }
         },
