@@ -34,12 +34,12 @@ h1 {
   font-weight: bold;
   line-height: 1.2; }
 
-h2:not(.usa-card__heading) {
+h2:not([class$="__heading"]) {
   font-family: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 1.95rem !important;
   line-height: 1.2; }
 
-h3 {
+h3:not([class$="__heading"]) {
   font-family: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 1.34rem !important;
   line-height: 1.2; }
