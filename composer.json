@@ -201,6 +201,9 @@
                 "Fix webform UI selection of cshs type": "patches/cshs_webform_ui_fix.patch",
                 "Fix webform UI selection of any type when preview is enabled": "patches/cshs_webform_ui_show_preview.patch"
             },
+            "drupal/media_entity_file_replace": {
+                "3152318: clarify checkbox language into radios": "https://www.drupal.org/files/issues/2021-08-24/mefr--option-radios--3152318-12.patch"
+            },
             "merge-plugin": {
                 "include": [
                     "docroot/modules/contrib/fontawesome/composer.libraries.json"
