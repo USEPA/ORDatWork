@@ -1000,6 +1000,60 @@ ins {
   }
 }
 
+/* ----- match image styling with mobile breakpoint ------ */
+@media (max-width: 40rem) {
+
+  .usa-card--flag .usa-card__media {
+    width: unset !important;
+  }
+  .usa-card--flag .usa-card__header, .usa-card--flag .usa-card__body, .usa-card--flag .usa-card__footer {
+    margin-left: unset !important;
+  }
+
+  .usa-card--flag.usa-card--media-right .usa-card__header,
+  .usa-card--flag.usa-card--media-right .usa-card__body,
+  .usa-card--flag.usa-card--media-right .usa-card__footer {
+    margin-right: unset !important;
+  }
+
+}
+
+/* ----- match image styling with vertical toolbar tray breakpoint ------ */
+@media (max-width: 60.99rem) {
+
+  .usa-card--flag .usa-card__media {
+    width: 9rem;
+  }
+  .usa-card--flag .usa-card__header, .usa-card--flag .usa-card__body, .usa-card--flag .usa-card__footer {
+    margin-left: 8rem;
+  }
+
+  .usa-card--flag.usa-card--media-right .usa-card__header,
+  .usa-card--flag.usa-card--media-right .usa-card__body,
+  .usa-card--flag.usa-card--media-right .usa-card__footer {
+    margin-right: 8rem;
+  }
+
+}
+
+/* ----- match image styling with vertical toolbar tray breakpoint ------ */
+@media (min-width: 61rem) {
+
+  .usa-card--flag .usa-card__media {
+    width: 15rem;
+  }
+  .usa-card--flag .usa-card__header, .usa-card--flag .usa-card__body, .usa-card--flag .usa-card__footer {
+    margin-left: 15rem;
+  }
+
+  .usa-card--flag.usa-card--media-right .usa-card__header,
+  .usa-card--flag.usa-card--media-right .usa-card__body,
+  .usa-card--flag.usa-card--media-right .usa-card__footer {
+    margin-right: 15rem;
+  }
+
+}
+
 div.box__title, .box--special > .box__title {
   font-family: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 0.98rem;
