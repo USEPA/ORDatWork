@@ -1,0 +1,13 @@
+diff --git a/media_entity_file_replace.module b/media_entity_file_replace.module
+index 46a324c..ba64380 100644
+--- a/media_entity_file_replace.module
++++ b/media_entity_file_replace.module
+@@ -121,7 +121,7 @@ function media_entity_file_replace_form_media_form_alter(&$form, FormStateInterf
+         0 => t('Use the file name from the replacement file.'),
+         1 => t('Keep the original file name, but replace its contents.'),
+       ],
+-      '#default_value' => 0,
++      '#default_value' => 1,
+     ];
+     $form['replace_file']['keep_original_filename'][0]['#description'] = t('If the replacement file has the same file name as the original, the file name will be changed to remain unique (usually by adding _0 or _1 before the file extension). If the replacement file has a different file name from the original, the new file name will be used.');
+     $form['replace_file']['keep_original_filename'][1]['#description'] = t('Warning: people may not see the updated content of static files (.txt, .pdf, etc) because they can be cached by external caches for a long time.');
