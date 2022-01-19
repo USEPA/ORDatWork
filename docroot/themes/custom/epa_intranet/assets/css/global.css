@@ -272,10 +272,14 @@ div.media-block-body-decoration a.ext {
   div.media-block-body-decoration a.ext div.field--name-field-usa-media-block-heading {
     display: contents; }
 
-ul.ul-cards div.field__items {
-  display: -webkit-box; }
-  ul.ul-cards div.field__items div.field__item {
-    display: contents; }
+@media (min-width: 40rem) {
+  ul.ul-cards div.field__items {
+    display: -webkit-box; } }
+@media (max-width: 39.99rem) {
+  ul.ul-cards div.field__items {
+    display: block; } }
+ul.ul-cards div.field__items div.field__item {
+  display: contents; }
 ul.ul-cards div.field__label {
   display: none; }
 
