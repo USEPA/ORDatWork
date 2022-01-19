@@ -378,10 +378,26 @@ div.media-block-body-decoration a.ext {
   }
 }
 
+
+@media (min-width: 40rem) {
+  ul.ul-cards div {
+    &.field__items {
+      display: -webkit-box;
+    }
+  }
+}
+
+@media (max-width: 39.99rem) {
+  ul.ul-cards div {
+    &.field__items {
+      display: block;
+    }
+  }
+}
+
+
 ul.ul-cards div {
   &.field__items {
-    display: -webkit-box;
-
     div.field__item {
       display: contents;
     }
