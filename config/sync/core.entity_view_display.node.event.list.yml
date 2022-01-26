@@ -36,8 +36,8 @@ content:
     settings:
       timezone_override: ''
       format: compact
-      past_display: '0'
-      upcoming_display: '4'
+      past_display: 0
+      upcoming_display: 4
       force_chronological: false
       format_type: medium
     third_party_settings: {  }
