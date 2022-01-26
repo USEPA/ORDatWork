@@ -6,12 +6,17 @@ dependencies:
     - node.type.article
     - node.type.blog_post
     - node.type.event
+    - node.type.faces_of_ord
     - node.type.landing_page
     - node.type.page
     - node.type.photos_of_the_week
+    - node.type.policy
+    - node.type.policy_delegation
+    - node.type.policy_delegation_auth_action
     - node.type.quiz
     - node.type.staff_member
     - node.type.webform
+    - node.type.weekly_compass
     - user.role.administrator
   module:
     - content_moderation
@@ -1039,14 +1044,17 @@ display:
             article: article
             page: page
             blog_post: blog_post
-            employee_profile: employee_profile
             event: event
+            faces_of_ord: faces_of_ord
             landing_page: landing_page
-            mass_mailer: mass_mailer
             photos_of_the_week: photos_of_the_week
+            policy: policy
+            policy_delegation: policy_delegation
+            policy_delegation_auth_action: policy_delegation_auth_action
             quiz: quiz
             staff_member: staff_member
             webform: webform
+            weekly_compass: weekly_compass
           group: 1
           exposed: true
           expose:
