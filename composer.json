@@ -110,6 +110,7 @@
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
+        "drupal/anchor_link": "^1.9",
         "drupal/linkchecker": "^1.0@beta",
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",
@@ -204,6 +205,8 @@
             "drupal/media_entity_file_replace": {
                 "3152318: clarify checkbox language into radios": "https://www.drupal.org/files/issues/2021-08-24/mefr--option-radios--3152318-12.patch",
                 "Change default radio to be the overwrite": "patches/media_replace_radio_default.patch"
+            },
+            "drupal/linkit": {
             },
             "merge-plugin": {
                 "include": [
