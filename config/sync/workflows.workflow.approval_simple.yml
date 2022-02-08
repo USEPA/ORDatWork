@@ -1,0 +1,42 @@
+uuid: efbf6c8e-22dd-4bc4-8ffc-35e8b0cbd7d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform_workflows_element
+id: approval_simple
+label: 'Approval - Simple'
+type: webform_workflows_element
+type_settings:
+  states:
+    approved:
+      label: Approved
+      weight: 2
+    disapproved:
+      label: Disapproved
+      weight: 3
+    in_process:
+      label: 'In process'
+      weight: 1
+    sum:
+      label: Submitted
+      weight: 0
+  transitions:
+    approve:
+      label: Approve
+      from:
+        - in_process
+      to: approved
+      weight: 1
+    disapprove:
+      label: Disapprove
+      from:
+        - in_process
+      to: disapproved
+      weight: 2
+    start_processing:
+      label: 'Start processing'
+      from:
+        - sum
+      to: in_process
+      weight: 0

@@ -113,7 +113,8 @@
         "drupal/linkchecker": "^1.0@beta",
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",
-        "sabre/vobject": "^4.2"
+        "sabre/vobject": "^4.2",
+        "drupal/webform_workflows_element": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^10.0"
