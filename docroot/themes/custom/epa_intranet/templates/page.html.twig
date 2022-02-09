@@ -9,20 +9,6 @@
         {{ government_banner }}
     {% endif %}
 
-    {% if nodeContentType %}
-        {% set content_type = nodeContentType %}
-    {% else %}
-        {% set content_type = '' %}
-    {% endif %}
-
-    {% if nodeWebArea %}
-        {% set web_area = nodeWebArea %}
-    {% else %}
-        {% set web_area = '' %}
-    {% endif %}
-
-    <meta name="WebArea" content="{{ web_area }}"/>
-    <meta name="ContentType" content="{{ content_type }}"/>
     <div class="usa-overlay"></div>
 
     {% if page.header_top %}
