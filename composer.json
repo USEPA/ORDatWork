@@ -110,6 +110,7 @@
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
+        "drupal/anchor_link": "^1.9",
         "drupal/linkchecker": "^1.0@beta",
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",

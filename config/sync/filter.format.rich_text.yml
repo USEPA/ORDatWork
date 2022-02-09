@@ -17,6 +17,7 @@ dependencies:
     - linkit
     - media
     - media_inline_embed
+    - slick
     - uswds_ckeditor_integration
 _core:
   default_config_hash: LQ7Z_f1qIeAP7aiyHGBwlgjdsAHzwISN1_6-Dvv_fVY
@@ -60,7 +61,7 @@ filters:
     status: true
     weight: -49
     settings:
-      allowed_html: '<a href hreflang data-entity-type data-entity-uuid class name id data-entity-substitution> <em> <strong> <cite class> <ins data-date> <blockquote cite class> <code> <ul type class> <ol start type class> <li class> <dl> <dt> <dd> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <s> <sup> <sub> <img src width height typeof alt data-align data-caption> <table width height style class> <caption> <tbody> <thead> <tfoot> <th style colspan rowspan scope width> <td style colspan rowspan width> <tr scope> <hr> <p class> <br> <pre> <drupal-entity data-* title alt data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <span class> <figcaption contenteditable data-cke-widget-editable data-cke-enter-mode data-cke-filter class data-cke-display-name data-placeholder> <figure role class> <div data-entity-type data-entity-uuid data-langcode data-entity-embed-display data-entity-embed-display-settings alt title data-embed-button id class data-*><drupal-media data-caption data-align data-entity-type data-entity-uuid data-view-mode alt><source media !src type><drupal-inline-media data-entity-type data-entity-uuid data-view-mode><button class aria-expanded aria-controls><svg class role aria-*><use xlink*>'
+      allowed_html: '<em> <strong> <ins data-date> <code> <ol start type class=""> <li class=""> <dl> <dt> <dd> <s> <sup> <sub> <img src width height typeof alt data-align data-caption> <caption> <tbody> <thead> <tfoot> <th style colspan rowspan scope width> <td style colspan rowspan width> <tr scope> <hr> <br> <pre> <figcaption contenteditable data-cke-widget-editable data-cke-enter-mode data-cke-filter data-cke-display-name data-placeholder class=""> <figure role class=""> <div data-entity-type data-entity-uuid data-langcode data-entity-embed-display data-entity-embed-display-settings alt title data-embed-button id data-* class=""> <source media !src type> <button aria-expanded aria-controls class=""> <svg role aria-* class=""> <use xlink*> <p class=" usa-intro"> <h2 id class=" highlight"> <h3 id class=" highlight"> <h4 id class=" highlight"> <h5 id class=" highlight"> <h6 id class=" highlight"> <blockquote cite class=" pull-quote u-align-left u-align-right"> <cite class=" pull-quote__cite"> <a href hreflang data-entity-type data-entity-uuid name id data-entity-substitution class=" usa-button"> <table width height style class=" datatable"> <span class=" usa-tag warning"> <ul type class=" list list--pipeline"> <drupal-inline-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <drupal-media data-caption data-align data-entity-type data-entity-uuid data-view-mode alt title> <drupal-entity data-* title alt data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -124,6 +125,9 @@ filters:
         img: img
         iframe: iframe
       media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
       use_data_uri: '0'
   media_inline_embed:
     id: media_inline_embed
@@ -142,3 +146,33 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      skin: ''
+      background: false
+      layout: ''
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_position: ''
+      thumbnail_caption: ''
+      image_style: ''
+      thumbnail_style: ''
+      responsive_image_style: ''
+      thumbnail_effect: ''
+      media_switch: ''
+      ratio: ''
+      override: false
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
