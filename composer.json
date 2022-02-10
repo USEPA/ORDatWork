@@ -207,6 +207,9 @@
                 "3152318: clarify checkbox language into radios": "https://www.drupal.org/files/issues/2021-08-24/mefr--option-radios--3152318-12.patch",
                 "Change default radio to be the overwrite": "patches/media_replace_radio_default.patch"
             },
+            "drupal/anchor_link": {
+                "Remove overriding of CTRL+K command from ckeditor interfaces": "patches/anchor_link_shortcut_override.patch"
+            },
             "merge-plugin": {
                 "include": [
                     "docroot/modules/contrib/fontawesome/composer.libraries.json"
