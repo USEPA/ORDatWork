@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8395903d6f4c4d1c5326911ce073e613",
+    "content-hash": "7a6b21c548759ce2d319f3ca86d25552",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1624,6 +1624,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Remove overriding of CTRL+K command from ckeditor interfaces": "patches/anchor_link_shortcut_override.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -20723,6 +20726,7 @@
                 }
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
+            "abandoned": "symfony/filesystem",
             "time": "2015-12-17T08:42:14+00:00"
         },
         {
