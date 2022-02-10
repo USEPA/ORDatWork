@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - anchor_link
     - node
 id: editor
 label: Editor
@@ -51,3 +52,8 @@ matchers:
       group_by_bundle: false
       substitution_type: canonical
       limit: 100
+  1046523c-5ec3-4ca6-8da0-7ad01c52b9bc:
+    uuid: 1046523c-5ec3-4ca6-8da0-7ad01c52b9bc
+    id: ckeditor_anchor_link
+    weight: 0
+    settings: {  }

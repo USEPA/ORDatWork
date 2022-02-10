@@ -4,7 +4,7 @@
     "description": "Project template for Drupal 8 sites built with the Lightning distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/core": "9.2.9",
+        "drupal/core": "9.2.11",
         "drupal/lightning_core": "5.9.0",
         "drupal/lightning_media": "4.2.0",
         "drupal/lightning_scheduler": "1.3",
@@ -110,10 +110,12 @@
         "drupal/node_export": "^1.0@alpha",
         "drupal/uswds_ckeditor_integration": "^1.0@beta",
         "ckeditor-plugin/templates": "^4.16",
+        "drupal/anchor_link": "^1.9",
         "drupal/linkchecker": "^1.0@beta",
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",
-        "sabre/vobject": "^4.2"
+        "sabre/vobject": "^4.2",
+        "drupal/webform_workflows_element": "^1.0@alpha"
     },
     "require-dev": {
         "drush/drush": "^10.0"
@@ -204,6 +206,9 @@
             "drupal/media_entity_file_replace": {
                 "3152318: clarify checkbox language into radios": "https://www.drupal.org/files/issues/2021-08-24/mefr--option-radios--3152318-12.patch",
                 "Change default radio to be the overwrite": "patches/media_replace_radio_default.patch"
+            },
+            "drupal/anchor_link": {
+                "Remove overriding of CTRL+K command from ckeditor interfaces": "patches/anchor_link_shortcut_override.patch"
             },
             "merge-plugin": {
                 "include": [

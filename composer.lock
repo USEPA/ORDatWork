@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b4e73e97848bd0e17b8a888864153d1",
+    "content-hash": "7a6b21c548759ce2d319f3ca86d25552",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -108,7 +108,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -1599,6 +1599,57 @@
             }
         },
         {
+            "name": "drupal/anchor_link",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/anchor_link.git",
+                "reference": "8.x-1.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/anchor_link-8.x-1.9.zip",
+                "reference": "8.x-1.9",
+                "shasum": "48d343f29dc034bf2deb7de858498fb80d558ca8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.9",
+                    "datestamp": "1643826959",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": {
+                    "Remove overriding of CTRL+K command from ckeditor interfaces": "patches/anchor_link_shortcut_override.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed J. Razem",
+                    "homepage": "https://www.drupal.org/user/255384"
+                },
+                {
+                    "name": "Rajab Natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                }
+            ],
+            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal 9",
+            "homepage": "https://www.drupal.org/project/anchor_link",
+            "support": {
+                "source": "https://git.drupalcode.org/project/anchor_link"
+            }
+        },
+        {
             "name": "drupal/auto_entitylabel",
             "version": "3.0.0-beta4",
             "source": {
@@ -2609,16 +2660,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.2.9",
+            "version": "9.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "2e2f015e881abccc32efcd264128e8a8444b2ec1"
+                "reference": "5e2414d2d825999807b6ca3334fc9bdaa11bf8d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/2e2f015e881abccc32efcd264128e8a8444b2ec1",
-                "reference": "2e2f015e881abccc32efcd264128e8a8444b2ec1",
+                "url": "https://api.github.com/repos/drupal/core/zipball/5e2414d2d825999807b6ca3334fc9bdaa11bf8d4",
+                "reference": "5e2414d2d825999807b6ca3334fc9bdaa11bf8d4",
                 "shasum": ""
             },
             "require": {
@@ -2824,10 +2875,13 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "includes/bootstrap.inc"
+                ],
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
-                    "Drupal\\Component\\": "lib/Drupal/Component",
-                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver"
+                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver",
+                    "Drupal\\Component\\": "lib/Drupal/Component"
                 },
                 "classmap": [
                     "lib/Drupal.php",
@@ -2856,9 +2910,6 @@
                     "lib/Drupal/Core/Http/InputBag.php",
                     "lib/Drupal/Core/Installer/InstallerRedirectTrait.php",
                     "lib/Drupal/Core/Site/Settings.php"
-                ],
-                "files": [
-                    "includes/bootstrap.inc"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2866,7 +2917,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2021-11-17T21:05:58+00:00"
+            "time": "2022-01-19T00:14:13+00:00"
         },
         {
             "name": "drupal/crop",
@@ -10114,6 +10165,55 @@
             "homepage": "https://www.drupal.org/project/webform_views",
             "support": {
                 "source": "https://git.drupalcode.org/project/webform_views"
+            }
+        },
+        {
+            "name": "drupal/webform_workflows_element",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_workflows_element.git",
+                "reference": "1.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_workflows_element-1.0.0-alpha1.zip",
+                "reference": "1.0.0-alpha1",
+                "shasum": "ae896967edc64c9ee4910efc524d34c27914657e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/webform": "*"
+            },
+            "require-dev": {
+                "drupal/maestro": "*",
+                "drupal/webform_query": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha1",
+                    "datestamp": "1636114920",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "maxwellkeeble",
+                    "homepage": "https://www.drupal.org/user/3653834"
+                }
+            ],
+            "description": "Provides a webform element that hooks into the core Workflows module to allow transitioning submissions through workflow states.",
+            "homepage": "https://www.drupal.org/project/webform_workflows_element",
+            "support": {
+                "source": "https://git.drupalcode.org/project/webform_workflows_element"
             }
         },
         {
@@ -20692,7 +20792,8 @@
         "drupal/cache_control_override": 15,
         "drupal/node_export": 15,
         "drupal/uswds_ckeditor_integration": 10,
-        "drupal/linkchecker": 10
+        "drupal/linkchecker": 10,
+        "drupal/webform_workflows_element": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
