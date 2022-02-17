@@ -5,12 +5,13 @@ dependencies:
   module:
     - editor
     - media
+    - slick
     - uswds_ckeditor_integration
 _core:
   default_config_hash: 05t4sDVkoIIr93awow19xLg0zeanMekWf7kwUh6Kroo
 name: USWDS
 format: uswds
-weight: 0
+weight: -6
 filters:
   editor_file_reference:
     id: editor_file_reference
@@ -61,3 +62,11 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''
