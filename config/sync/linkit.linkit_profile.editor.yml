@@ -9,18 +9,6 @@ id: editor
 label: Editor
 description: ''
 matchers:
-  eb591dc2-5475-4d8f-baa8-2db0f215be43:
-    uuid: eb591dc2-5475-4d8f-baa8-2db0f215be43
-    id: 'entity:media'
-    weight: 0
-    settings:
-      metadata: ''
-      bundles:
-        document: document
-        image: image
-      group_by_bundle: true
-      substitution_type: media
-      limit: 100
   ce372496-be75-48df-a3f2-51e08e2a2209:
     uuid: ce372496-be75-48df-a3f2-51e08e2a2209
     id: 'entity:node'
