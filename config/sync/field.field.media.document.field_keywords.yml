@@ -10,7 +10,7 @@ id: media.document.field_keywords
 field_name: field_keywords
 entity_type: media
 bundle: document
-label: Keywords
+label: 'Keywords (LEGACY)'
 description: ''
 required: false
 translatable: false
