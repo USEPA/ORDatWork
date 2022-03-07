@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.remote_video.field_limit_file_accessibility
     - field.field.media.remote_video.field_media_in_library
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_media_tags
     - media.type.remote_video
 id: media.remote_video.media_library
 targetEntityType: media
@@ -30,7 +32,9 @@ content:
     region: content
 hidden:
   created: true
+  field_limit_file_accessibility: true
   field_media_in_library: true
+  field_media_tags: true
   path: true
   status: true
   uid: true

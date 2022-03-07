@@ -1,0 +1,13 @@
+uuid: dcb6f8b8-6ce1-4919-9f7a-38819911ae51
+langcode: en
+status: true
+dependencies: {  }
+id: other
+label: Other
+description: 'Catch-all filetype for files that don''t fit the others.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

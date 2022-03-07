@@ -1,0 +1,61 @@
+uuid: f74ac1b4-f08d-456e-91b6-4c817425504e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.other.field_limit_file_accessibility
+    - field.field.media.other.field_media_file
+    - field.field.media.other.field_media_file_1
+    - field.field.media.other.field_media_in_library
+    - field.field.media.other.field_media_tags
+    - media.type.other
+  module:
+    - file
+id: media.other.default
+targetEntityType: media
+bundle: other
+mode: default
+content:
+  field_limit_file_accessibility:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_media_file:
+    label: visually_hidden
+    weight: 0
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_media_file_1:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_media_tags:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_in_library: true
+  name: true
+  thumbnail: true
+  uid: true

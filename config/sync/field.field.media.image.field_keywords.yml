@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.storage.media.field_keywords
     - media.type.image
-    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.media_tags
 id: media.image.field_keywords
 field_name: field_keywords
 entity_type: media
 bundle: image
-label: Keywords
+label: 'Keywords (LEGACY)'
 description: ''
 required: false
 translatable: true
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      media_tags: media_tags
     sort:
       field: name
       direction: asc
