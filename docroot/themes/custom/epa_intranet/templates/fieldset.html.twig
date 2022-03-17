@@ -40,7 +40,8 @@
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  {% if attributes.hasClass('checkboxes--wrapper') or attributes.hasClass('radios--wrapper') %}
+  {% if attributes.hasClass('checkboxes--wrapper') or attributes.hasClass('radios--wrapper')
+    or attributes.hasClass('webform-radios-other--wrapper') or attributes.hasClass('webform-checkboxes-other--wrapper') %}
     <label{{ legend.attributes }}>
       <span{{ legend_span.attributes.addClass(legend_span_classes).addClass('usa-sr-label') }}>{{ legend.title }}</span>
     </label>
