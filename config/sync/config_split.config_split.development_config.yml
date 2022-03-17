@@ -11,10 +11,12 @@ module:
   devel_generate: 0
   simplesamlphp_auth: 0
   stage_file_proxy: 0
+  update: 0
   webform_devel: 0
 theme: {  }
 blacklist:
   - system.performance
+  - update.settings
   - webform_custom_submissions.form
   - webform_custom_submissions.jira_custom_fields
 graylist: {  }

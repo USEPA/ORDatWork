@@ -184,7 +184,7 @@ iframe {
 ol.links-list a, ul.links-list a:not(.usa-button), ol.uswds-breadcrumbs a, ul.uswds-breadcrumbs a {
   color: #005ea2 !important; }
 
-p a[href]:not(.usa-button), article a[href]:not(.usa-button) {
+p a[href]:not(.usa-button), article a[href]:not(.usa-button):not(.usa-graphic-list__heading) {
   color: #005ea2;
   text-decoration: underline !important; }
 
@@ -553,6 +553,9 @@ li {
 fieldset .usa-checkbox__label, fieldset .usa-radio__label {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem; }
+
+.form-item-checkbox-single {
+  margin-top: 1.5rem; }
 
 /* correcting uswds syntax */
 .usa-checkbox__input:checked + .usa-checkbox__label::before,

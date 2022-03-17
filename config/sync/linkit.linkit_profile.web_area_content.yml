@@ -1,0 +1,40 @@
+uuid: 415de508-38bb-42b8-a37d-80935f52d365
+langcode: en
+status: true
+dependencies:
+  module:
+    - anchor_link
+    - node
+id: web_area_content
+label: 'Web Area Content'
+description: 'A Linkit profile that uses the Web Area Content matcher.'
+matchers:
+  def0bb7a-e3bc-4bbb-9784-67f02a3b15a9:
+    uuid: def0bb7a-e3bc-4bbb-9784-67f02a3b15a9
+    id: ckeditor_anchor_link
+    weight: 0
+    settings: {  }
+  9b69ee4a-9a8b-41d9-9e03-ff027683a145:
+    uuid: 9b69ee4a-9a8b-41d9-9e03-ff027683a145
+    id: 'entity:webarea_node'
+    weight: 0
+    settings:
+      include_unpublished: 1
+      metadata: '<em>[node:group:title]</em>; [node:published_status]'
+      bundles:
+        article: article
+        blog_post: blog_post
+        event: event
+        faces_of_ord: faces_of_ord
+        landing_page: landing_page
+        page: page
+        photos_of_the_week: photos_of_the_week
+        policy: policy
+        policy_delegation: policy_delegation
+        quiz: quiz
+        staff_member: staff_member
+        webform: webform
+        weekly_compass: weekly_compass
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100

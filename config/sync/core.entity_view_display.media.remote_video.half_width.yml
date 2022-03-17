@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.half_width
+    - field.field.media.remote_video.field_limit_file_accessibility
     - field.field.media.remote_video.field_media_in_library
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_media_tags
     - media.type.remote_video
   module:
     - layout_builder
@@ -36,7 +38,9 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_limit_file_accessibility: true
   field_media_in_library: true
+  field_media_tags: true
   name: true
   search_api_excerpt: true
   thumbnail: true

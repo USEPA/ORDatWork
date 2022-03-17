@@ -1,0 +1,45 @@
+uuid: 4f04ce27-7af1-47ea-8ed2-1d1ded6b5810
+langcode: en
+status: true
+dependencies:
+  module:
+    - anchor_link
+    - node
+id: default
+label: Default
+description: 'A default Linkit profile'
+matchers:
+  4d00816a-c579-4e0d-8a8d-8fdd94f80157:
+    uuid: 4d00816a-c579-4e0d-8a8d-8fdd94f80157
+    id: ckeditor_anchor_link
+    weight: 0
+    settings: {  }
+  8c5cc268-fe1c-4eab-948b-09e2d462c15f:
+    uuid: 8c5cc268-fe1c-4eab-948b-09e2d462c15f
+    id: 'entity:node'
+    weight: 0
+    settings:
+      include_unpublished: true
+      metadata: '<em>[node:group:title]</em>'
+      bundles:
+        article: article
+        blog_post: blog_post
+        event: event
+        faces_of_ord: faces_of_ord
+        landing_page: landing_page
+        page: page
+        photos_of_the_week: photos_of_the_week
+        policy: policy
+        policy_delegation: policy_delegation
+        quiz: quiz
+        staff_member: staff_member
+        webform: webform
+        weekly_compass: weekly_compass
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+  86c1049c-ff11-4db2-80d3-6c28978aa756:
+    uuid: 86c1049c-ff11-4db2-80d3-6c28978aa756
+    id: email
+    weight: 0
+    settings: {  }

@@ -9,18 +9,6 @@ id: editor
 label: Editor
 description: ''
 matchers:
-  eb591dc2-5475-4d8f-baa8-2db0f215be43:
-    uuid: eb591dc2-5475-4d8f-baa8-2db0f215be43
-    id: 'entity:media'
-    weight: 0
-    settings:
-      metadata: ''
-      bundles:
-        document: document
-        image: image
-      group_by_bundle: true
-      substitution_type: media
-      limit: 100
   ce372496-be75-48df-a3f2-51e08e2a2209:
     uuid: ce372496-be75-48df-a3f2-51e08e2a2209
     id: 'entity:node'
@@ -30,26 +18,19 @@ matchers:
       metadata: '[node:group:title]/[node:title]'
       bundles:
         article: article
+        blog_post: blog_post
         event: event
+        faces_of_ord: faces_of_ord
         landing_page: landing_page
         page: page
+        photos_of_the_week: photos_of_the_week
         policy: policy
         policy_delegation: policy_delegation
         quiz: quiz
-        webform: webform
-      group_by_bundle: true
-      substitution_type: canonical
-      limit: 100
-  43ae6e7c-868e-438a-80cd-9f2193085b30:
-    uuid: 43ae6e7c-868e-438a-80cd-9f2193085b30
-    id: 'entity:node'
-    weight: 0
-    settings:
-      include_unpublished: false
-      metadata: 'Staff Member/[node:title]'
-      bundles:
         staff_member: staff_member
-      group_by_bundle: false
+        webform: webform
+        weekly_compass: weekly_compass
+      group_by_bundle: true
       substitution_type: canonical
       limit: 100
   1046523c-5ec3-4ca6-8da0-7ad01c52b9bc:
