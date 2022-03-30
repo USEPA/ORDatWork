@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae618796fa42a25c3ca818a90b7785af",
+    "content-hash": "b5d470af314e924c00d71481829667f1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4634,17 +4634,17 @@
         },
         {
             "name": "drupal/fullcalendar_view",
-            "version": "5.1.2",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fullcalendar_view.git",
-                "reference": "5.1.2"
+                "reference": "5.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fullcalendar_view-5.1.2.zip",
-                "reference": "5.1.2",
-                "shasum": "52309d725a9e6dc80b03fd883ba78fb675dec947"
+                "url": "https://ftp.drupal.org/files/projects/fullcalendar_view-5.1.4.zip",
+                "reference": "5.1.4",
+                "shasum": "58af4602ff4a0d3920477c6c3a9b3d4a341d8d4f"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -4652,8 +4652,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.1.2",
-                    "datestamp": "1629420252",
+                    "version": "5.1.4",
+                    "datestamp": "1646881046",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8341,17 +8341,17 @@
         },
         {
             "name": "drupal/smart_date",
-            "version": "3.4.3",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smart_date.git",
-                "reference": "3.4.3"
+                "reference": "3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smart_date-3.4.3.zip",
-                "reference": "3.4.3",
-                "shasum": "802f21abc5c1848b04b88169cd63e0980ed5ec85"
+                "url": "https://ftp.drupal.org/files/projects/smart_date-3.5.1.zip",
+                "reference": "3.5.1",
+                "shasum": "bebf090fee43ce53469146a07676b0a844bbcd8d"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -8364,8 +8364,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.4.3",
-                    "datestamp": "1634467244",
+                    "version": "3.5.1",
+                    "datestamp": "1646337034",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
