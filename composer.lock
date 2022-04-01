@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5d470af314e924c00d71481829667f1",
+    "content-hash": "8162137f397f960f12e9b89965a83f82",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6272,6 +6272,10 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch",
+                    "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
