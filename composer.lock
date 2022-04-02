@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8162137f397f960f12e9b89965a83f82",
+    "content-hash": "4a99d84ed6573dd870d1bc01fca5c7b7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6274,8 +6274,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch",
-                    "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch"
+                    "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch",
+                    "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
