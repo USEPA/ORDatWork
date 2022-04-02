@@ -126,8 +126,8 @@
     "extra": {
         "patches": {
             "drupal/linkit": {
-                "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch",
-                "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch"
+                "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch",
+                "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch"
             },
             "spatie/calendar-links": {
                 "Fix ICS HTML formatting": "patches/spatie_ics_html_format_and_timezone.patch"

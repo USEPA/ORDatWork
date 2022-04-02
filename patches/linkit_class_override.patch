@@ -2,7 +2,7 @@ diff --git a/js/linkit.autocomplete.js b/js/linkit.autocomplete.js
 index 558278dd..f417fa02 100644
 --- a/js/linkit.autocomplete.js
 +++ b/js/linkit.autocomplete.js
-@@ -171,6 +171,18 @@
+@@ -171,6 +171,17 @@
          $autocomplete.autocomplete(autocomplete.options);
          $autocomplete.autocomplete('widget').addClass('linkit-ui-autocomplete');
  
@@ -10,7 +10,6 @@ index 558278dd..f417fa02 100644
 +        // for any number of autocomplete wrappers instead of just one
 +        var $parent = $('#drupal-modal');
 +        var $children = $parent.children('.ui-autocomplete');
-+        console.log($children);
 +        for (let i = 0; i < $children.length; i++) {
 +          if (!$children[i].classList.contains('linkit-ui-autocomplete')){
 +            $children[i].classList.add('linkit-ui-autocomplete');
