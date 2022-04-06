@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.policy.field_definitions
     - field.field.node.policy.field_delegation
     - field.field.node.policy.field_effective_date
+    - field.field.node.policy.field_last_reviewed_date
     - field.field.node.policy.field_next_review_date
     - field.field.node.policy.field_policy_background
     - field.field.node.policy.field_policy_coordinator_lco
@@ -46,7 +47,7 @@ third_party_settings:
       children:
         - field_signed_memo
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: details
       region: content
       format_settings:
@@ -61,7 +62,7 @@ third_party_settings:
       children:
         - field_related_procedures
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: details
       region: content
       format_settings:
@@ -76,7 +77,7 @@ third_party_settings:
       children:
         - field_delegation
       parent_name: ''
-      weight: 16
+      weight: 17
       format_type: details
       region: content
       format_settings:
@@ -91,7 +92,7 @@ third_party_settings:
       children:
         - field_policy_coordinator_lco
       parent_name: ''
-      weight: 17
+      weight: 18
       format_type: details
       region: content
       format_settings:
@@ -106,7 +107,7 @@ third_party_settings:
       children:
         - field_roles_and_responsibilities
       parent_name: ''
-      weight: 13
+      weight: 14
       format_type: details
       region: content
       format_settings:
@@ -119,7 +120,7 @@ third_party_settings:
       children:
         - field_definitions
       parent_name: ''
-      weight: 14
+      weight: 15
       format_type: details
       region: content
       format_settings:
@@ -132,7 +133,7 @@ third_party_settings:
       children:
         - field_references
       parent_name: ''
-      weight: 15
+      weight: 16
       format_type: details
       region: content
       format_settings:
@@ -145,7 +146,7 @@ third_party_settings:
       children:
         - field_rescissions
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details
       region: content
       format_settings:
@@ -160,7 +161,7 @@ third_party_settings:
       children:
         - field_supplemental_documents
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details
       region: content
       format_settings:
@@ -202,7 +203,7 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_next_review_date:
+  field_last_reviewed_date:
     weight: 5
     label: inline
     settings:
@@ -211,8 +212,17 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_next_review_date:
+    weight: 6
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: day_month_year
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_policy_background:
-    weight: 8
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -227,7 +237,7 @@ content:
     type: entity_reference_label
     region: content
   field_policy_statement:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -317,7 +327,7 @@ content:
     third_party_settings: {  }
     region: content
   field_topic_area_of_authority:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link: false
