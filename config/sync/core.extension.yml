@@ -114,7 +114,6 @@ module:
   lightning_media_image: 0
   lightning_media_slideshow: 0
   lightning_media_twitter: 0
-  lightning_scheduler: 0
   link: 0
   linkchecker: 0
   linkit: 0
