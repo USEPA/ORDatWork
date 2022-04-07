@@ -110,6 +110,7 @@ module:
   layout_library: 0
   libraries: 0
   lightning_core: 0
+  lightning_scheduler: 0
   lightning_media: 0
   lightning_media_image: 0
   lightning_media_slideshow: 0
