@@ -13,6 +13,11 @@ Use a BASH command line (e.g. GIT BASH) for a Windows environment.
 5. `composer install` -- install all dependencies for the project. This can take some time.
     * For a Windows environment, this must be done in a BASH command line. Try GIT bash, included with the GIT installation, or Ubuntu Bash, new to Windows 10. 
 
+### Requirements: Composer and PHP Version
+
+Currently the project requires:
+* Composer 1 (you can use `composer self-update --1` to downgrade)
+* PHP 7.x
 
 ### [Acquia Dev Desktop (ADD)](https://dev.acquia.com/downloads)
 1. Open ADD
