@@ -110,11 +110,11 @@ module:
   layout_library: 0
   libraries: 0
   lightning_core: 0
-  lightning_scheduler: 0
   lightning_media: 0
   lightning_media_image: 0
   lightning_media_slideshow: 0
   lightning_media_twitter: 0
+  lightning_scheduler: 0
   link: 0
   linkchecker: 0
   linkit: 0
@@ -146,6 +146,7 @@ module:
   page_manager: 0
   panels: 0
   paragraph_view_mode: 0
+  paragraphs_entity_embed: 0
   path: 0
   path_alias: 0
   path_file: 0

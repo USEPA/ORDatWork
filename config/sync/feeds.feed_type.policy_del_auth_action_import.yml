@@ -35,6 +35,7 @@ processor_configuration:
   skip_hash_check: false
   values:
     type: policy_delegation_auth_action
+  insert_new: 1
 custom_sources:
   action:
     label: Action

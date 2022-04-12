@@ -35,48 +35,10 @@ parser: xml
 parser_configuration:
   context:
     value: /rss/channel/item
-  sources:
-    title:
-      label: title
-      value: title
-    lab:
-      label: lab
-      value: lab
-    division:
-      label: division
-      value: division
-    qapp_latest_pdf:
-      label: qapp_latest_pdf
-      value: qapp_latest_pdf
-    qapp_latest_word:
-      label: qapp_latest_word
-      value: qapp_latest_word
-    description:
-      label: description
-      value: description
-    qa_activity_number:
-      label: qa_activity_number
-      value: qa_activity_number
-    qapp_approval_date:
-      label: qapp_approval_date
-      value: qapp_approval_date
-    project_lead:
-      label: project_lead
-      value: project_lead
-    project_lead_email:
-      label: project_lead_email
-      value: project_lead_email
-    project_type:
-      label: project_type
-      value: project_type
-    guid:
-      label: guid
-      value: guid
   use_tidy: false
   display_errors: false
   source_encoding:
     - auto
-  debug_mode: false
   line_limit: 100
 processor: 'entity:node'
 processor_configuration:
@@ -90,6 +52,7 @@ processor_configuration:
   skip_hash_check: false
   values:
     type: qapp
+  insert_new: 1
 custom_sources:
   title:
     label: title

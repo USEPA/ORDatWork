@@ -33,6 +33,7 @@ processor_configuration:
   owner_id: 0
   authorize: false
   owner_feed_author: false
+  insert_new: 1
 custom_sources:
   action:
     label: action
