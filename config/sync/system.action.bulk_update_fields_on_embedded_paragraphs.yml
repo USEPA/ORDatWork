@@ -1,0 +1,11 @@
+uuid: 51d6a019-6300-45ed-a335-e4cee9069b8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_update_fields
+id: bulk_update_fields_on_embedded_paragraphs
+label: 'Bulk Update EmbeddedParagraphs Fields'
+type: embedded_paragraphs
+plugin: bulk_update_fields_action_base
+configuration: {  }

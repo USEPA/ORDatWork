@@ -36,54 +36,10 @@ parser: xml
 parser_configuration:
   context:
     value: /rss/channel/item
-  sources:
-    title:
-      label: title
-      value: title
-    description:
-      label: description
-      value: description
-    guid:
-      label: guid
-      value: guid
-    discipline:
-      label: discipline
-      value: discipline
-    subdiscipline:
-      label: subdiscipline
-      value: subdiscipline
-    sop_number:
-      label: sop_number
-      value: sop_number
-    sop_status:
-      label: sop_status
-      value: sop_status
-    date_reviewed:
-      label: date_reviewed
-      value: date_reviewed
-    sop_contact:
-      label: sop_contact
-      value: sop_contact
-    lab:
-      label: lab
-      value: lab
-    division:
-      label: division
-      value: division
-    link:
-      label: link
-      value: link
-    alt_id:
-      label: alt_id
-      value: alt_id
-    previous_id:
-      label: previous_id
-      value: previous_id
   use_tidy: false
   display_errors: false
   source_encoding:
     - auto
-  debug_mode: false
   line_limit: 100
 processor: 'entity:node'
 processor_configuration:
@@ -97,6 +53,7 @@ processor_configuration:
   skip_hash_check: false
   values:
     type: sop
+  insert_new: 1
 custom_sources:
   title:
     label: title

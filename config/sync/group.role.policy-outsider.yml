@@ -12,6 +12,7 @@ audience: outsider
 group_type: policy
 permissions_ui: true
 permissions:
+  - 'view any unpublished group'
   - 'view group'
   - 'view group_media:document entity'
   - 'view group_media:image entity'
@@ -21,3 +22,5 @@ permissions:
   - 'view group_node:policy entity'
   - 'view group_node:policy_delegation entity'
   - 'view group_node:policy_delegation_auth_action entity'
+  - 'view latest group version'
+  - 'view own unpublished group'

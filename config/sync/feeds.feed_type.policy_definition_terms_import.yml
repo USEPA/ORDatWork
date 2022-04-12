@@ -32,6 +32,7 @@ processor_configuration:
   authorize: false
   owner_feed_author: false
   langcode: en
+  insert_new: 1
 custom_sources:
   name:
     label: Name

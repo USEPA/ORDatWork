@@ -10,7 +10,7 @@ field_name: field_card_type
 entity_type: paragraph
 type: paragraph_view_mode
 settings:
-  max_length: '255'
+  max_length: 255
   is_ascii: false
   case_sensitive: false
 module: paragraph_view_mode
