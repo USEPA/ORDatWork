@@ -42,6 +42,7 @@ processor_configuration:
   skip_hash_check: false
   values:
     type: staff_member
+  insert_new: 1
 custom_sources:
   email:
     label: email

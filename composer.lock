@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f07f762ee9fd0f2bfd91790e30eb34ef",
+    "content-hash": "a8a7048f4dd3937317aa3ac996f7af7b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -108,7 +108,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -4634,17 +4634,17 @@
         },
         {
             "name": "drupal/fullcalendar_view",
-            "version": "5.1.2",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fullcalendar_view.git",
-                "reference": "5.1.2"
+                "reference": "5.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fullcalendar_view-5.1.2.zip",
-                "reference": "5.1.2",
-                "shasum": "52309d725a9e6dc80b03fd883ba78fb675dec947"
+                "url": "https://ftp.drupal.org/files/projects/fullcalendar_view-5.1.4.zip",
+                "reference": "5.1.4",
+                "shasum": "58af4602ff4a0d3920477c6c3a9b3d4a341d8d4f"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -4652,8 +4652,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.1.2",
-                    "datestamp": "1629420252",
+                    "version": "5.1.4",
+                    "datestamp": "1646881046",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4761,39 +4761,40 @@
         },
         {
             "name": "drupal/group",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/group.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/group-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "167129a35353800e7ec1dc3302a4de7da1dae837"
+                "url": "https://ftp.drupal.org/files/projects/group-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "385a70f421dc3142c9c91876ac8b35ae3afa107e"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9",
-                "drupal/entity": "^1.0",
+                "drupal/entity": "^1.2",
                 "drupal/variationcache": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1601990196",
+                    "version": "8.x-1.4",
+                    "datestamp": "1625063515",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "patches_applied": {
-                    "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2020-11-18/group-support_string_entity_ids-2797793-239.patch",
+                    "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2021-06-15/group-support_string_entity_ids-2797793-260.patch",
                     "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2020-11-17/group-gnode_tokens-2774827-74.patch",
                     "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                     "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
-                    "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch"
+                    "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch",
+                    "3071489: Group media upload fix": "https://www.drupal.org/files/issues/2022-01-11/incorrect-access-check-on-media-library-3071489-25.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6272,6 +6273,10 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch",
+                    "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8341,17 +8346,17 @@
         },
         {
             "name": "drupal/smart_date",
-            "version": "3.4.3",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smart_date.git",
-                "reference": "3.4.3"
+                "reference": "3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smart_date-3.4.3.zip",
-                "reference": "3.4.3",
-                "shasum": "802f21abc5c1848b04b88169cd63e0980ed5ec85"
+                "url": "https://ftp.drupal.org/files/projects/smart_date-3.5.1.zip",
+                "reference": "3.5.1",
+                "shasum": "bebf090fee43ce53469146a07676b0a844bbcd8d"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -8364,8 +8369,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.4.3",
-                    "datestamp": "1634467244",
+                    "version": "3.5.1",
+                    "datestamp": "1646337034",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8858,17 +8863,17 @@
         },
         {
             "name": "drupal/uswds",
-            "version": "2.2.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/uswds.git",
-                "reference": "8.x-2.2"
+                "reference": "8.x-2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/uswds-8.x-2.2.zip",
-                "reference": "8.x-2.2",
-                "shasum": "894ff1487fb08927330ed85a877744c5829d6297"
+                "url": "https://ftp.drupal.org/files/projects/uswds-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "43cefe9ccc00d93b233d13955b03fee9ad5dbb7f"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -8876,8 +8881,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.2",
-                    "datestamp": "1627071665",
+                    "version": "8.x-2.4",
+                    "datestamp": "1642091810",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9664,17 +9669,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.1.1",
+            "version": "6.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.1.1"
+                "reference": "6.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.1.1.zip",
-                "reference": "6.1.1",
-                "shasum": "0d3c619a165f4a84b5cced8aa35c54e1296df22e"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.1.3.zip",
+                "reference": "6.1.3",
+                "shasum": "efd032eadc10a4752b9b0203152a5d20eefac175"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -9722,8 +9727,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.1.1",
-                    "datestamp": "1638398898",
+                    "version": "6.1.3",
+                    "datestamp": "1644940723",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9778,7 +9783,7 @@
         },
         {
             "name": "drupal/webform_access",
-            "version": "6.1.1",
+            "version": "6.1.3",
             "require": {
                 "drupal/core": "^8.8 || ^9",
                 "drupal/webform": "*",
@@ -9787,8 +9792,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "6.1.1",
-                    "datestamp": "1638398898",
+                    "version": "6.1.3",
+                    "datestamp": "1644940723",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9829,38 +9834,37 @@
         },
         {
             "name": "drupal/webform_analysis",
-            "version": "1.0.0-beta7",
+            "version": "1.0.0-beta8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform_analysis.git",
-                "reference": "8.x-1.0-beta7"
+                "reference": "8.x-1.0-beta8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_analysis-8.x-1.0-beta7.zip",
-                "reference": "8.x-1.0-beta7",
-                "shasum": "218ee42c0d3d5c62bb29e0e68134188dc2a16c85"
+                "url": "https://ftp.drupal.org/files/projects/webform_analysis-8.x-1.0-beta8.zip",
+                "reference": "8.x-1.0-beta8",
+                "shasum": "b342a88b890058ea8a81807a1528cf2d31ea053f"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8.8 || ^9",
                 "drupal/webform": "*"
             },
             "require-dev": {
+                "drupal/webform": "^5.6 || ^6",
                 "drupal/webform_node": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta7",
-                    "datestamp": "1540735084",
+                    "version": "8.x-1.0-beta8",
+                    "datestamp": "1643355378",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
                 },
                 "patches_applied": {
-                    "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch",
-                    "Drupal 9 submodule compatibility": "patches/webform_node_analysis_compatibility.patch",
                     "3137161: google charts fix": "https://www.drupal.org/files/issues/2020-06-07/google_charts_version_downgrade-3137161-5.patch"
                 }
             },
@@ -9870,14 +9874,16 @@
             ],
             "authors": [
                 {
-                    "name": "lbaran",
-                    "homepage": "https://www.drupal.org/user/3368098"
+                    "name": "Laurent BARAN (lbaran)",
+                    "homepage": "https://www.drupal.org/u/lbaran",
+                    "role": "Maintainer"
                 }
             ],
-            "description": "Enables to obtain statistics on the results of form submissions.",
-            "homepage": "https://www.drupal.org/project/webform_analysis",
+            "description": "This module is used to obtain statistics on the results of form submissions.",
+            "homepage": "https://drupal.org/project/webform_analysis",
             "support": {
-                "source": "https://git.drupalcode.org/project/webform_analysis"
+                "source": "https://git.drupalcode.org/project/webform_analysis",
+                "issues": "https://www.drupal.org/project/issues/webform_analysis"
             }
         },
         {
@@ -9974,7 +9980,7 @@
         },
         {
             "name": "drupal/webform_node",
-            "version": "6.1.1",
+            "version": "6.1.3",
             "require": {
                 "drupal/core": "^8.8 || ^9",
                 "drupal/webform": "*"
@@ -9982,8 +9988,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "6.1.1",
-                    "datestamp": "1638398898",
+                    "version": "6.1.3",
+                    "datestamp": "1644940723",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10024,7 +10030,7 @@
         },
         {
             "name": "drupal/webform_ui",
-            "version": "6.1.1",
+            "version": "6.1.3",
             "require": {
                 "drupal/core": "^8.8 || ^9",
                 "drupal/webform": "*"
@@ -10032,8 +10038,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "6.1.1",
-                    "datestamp": "1638398898",
+                    "version": "6.1.3",
+                    "datestamp": "1644940723",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_delegation
     - field.storage.node.field_effective_date
+    - field.storage.node.field_last_reviewed_date
     - field.storage.node.field_next_review_date
     - field.storage.node.field_policy_coordinator_lco
     - field.storage.node.field_policy_statement
@@ -15,17 +16,7 @@ dependencies:
     - node.type.policy
     - taxonomy.vocabulary.policy_topics
   content:
-    - 'taxonomy_term:policy_topics:17d483f7-ffa3-4505-850d-58449ada77f4'
-    - 'taxonomy_term:policy_topics:49a36efe-b258-4c46-956d-feebc8a67ce0'
-    - 'taxonomy_term:policy_topics:635ca668-dbfe-41de-af3c-562e1ac88e8a'
-    - 'taxonomy_term:policy_topics:652d980b-eca2-46af-af61-a23458e6bc20'
-    - 'taxonomy_term:policy_topics:7b88e031-364c-4aa2-8a31-92f4ff9270f4'
-    - 'taxonomy_term:policy_topics:b2397c0e-ae63-4c3a-9f99-08f67867ca7c'
-    - 'taxonomy_term:policy_topics:b82a3473-84d8-4e97-a7c9-a66d377654df'
-    - 'taxonomy_term:policy_topics:d5ab2631-5f12-4cf5-9682-ece42a6b4b7f'
-    - 'taxonomy_term:policy_topics:e0e74d7e-8bc8-4464-bb33-eea7418db534'
-    - 'taxonomy_term:policy_topics:ef893804-342d-4893-8bcc-422c16ef4780'
-    - 'taxonomy_term:policy_topics:f6938cfd-8d96-4972-a62d-dcb818f98d23'
+    - 'taxonomy_term:policy_topics:c2b0f652-48f8-4b8d-977a-a3d93ec844bc'
   module:
     - csv_serialization
     - datetime
@@ -123,25 +114,45 @@ display:
           summary: ''
           description: ''
           columns:
-            field_prior_identifier: field_prior_identifier
-            field_effective_date: field_effective_date
-            field_related_procedures: field_related_procedures
+            field_next_review_date: field_next_review_date
+            field_last_reviewed_date: field_last_reviewed_date
+            title: title
+            field_delegation: field_delegation
+            field_topic_area_of_authority: field_topic_area_of_authority
+            field_policy_coordinator_lco: field_policy_coordinator_lco
           info:
-            field_prior_identifier:
+            field_next_review_date:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_effective_date:
+            field_last_reviewed_date:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_related_procedures:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_delegation:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_topic_area_of_authority:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_policy_coordinator_lco:
               align: ''
               separator: ''
               empty_column: false
@@ -562,6 +573,70 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_last_reviewed_date:
+          id: field_last_reviewed_date
+          table: node__field_last_reviewed_date
+          field: field_last_reviewed_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Last Reviewed Date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: day_month_year
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_policy_statement:
           id: field_policy_statement
           table: node__field_policy_statement
@@ -714,6 +789,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_effective_date'
+        - 'config:field.storage.node.field_last_reviewed_date'
         - 'config:field.storage.node.field_policy_statement'
         - 'config:field.storage.node.field_topic_area_of_authority'
   active_policies_review_date_page:
@@ -755,6 +831,70 @@ display:
           group_type: group
           admin_label: ''
           label: 'Next Review Date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: day_month_year
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_last_reviewed_date:
+          id: field_last_reviewed_date
+          table: node__field_last_reviewed_date
+          field: field_last_reviewed_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Last Reviewed Date'
           exclude: false
           alter:
             alter_text: false
@@ -1330,6 +1470,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_delegation'
+        - 'config:field.storage.node.field_last_reviewed_date'
         - 'config:field.storage.node.field_next_review_date'
         - 'config:field.storage.node.field_policy_coordinator_lco'
         - 'config:field.storage.node.field_topic_area_of_authority'
@@ -1372,6 +1513,70 @@ display:
           group_type: group
           admin_label: ''
           label: 'Next Review Date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: day_month_year
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_last_reviewed_date:
+          id: field_last_reviewed_date
+          table: node__field_last_reviewed_date
+          field: field_last_reviewed_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Last Reviewed Date'
           exclude: false
           alter:
             alter_text: false
@@ -1808,6 +2013,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_delegation'
+        - 'config:field.storage.node.field_last_reviewed_date'
         - 'config:field.storage.node.field_next_review_date'
         - 'config:field.storage.node.field_policy_coordinator_lco'
         - 'config:field.storage.node.field_topic_area_of_authority'
@@ -2118,8 +2324,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            97: 97
-            98: 98
+            49: 49
           group: 1
           exposed: false
           expose:
@@ -2155,6 +2360,12 @@ display:
           vid: policy_topics
           hierarchy: false
           error_message: true
+          parent: 0
+          level_labels: ''
+          force_deepest: false
+          save_lineage: false
+          hierarchy_depth: 0
+          required_depth: 0
           plugin_id: taxonomy_index_tid
         field_rescind_this_policy_value:
           id: field_rescind_this_policy_value

@@ -12,11 +12,11 @@
         "drupal/media_entity_file_replace": "1.0",
         "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/group": "1.3",
+        "drupal/group": "1.4",
         "drupal/groupmenu": "^1.0",
         "drupal/entity_reference_tree": "^2.0",
         "drupal/fullcalendar_view": "^5.1",
-        "drupal/smart_date": "^3.4",
+        "drupal/smart_date": "^3.5",
         "drupal/paragraphs": "^1.13",
         "drupal/simplesamlphp_auth": "^3.2",
         "drupal/admin_toolbar": "^3.1",
@@ -125,6 +125,10 @@
     },
     "extra": {
         "patches": {
+            "drupal/linkit": {
+                "Fix issue with wrong ui-autocomplete class being assigned to autocompletes": "patches/linkit_class_override.patch",
+                "Fix sizing inconsistencies and scrollbar smoothness": "patches/linkit_css_override.patch"
+            },
             "spatie/calendar-links": {
                 "Fix ICS HTML formatting": "patches/spatie_ics_html_format_and_timezone.patch"
             },
@@ -138,8 +142,6 @@
                 "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"
             },
             "drupal/webform_analysis": {
-                "Drupal 9 compatibility": "patches/webform_analysis_compatibility.patch",
-                "Drupal 9 submodule compatibility": "patches/webform_node_analysis_compatibility.patch",
                 "3137161: google charts fix": "https://www.drupal.org/files/issues/2020-06-07/google_charts_version_downgrade-3137161-5.patch"
             },
             "drupal/viewsreference": {
@@ -158,11 +160,12 @@
                 "3168071: Mouse-hover tool-tip option for version since 8.x.4.2": "https://www.drupal.org/files/issues/2021-03-18/3168071-13.patch"
             },
             "drupal/group": {
-                "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2020-11-18/group-support_string_entity_ids-2797793-239.patch",
+                "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2021-06-15/group-support_string_entity_ids-2797793-260.patch",
                 "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2020-11-17/group-gnode_tokens-2774827-74.patch",
                 "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                 "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
-                "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch"
+                "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch",
+                "3071489: Group media upload fix": "https://www.drupal.org/files/issues/2022-01-11/incorrect-access-check-on-media-library-3071489-25.patch"
             },
             "drupal/groupmenu": {
                 "3010909: Group menu association": "https://www.drupal.org/files/issues/2019-04-04/groupmenu-change_references_to_entity_id-3010909-9.patch",

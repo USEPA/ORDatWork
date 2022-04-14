@@ -12,6 +12,7 @@ audience: anonymous
 group_type: communications
 permissions_ui: true
 permissions:
+  - 'view any unpublished group'
   - 'view group'
   - 'view group_media:document entity'
   - 'view group_media:image entity'
@@ -19,3 +20,5 @@ permissions:
   - 'view group_node:faces_of_ord entity'
   - 'view group_node:photos_of_the_week entity'
   - 'view group_node:weekly_compass entity'
+  - 'view latest group version'
+  - 'view own unpublished group'
