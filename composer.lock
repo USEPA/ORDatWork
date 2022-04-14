@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5867b532bb1ea2dd574a8ee5fa367f59",
+    "content-hash": "a8a7048f4dd3937317aa3ac996f7af7b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4793,7 +4793,8 @@
                     "2774827: Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2020-11-17/group-gnode_tokens-2774827-74.patch",
                     "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                     "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
-                    "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch"
+                    "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch",
+                    "3071489: Group media upload fix": "https://www.drupal.org/files/issues/2022-01-11/incorrect-access-check-on-media-library-3071489-25.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
