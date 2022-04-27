@@ -6,4 +6,14 @@ id: region_8_traveler_divisions
 label: 'Region 8 Traveler Divisions'
 category: 'Region 8'
 likert: false
-options: "ARD: ARD\nECAD: ECAD\nLCARD: LCARD\nLSASD: LSASD\nMSD: MSD\nORA: ORA\nORC: ORC\nRA-IOD: RA-IOD\nSEMD: SEMD\nWD: WD"
+options: |-
+  ARD: ARD
+  ECAD: ECAD
+  LCARD: LCARD
+  LSASD: LSASD
+  MSD: MSD
+  ORA: ORA
+  ORC: ORC
+  RA-IOD: RA-IOD
+  SEMD: SEMD
+  WD: WD

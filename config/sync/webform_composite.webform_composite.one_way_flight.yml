@@ -4,5 +4,21 @@ status: true
 dependencies: {  }
 id: one_way_flight
 label: 'One-Way Flight'
-elements: "flying_from:\n  '#type': textfield\n  '#title': 'Flying From'\nflying_to:\n  '#type': textfield\n  '#title': 'Flying To'\ndeparting_date:\n  '#type': date\n  '#title': 'Departing Date'\ndeparting_time:\n  '#type': webform_time\n  '#title': 'Approximate Departing Time'\ncomments:\n  '#type': textarea\n  '#title': Comments\n  '#help': \"\\tPlease identify any specific flights you are considering.\"\n"
+elements: |
+  flying_from:
+    '#type': textfield
+    '#title': 'Flying From'
+  flying_to:
+    '#type': textfield
+    '#title': 'Flying To'
+  departing_date:
+    '#type': date
+    '#title': 'Departing Date'
+  departing_time:
+    '#type': webform_time
+    '#title': 'Approximate Departing Time'
+  comments:
+    '#type': textarea
+    '#title': Comments
+    '#help': "\tPlease identify any specific flights you are considering."
 description: 'Collects information about a one-way flight. Will also be used for Multi-city trips, but will be customized to allow additional flights.'

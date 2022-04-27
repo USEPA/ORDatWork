@@ -14,7 +14,121 @@ id: region8_travel_profile
 title: 'Travel Profile'
 description: ''
 category: 'Region 8 Travel Forms'
-elements: "are_you_completing_this_form_for_someone_else_:\n  '#type': select\n  '#title': 'Are you completing this form for someone else?'\n  '#options': yes_no\n  '#required': true\nnew_employee_:\n  '#type': select\n  '#title': 'New Employee?'\n  '#options': yes_no\n  '#required': true\nyour_information:\n  '#type': 'webform_composite:completer_information'\n  '#title': 'Your Information'\n  '#required': true\nregion_8_your_division:\n  '#type': select\n  '#title': 'Your Division'\n  '#options': region_8_traveler_divisions\n  '#required': true\n  '#states':\n    visible:\n      ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n        value: 'No'\ntraveler_information:\n  '#type': 'webform_composite:traveler_information'\n  '#title': 'Traveler Information'\n  '#states':\n    visible:\n      ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n        value: 'Yes'\n  '#required': true\nregion_8_traveler_division:\n  '#type': select\n  '#title': 'Traveler Division'\n  '#options': region_8_traveler_divisions\n  '#required': true\n  '#states':\n    visible:\n      ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n        value: 'Yes'\npreferred_home_airport_new:\n  '#type': textfield\n  '#title': 'Preferred Home Airport'\n  '#multiple': 2\n  '#title_display': none\n  '#multiple__header_label': 'Preferred Home Airport'\n  '#multiple__sorting': false\n  '#multiple__operations': false\n  '#multiple__add_more_input': false\n  '#multiple__add_more_button_label': 'Add Another Airport'\nhave_a_frequent_flyer_account_with_an_airline_that_you_would_lik:\n  '#type': select\n  '#title': 'Do you have a preferred airline that you would like to use (if possible)?'\n  '#options': yes_no\nairline_preference:\n  '#type': 'webform_composite:frequent_flyer_information'\n  '#title': 'Airline Preference'\n  '#description_display': before\n  '#states':\n    visible:\n      ':input[name=\"have_a_frequent_flyer_account_with_an_airline_that_you_would_lik\"]':\n        value: 'Yes'\nflight_seating_preference:\n  '#type': radios\n  '#title': 'Flight seating preference'\n  '#options':\n    Aisle: Aisle\n    Middle: Middle\n    Window: Window\nrental_car_size_preference:\n  '#type': select\n  '#title': 'Rental Car Size Preference'\n  '#options':\n    Compact: Compact\n    Mid-size: Mid-size\nrental_car_company:\n  '#type': textfield\n  '#title': 'Rental Car Company(s)'\n  '#maxlength': 255\n  '#size': 45\nfrequent_rental_car_account_number:\n  '#type': textfield\n  '#title': 'Frequent Rental Car Account Number(s)'\n  '#maxlength': 255\n  '#size': 45\ndo_you_have_a_hotel_chain_preference_:\n  '#type': select\n  '#title': 'Do you have a preferred hotel chain that you would like to use (if possible)?'\n  '#options': yes_no\nhotel_preference:\n  '#type': 'webform_composite:hotel_preference'\n  '#title': 'Hotel Preference'\n  '#description_display': before\n  '#states':\n    visible:\n      ':input[name=\"do_you_have_a_hotel_chain_preference_\"]':\n        value: 'Yes'\nbed_size_preference:\n  '#type': radios\n  '#title': 'Bed Size Preference'\n  '#options':\n    King: King\n    Queen: Queen\n    'Two Doubles': 'Two Doubles'\nsmoking_preference:\n  '#type': radios\n  '#title': 'Smoking Preference'\n  '#options':\n    Smoking: Smoking\n    Non-smoking: Non-smoking\n    'No preference': 'No preference'\nany_additional_requests_:\n  '#type': textarea\n  '#title': 'Any additional requests?'"
+elements: |-
+  are_you_completing_this_form_for_someone_else_:
+    '#type': select
+    '#title': 'Are you completing this form for someone else?'
+    '#options': yes_no
+    '#required': true
+  new_employee_:
+    '#type': select
+    '#title': 'New Employee?'
+    '#options': yes_no
+    '#required': true
+  your_information:
+    '#type': 'webform_composite:completer_information'
+    '#title': 'Your Information'
+    '#required': true
+  region_8_your_division:
+    '#type': select
+    '#title': 'Your Division'
+    '#options': region_8_traveler_divisions
+    '#required': true
+    '#states':
+      visible:
+        ':input[name="are_you_completing_this_form_for_someone_else_"]':
+          value: 'No'
+  traveler_information:
+    '#type': 'webform_composite:traveler_information'
+    '#title': 'Traveler Information'
+    '#states':
+      visible:
+        ':input[name="are_you_completing_this_form_for_someone_else_"]':
+          value: 'Yes'
+    '#required': true
+  region_8_traveler_division:
+    '#type': select
+    '#title': 'Traveler Division'
+    '#options': region_8_traveler_divisions
+    '#required': true
+    '#states':
+      visible:
+        ':input[name="are_you_completing_this_form_for_someone_else_"]':
+          value: 'Yes'
+  preferred_home_airport_new:
+    '#type': textfield
+    '#title': 'Preferred Home Airport'
+    '#multiple': 2
+    '#title_display': none
+    '#multiple__header_label': 'Preferred Home Airport'
+    '#multiple__sorting': false
+    '#multiple__operations': false
+    '#multiple__add_more_input': false
+    '#multiple__add_more_button_label': 'Add Another Airport'
+  have_a_frequent_flyer_account_with_an_airline_that_you_would_lik:
+    '#type': select
+    '#title': 'Do you have a preferred airline that you would like to use (if possible)?'
+    '#options': yes_no
+  airline_preference:
+    '#type': 'webform_composite:frequent_flyer_information'
+    '#title': 'Airline Preference'
+    '#description_display': before
+    '#states':
+      visible:
+        ':input[name="have_a_frequent_flyer_account_with_an_airline_that_you_would_lik"]':
+          value: 'Yes'
+  flight_seating_preference:
+    '#type': radios
+    '#title': 'Flight seating preference'
+    '#options':
+      Aisle: Aisle
+      Middle: Middle
+      Window: Window
+  rental_car_size_preference:
+    '#type': select
+    '#title': 'Rental Car Size Preference'
+    '#options':
+      Compact: Compact
+      Mid-size: Mid-size
+  rental_car_company:
+    '#type': textfield
+    '#title': 'Rental Car Company(s)'
+    '#maxlength': 255
+    '#size': 45
+  frequent_rental_car_account_number:
+    '#type': textfield
+    '#title': 'Frequent Rental Car Account Number(s)'
+    '#maxlength': 255
+    '#size': 45
+  do_you_have_a_hotel_chain_preference_:
+    '#type': select
+    '#title': 'Do you have a preferred hotel chain that you would like to use (if possible)?'
+    '#options': yes_no
+  hotel_preference:
+    '#type': 'webform_composite:hotel_preference'
+    '#title': 'Hotel Preference'
+    '#description_display': before
+    '#states':
+      visible:
+        ':input[name="do_you_have_a_hotel_chain_preference_"]':
+          value: 'Yes'
+  bed_size_preference:
+    '#type': radios
+    '#title': 'Bed Size Preference'
+    '#options':
+      King: King
+      Queen: Queen
+      'Two Doubles': 'Two Doubles'
+  smoking_preference:
+    '#type': radios
+    '#title': 'Smoking Preference'
+    '#options':
+      Smoking: Smoking
+      Non-smoking: Non-smoking
+      'No preference': 'No preference'
+  any_additional_requests_:
+    '#type': textarea
+    '#title': 'Any additional requests?'
 css: ''
 javascript: ''
 settings:
@@ -283,9 +397,25 @@ handlers:
       settings:
         id: webform_custom_submissions
         label: 'Travelform Submission Handler'
-        handler_id: travelform_submission_handler
+        notes: ''
+        handler_id: null
         status: true
         conditions: {  }
-        weight: 2
-        settings: {  }
+        weight: null
+        settings:
+          id: webform_custom_submissions
+          label: 'Travelform Submission Handler'
+          notes: ''
+          handler_id: null
+          status: true
+          conditions: {  }
+          weight: null
+          settings:
+            id: webform_custom_submissions
+            label: 'Travelform Submission Handler'
+            handler_id: travelform_submission_handler
+            status: true
+            conditions: {  }
+            weight: 2
+            settings: {  }
 variants: {  }

@@ -4,5 +4,15 @@ status: true
 dependencies: {  }
 id: travel_request_numebr
 label: 'Travel Request Number'
-elements: "do_you_know_request_number:\n  '#type': select\n  '#options': yes_no\n  '#title': 'Do you know the travel request number?'\ntravel_request_number:\n  '#type': textfield\n  '#title': 'Travel Request Number'\ndestination:\n  '#type': textfield\n  '#title': Destination\n"
+elements: |
+  do_you_know_request_number:
+    '#type': select
+    '#options': yes_no
+    '#title': 'Do you know the travel request number?'
+  travel_request_number:
+    '#type': textfield
+    '#title': 'Travel Request Number'
+  destination:
+    '#type': textfield
+    '#title': Destination
 description: ''

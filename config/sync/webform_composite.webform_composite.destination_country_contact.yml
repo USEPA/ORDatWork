@@ -4,5 +4,14 @@ status: true
 dependencies: {  }
 id: destination_country_contact
 label: 'Destination Country Contact'
-elements: "contact_name:\n  '#type': textfield\n  '#title': 'Contact''s First and Last Name'\ncontact_phone:\n  '#type': tel\n  '#title': 'Contact''s Phone Number'\ncontact_org:\n  '#type': textfield\n  '#title': 'Contact''s Organization'\n"
+elements: |
+  contact_name:
+    '#type': textfield
+    '#title': 'Contact''s First and Last Name'
+  contact_phone:
+    '#type': tel
+    '#title': 'Contact''s Phone Number'
+  contact_org:
+    '#type': textfield
+    '#title': 'Contact''s Organization'
 description: 'For international travel. Collects destination country contact information.'
