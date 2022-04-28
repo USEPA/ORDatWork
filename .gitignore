@@ -13,7 +13,8 @@
 /docroot/modules/contrib/*
 /docroot/core
 /docroot/libraries/*
-/docroot/sites/*
+/docroot/sites/*/files
+/.ddev
 
 .idea
 acquia-pipelines.yml
@@ -22,6 +23,6 @@ vendor/
 
 saml/
 
-docroot/web.config
+/docroot/web.config
 ordatwork.code-workspace
-ord-at-work.code-workspace
+
