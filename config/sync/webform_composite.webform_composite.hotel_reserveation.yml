@@ -4,5 +4,19 @@ status: true
 dependencies: {  }
 id: hotel_reserveation
 label: 'Hotel Reservation'
-elements: "hotel_name:\n  '#type': textfield\n  '#title': 'Hotel Name'\nhotel_location:\n  '#type': textarea\n  '#title': 'Hotel Address'\n  '#description': 'Please enter the street address of the hotel you are staying at. '\nhotel_phone:\n  '#type': tel\n  '#title': 'Hotel Phone Number'\nroom_rate:\n  '#type': number\n  '#title': 'Room Rate'\n  '#description': 'Please enter the nightly room rate.'\n"
+elements: |
+  hotel_name:
+    '#type': textfield
+    '#title': 'Hotel Name'
+  hotel_location:
+    '#type': textarea
+    '#title': 'Hotel Address'
+    '#description': 'Please enter the street address of the hotel you are staying at. '
+  hotel_phone:
+    '#type': tel
+    '#title': 'Hotel Phone Number'
+  room_rate:
+    '#type': number
+    '#title': 'Room Rate'
+    '#description': 'Please enter the nightly room rate.'
 description: 'Collects information about a hotel reservation that has already been made by the user'

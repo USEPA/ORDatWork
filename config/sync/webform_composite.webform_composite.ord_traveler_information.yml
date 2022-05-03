@@ -4,5 +4,37 @@ status: true
 dependencies: {  }
 id: ord_traveler_information
 label: 'ORD Traveler Information'
-elements: "someone_else:\n  '#type': select\n  '#options': yes_no\n  '#title': 'Are you completing this form for someone else?'\ntraveler_name:\n  '#type': textfield\n  '#title': 'Traveler Name'\ntraveler_email:\n  '#type': email\n  '#title': 'Traveler Email'\ntraveler_co:\n  '#type': select\n  '#options': ord_centers_and_offices\n  '#title': 'Traveler Center/ Office'\ntraveler_division:\n  '#type': select\n  '#options': yes_no\n  '#title': 'Traveler Division'\nyour_name:\n  '#type': textfield\n  '#title': 'Your Name'\nyour_email:\n  '#type': email\n  '#title': 'Your Email'\nyour_co:\n  '#type': select\n  '#options': ord_centers_and_offices\n  '#title': 'Your Center/ Office'\nyour_division:\n  '#type': select\n  '#options': yes_no\n  '#title': 'Your Division'\n"
+elements: |
+  someone_else:
+    '#type': select
+    '#options': yes_no
+    '#title': 'Are you completing this form for someone else?'
+  traveler_name:
+    '#type': textfield
+    '#title': 'Traveler Name'
+  traveler_email:
+    '#type': email
+    '#title': 'Traveler Email'
+  traveler_co:
+    '#type': select
+    '#options': ord_centers_and_offices
+    '#title': 'Traveler Center/ Office'
+  traveler_division:
+    '#type': select
+    '#options': yes_no
+    '#title': 'Traveler Division'
+  your_name:
+    '#type': textfield
+    '#title': 'Your Name'
+  your_email:
+    '#type': email
+    '#title': 'Your Email'
+  your_co:
+    '#type': select
+    '#options': ord_centers_and_offices
+    '#title': 'Your Center/ Office'
+  your_division:
+    '#type': select
+    '#options': yes_no
+    '#title': 'Your Division'
 description: ''

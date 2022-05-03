@@ -4,5 +4,17 @@ status: true
 dependencies: {  }
 id: completer_information
 label: 'Completer Information'
-elements: "your_name:\n  '#type': textfield\n  '#required': true\n  '#title': 'Your Name'\nyour_email:\n  '#type': email\n  '#required': true\n  '#title': 'Your Email'\nyour_phone:\n  '#type': tel\n  '#required': true\n  '#title': 'Your Telephone'\n"
+elements: |
+  your_name:
+    '#type': textfield
+    '#required': true
+    '#title': 'Your Name'
+  your_email:
+    '#type': email
+    '#required': true
+    '#title': 'Your Email'
+  your_phone:
+    '#type': tel
+    '#required': true
+    '#title': 'Your Telephone'
 description: 'Collects information about the person completing the form.'

@@ -12,7 +12,33 @@ id: travel_forms
 title: 'Travel Forms'
 description: ''
 category: ''
-elements: "r9:\n  '#type': webform_wizard_page\n  '#title': R9\n  upload_field:\n    '#type': webform_document_file\n    '#title': 'Upload Field'\n    '#multiple': true\n    '#file_placeholder': Test\ntest:\n  '#type': fieldset\n  '#title': Test\n  destinations:\n    '#type': webform_custom_composite\n    '#title': Destinations\n    '#element':\n      from:\n        '#type': textfield\n        '#required': true\n        '#title': From\n      to:\n        '#type': textfield\n        '#title': To\n  gdsagasdg:\n    '#type': radios\n    '#title': gdsagasdg\n    '#options': days"
+elements: |-
+  r9:
+    '#type': webform_wizard_page
+    '#title': R9
+    upload_field:
+      '#type': webform_document_file
+      '#title': 'Upload Field'
+      '#multiple': true
+      '#file_placeholder': Test
+  test:
+    '#type': fieldset
+    '#title': Test
+    destinations:
+      '#type': webform_custom_composite
+      '#title': Destinations
+      '#element':
+        from:
+          '#type': textfield
+          '#required': true
+          '#title': From
+        to:
+          '#type': textfield
+          '#title': To
+    gdsagasdg:
+      '#type': radios
+      '#title': gdsagasdg
+      '#options': days
 css: ''
 javascript: ''
 settings:

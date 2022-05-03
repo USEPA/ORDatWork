@@ -14,7 +14,874 @@ id: region9_travel_authorization
 title: 'Travel Authorization'
 description: ''
 category: 'Region 9 Travel Forms'
-elements: "traveler_information_section:\n  '#type': fieldset\n  '#title': 'Traveler Information'\n  site_specific_travel:\n    '#type': select\n    '#title': 'Site-Specific Travel?'\n    '#options':\n      'No': 'No'\n      'Yes': 'Yes'\n  site_specific_details:\n    '#type': textarea\n    '#title': 'Please include the site name, site ID #, SSID, Operable Unit, and Action Code'\n    '#states':\n      visible:\n        ':input[name=\"site_specific_travel\"]':\n          value: 'Yes'\n  are_you_completing_this_form_for_someone_else_:\n    '#type': select\n    '#title': 'Are you completing this form for someone else?'\n    '#options': yes_no\n    '#required': true\n  your_information:\n    '#type': 'webform_composite:completer_information'\n    '#title': 'Your Information'\n    '#required': true\n  verify_your_name:\n    '#type': textfield\n    '#title': 'Verify Your Name'\n    '#description': 'Please verify your name as it appears on government issued ID being used for travel.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n          value: 'No'\n  traveler_information:\n    '#type': 'webform_composite:traveler_information'\n    '#title': 'Traveler Information'\n    '#states':\n      visible:\n        ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n          value: 'Yes'\n    '#required': true\n  verify_traveler_s_name:\n    '#type': textfield\n    '#title': 'Verify Traveler''s Name'\n    '#description': 'Please verify the traveler&#39;s name as it appears on government issued ID being used for travel.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n          value: 'Yes'\n  alternative_phone:\n    '#type': textfield\n    '#title': 'Alternative phone (optional)'\n  your_division:\n    '#type': select\n    '#title': 'Your Division'\n    '#options': traveler_division\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n          value: 'No'\n  traveler_division:\n    '#type': select\n    '#title': 'Traveler Division'\n    '#options': traveler_division\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"are_you_completing_this_form_for_someone_else_\"]':\n          value: 'Yes'\n  traveler_type:\n    '#type': radios\n    '#title': 'Traveler Type'\n    '#options':\n      'EPA Employee': 'EPA Employee'\n      'Non-EPA Employee': 'Non-EPA Employee (Invitational)'\n    '#required': true\n  travel_type:\n    '#type': radios\n    '#title': 'Travel Type'\n    '#options': travel_type\n    '#required': true\n  passport_expiration_date:\n    '#type': date\n    '#title': 'Passport Expiration Date'\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n    '#datepicker': true\n    '#date_date_format': m/d/Y\n    '#required': true\n  emergency_contact_information:\n    '#type': 'webform_composite:emergency_contact_information'\n    '#title': 'Emergency Contact Information'\n    '#multiple': 2\n    '#title_display': none\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n    '#multiple__header_label': 'Emergency Contact Information'\n    '#multiple__sorting': false\n    '#multiple__operations': false\n    '#multiple__add_more_input': false\n    '#multiple__add_more_button_label': 'Add Additional Contact'\ntravel_details:\n  '#type': fieldset\n  '#title': 'Travel Details and Itinerary'\n  trip_type:\n    '#type': radios\n    '#title': 'Trip Type'\n    '#options': trip_type\n    '#required': true\n  departing_from:\n    '#type': select\n    '#title': 'Departing From'\n    '#options':\n      Residence: Residence\n      'Duty Station': 'Duty Station'\n    '#required': true\n  returning_to:\n    '#type': select\n    '#title': 'Returning To'\n    '#options':\n      Residence: Residence\n      'Duty Station': 'Duty Station'\n    '#required': true\n    '#states':\n      invisible:\n        ':input[name=\"trip_type\"]':\n          value: 'One Way'\n  one_way_flight:\n    '#type': 'webform_composite:one_way_flight'\n    '#title': One-way\n    '#states':\n      visible:\n        ':input[name=\"trip_type\"]':\n          value: 'One Way'\n    '#flying_from__title': From\n    '#flying_from__required': true\n    '#flying_to__title': To\n    '#flying_to__required': true\n    '#departing_date__required': true\n    '#departing_time__required': true\n  round_trip_flight:\n    '#type': 'webform_composite:round_trip_flight'\n    '#title': 'Round Trip'\n    '#title_display': none\n    '#states':\n      visible:\n        ':input[name=\"trip_type\"]':\n          value: 'Round Trip'\n    '#flying_from__title': From\n    '#flying_from__required': true\n    '#flying_to__title': To\n    '#flying_to__required': true\n    '#departing_date__required': true\n    '#departing_time__required': true\n    '#returning_date__required': true\n    '#returning_time__required': true\n  multi_city_flight:\n    '#type': 'webform_composite:one_way_flight'\n    '#title': 'Multi-city Trip'\n    '#multiple': true\n    '#title_display': none\n    '#states':\n      visible:\n        ':input[name=\"trip_type\"]':\n          value: Multi-city\n    '#multiple__header_label': 'Multiple Destinations'\n    '#multiple__sorting': false\n    '#multiple__operations': false\n    '#multiple__add_more_input': false\n    '#multiple__add_more_button_label': 'Add Stop'\n    '#flying_from__title': From\n    '#flying_from__required': true\n    '#flying_to__title': To\n    '#flying_to__required': true\n    '#departing_date__required': true\n    '#departing_time__required': true\n  destination_country_contact_name_phone_organization_:\n    '#type': textarea\n    '#title': 'Destination Country Contact (Name/Phone/Organization)'\n    '#description': 'If traveling to multiple countries, please list a POC for each destination country. (Ex. Canada - Jane Doe, 888-000-1234, United Nations)'\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n    '#required': true\n  is_personal_annual_leave_being_requested_:\n    '#type': select\n    '#title': 'Is Personal/Annual leave being requested?'\n    '#options': yes_no\n    '#required': true\n  dates_of_approved_leave:\n    '#type': date\n    '#title': 'Dates of Approved Leave'\n    '#multiple': true\n    '#title_display': none\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_personal_annual_leave_being_requested_\"]':\n          value: 'Yes'\n    '#multiple__header_label': 'Dates of Approved Leave'\n    '#multiple__sorting': false\n    '#multiple__operations': false\n    '#multiple__add_more_input': false\n    '#multiple__add_more_button_label': 'Add Date'\n    '#date_date_format': ''\n    '#date_part_order':\n      - year\n      - month\n      - day\nlodging:\n  '#type': fieldset\n  '#title': Lodging\n  per_diem_message:\n    '#type': webform_message\n    '#message_type': info\n    '#message_message': 'Please remind your traveler to stay within the <a href=\"http://www.gsa.gov/HP_01_Requested_perdiem\" target=\"_blank\">Government Per Diem Rates</a>&nbsp;when making Hotel Reservations.'\n    '#message_close': true\n  lodging_message:\n    '#type': webform_message\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: 'Invitational (non-EPA)'\n    '#message_type': info\n    '#message_message': 'Note: For Invitation Travel, it is the Traveler&#39;s responsibility to make hotel reservations.&nbsp;'\n  is_there_a_block_of_rooms_reserved_for_you_to_book_with_:\n    '#type': select\n    '#title': 'Is there a block of rooms reserved for you to book with?'\n    '#options': yes_no\n    '#required': true\n  block_of_rooms_message:\n    '#type': webform_message\n    '#states':\n      visible:\n        ':input[name=\"is_there_a_block_of_rooms_reserved_for_you_to_book_with_\"]':\n          value: 'Yes'\n    '#message_type': info\n    '#message_message': 'You will need to make your own reservation using the room block information. Please provide the hotel name and room rate to your travel preparer.'\n  name_of_room_block:\n    '#type': textfield\n    '#title': 'Name of Room Block'\n    '#states':\n      visible:\n        ':input[name=\"is_there_a_block_of_rooms_reserved_for_you_to_book_with_\"]':\n          value: 'Yes'\n    '#required': true\n  do_you_already_have_a_room_reserved_:\n    '#type': select\n    '#title': 'Do you already have a room reserved?'\n    '#options': yes_no\n    '#required': true\n  reservation_information:\n    '#type': 'webform_composite:hotel_reserveation'\n    '#title': 'Reservation Information'\n    '#multiple': true\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"do_you_already_have_a_room_reserved_\"]':\n          value: 'Yes'\n    '#multiple__sorting': false\n    '#multiple__operations': false\n    '#multiple__add_more_input': false\n    '#multiple__add_more_button_label': 'Add another hotel'\n  do_you_have_a_hotel_chain_preference_:\n    '#type': select\n    '#title': 'Do you have a preferred hotel chain that you would like to use (if possible)?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"do_you_already_have_a_room_reserved_\"]':\n          value: 'No'\n  hotel_preference:\n    '#type': 'webform_composite:hotel_preference'\n    '#title': 'Hotel Preference'\n    '#description_display': before\n    '#states':\n      visible:\n        ':input[name=\"do_you_have_a_hotel_chain_preference_\"]':\n          value: 'Yes'\n  address_of_meeting_s_:\n    '#type': webform_address\n    '#title': 'Address of Meeting(s)'\n    '#multiple': true\n    '#description': |\n      <span style=\"font-size:11.0pt\"><span style=\"font-family:Calibri\">Please make sure to add all locations for a multi-city trip.</span></span><br />\n      &nbsp;\n      \n    '#title_display': none\n    '#description_display': after\n    '#states':\n      visible:\n        ':input[name=\"do_you_already_have_a_room_reserved_\"]':\n          value: 'No'\n    '#multiple__header_label': 'Address of Meeting(s)'\n    '#multiple__sorting': false\n    '#multiple__operations': false\n    '#multiple__add_more_input': false\n    '#multiple__add_more_button_label': 'Add Location'\n    '#address_2__access': false\n    '#required': true\ntransportation:\n  '#type': fieldset\n  '#title': Transportation\n  airline_message:\n    '#type': webform_message\n    '#message_type': info\n    '#message_message': 'Please note, all airline and Amtrak reservations must be made in Concur or through BCD Travel directly.'\n  mode_s_of_transportation:\n    '#type': checkboxes\n    '#title': 'Mode(s) of Transportation'\n    '#options':\n      Air: Air\n      'Privately Owned Vehicle (POV)': 'Privately Owned Vehicle (POV)'\n      'Rental Car': 'Rental Car'\n      Rail: Rail\n      'Government Vehicle': 'Government Vehicle'\n  government_vehicle_available:\n    '#type': select\n    '#title': 'Is government vehicle available?'\n    '#required': true\n    '#options':\n      'No': 'No'\n      'Yes': 'Yes'\n  government_vehicle_available_message:\n    '#type': webform_message\n    '#states':\n      visible:\n        ':input[name=\"government_vehicle_available\"]':\n          value: 'Yes'\n    '#message_type': info\n    '#message_message': 'You have selected the use of a government vehicle. Please be aware that there will be a reduced POV mileage rate.'\n  fedtravel_message:\n    '#type': webform_message\n    '#states':\n      visible:\n        ':input[name=\"mode_s_of_transportation[Air]\"]':\n          checked: true\n    '#message_type': info\n    '#message_message': '<span style=\"font-size:11.0pt\"><span style=\"font-family:Calibri\"><em style=\"font-style:italic\"><span style=\"color:#1b1b1b\">If you would like to view contract carriers/flight options without booking visit&nbsp;</span></em><a href=\"http://www.fedtravel.com/\"><em style=\"font-style:italic\">www.fedtravel.com</em></a><em style=\"font-style:italic\">.</em></span></span>'\n  pov_mileage:\n    '#type': textfield\n    '#title': 'POV Mileage'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"mode_s_of_transportation[Privately Owned Vehicle (POV)]\"]':\n          checked: true\n  have_you_made_your_own_airline_reservation_:\n    '#type': select\n    '#title': 'Have you made your own airline reservation?'\n    '#options': yes_no\n    '#states':\n      visible:\n        ':input[name=\"mode_s_of_transportation[Air]\"]':\n          checked: true\n  cost_of_airfare:\n    '#type': textfield\n    '#title': 'Cost of Airfare'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"have_you_made_your_own_airline_reservation_\"]':\n          value: 'Yes'\n  name_of_airline:\n    '#type': textfield\n    '#title': 'Name of Airline'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"have_you_made_your_own_airline_reservation_\"]':\n          value: 'Yes'\n  flight_number_s_:\n    '#type': textarea\n    '#title': 'Flight Number(s)'\n    '#required': true\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#states':\n      visible:\n        ':input[name=\"have_you_made_your_own_airline_reservation_\"]':\n          value: 'Yes'\n  would_you_like_to_request_a_specific_flight_:\n    '#type': select\n    '#title': 'Would you like to request a specific flight?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"have_you_made_your_own_airline_reservation_\"]':\n          value: 'No'\n  information_about_specific_flight:\n    '#type': textarea\n    '#title': 'Information about specific flight'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"would_you_like_to_request_a_specific_flight_\"]':\n          value: 'Yes'\n  additional_information_transportation:\n    '#type': textarea\n    '#title': 'Additional Information'\n    '#description': 'If you have any additional transportation requirements, please specify those below.'\npurpose_and_funding:\n  '#type': fieldset\n  '#title': 'Purpose and Funding'\n  region_travel_description:\n    '#type': textarea\n    '#title': 'Travel Description'\n    '#required': true\n  travel_purpose:\n    '#type': select\n    '#title': 'Travel Purpose'\n    '#options': travel_purpose\n    '#required': true\n  what_program_s_the_trip_is_related_to_:\n    '#type': textarea\n    '#title': 'What Program(s) the trip is related to? '\n    '#description': '(E.g., 106, Water SRF, Federal Facilities Program, etc.)'\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#required': true\n  is_this_travel_for_an_epa_conference_:\n    '#type': select\n    '#title': 'Is this travel for an EPA conference?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_purpose\"]':\n          value: 'P4- Conference'\n  please_provide_the_conference_code:\n    '#type': textfield\n    '#title': 'Please provide the conference code'\n    '#states':\n      visible:\n        ':input[name=\"is_this_travel_for_an_epa_conference_\"]':\n          value: 'Yes'\n  is_there_a_registration_fee_:\n    '#type': select\n    '#title': 'Is there a registration fee?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_purpose\"]':\n          value: 'P4- Conference'\n  has_registration_fee_been_paid_by_gov_t_purchase_card_bank_card_:\n    '#type': select\n    '#title': 'Has registration fee been paid by Gov''t Purchase Card (Bank Card)?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_there_a_registration_fee_\"]':\n          value: 'Yes'\n  what_s_the_dollar_amount_to_include_in_ta:\n    '#type': textfield\n    '#title': 'What''s the dollar amount to include in TA'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_there_a_registration_fee_\"]':\n          value: 'Yes'\n  will_training_dollars_be_used_for_this_travel_:\n    '#type': select\n    '#title': 'Will training dollars be used for this travel?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_purpose\"]':\n          value: 'P5- Training'\n  is_this_sf_182_approved_:\n    '#type': select\n    '#title': 'Is this SF-182 approved?'\n    '#options': yes_no\n    '#states':\n      visible:\n        ':input[name=\"will_training_dollars_be_used_for_this_travel_\"]':\n          value: 'Yes'\n  please_provide_more_information_about_the_current_status_of_the_:\n    '#type': textarea\n    '#title': 'Please provide more information about the current status of the SF-182.'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_this_sf_182_approved_\"]':\n          value: 'No'\n  please_attach_the_approved_sf_182:\n    '#type': managed_file\n    '#title': 'Please attach the approved SF-182'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_this_sf_182_approved_\"]':\n          value: 'Yes'\n    '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'\n    '#sanitize': true\n  are_you_presenting_:\n    '#type': select\n    '#title': 'Are you presenting?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"will_training_dollars_be_used_for_this_travel_\"]':\n          value: 'Yes'\n  what_day_s_are_you_presenting_:\n    '#type': textarea\n    '#title': 'What day(s) are you presenting?'\n    '#required': true\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#states':\n      visible:\n        ':input[name=\"are_you_presenting_\"]':\n          value: 'Yes'\n  division_director_and_or_branch_chief_s_name:\n    '#type': textarea\n    '#title': 'List your Division Director and/or Branch Chief Name(s)'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n  traveler_s_qualifications:\n    '#type': textarea\n    '#title': 'Traveler''s Qualifications'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n  how_will_this_trip_benefit_the_epa_:\n    '#type': textarea\n    '#title': 'How will this trip benefit the EPA?'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"travel_type\"]':\n          value: International\n  are_others_from_your_l_c_o_attending_this_meeting_as_well_:\n    '#type': select\n    '#title': 'Are others from your Division attending this meeting as well?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      invisible:\n        ':input[name=\"travel_type\"]':\n          value: 'Invitational (Non-EPA)'\n  please_provide_the_names_of_the_others_attending_this_meeting_wi:\n    '#type': textarea\n    '#title': \"Please provide the names of the others attending this meeting with you.\\_\"\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"are_others_from_your_l_c_o_attending_this_meeting_as_well_\"]':\n          value: 'Yes'\n  is_someone_else_paying_for_a_portion_or_all_of_the_travel_:\n    '#type': select\n    '#title': 'Is another organization paying for a portion or all of the travel?'\n    '#options': yes_no\n    '#required': true\n  who_is_paying_:\n    '#type': textfield\n    '#title': 'Name of Organization Paying'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"is_someone_else_paying_for_a_portion_or_all_of_the_travel_\"]':\n          value: 'Yes'\n  epa_office_division_branch:\n    '#type': textfield\n    '#title': 'EPA Office/Division/Branch'\n  epa_office_paying:\n    '#type': textfield\n    '#title': 'EPA Office Paying'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"who_is_paying_\"]':\n          value: 'EPA Office'\n  office_point_of_contact:\n    '#type': textfield\n    '#title': 'Office Point of Contact'\n    '#description': 'Please provide a first and last name.'\n  cross_funding_label_:\n    '#type': textfield\n    '#title': 'Cross-funding label (if available)'\n    '#states':\n      visible:\n        ':input[name=\"is_someone_else_paying_for_a_portion_or_all_of_the_travel_\"]':\n          value: 'Yes'\n  name_of_funding_organization:\n    '#type': textfield\n    '#title': 'Name of Funding Organization'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"who_is_paying_\"]':\n          value: 'Non-Federal Source'\n  has_an_ethics_form_been_prepared_:\n    '#type': select\n    '#title': \"Has an ethics form been prepared?\\_\"\n    '#options': yes_no\n    '#states':\n      visible:\n        ':input[name=\"who_is_paying_\"]':\n          value: 'Non-Federal Source'\n    '#required': true\n  has_an_ethics_form_been_approved_:\n    '#type': select\n    '#title': 'Has an ethics form been approved?'\n    '#options': yes_no\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"has_an_ethics_form_been_prepared_\"]':\n          value: 'Yes'\n  please_attach_approved_ethics_form_:\n    '#type': managed_file\n    '#title': \"Please attach approved ethics form.\\_\"\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"has_an_ethics_form_been_approved_\"]':\n          value: 'Yes'\n    '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'\n    '#sanitize': true\n  please_attach_your_invitational_letter_:\n    '#type': managed_file\n    '#title': 'Please attach your invitational letter.'\n    '#required': true\n    '#states':\n      visible:\n        - ':input[name=\"has_an_ethics_form_been_approved_\"]':\n            value: 'No'\n        - xor\n        - ':input[name=\"has_an_ethics_form_been_prepared_\"]':\n            value: 'No'\n    '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'\n    '#sanitize': true\nexpenses:\n  '#type': fieldset\n  '#title': Expenses\n  transportation_to_and_from_airport:\n    '#type': textfield\n    '#title': 'Transportation to and from Airport (number of miles roundtrip from your home)'\n    '#attributes':\n      data-jira-field: customfield_10410\n  transportation_expenses:\n    '#type': checkboxes\n    '#title': 'Anticipated Transportation Expenses'\n    '#options': transportation_expense\n  cost_of_taxi_uber_lyft:\n    '#type': number\n    '#title': 'Cost of Taxi/ Uber/ Lyft'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Taxi / Uber/ Lyft]\"]':\n          checked: true\n  cost_of_metro_bus_public_transportation:\n    '#type': number\n    '#title': 'Cost of Metro/ Bus / Public Transportation'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Metro / Bus / Public Transportation]\"]':\n          checked: true\n    '#min': 0\n  cost_of_rental_car_fee:\n    '#type': number\n    '#title': 'Cost of Rental Car Fee'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Rental Car]\"]':\n          checked: true\n    '#min': 0\n  cost_of_rental_car_fuel:\n    '#type': number\n    '#title': 'Cost of Rental Car Fuel'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Rental Car Fuel]\"]':\n          checked: true\n    '#min': 0\n  cost_of_tolls:\n    '#type': number\n    '#title': 'Cost of Tolls'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Tolls]\"]':\n          checked: true\n    '#min': 0\n  cost_of_rail:\n    '#type': number\n    '#title': 'Cost of Rail'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"transportation_expenses[Rail]\"]':\n          checked: true\n    '#min': 0\n  additional_expenses:\n    '#type': checkboxes\n    '#title': 'Additional Anticipated Expenses'\n    '#options': additional_trip_expenses\n  cost_of_conference_registration_fee:\n    '#type': number\n    '#title': 'Cost of Conference Registration Fee'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Conference Registration Fees]\"]':\n          checked: true\n    '#min': 0\n  cost_of_hotel:\n    '#type': number\n    '#title': 'Cost of Hotel'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Hotel Costs]\"]':\n          checked: true\n    '#min': 0\n  cost_of_hotel_parking:\n    '#type': number\n    '#title': 'Cost of Hotel Parking'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Hotel Parking]\"]':\n          checked: true\n    '#min': 0\n  cost_of_internet_fees:\n    '#type': number\n    '#title': 'Cost of Internet Fees'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Internet Fees]\"]':\n          checked: true\n    '#min': 0\n  cost_of_phone_calls:\n    '#type': number\n    '#title': 'Cost of Phone Calls'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Phone Calls]\"]':\n          checked: true\n    '#min': 0\n  cost_of_airport_parking:\n    '#type': number\n    '#title': 'Cost of Airport Parking (cost/ day)'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Airport Parking]\"]':\n          checked: true\n    '#min': 0\n  cost_of_baggage_fees:\n    '#type': number\n    '#title': 'Cost of Baggage Fees'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Baggage Fee]\"]':\n          checked: true\n    '#min': 0\n  cost_of_cash_withdraw_finance_fees:\n    '#type': number\n    '#title': 'Cost of Cash Withdraw Finance Fees'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Cash Withdraw Finance Fees]\"]':\n          checked: true\n    '#min': 0\n  cost_of_atm_fees:\n    '#type': number\n    '#title': 'Cost of ATM Fees'\n    '#description': 'Please enter the dollar amount for this expense.&nbsp;'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[ATM Fees]\"]':\n          checked: true\n    '#min': 0\n  cost_of_supplies:\n    '#type': textarea\n    '#title': 'Cost of Supplies'\n    '#description': 'Please itemize.'\n    '#required': true\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Supplies]\"]':\n          checked: true\n  cost_of_other_expenses:\n    '#type': textarea\n    '#title': 'Cost of Other Expenses'\n    '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'\n    '#required': true\n    '#counter_type': character\n    '#counter_maximum': 255\n    '#counter_maximum_message': '255 maximum characters allowed.'\n    '#states':\n      visible:\n        ':input[name=\"additional_expenses[Other]\"]':\n          checked: true\nadditional_information:\n  '#type': fieldset\n  '#title': 'Additional Information'\n  additional_info_text:\n    '#type': textarea\n    '#title': 'Additional Information'\n    '#description': '<span style=\"font-size:11.0pt\"><span style=\"font-family:Calibri\"><span style=\"color:#1b1b1b\">Please provide/explain any special requirements related to this travel request.</span></span></span>'\n  attachment_s_:\n    '#type': managed_file\n    '#title': Attachment(s)\n    '#multiple': true\n    '#description': '<strong><span style=\"font-size:11.0pt\"><span style=\"font-family:Calibri\"><span style=\"color:#1b1b1b\">Please attach any necessary documents related to this travel request.</span></span></span></strong>'\n    '#description_display': before\n    '#file_placeholder': |\n      <br />\n      &nbsp;\n      \n    '#file_extensions': 'gif jpg png pdf doc docx tar zip'\n    '#sanitize': true"
+elements: |-
+  traveler_information_section:
+    '#type': fieldset
+    '#title': 'Traveler Information'
+    site_specific_travel:
+      '#type': select
+      '#title': 'Site-Specific Travel?'
+      '#options':
+        'No': 'No'
+        'Yes': 'Yes'
+    site_specific_details:
+      '#type': textarea
+      '#title': 'Please include the site name, site ID #, SSID, Operable Unit, and Action Code'
+      '#states':
+        visible:
+          ':input[name="site_specific_travel"]':
+            value: 'Yes'
+    are_you_completing_this_form_for_someone_else_:
+      '#type': select
+      '#title': 'Are you completing this form for someone else?'
+      '#options': yes_no
+      '#required': true
+    your_information:
+      '#type': 'webform_composite:completer_information'
+      '#title': 'Your Information'
+      '#required': true
+    verify_your_name:
+      '#type': textfield
+      '#title': 'Verify Your Name'
+      '#description': 'Please verify your name as it appears on government issued ID being used for travel.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_you_completing_this_form_for_someone_else_"]':
+            value: 'No'
+    traveler_information:
+      '#type': 'webform_composite:traveler_information'
+      '#title': 'Traveler Information'
+      '#states':
+        visible:
+          ':input[name="are_you_completing_this_form_for_someone_else_"]':
+            value: 'Yes'
+      '#required': true
+    verify_traveler_s_name:
+      '#type': textfield
+      '#title': 'Verify Traveler''s Name'
+      '#description': 'Please verify the traveler&#39;s name as it appears on government issued ID being used for travel.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_you_completing_this_form_for_someone_else_"]':
+            value: 'Yes'
+    alternative_phone:
+      '#type': textfield
+      '#title': 'Alternative phone (optional)'
+    your_division:
+      '#type': select
+      '#title': 'Your Division'
+      '#options': traveler_division
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_you_completing_this_form_for_someone_else_"]':
+            value: 'No'
+    traveler_division:
+      '#type': select
+      '#title': 'Traveler Division'
+      '#options': traveler_division
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_you_completing_this_form_for_someone_else_"]':
+            value: 'Yes'
+    traveler_type:
+      '#type': radios
+      '#title': 'Traveler Type'
+      '#options':
+        'EPA Employee': 'EPA Employee'
+        'Non-EPA Employee': 'Non-EPA Employee (Invitational)'
+      '#required': true
+    travel_type:
+      '#type': radios
+      '#title': 'Travel Type'
+      '#options': travel_type
+      '#required': true
+    passport_expiration_date:
+      '#type': date
+      '#title': 'Passport Expiration Date'
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+      '#datepicker': true
+      '#date_date_format': m/d/Y
+      '#required': true
+    emergency_contact_information:
+      '#type': 'webform_composite:emergency_contact_information'
+      '#title': 'Emergency Contact Information'
+      '#multiple': 2
+      '#title_display': none
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+      '#multiple__header_label': 'Emergency Contact Information'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add Additional Contact'
+  travel_details:
+    '#type': fieldset
+    '#title': 'Travel Details and Itinerary'
+    trip_type:
+      '#type': radios
+      '#title': 'Trip Type'
+      '#options': trip_type
+      '#required': true
+    departing_from:
+      '#type': select
+      '#title': 'Departing From'
+      '#options':
+        Residence: Residence
+        'Duty Station': 'Duty Station'
+      '#required': true
+    returning_to:
+      '#type': select
+      '#title': 'Returning To'
+      '#options':
+        Residence: Residence
+        'Duty Station': 'Duty Station'
+      '#required': true
+      '#states':
+        invisible:
+          ':input[name="trip_type"]':
+            value: 'One Way'
+    one_way_flight:
+      '#type': 'webform_composite:one_way_flight'
+      '#title': One-way
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: 'One Way'
+      '#flying_from__title': From
+      '#flying_from__required': true
+      '#flying_to__title': To
+      '#flying_to__required': true
+      '#departing_date__required': true
+      '#departing_time__required': true
+    round_trip_flight:
+      '#type': 'webform_composite:round_trip_flight'
+      '#title': 'Round Trip'
+      '#title_display': none
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: 'Round Trip'
+      '#flying_from__title': From
+      '#flying_from__required': true
+      '#flying_to__title': To
+      '#flying_to__required': true
+      '#departing_date__required': true
+      '#departing_time__required': true
+      '#returning_date__required': true
+      '#returning_time__required': true
+    multi_city_flight:
+      '#type': 'webform_composite:one_way_flight'
+      '#title': 'Multi-city Trip'
+      '#multiple': true
+      '#title_display': none
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: Multi-city
+      '#multiple__header_label': 'Multiple Destinations'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add Stop'
+      '#flying_from__title': From
+      '#flying_from__required': true
+      '#flying_to__title': To
+      '#flying_to__required': true
+      '#departing_date__required': true
+      '#departing_time__required': true
+    destination_country_contact_name_phone_organization_:
+      '#type': textarea
+      '#title': 'Destination Country Contact (Name/Phone/Organization)'
+      '#description': 'If traveling to multiple countries, please list a POC for each destination country. (Ex. Canada - Jane Doe, 888-000-1234, United Nations)'
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+      '#required': true
+    is_personal_annual_leave_being_requested_:
+      '#type': select
+      '#title': 'Is Personal/Annual leave being requested?'
+      '#options': yes_no
+      '#required': true
+    dates_of_approved_leave:
+      '#type': date
+      '#title': 'Dates of Approved Leave'
+      '#multiple': true
+      '#title_display': none
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_personal_annual_leave_being_requested_"]':
+            value: 'Yes'
+      '#multiple__header_label': 'Dates of Approved Leave'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add Date'
+      '#date_date_format': ''
+      '#date_part_order':
+        - year
+        - month
+        - day
+  lodging:
+    '#type': fieldset
+    '#title': Lodging
+    per_diem_message:
+      '#type': webform_message
+      '#message_type': info
+      '#message_message': 'Please remind your traveler to stay within the <a href="http://www.gsa.gov/HP_01_Requested_perdiem" target="_blank">Government Per Diem Rates</a>&nbsp;when making Hotel Reservations.'
+      '#message_close': true
+    lodging_message:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: 'Invitational (non-EPA)'
+      '#message_type': info
+      '#message_message': 'Note: For Invitation Travel, it is the Traveler&#39;s responsibility to make hotel reservations.&nbsp;'
+    is_there_a_block_of_rooms_reserved_for_you_to_book_with_:
+      '#type': select
+      '#title': 'Is there a block of rooms reserved for you to book with?'
+      '#options': yes_no
+      '#required': true
+    block_of_rooms_message:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="is_there_a_block_of_rooms_reserved_for_you_to_book_with_"]':
+            value: 'Yes'
+      '#message_type': info
+      '#message_message': 'You will need to make your own reservation using the room block information. Please provide the hotel name and room rate to your travel preparer.'
+    name_of_room_block:
+      '#type': textfield
+      '#title': 'Name of Room Block'
+      '#states':
+        visible:
+          ':input[name="is_there_a_block_of_rooms_reserved_for_you_to_book_with_"]':
+            value: 'Yes'
+      '#required': true
+    do_you_already_have_a_room_reserved_:
+      '#type': select
+      '#title': 'Do you already have a room reserved?'
+      '#options': yes_no
+      '#required': true
+    reservation_information:
+      '#type': 'webform_composite:hotel_reserveation'
+      '#title': 'Reservation Information'
+      '#multiple': true
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="do_you_already_have_a_room_reserved_"]':
+            value: 'Yes'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add another hotel'
+    do_you_have_a_hotel_chain_preference_:
+      '#type': select
+      '#title': 'Do you have a preferred hotel chain that you would like to use (if possible)?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="do_you_already_have_a_room_reserved_"]':
+            value: 'No'
+    hotel_preference:
+      '#type': 'webform_composite:hotel_preference'
+      '#title': 'Hotel Preference'
+      '#description_display': before
+      '#states':
+        visible:
+          ':input[name="do_you_have_a_hotel_chain_preference_"]':
+            value: 'Yes'
+    address_of_meeting_s_:
+      '#type': webform_address
+      '#title': 'Address of Meeting(s)'
+      '#multiple': true
+      '#description': |
+        <span style="font-size:11.0pt"><span style="font-family:Calibri">Please make sure to add all locations for a multi-city trip.</span></span><br />
+        &nbsp;
+        
+      '#title_display': none
+      '#description_display': after
+      '#states':
+        visible:
+          ':input[name="do_you_already_have_a_room_reserved_"]':
+            value: 'No'
+      '#multiple__header_label': 'Address of Meeting(s)'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add Location'
+      '#address_2__access': false
+      '#required': true
+  transportation:
+    '#type': fieldset
+    '#title': Transportation
+    airline_message:
+      '#type': webform_message
+      '#message_type': info
+      '#message_message': 'Please note, all airline and Amtrak reservations must be made in Concur or through BCD Travel directly.'
+    mode_s_of_transportation:
+      '#type': checkboxes
+      '#title': 'Mode(s) of Transportation'
+      '#options':
+        Air: Air
+        'Privately Owned Vehicle (POV)': 'Privately Owned Vehicle (POV)'
+        'Rental Car': 'Rental Car'
+        Rail: Rail
+        'Government Vehicle': 'Government Vehicle'
+    government_vehicle_available:
+      '#type': select
+      '#title': 'Is government vehicle available?'
+      '#required': true
+      '#options':
+        'No': 'No'
+        'Yes': 'Yes'
+    government_vehicle_available_message:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="government_vehicle_available"]':
+            value: 'Yes'
+      '#message_type': info
+      '#message_message': 'You have selected the use of a government vehicle. Please be aware that there will be a reduced POV mileage rate.'
+    fedtravel_message:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="mode_s_of_transportation[Air]"]':
+            checked: true
+      '#message_type': info
+      '#message_message': '<span style="font-size:11.0pt"><span style="font-family:Calibri"><em style="font-style:italic"><span style="color:#1b1b1b">If you would like to view contract carriers/flight options without booking visit&nbsp;</span></em><a href="http://www.fedtravel.com/"><em style="font-style:italic">www.fedtravel.com</em></a><em style="font-style:italic">.</em></span></span>'
+    pov_mileage:
+      '#type': textfield
+      '#title': 'POV Mileage'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="mode_s_of_transportation[Privately Owned Vehicle (POV)]"]':
+            checked: true
+    have_you_made_your_own_airline_reservation_:
+      '#type': select
+      '#title': 'Have you made your own airline reservation?'
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="mode_s_of_transportation[Air]"]':
+            checked: true
+    cost_of_airfare:
+      '#type': textfield
+      '#title': 'Cost of Airfare'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="have_you_made_your_own_airline_reservation_"]':
+            value: 'Yes'
+    name_of_airline:
+      '#type': textfield
+      '#title': 'Name of Airline'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="have_you_made_your_own_airline_reservation_"]':
+            value: 'Yes'
+    flight_number_s_:
+      '#type': textarea
+      '#title': 'Flight Number(s)'
+      '#required': true
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#states':
+        visible:
+          ':input[name="have_you_made_your_own_airline_reservation_"]':
+            value: 'Yes'
+    would_you_like_to_request_a_specific_flight_:
+      '#type': select
+      '#title': 'Would you like to request a specific flight?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="have_you_made_your_own_airline_reservation_"]':
+            value: 'No'
+    information_about_specific_flight:
+      '#type': textarea
+      '#title': 'Information about specific flight'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="would_you_like_to_request_a_specific_flight_"]':
+            value: 'Yes'
+    additional_information_transportation:
+      '#type': textarea
+      '#title': 'Additional Information'
+      '#description': 'If you have any additional transportation requirements, please specify those below.'
+  purpose_and_funding:
+    '#type': fieldset
+    '#title': 'Purpose and Funding'
+    region_travel_description:
+      '#type': textarea
+      '#title': 'Travel Description'
+      '#required': true
+    travel_purpose:
+      '#type': select
+      '#title': 'Travel Purpose'
+      '#options': travel_purpose
+      '#required': true
+    what_program_s_the_trip_is_related_to_:
+      '#type': textarea
+      '#title': 'What Program(s) the trip is related to? '
+      '#description': '(E.g., 106, Water SRF, Federal Facilities Program, etc.)'
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#required': true
+    is_this_travel_for_an_epa_conference_:
+      '#type': select
+      '#title': 'Is this travel for an EPA conference?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_purpose"]':
+            value: 'P4- Conference'
+    please_provide_the_conference_code:
+      '#type': textfield
+      '#title': 'Please provide the conference code'
+      '#states':
+        visible:
+          ':input[name="is_this_travel_for_an_epa_conference_"]':
+            value: 'Yes'
+    is_there_a_registration_fee_:
+      '#type': select
+      '#title': 'Is there a registration fee?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_purpose"]':
+            value: 'P4- Conference'
+    has_registration_fee_been_paid_by_gov_t_purchase_card_bank_card_:
+      '#type': select
+      '#title': 'Has registration fee been paid by Gov''t Purchase Card (Bank Card)?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_there_a_registration_fee_"]':
+            value: 'Yes'
+    what_s_the_dollar_amount_to_include_in_ta:
+      '#type': textfield
+      '#title': 'What''s the dollar amount to include in TA'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_there_a_registration_fee_"]':
+            value: 'Yes'
+    will_training_dollars_be_used_for_this_travel_:
+      '#type': select
+      '#title': 'Will training dollars be used for this travel?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_purpose"]':
+            value: 'P5- Training'
+    is_this_sf_182_approved_:
+      '#type': select
+      '#title': 'Is this SF-182 approved?'
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="will_training_dollars_be_used_for_this_travel_"]':
+            value: 'Yes'
+    please_provide_more_information_about_the_current_status_of_the_:
+      '#type': textarea
+      '#title': 'Please provide more information about the current status of the SF-182.'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_this_sf_182_approved_"]':
+            value: 'No'
+    please_attach_the_approved_sf_182:
+      '#type': managed_file
+      '#title': 'Please attach the approved SF-182'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_this_sf_182_approved_"]':
+            value: 'Yes'
+      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
+      '#sanitize': true
+    are_you_presenting_:
+      '#type': select
+      '#title': 'Are you presenting?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="will_training_dollars_be_used_for_this_travel_"]':
+            value: 'Yes'
+    what_day_s_are_you_presenting_:
+      '#type': textarea
+      '#title': 'What day(s) are you presenting?'
+      '#required': true
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#states':
+        visible:
+          ':input[name="are_you_presenting_"]':
+            value: 'Yes'
+    division_director_and_or_branch_chief_s_name:
+      '#type': textarea
+      '#title': 'List your Division Director and/or Branch Chief Name(s)'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+    traveler_s_qualifications:
+      '#type': textarea
+      '#title': 'Traveler''s Qualifications'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+    how_will_this_trip_benefit_the_epa_:
+      '#type': textarea
+      '#title': 'How will this trip benefit the EPA?'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+    are_others_from_your_l_c_o_attending_this_meeting_as_well_:
+      '#type': select
+      '#title': 'Are others from your Division attending this meeting as well?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        invisible:
+          ':input[name="travel_type"]':
+            value: 'Invitational (Non-EPA)'
+    please_provide_the_names_of_the_others_attending_this_meeting_wi:
+      '#type': textarea
+      '#title': "Please provide the names of the others attending this meeting with you.\_"
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_others_from_your_l_c_o_attending_this_meeting_as_well_"]':
+            value: 'Yes'
+    is_someone_else_paying_for_a_portion_or_all_of_the_travel_:
+      '#type': select
+      '#title': 'Is another organization paying for a portion or all of the travel?'
+      '#options': yes_no
+      '#required': true
+    who_is_paying_:
+      '#type': textfield
+      '#title': 'Name of Organization Paying'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_someone_else_paying_for_a_portion_or_all_of_the_travel_"]':
+            value: 'Yes'
+    epa_office_division_branch:
+      '#type': textfield
+      '#title': 'EPA Office/Division/Branch'
+    epa_office_paying:
+      '#type': textfield
+      '#title': 'EPA Office Paying'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="who_is_paying_"]':
+            value: 'EPA Office'
+    office_point_of_contact:
+      '#type': textfield
+      '#title': 'Office Point of Contact'
+      '#description': 'Please provide a first and last name.'
+    cross_funding_label_:
+      '#type': textfield
+      '#title': 'Cross-funding label (if available)'
+      '#states':
+        visible:
+          ':input[name="is_someone_else_paying_for_a_portion_or_all_of_the_travel_"]':
+            value: 'Yes'
+    name_of_funding_organization:
+      '#type': textfield
+      '#title': 'Name of Funding Organization'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="who_is_paying_"]':
+            value: 'Non-Federal Source'
+    has_an_ethics_form_been_prepared_:
+      '#type': select
+      '#title': "Has an ethics form been prepared?\_"
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="who_is_paying_"]':
+            value: 'Non-Federal Source'
+      '#required': true
+    has_an_ethics_form_been_approved_:
+      '#type': select
+      '#title': 'Has an ethics form been approved?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="has_an_ethics_form_been_prepared_"]':
+            value: 'Yes'
+    please_attach_approved_ethics_form_:
+      '#type': managed_file
+      '#title': "Please attach approved ethics form.\_"
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="has_an_ethics_form_been_approved_"]':
+            value: 'Yes'
+      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
+      '#sanitize': true
+    please_attach_your_invitational_letter_:
+      '#type': managed_file
+      '#title': 'Please attach your invitational letter.'
+      '#required': true
+      '#states':
+        visible:
+          - ':input[name="has_an_ethics_form_been_approved_"]':
+              value: 'No'
+          - xor
+          - ':input[name="has_an_ethics_form_been_prepared_"]':
+              value: 'No'
+      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
+      '#sanitize': true
+  expenses:
+    '#type': fieldset
+    '#title': Expenses
+    transportation_to_and_from_airport:
+      '#type': textfield
+      '#title': 'Transportation to and from Airport (number of miles roundtrip from your home)'
+      '#attributes':
+        data-jira-field: customfield_10410
+    transportation_expenses:
+      '#type': checkboxes
+      '#title': 'Anticipated Transportation Expenses'
+      '#options': transportation_expense
+    cost_of_taxi_uber_lyft:
+      '#type': number
+      '#title': 'Cost of Taxi/ Uber/ Lyft'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Taxi / Uber/ Lyft]"]':
+            checked: true
+    cost_of_metro_bus_public_transportation:
+      '#type': number
+      '#title': 'Cost of Metro/ Bus / Public Transportation'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Metro / Bus / Public Transportation]"]':
+            checked: true
+      '#min': 0
+    cost_of_rental_car_fee:
+      '#type': number
+      '#title': 'Cost of Rental Car Fee'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Rental Car]"]':
+            checked: true
+      '#min': 0
+    cost_of_rental_car_fuel:
+      '#type': number
+      '#title': 'Cost of Rental Car Fuel'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Rental Car Fuel]"]':
+            checked: true
+      '#min': 0
+    cost_of_tolls:
+      '#type': number
+      '#title': 'Cost of Tolls'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Tolls]"]':
+            checked: true
+      '#min': 0
+    cost_of_rail:
+      '#type': number
+      '#title': 'Cost of Rail'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses[Rail]"]':
+            checked: true
+      '#min': 0
+    additional_expenses:
+      '#type': checkboxes
+      '#title': 'Additional Anticipated Expenses'
+      '#options': additional_trip_expenses
+    cost_of_conference_registration_fee:
+      '#type': number
+      '#title': 'Cost of Conference Registration Fee'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Conference Registration Fees]"]':
+            checked: true
+      '#min': 0
+    cost_of_hotel:
+      '#type': number
+      '#title': 'Cost of Hotel'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Hotel Costs]"]':
+            checked: true
+      '#min': 0
+    cost_of_hotel_parking:
+      '#type': number
+      '#title': 'Cost of Hotel Parking'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Hotel Parking]"]':
+            checked: true
+      '#min': 0
+    cost_of_internet_fees:
+      '#type': number
+      '#title': 'Cost of Internet Fees'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Internet Fees]"]':
+            checked: true
+      '#min': 0
+    cost_of_phone_calls:
+      '#type': number
+      '#title': 'Cost of Phone Calls'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Phone Calls]"]':
+            checked: true
+      '#min': 0
+    cost_of_airport_parking:
+      '#type': number
+      '#title': 'Cost of Airport Parking (cost/ day)'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Airport Parking]"]':
+            checked: true
+      '#min': 0
+    cost_of_baggage_fees:
+      '#type': number
+      '#title': 'Cost of Baggage Fees'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Baggage Fee]"]':
+            checked: true
+      '#min': 0
+    cost_of_cash_withdraw_finance_fees:
+      '#type': number
+      '#title': 'Cost of Cash Withdraw Finance Fees'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Cash Withdraw Finance Fees]"]':
+            checked: true
+      '#min': 0
+    cost_of_atm_fees:
+      '#type': number
+      '#title': 'Cost of ATM Fees'
+      '#description': 'Please enter the dollar amount for this expense.&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="additional_expenses[ATM Fees]"]':
+            checked: true
+      '#min': 0
+    cost_of_supplies:
+      '#type': textarea
+      '#title': 'Cost of Supplies'
+      '#description': 'Please itemize.'
+      '#required': true
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Supplies]"]':
+            checked: true
+    cost_of_other_expenses:
+      '#type': textarea
+      '#title': 'Cost of Other Expenses'
+      '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'
+      '#required': true
+      '#counter_type': character
+      '#counter_maximum': 255
+      '#counter_maximum_message': '255 maximum characters allowed.'
+      '#states':
+        visible:
+          ':input[name="additional_expenses[Other]"]':
+            checked: true
+  additional_information:
+    '#type': fieldset
+    '#title': 'Additional Information'
+    additional_info_text:
+      '#type': textarea
+      '#title': 'Additional Information'
+      '#description': '<span style="font-size:11.0pt"><span style="font-family:Calibri"><span style="color:#1b1b1b">Please provide/explain any special requirements related to this travel request.</span></span></span>'
+    attachment_s_:
+      '#type': managed_file
+      '#title': Attachment(s)
+      '#multiple': true
+      '#description': '<strong><span style="font-size:11.0pt"><span style="font-family:Calibri"><span style="color:#1b1b1b">Please attach any necessary documents related to this travel request.</span></span></span></strong>'
+      '#description_display': before
+      '#file_placeholder': |
+        <br />
+        &nbsp;
+        
+      '#file_extensions': 'gif jpg png pdf doc docx tar zip'
+      '#sanitize': true
 css: ''
 javascript: ''
 settings:
@@ -283,9 +1150,25 @@ handlers:
       settings:
         id: webform_custom_submissions
         label: 'Travelform Submission Handler'
-        handler_id: travelform_submission_handler
+        notes: ''
+        handler_id: null
         status: true
         conditions: {  }
-        weight: 2
-        settings: {  }
+        weight: null
+        settings:
+          id: webform_custom_submissions
+          label: 'Travelform Submission Handler'
+          notes: ''
+          handler_id: null
+          status: true
+          conditions: {  }
+          weight: null
+          settings:
+            id: webform_custom_submissions
+            label: 'Travelform Submission Handler'
+            handler_id: travelform_submission_handler
+            status: true
+            conditions: {  }
+            weight: 2
+            settings: {  }
 variants: {  }

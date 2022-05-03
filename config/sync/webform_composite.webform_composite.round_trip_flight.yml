@@ -4,5 +4,29 @@ status: true
 dependencies: {  }
 id: round_trip_flight
 label: 'Round Trip Flight'
-elements: "flying_from:\n  '#type': textfield\n  '#title': 'Flying From'\nflying_to:\n  '#type': textfield\n  '#title': 'Flying To'\ndeparting_date:\n  '#type': date\n  '#title': 'Departing Date'\ndeparting_time:\n  '#type': webform_time\n  '#title': 'Approximate Departure Time'\n  '#help': 'Please enter an approximate departing time, such as 11:30am. '\nreturning_date:\n  '#type': date\n  '#title': 'Returning Date'\nreturning_time:\n  '#type': webform_time\n  '#title': 'Approximate Departure Time for Return Trip'\n  '#help': 'Please enter an approximate departing time, such as 2:00pm. '\ncomments:\n  '#type': textarea\n  '#title': Comments\n  '#help': \"\\tPlease identify any specific flights you are considering.\"\n"
+elements: |
+  flying_from:
+    '#type': textfield
+    '#title': 'Flying From'
+  flying_to:
+    '#type': textfield
+    '#title': 'Flying To'
+  departing_date:
+    '#type': date
+    '#title': 'Departing Date'
+  departing_time:
+    '#type': webform_time
+    '#title': 'Approximate Departure Time'
+    '#help': 'Please enter an approximate departing time, such as 11:30am. '
+  returning_date:
+    '#type': date
+    '#title': 'Returning Date'
+  returning_time:
+    '#type': webform_time
+    '#title': 'Approximate Departure Time for Return Trip'
+    '#help': 'Please enter an approximate departing time, such as 2:00pm. '
+  comments:
+    '#type': textarea
+    '#title': Comments
+    '#help': "\tPlease identify any specific flights you are considering."
 description: 'Collects information about a traveler taking a round-trip flight.&nbsp;'

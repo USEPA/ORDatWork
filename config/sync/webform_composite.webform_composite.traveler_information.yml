@@ -4,5 +4,14 @@ status: true
 dependencies: {  }
 id: traveler_information
 label: 'Traveler Information'
-elements: "traveler_name:\n  '#type': textfield\n  '#title': 'Traveler''s Name'\ntraveler_email:\n  '#type': email\n  '#title': 'Traveler''s Email'\ntraveler_phone:\n  '#type': tel\n  '#title': 'Traveler''s Telephone'\n"
+elements: |
+  traveler_name:
+    '#type': textfield
+    '#title': 'Traveler''s Name'
+  traveler_email:
+    '#type': email
+    '#title': 'Traveler''s Email'
+  traveler_phone:
+    '#type': tel
+    '#title': 'Traveler''s Telephone'
 description: 'Collects information about the traveler when the person filling out the form is NOT the traveler.'

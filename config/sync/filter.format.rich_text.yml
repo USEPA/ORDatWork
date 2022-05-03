@@ -103,11 +103,6 @@ filters:
     weight: -41
     settings:
       default_view_mode: full_width
-      allowed_media_types:
-        audio_file: audio_file
-        image: image
-        remote_video: remote_video
-        tweet: tweet
       allowed_view_modes:
         embedded: embedded
         full_width: full_width
@@ -115,6 +110,11 @@ filters:
         original: original
         small: small
         thumbnail: thumbnail
+      allowed_media_types:
+        audio_file: audio_file
+        image: image
+        remote_video: remote_video
+        tweet: tweet
   blazy_filter:
     id: blazy_filter
     provider: blazy
@@ -125,10 +125,10 @@ filters:
         img: img
         iframe: iframe
       media_switch: ''
-      hybrid_style: ''
       box_style: ''
-      box_caption: ''
+      hybrid_style: ''
       use_data_uri: '0'
+      box_caption: ''
   media_inline_embed:
     id: media_inline_embed
     provider: media_inline_embed
@@ -136,10 +136,10 @@ filters:
     weight: 100
     settings:
       default_view_mode: link
-      allowed_media_types:
-        document: document
       allowed_view_modes:
         link: link
+      allowed_media_types:
+        document: document
   filter_table_attributes:
     id: filter_table_attributes
     provider: uswds_ckeditor_integration
@@ -153,6 +153,7 @@ filters:
     weight: 4
     settings:
       optionset: default
+      media_switch: ''
       skin: ''
       background: false
       layout: ''
@@ -164,7 +165,6 @@ filters:
       thumbnail_style: ''
       responsive_image_style: ''
       thumbnail_effect: ''
-      media_switch: ''
       ratio: ''
       override: false
       overridables:

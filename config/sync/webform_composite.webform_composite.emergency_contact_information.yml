@@ -4,5 +4,14 @@ status: true
 dependencies: {  }
 id: emergency_contact_information
 label: 'Emergency Contact Information'
-elements: "emergency_contact_first_name:\n  '#type': textfield\n  '#title': 'Contact''s First Name'\nemergency_contact_last_name:\n  '#type': textfield\n  '#title': 'Contact''s Last Name'\nemergency_contact_phone_number:\n  '#type': textfield\n  '#title': 'Contact''s Phone Number'\n"
+elements: |
+  emergency_contact_first_name:
+    '#type': textfield
+    '#title': 'Contact''s First Name'
+  emergency_contact_last_name:
+    '#type': textfield
+    '#title': 'Contact''s Last Name'
+  emergency_contact_phone_number:
+    '#type': textfield
+    '#title': 'Contact''s Phone Number'
 description: 'Collects Emergency Contact first and last name, and phone number.'
