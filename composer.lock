@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8a7048f4dd3937317aa3ac996f7af7b",
+    "content-hash": "0b211950bc508bd6df294d344dfc17ba",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1471,14 +1471,15 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-2.0-beta3",
-                    "datestamp": "1607099904",
+                    "datestamp": "1607099933",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 },
                 "patches_applied": {
-                    "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch"
+                    "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch",
+                    "3197306": "https://www.drupal.org/files/issues/2021-04-09/field-token-values-not-cleared-when-empty-3197306-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -20760,12 +20761,12 @@
         "drupal/moderation_dashboard": 10,
         "drupal/h5p": 15,
         "drupal/libraries": 10,
-        "drupal/addtocal": 10,
         "drupal/cache_control_override": 15,
         "drupal/node_export": 15,
         "drupal/uswds_ckeditor_integration": 10,
         "drupal/linkchecker": 10,
-        "drupal/webform_workflows_element": 15
+        "drupal/webform_workflows_element": 15,
+        "drupal/addtocal": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
