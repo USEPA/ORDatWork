@@ -4,5 +4,17 @@ status: true
 dependencies: {  }
 id: provided_meals
 label: 'Provided Meals'
-elements: "date_of_meal:\n  '#type': date\n  '#title': 'Date of meal provided'\nbreakfast:\n  '#type': checkbox\n  '#title': Breakfast\nlunch:\n  '#type': checkbox\n  '#title': Lunch\ndinner:\n  '#type': checkbox\n  '#title': Dinner\n"
+elements: |
+  date_of_meal:
+    '#type': date
+    '#title': 'Date of meal provided'
+  breakfast:
+    '#type': checkbox
+    '#title': Breakfast
+  lunch:
+    '#type': checkbox
+    '#title': Lunch
+  dinner:
+    '#type': checkbox
+    '#title': Dinner
 description: ''

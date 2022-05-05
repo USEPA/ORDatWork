@@ -4,5 +4,14 @@ status: true
 dependencies: {  }
 id: hotel_preference
 label: 'Hotel Preference'
-elements: "hotel_name:\n  '#type': textfield\n  '#title': 'Hotel Chain Name'\n  '#help': 'Please enter the hotel chain name, such as Wyndham.'\naccount_information:\n  '#type': textarea\n  '#title': 'Account Information'\n  '#description': 'If you have a rewards account with this hotel chain that you would like to use, please enter the information below. '\n  '#help': 'Please enter the information that is used to identify your account when booking (account number, account ID, member ID, etc...).'\n"
+elements: |
+  hotel_name:
+    '#type': textfield
+    '#title': 'Hotel Chain Name'
+    '#help': 'Please enter the hotel chain name, such as Wyndham.'
+  account_information:
+    '#type': textarea
+    '#title': 'Account Information'
+    '#description': 'If you have a rewards account with this hotel chain that you would like to use, please enter the information below. '
+    '#help': 'Please enter the information that is used to identify your account when booking (account number, account ID, member ID, etc...).'
 description: 'Collects information regrading the user&#39;s hotel preference.&nbsp;'

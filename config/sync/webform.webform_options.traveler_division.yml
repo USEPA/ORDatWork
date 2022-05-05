@@ -6,4 +6,14 @@ id: traveler_division
 label: 'Traveler Division'
 category: 'Region 9'
 likert: false
-options: "AIR: AIR\nENF: ENF\nLSS: LSS\nMSD: MSD\nOPA: OPA\nORA: ORA\nORC: ORC\nSFD: SFD\nTIP: TIP\nWTR: WTR"
+options: |-
+  AIR: AIR
+  ENF: ENF
+  LSS: LSS
+  MSD: MSD
+  OPA: OPA
+  ORA: ORA
+  ORC: ORC
+  SFD: SFD
+  TIP: TIP
+  WTR: WTR

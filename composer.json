@@ -97,7 +97,6 @@
         "drupal/openapi_ui_redoc": "^1.0-rc3",
         "drupal/openapi_ui_swagger": "^1.0-rc4",
         "drupal/openapi_jsonapi": "^3.0",
-        "drupal/addtocal": "^2.0@beta",
         "drupal/image_style_quality": "^1.4",
         "drupal/cache_control_override": "^1.0@alpha",
         "drupal/editoria11y": "^1.0",
@@ -114,7 +113,8 @@
         "drupal/csv_serialization": "^2.0",
         "drupal/hierarchical_term_formatter": "^1.2",
         "sabre/vobject": "^4.2",
-        "drupal/webform_workflows_element": "^1.0@alpha"
+        "drupal/webform_workflows_element": "^1.0@alpha",
+        "drupal/addtocal": "^2.0@beta"
     },
     "require-dev": {
         "drush/drush": "^10.0"
@@ -151,7 +151,8 @@
                 "3201294: Allows editing of autocompleted taxonomy filters": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-3201294-6.patch"
             },
             "drupal/addtocal": {
-                "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch"
+                "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch",
+                "3197306": "https://www.drupal.org/files/issues/2021-04-09/field-token-values-not-cleared-when-empty-3197306-2.patch"
             },
             "drupal/diff": {
                 "2980335: Establish class attribute as array instead of string.": "https://www.drupal.org/files/issues/2018-06-18/2980335_2_define_classes_as_array.patch"
@@ -368,12 +369,19 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "install.ord": [
-            "composer install",
+        "site-install": [
+            "drush site-install standard -n --ansi",
+            "drush entity:delete shortcut -y",
+            "drush cset system.site uuid a20f8b2d-8c57-4965-bb1c-d142c5b66431 -y",
+            "drush cr",
+            "drush en config_split -y",
+            "drush cim -y --ansi"
+        ],
+        "post-install-cmd": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
             "rm -f docroot/web.config",
             "rm -f docroot/core/install.php"
         ],
-        "post-install-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-update-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-create-project-cmd": "rm -r -f .travis.yml behat.yml .travis-ci",
         "nuke": "rm -r -f docroot/modules/contrib docroot/profiles/contrib/lightning vendor composer.lock",
