@@ -7,6 +7,12 @@ div[class*='exposed-filters-vr-exposed-filters-visible'] {
 div.more-link {
   margin-bottom: 1rem; }
 
+.search-button-background {
+  background-image: url(../../../epa_intranet/assets/img/usa-icons-bg/search--white.svg);
+  background-repeat: no-repeat;
+  background-size: 1.5rem, 1.5rem;
+  background-position: center; }
+
 .usa-collection__item:last-child {
   margin-bottom: 1rem; }
 

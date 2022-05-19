@@ -4,7 +4,7 @@
     "description": "Project template for Drupal 8 sites built with the Lightning distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/core": "9.2.13",
+        "drupal/core": "9.3.12",
         "drupal/lightning_core": "5.9.0",
         "drupal/lightning_media": "4.2.0",
         "drupal/lightning_scheduler": "1.3",
@@ -22,8 +22,6 @@
         "drupal/admin_toolbar": "^3.1",
         "drupal/fontawesome": "^2.19",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/chosen": "^3.0",
-        "drupal/chosen_lib": "^3.0",
         "drupal/config_filter": "^1.5",
         "drupal/config_ignore": "^3.0",
         "drupal/config_split": "^1.7",
@@ -98,7 +96,6 @@
         "drupal/openapi_ui_swagger": "^1.0-rc4",
         "drupal/openapi_jsonapi": "^3.0",
         "drupal/image_style_quality": "^1.4",
-        "drupal/cache_control_override": "^1.0@alpha",
         "drupal/editoria11y": "^1.0",
         "drupal/custom_sql_migrate_source_plugin": "^1.3",
         "drupal/cshs": "^1.7",
@@ -196,10 +193,10 @@
                 "3020876: Custom block contextual links": "https://www.drupal.org/files/issues/2020-02-22/contextual_links_layout_builder_0.patch",
                 "2719797: New option for Views page displays to use the admin theme": "https://www.drupal.org/files/issues/2019-06-10/core-88x--views--admin-path-2719797-77.patch",
                 "2950729: Undefined offset 1 in the MenuParentFormSelector.php": "https://www.drupal.org/files/issues/2019-09-17/2950729-14.patch",
-                "2949017: There is no way to delete or update file entities of other users incl. user/1": "https://www.drupal.org/files/issues/2020-01-13/2949017-62.patch",
-                "3035113: JSON API": "https://www.drupal.org/files/issues/2019-10-21/LatestRevisionCheck-13092187-24.patch",
-                "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-01-20/2985882-53.patch",
-                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-09-16/923934-50-d92.patch"
+                "2949017: There is no way to delete or update file entities of other users incl. user/1": "https://www.drupal.org/files/issues/2022-03-24/allow-user-with-delete-any-files-to-delete-in-bulk.patch",
+                "3035113: JSON API": "https://www.drupal.org/files/issues/2021-12-28/3035113-33.patch",
+                "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
+                "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2021-10-01/923934-58.patch"
             },
             "drupal/cshs": {
                 "3166046: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
@@ -310,21 +307,6 @@
                 "version": "4.1.3",
                 "dist": {
                     "url": "https://github.com/twbs/bootstrap/releases/download/v4.3.1/bootstrap-4.3.1-dist.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "harvesthq/chosen",
-                "type": "drupal-library",
-                "version": "1.8.7",
-                "dist": {
-                    "url": "https://github.com/harvesthq/chosen-package/archive/master.zip",
                     "type": "zip"
                 },
                 "require": {
