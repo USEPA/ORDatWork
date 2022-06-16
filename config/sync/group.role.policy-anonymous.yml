@@ -22,5 +22,6 @@ permissions:
   - 'view group_node:policy entity'
   - 'view group_node:policy_delegation entity'
   - 'view group_node:policy_delegation_auth_action entity'
+  - 'view group_node:webform entity'
   - 'view latest group version'
   - 'view own unpublished group'
