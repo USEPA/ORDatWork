@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf520079bdc2e842ba13b49511f22f4a",
+    "content-hash": "7450b7448b58a39684fbadf12d0b9747",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6640,6 +6640,69 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/moderation_dashboard",
                 "issues": "https://drupal.org/project/issues/moderation_dashboard"
+            }
+        },
+        {
+            "name": "drupal/no_autocomplete",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/no_autocomplete.git",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/no_autocomplete-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "265909a045cb30e591b3a82415161ce59e4080a7"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1622643639",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Cid Almaguer (adriancid)",
+                    "homepage": "https://www.drupal.org/u/adriancid",
+                    "email": "adriancid@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Randy Fay (rfay)",
+                    "homepage": "https://www.drupal.org/u/rfay",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": " * Dhruvesh Tripathi (dhruveshdtripathi)",
+                    "homepage": "https://www.drupal.org/u/dhruveshdtripathi",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "No browser autocomplete in key user forms.",
+            "homepage": "https://www.drupal.org/project/no_autocomplete",
+            "keywords": [
+                "Autocomplete",
+                "Browser",
+                "Drupal",
+                "Forms"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/no_autocomplete",
+                "issues": "https://www.drupal.org/project/issues/no_autocomplete"
             }
         },
         {
