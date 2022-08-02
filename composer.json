@@ -112,7 +112,8 @@
         "sabre/vobject": "^4.2",
         "drupal/webform_workflows_element": "^1.0@alpha",
         "drupal/addtocal": "^2.0@beta",
-        "drupal/no_autocomplete" : "^1.6"
+        "drupal/no_autocomplete" : "^1.6",
+        "drupal/group_action":  "^1.0@RC"
     },
     "require-dev": {
         "drush/drush": "^10.0"
@@ -210,6 +211,9 @@
             },
             "drupal/anchor_link": {
                 "Remove overriding of CTRL+K command from ckeditor interfaces": "patches/anchor_link_shortcut_override.patch"
+            },
+            "drupal/group_action": {
+                "Declare variables appropriately for php <7.4": "patches/group_action_variables.patch"
             },
             "merge-plugin": {
                 "include": [
