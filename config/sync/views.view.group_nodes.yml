@@ -1425,7 +1425,7 @@ display:
         page_1: page_1
         default: '0'
         page_2: '0'
-      filename: group.json
+      filename: group_content.json
       automatic_download: true
       store_in_public_file_directory: false
       custom_redirect_path: false
