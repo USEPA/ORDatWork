@@ -3,6 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
+    - node.type.blog_post
+    - node.type.landing_page
+    - node.type.page
+    - node.type.policy
+    - node.type.policy_delegation
+    - node.type.policy_delegation_auth_action
+    - node.type.quiz
+    - node.type.webform
+    - user.role.administrator
     - workflows.workflow.editorial
   module:
     - content_moderation
@@ -27,7 +37,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Content
+      title: 'Group Actions'
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -838,6 +848,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: Content
+      defaults:
+        title: false
       display_extenders: {  }
       path: admin/content/node
       menu:
@@ -871,6 +884,71 @@ display:
     position: 1
     display_options:
       fields:
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: views_bulk_operations_bulk_form
+          label: 'Views bulk operations'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          action_title: Action
+          clear_on_exposed: true
+          force_selection_info: false
+          selected_actions:
+            -
+              action_id: group_add_content
+              preconfiguration:
+                add_confirmation: false
+            -
+              action_id: group_remove_content
+              preconfiguration:
+                add_confirmation: false
         title:
           id: title
           table: node_field_data
@@ -1242,89 +1320,278 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: true
-        views_bulk_operations_bulk_form:
-          id: views_bulk_operations_bulk_form
-          table: views
-          field: views_bulk_operations_bulk_form
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+      filters:
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: views_bulk_operations_bulk_form
-          label: 'Views bulk operations'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          batch: true
-          batch_size: 10
-          form_step: true
-          buttons: false
-          action_title: Action
-          clear_on_exposed: true
-          force_selection_info: false
-          selected_actions:
-            -
-              action_id: group_add_content
-              preconfiguration:
-                add_confirmation: false
-            -
-              action_id: group_remove_content
-              preconfiguration:
-                add_confirmation: false
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            article: article
+            page: page
+            blog_post: blog_post
+            landing_page: landing_page
+            policy: policy
+            policy_delegation: policy_delegation
+            policy_delegation_auth_action: policy_delegation_auth_action
+            quiz: quiz
+            webform: webform
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: 'Content type'
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            argument: ''
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: langcode_op
+            label: Language
+            description: ''
+            use_operator: false
+            operator: langcode_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: langcode
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        moderation_state:
+          id: moderation_state
+          table: node_field_data
+          field: moderation_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: moderation_state_filter
+          operator: in
+          value:
+            all: all
+            editorial-draft: editorial-draft
+            editorial-review: editorial-review
+            editorial-published: editorial-published
+            editorial-archived: editorial-archived
+          group: 1
+          exposed: true
+          expose:
+            operator_id: moderation_state_op
+            label: 'Moderation state'
+            description: ''
+            use_operator: false
+            operator: moderation_state_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: moderation_state
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              page_creator: '0'
+              layout_manager: '0'
+              page_reviewer: '0'
+              landing_page_creator: '0'
+              landing_page_reviewer: '0'
+              media_creator: '0'
+              media_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
+        access: false
+        relationships: false
         fields: false
+        filters: false
+        filter_groups: false
+      relationships:
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          admin_label: author
+          plugin_id: standard
+          required: true
+        group_content:
+          id: group_content
+          table: node_field_data
+          field: group_content
+          relationship: none
+          group_type: group
+          admin_label: 'Content group content'
+          entity_type: node
+          plugin_id: group_content_to_entity_reverse
+          required: false
+          group_content_plugins:
+            'group_node:article': 'group_node:article'
+            'group_node:blog_post': 'group_node:blog_post'
+            'group_node:landing_page': 'group_node:landing_page'
+            'group_node:page': 'group_node:page'
+            'group_node:policy': 'group_node:policy'
+            'group_node:policy_delegation': 'group_node:policy_delegation'
+            'group_node:policy_delegation_auth_action': 'group_node:policy_delegation_auth_action'
+            'group_node:quiz': 'group_node:quiz'
+            'group_node:webform': 'group_node:webform'
+            'group_node:event': '0'
+            'group_node:faces_of_ord': '0'
+            'group_node:photos_of_the_week': '0'
+            'group_node:qapp': '0'
+            'group_node:sop': '0'
+            'group_node:staff_member': '0'
+            'group_node:weekly_compass': '0'
+        revision_uid:
+          id: revision_uid
+          table: node_revision
+          field: revision_uid
+          relationship: none
+          group_type: group
+          admin_label: 'revision user'
+          entity_type: node
+          entity_field: revision_uid
+          plugin_id: standard
+          required: false
       display_description: ''
       display_extenders: {  }
-      path: admin/content_vbo/node
+      path: admin/content/group-actions
       menu:
-        type: 'default tab'
-        title: Content
+        type: none
+        title: 'Group Actions'
         description: ''
         weight: -10
+        expanded: false
         menu_name: admin
-        context: ''
+        parent: ''
+        context: '0'
       tab_options:
         type: normal
         title: Content
         description: 'Find and manage content'
         weight: -10
-        menu_name: admin
     cache_metadata:
       max-age: 0
       contexts:
@@ -1333,6 +1600,6 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:workflow_list'
