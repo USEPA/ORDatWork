@@ -79,6 +79,7 @@ module:
   gnode: 0
   google_analytics: 0
   group: 0
+  group_action: 0
   group_media_context: 0
   group_taxonomy: 0
   groupmedia: 0
@@ -177,8 +178,8 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  twig_field_value: 0
   update: 0
+  twig_field_value: 0
   user: 0
   uswds_ckeditor_integration: 0
   uswds_paragraphs: 0

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7450b7448b58a39684fbadf12d0b9747",
+    "content-hash": "5d4c1c65933810f638e979e17b9fa30a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2467,16 +2467,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.3.16",
+            "version": "9.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "eef5b91fa6689410325d569a0653878b2b1782ed"
+                "reference": "c7699be0689913e9f71edafe985dd36996111496"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/eef5b91fa6689410325d569a0653878b2b1782ed",
-                "reference": "eef5b91fa6689410325d569a0653878b2b1782ed",
+                "url": "https://api.github.com/repos/drupal/core/zipball/c7699be0689913e9f71edafe985dd36996111496",
+                "reference": "c7699be0689913e9f71edafe985dd36996111496",
                 "shasum": ""
             },
             "require": {
@@ -2498,7 +2498,7 @@
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "ext-xml": "*",
-                "guzzlehttp/guzzle": "^6.5.7",
+                "guzzlehttp/guzzle": "^6.5.8",
                 "laminas/laminas-diactoros": "^2.1",
                 "laminas/laminas-feed": "^2.12",
                 "masterminds/html5": "^2.1",
@@ -2727,7 +2727,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2022-06-10T19:08:28+00:00"
+            "time": "2022-07-28T19:28:17+00:00"
         },
         {
             "name": "drupal/crop",
@@ -4599,7 +4599,8 @@
                     "2984315: Media enabler": "https://www.drupal.org/files/issues/2019-05-30/media-enabler-2984315-31.patch",
                     "2999661: Views default argument for referencing current user groups": "https://www.drupal.org/files/issues/2019-06-07/user-groups-argument-2999661.patch",
                     "2906085: Content transition permissions": "https://www.drupal.org/files/issues/2020-09-23/2906085-80.patch",
-                    "3071489: Group media upload fix": "https://www.drupal.org/files/issues/2022-01-11/incorrect-access-check-on-media-library-3071489-25.patch"
+                    "3071489: Group media upload fix": "https://www.drupal.org/files/issues/2022-01-11/incorrect-access-check-on-media-library-3071489-25.patch",
+                    "3256998: Fix node revisions access": "https://www.drupal.org/files/issues/2022-03-30/group-3256998-35.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4618,6 +4619,55 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/group",
                 "issues": "https://drupal.org/project/issues/group"
+            }
+        },
+        {
+            "name": "drupal/group_action",
+            "version": "1.0.0-rc3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/group_action.git",
+                "reference": "1.0.0-rc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/group_action-1.0.0-rc3.zip",
+                "reference": "1.0.0-rc3",
+                "shasum": "f758d8693ce4e50544e5371a5aa686e255a5a529"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/group": "^1.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc3",
+                    "datestamp": "1659338303",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches_applied": {
+                    "Declare variables appropriately for php <7.4": "patches/group_action_variables.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mxh",
+                    "homepage": "https://www.drupal.org/user/1124384"
+                }
+            ],
+            "description": "A Drupal module that provides actions for the Group module.",
+            "homepage": "https://www.drupal.org/project/group_action",
+            "support": {
+                "source": "https://drupal.org/project/group_action",
+                "issues": "https://drupal.org/project/issues/group_action"
             }
         },
         {
@@ -10257,24 +10307,24 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.7",
+            "version": "6.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "724562fa861e21a4071c652c8a159934e4f05592"
+                "reference": "a52f0440530b54fa079ce76e8c5d196a42cad981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/724562fa861e21a4071c652c8a159934e4f05592",
-                "reference": "724562fa861e21a4071c652c8a159934e4f05592",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a52f0440530b54fa079ce76e8c5d196a42cad981",
+                "reference": "a52f0440530b54fa079ce76e8c5d196a42cad981",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.6.1",
+                "guzzlehttp/psr7": "^1.9",
                 "php": ">=5.5",
-                "symfony/polyfill-intl-idn": "^1.17.0"
+                "symfony/polyfill-intl-idn": "^1.17"
             },
             "require-dev": {
                 "ext-curl": "*",
@@ -10364,7 +10414,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-09T21:36:50+00:00"
+            "time": "2022-06-20T22:16:07+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -10419,16 +10469,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.7.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3"
+                "reference": "e98e3e6d4f86621a9b75f623996e6bbdeb4b9318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53330f47520498c0ae1f61f7e2c90f55690c06a3",
-                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/e98e3e6d4f86621a9b75f623996e6bbdeb4b9318",
+                "reference": "e98e3e6d4f86621a9b75f623996e6bbdeb4b9318",
                 "shasum": ""
             },
             "require": {
@@ -10449,16 +10499,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -10466,12 +10516,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 }
             ],
@@ -10486,7 +10557,21 @@
                 "uri",
                 "url"
             ],
-            "time": "2020-09-30T07:37:11+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-20T21:43:03+00:00"
         },
         {
             "name": "h5p/h5p-core",
@@ -20665,7 +20750,8 @@
         "drupal/uswds_ckeditor_integration": 10,
         "drupal/linkchecker": 10,
         "drupal/webform_workflows_element": 15,
-        "drupal/addtocal": 10
+        "drupal/addtocal": 10,
+        "drupal/group_action": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
