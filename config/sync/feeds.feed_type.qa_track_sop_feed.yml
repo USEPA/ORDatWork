@@ -20,8 +20,8 @@ dependencies:
   module:
     - feeds_ex
     - node
-id: qa_track_sop_feed
 label: 'QA Track SOP Feed'
+id: qa_track_sop_feed
 description: 'Imports SOP records from QA Track'
 help: ''
 import_period: 86400
@@ -36,84 +36,84 @@ parser: xml
 parser_configuration:
   context:
     value: /rss/channel/item
-  use_tidy: false
-  display_errors: false
   source_encoding:
     - auto
+  display_errors: false
   line_limit: 100
+  use_tidy: false
 processor: 'entity:node'
 processor_configuration:
+  values:
+    type: sop
   langcode: en
+  insert_new: 1
   update_existing: 1
   update_non_existent: _delete
+  skip_hash_check: false
+  authorize: false
   expire: -1
   owner_feed_author: true
   owner_id: 4
-  authorize: false
-  skip_hash_check: false
-  values:
-    type: sop
-  insert_new: 1
 custom_sources:
   title:
-    label: title
     value: title
+    label: title
     machine_name: title
   description:
-    label: description
     value: description
+    label: description
     machine_name: description
   guid:
-    label: guid
     value: guid
+    label: guid
     machine_name: guid
   discipline:
-    label: discipline
     value: discipline
+    label: discipline
     machine_name: discipline
   subdiscipline:
-    label: subdiscipline
     value: subdiscipline
+    label: subdiscipline
     machine_name: subdiscipline
   sop_number:
-    label: sop_number
     value: sop_number
+    label: sop_number
     machine_name: sop_number
   sop_status:
-    label: sop_status
     value: sop_status
+    label: sop_status
     machine_name: sop_status
   date_reviewed:
-    label: date_reviewed
     value: date_reviewed
+    label: date_reviewed
     machine_name: date_reviewed
   sop_contact:
-    label: sop_contact
     value: sop_contact
+    label: sop_contact
     machine_name: sop_contact
   lab:
-    label: lab
     value: lab
+    label: lab
     machine_name: lab
   division:
-    label: division
     value: division
+    label: division
     machine_name: division
   center:
-    label: center
     value: center
+    label: center
     machine_name: center
   link:
-    label: link
     value: link
+    label: link
     machine_name: link
   alt_id:
-    label: alt_id
     value: alt_id
+    label: alt_id
     machine_name: alt_id
   previous_id:
-    label: previous_id
     value: previous_id
+    label: previous_id
     machine_name: previous_id
 mappings:
   -

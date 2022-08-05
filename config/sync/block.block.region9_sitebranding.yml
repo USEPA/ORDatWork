@@ -15,14 +15,14 @@ plugin: system_branding_block
 settings:
   id: system_branding_block
   label: 'Region 9'
-  provider: system
   label_display: '0'
+  provider: system
   use_site_logo: true
   use_site_name: true
   use_site_slogan: true
 visibility:
   request_path:
     id: request_path
-    pages: '*region9*'
     negate: false
     context_mapping: {  }
+    pages: '*region9*'

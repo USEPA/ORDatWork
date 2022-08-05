@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: CgXLPQkHCGerCdDtMO8wK9Er4j6iy1iMOyalk8iRgrE
 domain_redirects:
   'intranet:ord:epa:gov':
     -
@@ -9,5 +11,3 @@ domain_redirects:
     -
       sub_path: /releasing-manuscripts-and-data
       destination: work.epa.gov/pamd
-_core:
-  default_config_hash: CgXLPQkHCGerCdDtMO8wK9Er4j6iy1iMOyalk8iRgrE

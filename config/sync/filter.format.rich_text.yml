@@ -121,14 +121,14 @@ filters:
     status: false
     weight: -38
     settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
       filter_tags:
         img: img
         iframe: iframe
-      media_switch: ''
-      box_style: ''
-      hybrid_style: ''
       use_data_uri: '0'
-      box_caption: ''
   media_inline_embed:
     id: media_inline_embed
     provider: media_inline_embed
@@ -136,10 +136,10 @@ filters:
     weight: 100
     settings:
       default_view_mode: link
-      allowed_view_modes:
-        link: link
       allowed_media_types:
         document: document
+      allowed_view_modes:
+        link: link
   filter_table_attributes:
     id: filter_table_attributes
     provider: uswds_ckeditor_integration
@@ -153,20 +153,14 @@ filters:
     weight: 4
     settings:
       optionset: default
-      media_switch: ''
+      layout: ''
       skin: ''
       background: false
-      layout: ''
-      optionset_thumbnail: ''
-      skin_thumbnail: ''
-      thumbnail_position: ''
-      thumbnail_caption: ''
-      image_style: ''
-      thumbnail_style: ''
       responsive_image_style: ''
-      thumbnail_effect: ''
+      image_style: ''
+      media_switch: ''
       ratio: ''
-      override: false
+      thumbnail_style: ''
       overridables:
         arrows: '0'
         autoplay: '0'
@@ -176,3 +170,9 @@ filters:
         mouseWheel: '0'
         randomize: '0'
         variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false

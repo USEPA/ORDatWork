@@ -26,7 +26,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       title_and_text: title_and_text
       uswds_card_set: uswds_card_set
@@ -34,6 +33,7 @@ settings:
       list_of_link: list_of_link
       rich_text: rich_text
       slide_show: slide_show
+    negate: 0
     target_bundles_drag_drop:
       dynamic_list:
         weight: -40
@@ -48,8 +48,8 @@ settings:
         weight: -27
         enabled: false
       list_of_link:
-        enabled: true
         weight: -44
+        enabled: true
       policy_delegation_authorization:
         weight: -26
         enabled: false
@@ -60,17 +60,17 @@ settings:
         weight: -38
         enabled: false
       rich_text:
-        enabled: true
         weight: -43
+        enabled: true
       slide:
         weight: -35
         enabled: false
       slide_show:
-        enabled: true
         weight: -42
-      title_and_text:
         enabled: true
+      title_and_text:
         weight: -47
+        enabled: true
       uswds_accordion:
         weight: -41
         enabled: false
@@ -81,8 +81,8 @@ settings:
         weight: -25
         enabled: false
       uswds_card_set:
-        enabled: true
         weight: -46
+        enabled: true
       uswds_column:
         weight: -33
         enabled: false
@@ -102,6 +102,6 @@ settings:
         weight: -28
         enabled: false
       views_reference_list:
-        enabled: true
         weight: -45
+        enabled: true
 field_type: entity_reference_revisions

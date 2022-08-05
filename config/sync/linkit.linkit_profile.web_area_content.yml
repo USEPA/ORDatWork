@@ -5,21 +5,19 @@ dependencies:
   module:
     - anchor_link
     - node
-id: web_area_content
 label: 'Web Area Content'
+id: web_area_content
 description: 'A Linkit profile that uses the Web Area Content matcher.'
 matchers:
   def0bb7a-e3bc-4bbb-9784-67f02a3b15a9:
-    uuid: def0bb7a-e3bc-4bbb-9784-67f02a3b15a9
     id: ckeditor_anchor_link
-    weight: 0
+    uuid: def0bb7a-e3bc-4bbb-9784-67f02a3b15a9
     settings: {  }
-  9b69ee4a-9a8b-41d9-9e03-ff027683a145:
-    uuid: 9b69ee4a-9a8b-41d9-9e03-ff027683a145
-    id: 'entity:webarea_node'
     weight: 0
+  9b69ee4a-9a8b-41d9-9e03-ff027683a145:
+    id: 'entity:webarea_node'
+    uuid: 9b69ee4a-9a8b-41d9-9e03-ff027683a145
     settings:
-      include_unpublished: 1
       metadata: '<em>[node:group:title]</em>; [node:published_status]'
       bundles:
         article: article
@@ -38,3 +36,5 @@ matchers:
       group_by_bundle: true
       substitution_type: canonical
       limit: 100
+      include_unpublished: 1
+    weight: 0

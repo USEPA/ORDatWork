@@ -20,44 +20,25 @@ plugin: 'views_exposed_filter_block:event_calendar-calendar_page'
 settings:
   id: 'views_exposed_filter_block:event_calendar-calendar_page'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
 visibility:
   and_or:
     id: and_or
-    all: or
     negate: false
     context_mapping: {  }
+    all: or
   request_path:
     id: request_path
-    pages: /calendar
     negate: false
     context_mapping: {  }
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      blog_post: blog_post
-      event: event
-      faces_of_ord: faces_of_ord
-      landing_page: landing_page
-      page: page
-      photos_of_the_week: photos_of_the_week
-      policy: policy
-      policy_delegation: policy_delegation
-      policy_delegation_auth_action: policy_delegation_auth_action
-      qapp: qapp
-      quiz: quiz
-      sop: sop
-      staff_member: staff_member
-      webform: webform
-      weekly_compass: weekly_compass
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
+    pages: /calendar
   'entity_bundle:node':
     id: 'entity_bundle:node'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
     bundles:
       policy_delegation_auth_action: policy_delegation_auth_action
       article: article
@@ -75,6 +56,25 @@ visibility:
       staff_member: staff_member
       webform: webform
       weekly_compass: weekly_compass
+  node_type:
+    id: node_type
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      blog_post: blog_post
+      event: event
+      faces_of_ord: faces_of_ord
+      landing_page: landing_page
+      page: page
+      photos_of_the_week: photos_of_the_week
+      policy: policy
+      policy_delegation: policy_delegation
+      policy_delegation_auth_action: policy_delegation_auth_action
+      qapp: qapp
+      quiz: quiz
+      sop: sop
+      staff_member: staff_member
+      webform: webform
+      weekly_compass: weekly_compass

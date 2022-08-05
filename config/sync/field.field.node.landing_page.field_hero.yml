@@ -22,10 +22,10 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       uswds_hero: uswds_hero
       hero_carousel: hero_carousel
+    negate: 0
     target_bundles_drag_drop:
       dynamic_list:
         weight: 21
@@ -37,8 +37,8 @@ settings:
         weight: 14
         enabled: false
       hero_carousel:
-        enabled: true
         weight: 25
+        enabled: true
       list_of_link:
         weight: 15
         enabled: false
@@ -82,8 +82,8 @@ settings:
         weight: 23
         enabled: false
       uswds_hero:
-        enabled: true
         weight: 24
+        enabled: true
       uswds_media_block:
         weight: 25
         enabled: false

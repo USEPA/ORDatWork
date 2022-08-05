@@ -7,8 +7,8 @@ dependencies:
     - taxonomy.vocabulary.policy_delegation_actions
   module:
     - taxonomy
-id: policy_delegation_actions
 label: 'Policy Delegation Actions'
+id: policy_delegation_actions
 description: 'import actions with category and topic'
 help: ''
 import_period: -1
@@ -23,38 +23,38 @@ parser_configuration:
   line_limit: 100
 processor: 'entity:taxonomy_term'
 processor_configuration:
-  langcode: en
-  update_existing: 0
-  update_non_existent: _delete
-  expire: -1
-  skip_hash_check: false
   values:
     vid: policy_delegation_actions
-  owner_id: 0
-  authorize: false
-  owner_feed_author: false
+  langcode: en
   insert_new: 1
+  update_existing: 0
+  update_non_existent: _delete
+  skip_hash_check: false
+  authorize: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
 custom_sources:
   action:
-    label: action
     value: action
+    label: action
     machine_name: action
   topic:
-    label: topic
     value: topic
+    label: topic
     machine_name: topic
   category:
-    label: category
     value: category
+    label: category
     machine_name: category
 mappings:
   -
     target: name
     map:
       value: action
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_policy_topic
     map:
