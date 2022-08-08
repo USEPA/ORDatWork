@@ -18,8 +18,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: true
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol
@@ -31,6 +31,57 @@ third_party_settings:
     enable: true
   layout_builder_restrictions:
     entity_view_mode_restriction:
+      allowed_layouts:
+        - layout_onecol
+        - layout_twocol_section
+        - layout_threecol_section
+      blacklisted_blocks:
+        'Chaos Tools':
+          - 'entity_view:node'
+          - 'entity_view:user'
+        'Custom block types':
+          - alert
+          - banner
+          - basic
+          - card_with_image
+          - dynamic_list
+          - google_map
+          - text
+        'Custom blocks':
+          - 'block_content:e841ddc9-4e65-4f8c-bed4-ffd53f7d7221'
+          - 'block_content:5ea3ec0a-53cd-4615-b1e0-e18fb4608341'
+        'Inline blocks':
+          - 'inline_block:alert'
+          - 'inline_block:banner'
+          - 'inline_block:basic'
+          - 'inline_block:card_with_image'
+          - 'inline_block:dynamic_list'
+          - 'inline_block:google_map'
+          - 'inline_block:text'
+      whitelisted_blocks:
+        'Content fields': {  }
+        'Entity Block':
+          - 'entity_block:node'
+          - 'entity_block:media'
+        'Entity Browser': {  }
+        'Fixed custom': {  }
+        Forms: {  }
+        Group: {  }
+        'Group Menu Block': {  }
+        Help: {  }
+        'Lists (Views)':
+          - 'views_block:articles-blogs_by_group'
+          - 'views_block:articles-group_articles_block'
+        Menus: {  }
+        'Moderation Dashboard': {  }
+        'SimpleSAMLphp Authentication': {  }
+        System: {  }
+        Views: {  }
+        Webform: {  }
+        'Webform access': {  }
+        core: {  }
+        'jQuery Countdown Timer': {  }
+      restricted_categories: {  }
       allowed_blocks:
         'Chaos Tools': {  }
         'Content fields': {  }
@@ -70,55 +121,6 @@ third_party_settings:
         Webform: {  }
         'Webform access': {  }
         core: {  }
-      allowed_layouts:
-        - layout_onecol
-        - layout_twocol_section
-        - layout_threecol_section
-      whitelisted_blocks:
-        'Content fields': {  }
-        'Entity Block':
-          - 'entity_block:node'
-          - 'entity_block:media'
-        'Entity Browser': {  }
-        'Entity Print': {  }
-        'Fixed custom': {  }
-        Forms: {  }
-        Group: {  }
-        'Group Menu Block': {  }
-        Help: {  }
-        'Lists (Views)':
-          - 'views_block:articles-blogs_by_group'
-          - 'views_block:articles-group_articles_block'
-        Menus: {  }
-        'Moderation Dashboard': {  }
-        'SimpleSAMLphp Authentication': {  }
-        System: {  }
-        Views: {  }
-        Webform: {  }
-        'Webform access': {  }
-        core: {  }
-        'jQuery Countdown Timer': {  }
-      blacklisted_blocks:
-        'Chaos Tools':
-          - 'entity_view:node'
-          - 'entity_view:user'
-        'Custom block types':
-          - alert
-          - banner
-          - card_with_image
-          - dynamic_list
-          - google_map
-          - text
-        'Custom blocks':
-          - 'block_content:e841ddc9-4e65-4f8c-bed4-ffd53f7d7221'
-          - 'block_content:5ea3ec0a-53cd-4615-b1e0-e18fb4608341'
-        'Inline blocks':
-          - 'inline_block:alert'
-          - 'inline_block:banner'
-          - 'inline_block:card_with_image'
-          - 'inline_block:dynamic_list'
-          - 'inline_block:google_map'
-          - 'inline_block:text'
     allowed_block_categories:
       - 'Chaos Tools'
       - 'Content fields'
@@ -126,7 +128,6 @@ third_party_settings:
       - 'Custom blocks'
       - 'Entity Block'
       - 'Entity Browser'
-      - 'Entity Print'
       - 'Fixed custom'
       - Forms
       - Group
@@ -150,24 +151,24 @@ mode: default
 content:
   field_hero:
     type: entity_reference_revisions_entity_view
-    weight: 102
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 102
     region: content
   field_landing_description:
-    weight: 101
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 101
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   content_moderation_control: true
