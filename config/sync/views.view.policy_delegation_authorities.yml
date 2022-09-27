@@ -682,6 +682,31 @@ display:
         - 'config:field.storage.node.field_policy_delegation_party'
         - 'config:field.storage.taxonomy_term.field_delegation'
         - 'config:field.storage.taxonomy_term.field_policy_topic'
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 1
+    display_options:
+      defaults:
+        header: false
+      header: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_policy_delegation_party'
+        - 'config:field.storage.taxonomy_term.field_delegation'
+        - 'config:field.storage.taxonomy_term.field_policy_topic'
   page_delegation_authorities:
     id: page_delegation_authorities
     display_title: Page
@@ -689,7 +714,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: policy/delegation-authority
+      path: policy/delegation-authority-page
     cache_metadata:
       max-age: -1
       contexts:
