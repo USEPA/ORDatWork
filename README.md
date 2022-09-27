@@ -1,18 +1,18 @@
-#EPA Open Source Reference
-##Brief Project Description
+# EPA Open Source Reference
+## Brief Project Description
 This repository contains files for a Drupal intranet website.
 
 Also, this repository contains the link to EPA's System Lifecycle Management Policy and Procedure which lays out EPA's Open Source Software Policy and EPA's Open Source Code Guidance.
 
-##For EPA Teams
+## For EPA Teams
 For EPA Teams, we have guidance on how EPA puts our open source software policies into practice on GitHub. Read EPA's GitHub Guidance.
 
 EPA's Open Source Project repo is for EPA teams to reuse file for properly maintaining their open source project. All projects must include a readme.md, license.md, contributing.md file and the disclaimer below.
 
-##Credits
+## Credits
 This repository reused material from GSA, 18F , Lawrence Livermore National Lab, and from the Consumer Financial Protection Bureau's policy.
 
-##Disclaimer
+## Disclaimer
 The United States Environmental Protection Agency (EPA) GitHub project code is provided on an "as is" basis and the user assumes responsibility for its use.  EPA has relinquished control of the information and no longer has responsibility to protect the integrity , confidentiality, or availability of the information.  Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by EPA.  The EPA seal and logo shall not be used in any manner to imply endorsement of any commercial product or activity by EPA or the United States Government.
 
 # Contributing to ORDatWork
