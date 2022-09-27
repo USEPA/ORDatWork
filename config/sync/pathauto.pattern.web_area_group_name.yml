@@ -3,17 +3,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - group
 id: web_area_group_name
 label: 'Web Area Group Name'
 type: 'canonical_entities:group'
-pattern: '/web-area/[group:title]'
+pattern: '/web-areas/[group:title]'
 selection_criteria:
-  802c459d-7e2d-4c3c-9af2-dd0d33079a08:
+  349ac69b-a1c0-4335-b0e8-65595fcf241a:
     id: 'entity_bundle:group'
     negate: false
-    uuid: 802c459d-7e2d-4c3c-9af2-dd0d33079a08
+    uuid: 349ac69b-a1c0-4335-b0e8-65595fcf241a
     context_mapping:
       group: group
     bundles:
