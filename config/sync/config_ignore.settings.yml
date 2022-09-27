@@ -3,7 +3,7 @@ _core:
 ignored_config_entities:
   - 'system.menu.*'
   - system.site
-  - 'webform_composite.*'
-  - 'webform.*'
+  - webform_composite.*
+  - webform.*
   - 'core.entity_view_display.node.webform.*'
   - 'webform_custom_submissions*'

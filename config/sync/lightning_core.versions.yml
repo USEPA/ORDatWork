@@ -66,7 +66,6 @@ entity_browser_entity_form: 2.1.0
 entity_embed: 1.0.0
 entity_print: 2.2.0
 entity_print_views: 2.2.0
-entity_reference: 8.7.3
 entity_reference_revisions: 1.6.0
 entity_reference_tree: 1.8.0
 entity_view_group_bypass: 0.0.0
