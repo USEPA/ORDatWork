@@ -42,6 +42,7 @@ third_party_settings:
         'Custom block types':
           - alert
           - banner
+          - basic
           - card_with_image
           - dynamic_list
           - google_map
@@ -52,6 +53,7 @@ third_party_settings:
         'Inline blocks':
           - 'inline_block:alert'
           - 'inline_block:banner'
+          - 'inline_block:basic'
           - 'inline_block:card_with_image'
           - 'inline_block:dynamic_list'
           - 'inline_block:google_map'
@@ -80,6 +82,7 @@ third_party_settings:
         'Webform access': {  }
         core: {  }
         'jQuery Countdown Timer': {  }
+      restricted_categories: {  }
       allowed_blocks:
         'Chaos Tools': {  }
         'Content fields': {  }
@@ -126,7 +129,6 @@ third_party_settings:
       - 'Custom blocks'
       - 'Entity Block'
       - 'Entity Browser'
-      - 'Entity Print'
       - 'Fixed custom'
       - Forms
       - Group
