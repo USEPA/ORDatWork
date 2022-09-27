@@ -11,12 +11,12 @@ pattern: 'weekly-compass/[node:title]'
 selection_criteria:
   7f1a8c80-bf31-4bd7-8447-560815f46df6:
     id: node_type
-    bundles:
-      weekly_compass: weekly_compass
     negate: false
+    uuid: 7f1a8c80-bf31-4bd7-8447-560815f46df6
     context_mapping:
       node: node
-    uuid: 7f1a8c80-bf31-4bd7-8447-560815f46df6
+    bundles:
+      weekly_compass: weekly_compass
 selection_logic: and
 weight: -5
 relationships: {  }

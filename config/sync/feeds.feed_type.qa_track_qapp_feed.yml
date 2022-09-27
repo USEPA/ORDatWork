@@ -19,8 +19,8 @@ dependencies:
   module:
     - feeds_ex
     - node
-id: qa_track_qapp_feed
 label: 'QA Track QAPP Feed'
+id: qa_track_qapp_feed
 description: 'Imports QAPP records from QA Track'
 help: ''
 import_period: 86400
@@ -35,84 +35,84 @@ parser: xml
 parser_configuration:
   context:
     value: /rss/channel/item
-  use_tidy: false
-  display_errors: false
   source_encoding:
     - auto
+  display_errors: false
   line_limit: 100
+  use_tidy: false
 processor: 'entity:node'
 processor_configuration:
+  values:
+    type: qapp
   langcode: en
+  insert_new: 1
   update_existing: 1
   update_non_existent: _delete
+  skip_hash_check: false
+  authorize: true
   expire: -1
   owner_feed_author: true
   owner_id: 4
-  authorize: true
-  skip_hash_check: false
-  values:
-    type: qapp
-  insert_new: 1
 custom_sources:
   title:
-    label: title
     value: title
+    label: title
     machine_name: title
   body:
-    label: body
     value: body
+    label: body
     machine_name: body
   lab:
-    label: lab
     value: lab
+    label: lab
     machine_name: lab
   division:
-    label: division
     value: division
+    label: division
     machine_name: division
   pdf:
-    label: PDF
     value: PDF
+    label: PDF
     machine_name: pdf
   word:
-    label: Word
     value: Word
+    label: Word
     machine_name: word
   qa_activity_number:
-    label: qa_activity_number
     value: qa_activity_number
+    label: qa_activity_number
     machine_name: qa_activity_number
   description:
-    label: description
     value: description
+    label: description
     machine_name: description
   qapp_latest_pdf:
-    label: qapp_latest_pdf
     value: qapp_latest_pdf
+    label: qapp_latest_pdf
     machine_name: qapp_latest_pdf
   qapp_latest_word:
-    label: qapp_latest_word
     value: qapp_latest_word
+    label: qapp_latest_word
     machine_name: qapp_latest_word
   qapp_approval_date:
-    label: qapp_approval_date
     value: qapp_approval_date
+    label: qapp_approval_date
     machine_name: qapp_approval_date
   project_lead:
-    label: project_lead
     value: project_lead
+    label: project_lead
     machine_name: project_lead
   project_lead_email:
-    label: project_lead_email
     value: project_lead_email
+    label: project_lead_email
     machine_name: project_lead_email
   project_type:
-    label: project_type
     value: project_type
+    label: project_type
     machine_name: project_type
   guid:
-    label: guid
     value: guid
+    label: guid
     machine_name: guid
 mappings:
   -
@@ -165,9 +165,9 @@ mappings:
     target: field_qapp_project_lead_email
     map:
       value: project_lead_email
-    unique: {  }
     settings:
       defuse: false
+    unique: {  }
   -
     target: field_qapp_project_type
     map:

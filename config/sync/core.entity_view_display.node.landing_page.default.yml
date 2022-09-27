@@ -64,6 +64,7 @@ third_party_settings:
           - 'entity_block:node'
           - 'entity_block:media'
         'Entity Browser': {  }
+        'Entity Print': {  }
         'Fixed custom': {  }
         Forms: {  }
         Group: {  }

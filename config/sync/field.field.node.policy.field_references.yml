@@ -21,13 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       governing_authorities: governing_authorities
+    negate: 0
     target_bundles_drag_drop:
       governing_authorities:
-        enabled: true
         weight: 17
+        enabled: true
       heading_title_and_text:
         weight: 18
         enabled: false

@@ -15,34 +15,34 @@ bundle: web_area
 mode: default
 content:
   field_group_contact:
-    weight: 3
+    type: email_mailto
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 3
     region: content
   field_group_contact_info:
-    weight: 2
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_group_description:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   label:
-    label: hidden
     type: string
-    weight: 0
-    region: content
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   changed: true
   created: true

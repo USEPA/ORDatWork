@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
   - 'system.menu.*'
   - system.site
@@ -5,5 +7,3 @@ ignored_config_entities:
   - 'webform.*'
   - 'core.entity_view_display.node.webform.*'
   - 'webform_custom_submissions*'
-_core:
-  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

@@ -16,8 +16,8 @@ dependencies:
     - node.type.staff_member
   module:
     - node
-id: staff_member_import
 label: 'Staff Member Import'
+id: staff_member_import
 description: 'Used to import staff member content'
 help: ''
 import_period: -1
@@ -32,89 +32,89 @@ parser_configuration:
   line_limit: 100
 processor: 'entity:node'
 processor_configuration:
+  values:
+    type: staff_member
   langcode: en
+  insert_new: 1
   update_existing: 0
   update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
   expire: -1
   owner_feed_author: false
   owner_id: 8
-  authorize: false
-  skip_hash_check: false
-  values:
-    type: staff_member
-  insert_new: 1
 custom_sources:
   email:
-    label: email
     value: email
+    label: email
     machine_name: email
   firstname:
-    label: firstname
     value: firstname
+    label: firstname
     machine_name: firstname
   lastname:
-    label: lastname
     value: lastname
+    label: lastname
     machine_name: lastname
   position:
-    label: position
     value: position
+    label: position
     machine_name: position
   phone:
-    label: phone
     value: phone
+    label: phone
     machine_name: phone
   location:
-    label: location
     value: location
+    label: location
     machine_name: location
   secondary:
-    label: secondary
     value: secondary
+    label: secondary
     machine_name: secondary
   organization:
-    label: organization
     value: organization
+    label: organization
     machine_name: organization
   rpa:
-    label: rpa
     value: rpa
+    label: rpa
     machine_name: rpa
   bio:
-    label: bio
     value: bio
+    label: bio
     machine_name: bio
 mappings:
   -
     target: field_email
     map:
       value: email
-    unique:
-      value: '1'
     settings:
       language: null
       defuse: false
+    unique:
+      value: '1'
   -
     target: field_first_name
     map:
       value: firstname
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_last_name
     map:
       value: lastname
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_staff_position
     map:
       value: position
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_phone
     map:
@@ -134,9 +134,9 @@ mappings:
     target: field_staff_secondary_location
     map:
       value: secondary
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: field_organization
     map:

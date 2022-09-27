@@ -33,8 +33,8 @@ settings:
         weight: 11
         enabled: false
       uswds_column:
-        enabled: true
         weight: 12
+        enabled: true
       uswds_graphic_list:
         weight: 13
         enabled: false

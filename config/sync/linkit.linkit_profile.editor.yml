@@ -5,16 +5,14 @@ dependencies:
   module:
     - anchor_link
     - node
-id: editor
 label: Editor
+id: editor
 description: ''
 matchers:
   ce372496-be75-48df-a3f2-51e08e2a2209:
-    uuid: ce372496-be75-48df-a3f2-51e08e2a2209
     id: 'entity:node'
-    weight: 0
+    uuid: ce372496-be75-48df-a3f2-51e08e2a2209
     settings:
-      include_unpublished: false
       metadata: '[node:group:title]/[node:title]'
       bundles:
         article: article
@@ -33,8 +31,10 @@ matchers:
       group_by_bundle: true
       substitution_type: canonical
       limit: 100
-  1046523c-5ec3-4ca6-8da0-7ad01c52b9bc:
-    uuid: 1046523c-5ec3-4ca6-8da0-7ad01c52b9bc
-    id: ckeditor_anchor_link
+      include_unpublished: false
     weight: 0
+  1046523c-5ec3-4ca6-8da0-7ad01c52b9bc:
+    id: ckeditor_anchor_link
+    uuid: 1046523c-5ec3-4ca6-8da0-7ad01c52b9bc
     settings: {  }
+    weight: 0

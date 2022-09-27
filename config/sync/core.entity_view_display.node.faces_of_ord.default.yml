@@ -22,81 +22,81 @@ bundle: faces_of_ord
 mode: default
 content:
   field_center_or_office:
-    weight: 4
+    type: entity_reference_label
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 4
     region: content
   field_custom_question:
     type: entity_reference_revisions_entity_view
-    weight: 9
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 9
     region: content
   field_faces_job_position:
-    weight: 3
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_faces_name:
-    weight: 2
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_faces_photo:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: small
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
   field_favorite_thing:
-    weight: 8
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 8
     region: content
   field_interesting_job:
-    weight: 7
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 7
     region: content
   field_research_program_area:
-    weight: 5
+    type: entity_reference_label
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   field_when_did_you_start_at_epa:
-    weight: 6
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 6
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   content_moderation_control: true
   entity_print_view_epub: true

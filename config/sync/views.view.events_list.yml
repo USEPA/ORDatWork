@@ -21,92 +21,34 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: mini
-        options:
-          items_per_page: 6
-          offset: 0
-          id: 0
-          total_pages: 1
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: teaser
+      title: ''
       fields:
         title:
           id: title
           table: node_field_data
           field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: title
+          plugin_id: field
           label: ''
+          exclude: false
           alter:
             alter_text: false
             make_link: false
             absolute: false
-            trim: false
             word_boundary: false
             ellipsis: false
             strip_tags: false
+            trim: false
             html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -116,9 +58,13 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -129,20 +75,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 6
+          total_pages: 1
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: field_event_date_value
+          exposed: false
+          granularity: second
+      arguments: {  }
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
@@ -150,6 +148,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
           operator: in
           value:
             event: event
@@ -169,8 +170,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
             argument: null
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -183,9 +184,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
         field_event_tags_target_id:
           id: field_event_tags_target_id
           table: node__field_event_tags
@@ -193,6 +191,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: taxonomy_index_tid
           operator: or
           value: {  }
           group: 1
@@ -228,18 +227,17 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: textfield
-          limit: true
           vid: event_tags
+          type: textfield
           hierarchy: false
+          limit: true
           error_message: true
+          save_lineage: false
+          force_deepest: false
           parent: 0
           level_labels: ''
-          force_deepest: false
-          save_lineage: false
           hierarchy_depth: 0
           required_depth: 0
-          plugin_id: taxonomy_index_tid
         field_show_on_ord_calendar_value:
           id: field_show_on_ord_calendar_value
           table: node__field_show_on_ord_calendar
@@ -247,6 +245,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: boolean
           operator: '='
           value: '1'
           group: 1
@@ -280,7 +279,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: boolean
         field_event_host_target_id:
           id: field_event_host_target_id
           table: node__field_event_host
@@ -288,6 +286,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: taxonomy_index_tid
           operator: or
           value: {  }
           group: 2
@@ -326,18 +325,17 @@ display:
               2: {  }
               3: {  }
           reduce_duplicates: false
-          type: textfield
-          limit: true
           vid: event_host
+          type: textfield
           hierarchy: false
+          limit: true
           error_message: true
+          save_lineage: false
+          force_deepest: false
           parent: 0
           level_labels: ''
-          force_deepest: false
-          save_lineage: false
           hierarchy_depth: 0
           required_depth: 0
-          plugin_id: taxonomy_index_tid
         field_event_date_value:
           id: field_event_date_value
           table: node__field_event_date
@@ -345,6 +343,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           operator: '>'
           value:
             min: ''
@@ -367,9 +366,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -382,36 +381,38 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: date
-      sorts:
-        field_event_date_value:
-          id: field_event_date_value
-          table: node__field_event_date
-          field: field_event_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          plugin_id: date
-      header: {  }
-      footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
-      display_extenders: {  }
-      title: ''
-      group_by: false
-      show_admin_links: true
-      use_ajax: true
       filter_groups:
         operator: OR
         groups:
           1: AND
           2: OR
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      use_ajax: true
+      group_by: false
+      show_admin_links: true
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -424,13 +425,13 @@ display:
         - user.permissions
       tags: {  }
   block_1:
-    display_plugin: block
     id: block_1
     display_title: Teaser
+    display_plugin: block
     position: 2
     display_options:
-      display_extenders: {  }
       display_description: ''
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -443,23 +444,21 @@ display:
         - user.permissions
       tags: {  }
   block_2:
-    display_plugin: block
     id: block_2
     display_title: 'Archive/All Items - Teaser'
+    display_plugin: block
     position: 2
     display_options:
-      display_extenders: {  }
-      display_description: ''
       pager:
         type: full
         options:
-          items_per_page: 6
           offset: 0
-          id: 0
+          items_per_page: 6
           total_pages: null
+          id: 0
           tags:
-            previous: ‹‹
             next: ››
+            previous: ‹‹
             first: '« First'
             last: 'Last »'
           expose:
@@ -473,6 +472,8 @@ display:
           quantity: 5
       defaults:
         pager: false
+      display_description: ''
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -485,13 +486,11 @@ display:
         - user.permissions
       tags: {  }
   block_3:
-    display_plugin: block
     id: block_3
     display_title: 'Sidebar Teaser'
+    display_plugin: block
     position: 2
     display_options:
-      display_extenders: {  }
-      display_description: ''
       style:
         type: default
         options:
@@ -499,14 +498,16 @@ display:
           row_class: ''
           default_row_class: true
           uses_fields: false
-      defaults:
-        style: false
-        row: false
       row:
         type: 'entity:node'
         options:
           relationship: none
           view_mode: sidebar_teaser
+      defaults:
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

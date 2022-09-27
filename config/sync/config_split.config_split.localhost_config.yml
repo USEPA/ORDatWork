@@ -5,6 +5,7 @@ dependencies: {  }
 id: localhost_config
 label: 'Localhost config'
 description: 'Config settings for localhost environment'
+weight: 0
 folder: ../config/localhost
 module:
   devel: 0
@@ -19,4 +20,3 @@ blacklist:
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
-weight: 0

@@ -18,17 +18,17 @@ content:
   field_slideshow_items:
     type: entity_browser_entity_reference
     weight: 1
+    region: content
     settings:
       entity_browser: image_browser
       field_widget_display: rendered_entity
-      field_widget_display_settings:
-        view_mode: media_block
+      field_widget_edit: false
       field_widget_remove: true
       field_widget_replace: true
       open: true
+      field_widget_display_settings:
+        view_mode: media_block
       selection_mode: selection_append
-      field_widget_edit: false
-    region: content
     third_party_settings: {  }
   info:
     type: string_textfield

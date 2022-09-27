@@ -5,21 +5,19 @@ dependencies:
   module:
     - anchor_link
     - node
-id: default
 label: Default
+id: default
 description: 'A default Linkit profile'
 matchers:
   4d00816a-c579-4e0d-8a8d-8fdd94f80157:
-    uuid: 4d00816a-c579-4e0d-8a8d-8fdd94f80157
     id: ckeditor_anchor_link
-    weight: 0
+    uuid: 4d00816a-c579-4e0d-8a8d-8fdd94f80157
     settings: {  }
-  8c5cc268-fe1c-4eab-948b-09e2d462c15f:
-    uuid: 8c5cc268-fe1c-4eab-948b-09e2d462c15f
-    id: 'entity:node'
     weight: 0
+  8c5cc268-fe1c-4eab-948b-09e2d462c15f:
+    id: 'entity:node'
+    uuid: 8c5cc268-fe1c-4eab-948b-09e2d462c15f
     settings:
-      include_unpublished: true
       metadata: '<em>[node:group:title]</em>'
       bundles:
         article: article
@@ -38,8 +36,10 @@ matchers:
       group_by_bundle: true
       substitution_type: canonical
       limit: 100
-  86c1049c-ff11-4db2-80d3-6c28978aa756:
-    uuid: 86c1049c-ff11-4db2-80d3-6c28978aa756
-    id: email
+      include_unpublished: true
     weight: 0
+  86c1049c-ff11-4db2-80d3-6c28978aa756:
+    id: email
+    uuid: 86c1049c-ff11-4db2-80d3-6c28978aa756
     settings: {  }
+    weight: 0

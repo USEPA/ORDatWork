@@ -9,8 +9,8 @@ dependencies:
     - node.type.policy_delegation_auth_action
   module:
     - node
-id: policy_del_auth_action_import
 label: 'Policy Delgation Authority Action Import'
+id: policy_del_auth_action_import
 description: 'Import policy delegation actions by authority'
 help: ''
 import_period: -1
@@ -25,33 +25,33 @@ parser_configuration:
   line_limit: 100
 processor: 'entity:node'
 processor_configuration:
+  values:
+    type: policy_delegation_auth_action
   langcode: en
+  insert_new: 1
   update_existing: 0
   update_non_existent: _delete
+  skip_hash_check: false
+  authorize: true
   expire: -1
   owner_feed_author: true
   owner_id: 0
-  authorize: true
-  skip_hash_check: false
-  values:
-    type: policy_delegation_auth_action
-  insert_new: 1
 custom_sources:
   action:
-    label: Action
     value: Action
+    label: Action
     machine_name: action
   co:
-    label: CO
     value: CO
+    label: CO
     machine_name: co
   title:
-    label: title
     value: title
+    label: title
     machine_name: title
   notes:
-    label: notes
     value: notes
+    label: notes
     machine_name: notes
 mappings:
   -
@@ -76,9 +76,9 @@ mappings:
     target: title
     map:
       value: title
-    unique: {  }
     settings:
       language: null
+    unique: {  }
   -
     target: body
     map:

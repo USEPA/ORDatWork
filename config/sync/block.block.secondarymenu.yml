@@ -17,19 +17,19 @@ plugin: 'system_menu_block:secondary-menu'
 settings:
   id: 'system_menu_block:secondary-menu'
   label: 'Secondary Menu'
-  provider: system
   label_display: '0'
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
 visibility:
   and_or:
     id: and_or
-    all: or
     negate: false
     context_mapping: {  }
+    all: or
   request_path:
     id: request_path
-    pages: "*region8*\r\n*region9*"
     negate: true
     context_mapping: {  }
+    pages: "*region8*\r\n*region9*"
