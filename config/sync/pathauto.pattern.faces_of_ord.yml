@@ -11,12 +11,12 @@ pattern: 'faces-of-ord/[node:title]'
 selection_criteria:
   08cb18e7-aaa0-4c78-a22d-5ef71291ee76:
     id: node_type
-    bundles:
-      faces_of_ord: faces_of_ord
     negate: false
+    uuid: 08cb18e7-aaa0-4c78-a22d-5ef71291ee76
     context_mapping:
       node: node
-    uuid: 08cb18e7-aaa0-4c78-a22d-5ef71291ee76
+    bundles:
+      faces_of_ord: faces_of_ord
 selection_logic: and
 weight: -7
 relationships: {  }

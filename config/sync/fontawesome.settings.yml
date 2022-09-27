@@ -1,16 +1,16 @@
+_core:
+  default_config_hash: _0TCP1OlXsH5Pus8XEGjw0gzFvkiJFQBvJqqNpD9p0s
 tag: span
 method: svg
+load_assets: true
 use_cdn: false
 external_svg_location: /libraries/fontawesome/js/all.js
 use_shim: false
 external_shim_location: 'https://use.fontawesome.com/releases/v5.10.0/js/v4-shims.js'
+allow_pseudo_elements: false
 use_solid_file: true
 use_regular_file: false
 use_light_file: false
 use_brands_file: true
-_core:
-  default_config_hash: _0TCP1OlXsH5Pus8XEGjw0gzFvkiJFQBvJqqNpD9p0s
-allow_pseudo_elements: false
-external_svg_integrity: ''
 use_duotone_file: false
-load_assets: true
+external_svg_integrity: ''

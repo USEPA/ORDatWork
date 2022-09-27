@@ -21,31 +21,31 @@ content:
     weight: 3
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_delegation:
+    type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_policy_topic:
+    type: cshs
     weight: 1
+    region: content
     settings:
+      force_deepest: false
       parent: '0'
       level_labels: ''
-      force_deepest: false
       save_lineage: false
       hierarchy_depth: 0
       required_depth: 0
     third_party_settings: {  }
-    type: cshs
-    region: content
   name:
     type: string_textfield
     weight: 0
@@ -62,10 +62,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   feeds_item: true

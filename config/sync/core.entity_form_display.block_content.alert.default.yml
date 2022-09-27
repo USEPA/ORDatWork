@@ -17,40 +17,40 @@ bundle: alert
 mode: default
 content:
   field_alert_heading:
+    type: string_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_alert_text:
+    type: text_textarea
     weight: 4
+    region: content
     settings:
       rows: 2
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_alert_type:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_include_alert_icon:
+    type: boolean_checkbox
     weight: 1
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_slim_alert:
+    type: boolean_checkbox
     weight: 2
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
 hidden:
   info: true

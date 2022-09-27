@@ -16,42 +16,42 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: node.blog_post.sidebar_teaser
 targetEntityType: node
 bundle: blog_post
 mode: sidebar_teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    label: hidden
     settings:
       trim_length: 60
     third_party_settings: {  }
+    weight: 1
     region: content
   field_blog_post_author:
     type: entity_reference_label
-    weight: 2
-    region: content
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
+    weight: 2
+    region: content
   field_keywords:
-    weight: 3
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 3
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   content_moderation_control: true
   entity_print_view_epub: true

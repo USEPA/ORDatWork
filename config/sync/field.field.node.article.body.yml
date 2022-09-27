@@ -22,8 +22,8 @@ required: true
 translatable: true
 default_value:
   -
-    summary: 'Enter a summary of the article.'
     value: ''
+    summary: 'Enter a summary of the article.'
     format: simple_text
 default_value_callback: ''
 settings:

@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       policy_delegation_authorization: policy_delegation_authorization
+    negate: 0
     target_bundles_drag_drop:
       dynamic_list:
         weight: 23
@@ -41,8 +41,8 @@ settings:
         weight: 27
         enabled: false
       policy_delegation_authorization:
-        enabled: true
         weight: 28
+        enabled: true
       policy_roles:
         weight: 29
         enabled: false

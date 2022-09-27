@@ -21,14 +21,14 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       title_and_text: title_and_text
+    negate: 0
     target_bundles_drag_drop:
       question_and_answer:
         weight: 3
         enabled: false
       title_and_text:
-        enabled: true
         weight: 4
+        enabled: true
 field_type: entity_reference_revisions

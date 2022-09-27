@@ -22,8 +22,8 @@ required: false
 translatable: true
 default_value:
   -
-    summary: ''
     value: "<p>The purpose of this delegation is to re-delegate the following responsibility:</p>\r\n"
+    summary: ''
     format: simple_text
 default_value_callback: ''
 settings:

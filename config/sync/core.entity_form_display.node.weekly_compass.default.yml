@@ -26,17 +26,17 @@ third_party_settings:
     group_upcoming_webinars:
       children:
         - field_compass_upcoming_webinars
+      label: 'Upcoming Webinars'
+      region: hidden
       parent_name: ''
       weight: 13
       format_type: details
-      region: hidden
       format_settings:
-        description: ''
-        id: ''
         classes: ''
+        id: ''
         open: false
+        description: ''
         required_fields: false
-      label: 'Upcoming Webinars'
 id: node.weekly_compass.default
 targetEntityType: node
 bundle: weekly_compass
@@ -49,38 +49,38 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_faces_of_ord:
+    type: entity_reference_autocomplete
     weight: 9
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_photos_of_the_week:
+    type: entity_reference_autocomplete
     weight: 10
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_weekly_note:
+    type: text_textarea
     weight: 8
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   moderation_state:
     type: moderation_state_default
     weight: 6
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -90,24 +90,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 3
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -120,12 +120,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 1
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
     weight: 11

@@ -118,12 +118,12 @@ filters:
     status: false
     weight: -38
     settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
       filter_tags:
         img: img
         iframe: iframe
-      media_switch: ''
-      box_style: ''
-      hybrid_style: ''
       use_data_uri: '0'
   media_inline_embed:
     id: media_inline_embed
@@ -132,10 +132,10 @@ filters:
     weight: 100
     settings:
       default_view_mode: link
-      allowed_view_modes:
-        link: link
       allowed_media_types:
         document: document
+      allowed_view_modes:
+        link: link
   slick_filter:
     id: slick_filter
     provider: slick
