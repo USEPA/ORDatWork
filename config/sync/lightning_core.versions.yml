@@ -93,6 +93,7 @@ gmedia: '1'
 gnode: 1.0.0-rc4
 google_analytics: 2.4.0
 group: 1.0.0-rc4
+group_action: 1.0.0-rc3
 group_media_context: 0.0.0
 group_taxonomy: 1.0.0-beta4
 groupmedia: 2.0.0-alpha4
@@ -160,6 +161,7 @@ migrate_tools: 4.4.0
 moderated_content_bulk_publish: 1.0.0-alpha5
 moderation_dashboard: 1.0.0-beta1
 moderation_sidebar: 1.1.0
+no_autocomplete: 1.6.0
 node: 8.7.3
 node_export: 1.0.0-alpha1
 node_revision_delete: 1.0.0-rc2

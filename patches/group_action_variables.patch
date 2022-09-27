@@ -1,0 +1,45 @@
+diff --git a/src/Plugin/Action/GroupActionBase.php b/src/Plugin/Action/GroupActionBase.php
+index 45951777..510bcb2a 100644
+--- a/src/Plugin/Action/GroupActionBase.php
++++ b/src/Plugin/Action/GroupActionBase.php
+@@ -34,35 +34,35 @@ abstract class GroupActionBase extends ConfigurableActionBase implements Contain
+    *
+    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+    */
+-  protected EntityTypeManagerInterface $entityTypeManager;
++  protected $entityTypeManager;
+ 
+   /**
+    * The plugin manager of group content enablers.
+    *
+    * @var \Drupal\group\Plugin\GroupContentEnablerManagerInterface
+    */
+-  protected GroupContentEnablerManagerInterface $gcePluginManager;
++  protected $gcePluginManager;
+ 
+   /**
+    * The Token service.
+    *
+    * @var \Drupal\Core\Utility\Token
+    */
+-  protected Token $token;
++  protected $token;
+ 
+   /**
+    * The entity repository.
+    *
+    * @var \Drupal\Core\Entity\EntityRepositoryInterface
+    */
+-  protected EntityRepositoryInterface $entityRepository;
++  protected $entityRepository;
+ 
+   /**
+    * The current user.
+    *
+    * @var \Drupal\Core\Session\AccountInterface
+    */
+-  protected AccountInterface $currentUser;
++  protected $currentUser;
+ 
+   /**
+    * Constructs a new GroupActionBase plugin instance.
