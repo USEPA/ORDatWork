@@ -2,8 +2,14 @@ uuid: 1b2471c3-dee2-4eb7-bab2-06576a2da6f6
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.rich_text
+    - filter.format.simple_text
   module:
+    - filter
     - lightning_core
+    - webform
+    - webform_submission_log
 third_party_settings:
   lightning_core:
     description: 'This role is used for managing global permissions for webform management.'

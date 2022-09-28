@@ -43,7 +43,7 @@
         "drupal/extlink": "^1.6",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/uswds_paragraphs": "^2.0@beta",
-        "drupal/uswds": "^2.0",
+        "drupal/uswds": "^2.6",
         "drupal/bamboo_twig": "^5.0@alpha",
         "drupal/redirect": "^1.7",
         "drupal/webform": "^6.1",
@@ -114,6 +114,7 @@
         "drupal/addtocal": "^2.0@beta",
         "drupal/no_autocomplete" : "^1.6",
         "drupal/group_action":  "^1.0@RC",
+        "drupal/field_permissions": "^1.2",
         "drupal/entity_usage":  "^2.0@beta"
     },
     "require-dev": {

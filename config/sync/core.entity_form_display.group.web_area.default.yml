@@ -3,11 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.web_area.field_eic
     - field.field.group.web_area.field_group_contact
     - field.field.group.web_area.field_group_contact_info
     - field.field.group.web_area.field_group_description
+    - field.field.group.web_area.field_web_area_homepage
+    - field.field.group.web_area.field_webarea_archive_date
+    - field.field.group.web_area.field_webarea_contact_us_form
+    - field.field.group.web_area.field_webarea_office_center
+    - field.field.group.web_area.field_webarea_status
     - group.type.web_area
   module:
+    - datetime
+    - link
     - path
     - text
 id: group.web_area.default
@@ -15,9 +23,19 @@ targetEntityType: group
 bundle: web_area
 mode: default
 content:
+  field_eic:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_group_contact:
     type: email_default
-    weight: 4
+    weight: 10
     region: content
     settings:
       placeholder: ''
@@ -25,7 +43,7 @@ content:
     third_party_settings: {  }
   field_group_contact_info:
     type: text_textarea
-    weight: 3
+    weight: 8
     region: content
     settings:
       rows: 3
@@ -33,11 +51,51 @@ content:
     third_party_settings: {  }
   field_group_description:
     type: string_textarea
-    weight: 2
+    weight: 7
     region: content
     settings:
       rows: 2
       placeholder: ''
+    third_party_settings: {  }
+  field_web_area_homepage:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webarea_archive_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_webarea_contact_us_form:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_webarea_office_center:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webarea_status:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
   label:
     type: string_textfield
@@ -49,16 +107,10 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 1
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 120
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
 hidden:
+  status: true
   uid: true
