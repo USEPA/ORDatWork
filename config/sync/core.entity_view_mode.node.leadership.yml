@@ -1,0 +1,14 @@
+uuid: dfdb1d3d-9d90-4812-abde-223e95bd4031
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Display used for senior leaders in staff member content.'
+id: node.leadership
+label: Leadership
+targetEntityType: node
+cache: true
