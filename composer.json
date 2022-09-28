@@ -114,7 +114,8 @@
         "drupal/addtocal": "^2.0@beta",
         "drupal/no_autocomplete" : "^1.6",
         "drupal/group_action":  "^1.0@RC",
-        "drupal/field_permissions": "^1.2"
+        "drupal/field_permissions": "^1.2",
+        "drupal/entity_usage":  "^2.0@beta"
     },
     "require-dev": {
         "drush/drush": "^10.0"
