@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.photos_of_the_week.body
+    - field.field.node.photos_of_the_week.field_photos_for_slideshow
+    - field.field.node.photos_of_the_week.field_week_photos
     - node.type.photos_of_the_week
   module:
     - text
@@ -32,5 +34,6 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_photos_for_slideshow: true
   field_week_photos: true
   search_api_excerpt: true
