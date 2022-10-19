@@ -19,6 +19,7 @@ dependencies:
     - editoria11y
     - entity_browser
     - filter
+    - fontawesome
     - google_analytics
     - h5peditor
     - layout_builder
@@ -52,6 +53,7 @@ permissions:
   - 'access contextual links'
   - 'access draggableviews'
   - 'access editor'
+  - 'access fontawesome additional settings'
   - 'access image_browser entity browser pages'
   - 'access in-place editing'
   - 'access media overview'
