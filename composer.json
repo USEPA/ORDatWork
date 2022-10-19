@@ -72,7 +72,7 @@
         "drupal/moderation_dashboard": "^1.0@beta",
         "drupal/no_autocomplete": "^1.6",
         "drupal/node_export": "^1.0@alpha",
-        "drupal/node_revision_delete": "^1.0",
+        "drupal/node_revision_delete": "1.0-rc3",
         "drupal/openapi_jsonapi": "^3.0",
         "drupal/openapi_ui": "^1.0-rc3",
         "drupal/openapi_ui_redoc": "^1.0-rc3",
