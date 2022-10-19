@@ -1,0 +1,51 @@
+diff --git a/src/Api.php b/src/Api.php
+index d3e148b9..f26c860c 100644
+--- a/src/Api.php
++++ b/src/Api.php
+@@ -20,16 +20,16 @@ class Api
+    *
+    * @var \Drupal\Core\Session\AccountInterface
+    */
+-    protected AccountInterface $account;
++    protected $account;
+ 
+   /**
+    * The current database connection.
+    *
+    * @var \Drupal\Core\Database\Connection
+    */
+-    protected Connection $connection;
++    protected $connection;
+ 
+-    protected EntityTypeManager $manager;
++    protected $manager;
+ 
+   /**
+    * Constructs an Api object.
+@@ -58,7 +58,7 @@ public function test_results($results)
+         $this->validate_path($results["page_path"]);
+         foreach ($results["results"] as $key => $value) {
+           $this->validate_number($value);
+-          
++
+           // todo: handle page parameters that change content
+           if ($results["page_count"] > 0) {
+             $this->validate_not_null($key);
+@@ -246,7 +246,7 @@ private function validate_not_null($user_input)
+         throw new Editoria11yApiException("Missing value: {$key}");
+       }
+     }
+-    
++
+     private function validate_path($user_input)
+     {
+       if (strpos($user_input, '/') !== 0) {
+@@ -261,7 +261,7 @@ private function validate_dismissal_status($user_input)
+       }
+     }
+ 
+-    private function validate_number($user_input) 
++    private function validate_number($user_input)
+     {
+       if (!(is_numeric($user_input))) {
+         throw new Editoria11yApiException("Nan: {$user_input}");

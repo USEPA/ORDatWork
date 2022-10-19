@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/CKEditorPlugin/CkeditorUswdsGrid.php b/src/Plugin/CKEditorPlugin/CkeditorUswdsGrid.php
+index 4f008f6a..6fa26987 100644
+--- a/src/Plugin/CKEditorPlugin/CkeditorUswdsGrid.php
++++ b/src/Plugin/CKEditorPlugin/CkeditorUswdsGrid.php
+@@ -26,7 +26,7 @@ class CkeditorUswdsGrid extends CKEditorPluginBase implements CKEditorPluginConf
+    *
+    * @var \Drupal\Core\Config\ConfigFactoryInterface
+    */
+-  protected ConfigFactoryInterface $configFactory;
++  protected $configFactory;
+ 
+   /**
+    * {@inheritdoc}
