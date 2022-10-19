@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c762e3265cd892a10bc1157a84f55f5",
+    "content-hash": "1cf873b269e4a4b7c778cf4cf4eb7fe5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8966,6 +8966,10 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "PHP 7.3 compatibility for Form": "patches/grid_dialog_compatibility.patch",
+                    "PHP 7.3 compatibility for Plugin": "patches/ck_grid_compatibility.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

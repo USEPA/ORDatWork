@@ -1,0 +1,21 @@
+diff --git a/src/Form/GridDialog.php b/src/Form/GridDialog.php
+index 82418f29..57d6b571 100644
+--- a/src/Form/GridDialog.php
++++ b/src/Form/GridDialog.php
+@@ -28,14 +28,14 @@ class GridDialog extends FormBase {
+    *
+    * @var \Drupal\Core\Form\FormBuilderInterface
+    */
+-  protected FormBuilderInterface $formBuilder;
++  protected $formBuilder;
+ 
+   /**
+    * The module extension list.
+    *
+    * @var \Drupal\Core\Extension\ModuleExtensionList
+    */
+-  protected ModuleExtensionList $moduleExtensionList;
++  protected $moduleExtensionList;
+ 
+   /**
+    * GridDialog class initialize..
