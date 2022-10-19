@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cf873b269e4a4b7c778cf4cf4eb7fe5",
+    "content-hash": "32f720f74eec386769908718cf1ec75f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3505,6 +3505,9 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
+                },
+                "patches_applied": {
+                    "PHP 7.3 compatibility": "patches/api_compatibility.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
