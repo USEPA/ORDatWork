@@ -10,7 +10,7 @@ id: node.photos_of_the_week.field_week_photos
 field_name: field_week_photos
 entity_type: node
 bundle: photos_of_the_week
-label: Photos
+label: 'Photos (Deprecated)'
 description: ''
 required: false
 translatable: false
@@ -23,6 +23,7 @@ settings:
       image: image
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

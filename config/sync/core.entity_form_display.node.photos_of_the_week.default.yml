@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
     - field.field.node.photos_of_the_week.body
+    - field.field.node.photos_of_the_week.field_photos_for_slideshow
     - field.field.node.photos_of_the_week.field_week_photos
     - node.type.photos_of_the_week
     - workflows.workflow.editorial
   module:
     - content_moderation
-    - entity_browser
+    - lightning_scheduler
+    - paragraphs
     - path
     - text
 id: node.photos_of_the_week.default
@@ -26,6 +27,7 @@ content:
       rows: 4
       summary_rows: 2
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -33,20 +35,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_week_photos:
-    type: entity_browser_entity_reference
-    weight: 7
+  field_photos_for_slideshow:
+    type: paragraphs
+    weight: 8
     region: content
     settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      field_widget_display_settings:
-        view_mode: thumbnail
-      selection_mode: selection_append
+      title: Photo
+      title_plural: Photos
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slide_show
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -86,10 +92,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_week_photos: true
   promote: true
   sticky: true

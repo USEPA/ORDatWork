@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.photos_of_the_week.body
+    - field.field.node.photos_of_the_week.field_photos_for_slideshow
     - field.field.node.photos_of_the_week.field_week_photos
     - node.type.photos_of_the_week
   module:
+    - entity_reference_revisions
     - slick_entityreference
     - text
     - user
@@ -20,17 +22,27 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
+    region: content
+  field_photos_for_slideshow:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_week_photos:
     type: slick_entityreference_vanilla
-    label: visually_hidden
+    label: hidden
     settings:
       optionset: default
       view_mode: slideshow
       cache: 0
       current_view_mode: default
       skin: classic
+      fx: ''
       style: ''
       overridables:
         arrows: '0'
@@ -44,13 +56,14 @@ content:
       override: false
       skin_arrows: ''
       skin_dots: ''
+      use_theme_field: false
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

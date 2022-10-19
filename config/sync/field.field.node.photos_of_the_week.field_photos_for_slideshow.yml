@@ -1,0 +1,94 @@
+uuid: 2ffce410-3812-4bd2-92da-7e176b9edf8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photos_for_slideshow
+    - node.type.photos_of_the_week
+    - paragraphs.paragraphs_type.slide_show
+  module:
+    - entity_reference_revisions
+id: node.photos_of_the_week.field_photos_for_slideshow
+field_name: field_photos_for_slideshow
+entity_type: node
+bundle: photos_of_the_week
+label: Photos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      slide_show: slide_show
+    negate: 0
+    target_bundles_drag_drop:
+      governing_authorities:
+        weight: 23
+        enabled: false
+      heading_title_and_text:
+        weight: 24
+        enabled: false
+      hero_carousel:
+        weight: 25
+        enabled: false
+      list_of_link:
+        weight: 26
+        enabled: false
+      policy_delegation_authorization:
+        weight: 27
+        enabled: false
+      policy_roles:
+        weight: 28
+        enabled: false
+      question_and_answer:
+        weight: 29
+        enabled: false
+      rich_text:
+        weight: 30
+        enabled: false
+      slide:
+        weight: 31
+        enabled: false
+      slide_show:
+        weight: 32
+        enabled: true
+      title_and_text:
+        weight: 33
+        enabled: false
+      uswds_accordion:
+        weight: 34
+        enabled: false
+      uswds_accordion_item:
+        weight: 35
+        enabled: false
+      uswds_card:
+        weight: 36
+        enabled: false
+      uswds_card_set:
+        weight: 37
+        enabled: false
+      uswds_column:
+        weight: 38
+        enabled: false
+      uswds_graphic_list:
+        weight: 39
+        enabled: false
+      uswds_grid:
+        weight: 40
+        enabled: false
+      uswds_hero:
+        weight: 41
+        enabled: false
+      uswds_media_block:
+        weight: 42
+        enabled: false
+      uswds_text:
+        weight: 43
+        enabled: false
+      views_reference_list:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions
