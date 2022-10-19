@@ -32,7 +32,7 @@
         "drupal/draggableviews": "1.2",
         "drupal/dynamic_entity_reference": "1.13",
         "drupal/easy_breadcrumb": "^2.0",
-        "drupal/editoria11y": "^2.0",
+        "drupal/editoria11y": "^1.0",
         "drupal/entity_reference_tree": "^2.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/extlink": "^1.7",
@@ -156,9 +156,6 @@
                 "Drupal 9 submodule compatibility": "patches/draggableviews_demo_compatibility.patch",
                 "Drupal 9 migrate class compatibility": "patches/draggableviews_migrate_compatibility.patch",
                 "Drupal 9 classes compatibility": "patches/draggableviews_classes_compatibility.patch"
-            },
-            "drupal/editoria11y": {
-                "PHP 7.3 compatibility": "patches/api_compatibility.patch"
             },
             "drupal/entity_browser": {
                 "3104901: Entity Browser used in a entity referenced field of a layout builder custom block is not working": "https://www.drupal.org/files/issues/2020-03-25/3104901.patch"
