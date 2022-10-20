@@ -206,8 +206,7 @@
             },
             "drupal/uswds_ckeditor_integration": {
                 "PHP 7.3 compatibility for Form": "patches/grid_dialog_compatibility.patch",
-                "PHP 7.3 compatibility for Plugin": "patches/ck_grid_compatibility.patch",
-                "Change Header Alert": "patches/alert-header.patch"
+                "PHP 7.3 compatibility for Plugin": "patches/ck_grid_compatibility.patch"
             },
             "drupal/viewsreference_filter": {
                 "3201294: Allows editing of autocompleted taxonomy filters": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-3201294-6.patch"
