@@ -93,15 +93,15 @@ settings:
         11: '11'
         12: '12'
       available_breakpoints:
-        card: card
-        card-lg: card-lg
-        mobile: mobile
-        mobile-lg: mobile-lg
-        tablet: tablet
-        tablet-lg: tablet-lg
         desktop: desktop
-        desktop-lg: desktop-lg
-        widescreen: widescreen
+        card: 0
+        card-lg: 0
+        mobile: 0
+        mobile-lg: 0
+        tablet: 0
+        tablet-lg: 0
+        desktop-lg: 0
+        widescreen: 0
     uswds_overrides:
       overrides_lists: 1
     uswds_table:
