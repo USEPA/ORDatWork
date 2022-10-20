@@ -219,7 +219,7 @@
                 ]
             },
             "spatie/calendar-links": {
-                "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format.patch",
+                "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format2.patch",
                 "PHP compatibility": "patches/spatie_php.patch"
             }
         },

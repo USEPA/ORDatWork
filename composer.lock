@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26d18f42aa5e6c388242ba168d782885",
+    "content-hash": "68eb2528c817eb2f44c44f626ae34137",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -14327,7 +14327,7 @@
             "type": "library",
             "extra": {
                 "patches_applied": {
-                    "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format.patch",
+                    "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format2.patch",
                     "PHP compatibility": "patches/spatie_php.patch"
                 }
             },
