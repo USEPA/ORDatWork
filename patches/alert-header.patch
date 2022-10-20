@@ -1,173 +1,46 @@
 diff --git a/js/plugins/uswds_alerts/dialogs/alertsDialog.js b/js/plugins/uswds_alerts/dialogs/alertsDialog.js
-index bacc9af..3cf0cf9 100644
+index bacc9af..524c75b 100644
 --- a/js/plugins/uswds_alerts/dialogs/alertsDialog.js
 +++ b/js/plugins/uswds_alerts/dialogs/alertsDialog.js
-@@ -1,5 +1,4 @@
--CKEDITOR.dialog.add('alertsDialog', function (editor) {
--  'use strict';
-+CKEDITOR.dialog.add( 'alertsDialog', function( editor ) {
-   return {
-     title: 'USWDS Alert Properties',
-     minWidth: 400,
-@@ -16,12 +15,12 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-             label: 'Slim Alert',
-             'default': '',
- 
--            setup: function (element) {
-+            setup: function( element ) {
-               let val = element.getParent().hasClass('usa-alert--slim');
--              this.setValue(val);
-+              this.setValue( val );
-             },
- 
--            commit: function (element) {
-+            commit: function( element ) {
+@@ -25,20 +25,20 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
                if (this.getValue()) {
                  if (element.hasClass('usa-alert__body')) {
                    element.getParent().addClass('usa-alert--slim');
-@@ -36,9 +35,9 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
+-                  element.findOne('h4').remove();
++                  element.findOne('span').remove();
+                 }
+                 else {
+                   element.addClass('usa-alert--slim');
+-                  element.findOne('h4').remove();
++                  element.findOne('span').remove();
+                 }
+               }
+               else {
                  if (element.hasClass('usa-alert__body')) {
                    element.getParent().removeClass('usa-alert--slim');
  
 -                  let header = editor.document.createElement('h4');
-+                  let header =  editor.document.createElement( 'span' );
++                  let header = editor.document.createElement('span');
                    header.addClass('usa-alert__heading');
 -                  header.setText("ALERT HEADER");
 +                  header.setText("Alert Header");
  
                    element.append(header, true);
                  }
-@@ -52,18 +51,18 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-             label: 'No Icons',
-             'default': '',
- 
--            setup: function (element) {
-+            setup: function( element ) {
-               let val = element.getParent().hasClass('usa-alert--no-icon');
--              this.setValue(val);
-+              this.setValue( val );
-             },
- 
--            commit: function (element) {
-+            commit: function( element ) {
-               if (this.getValue()) {
-                 if (element.hasClass('usa-alert__body')) {
--                  element.getParent().addClass('usa-alert--no-icon');
-+                  element.getParent().addClass( 'usa-alert--no-icon' );
-                 }
-                 else {
--                  element.addClass('usa-alert--no-icon');
-+                  element.addClass( 'usa-alert--no-icon' );
-                 }
-               }
-               else {
-@@ -77,10 +76,10 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-             type: 'select',
-             id: 'severity',
-             label: 'Select alert severity',
--            items: [['Informative', 'info'], ['Warning', 'warning'], ['Error', 'error'], ['Success', 'success']],
-+            items: [ [ 'Informative', 'info' ], [ 'Warning', 'warning' ], [ 'Error', 'error' ], [ 'Success', 'success' ] ],
-             'default': 'info',
- 
--            setup: function (element) {
-+            setup: function( element ) {
-               let val = element.getParent();
-               let severity = 'info';
-               if (val.hasClass('usa-alert--info')) {
-@@ -95,10 +94,10 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-               else if (val.hasClass('usa-alert--success')) {
-                 severity = 'success';
-               }
--              this.setValue(severity);
-+              this.setValue( severity );
-             },
- 
--            commit: function (element) {
-+            commit: function( element ) {
-               if (this.getValue()) {
-                 if (element.hasClass('usa-alert__body')) {
-                   element.getParent().removeClass('usa-alert--info');
-@@ -110,8 +109,7 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-                   element.removeClass('usa-alert--info');
-                   element.removeClass('usa-alert--warning');
-                   element.removeClass('usa-alert--error');
--                  element.removeClass('usa-alert--success');
--                }
-+                  element.removeClass('usa-alert--success');                }
- 
-                 let className = 'usa-alert--info';
-                 switch (this.getValue()) {
-@@ -132,10 +130,10 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-                 }
- 
-                 if (element.hasClass('usa-alert__body')) {
--                  element.getParent().addClass(className);
-+                  element.getParent().addClass( className );
-                 }
-                 else {
--                  element.addClass(className);
-+                  element.addClass( className );
-                 }
-               }
-             }
-@@ -149,29 +147,29 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-       }
-     ],
- 
--    onShow: function () {
-+    onShow: function() {
-       let selection = editor.getSelection();
-       let element = selection.getStartElement();
- 
--      if (element) {
--        element = element.getAscendant('div');
-+      if ( element ) {
-+        element = element.getAscendant( 'div');
-       }
- 
--      if (!element || element.getName() !== 'div') {
--        let containerDiv = editor.document.createElement('div');
-+      if ( !element || element.getName() !== 'div' ) {
-+        let containerDiv = editor.document.createElement( 'div' );
-         let severity = 'usa-alert--info';
-         containerDiv.addClass('usa-alert').addClass(severity);
- 
--        let bodyDiv = editor.document.createElement('div');
-+        let bodyDiv = editor.document.createElement( 'div' );
+@@ -165,13 +165,13 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
+         let bodyDiv = editor.document.createElement('div');
          bodyDiv.addClass('usa-alert__body');
  
 -        let header = editor.document.createElement('h4');
-+        let header =  editor.document.createElement( 'span' );
++        let header = editor.document.createElement('span');
          header.addClass('usa-alert__heading');
 -        header.setText("ALERT HEADER");
 +        header.setText("Alert Header");
  
--        let body = editor.document.createElement('p');
-+        let body = editor.document.createElement( 'p' );
+         let body = editor.document.createElement('p');
          body.addClass('usa-alert__text');
 -        body.setText('ALERT BODY TEXT');
 +        body.setText('Alert body text');
  
          bodyDiv.append(header);
          bodyDiv.append(body);
-@@ -186,16 +184,16 @@ CKEDITOR.dialog.add('alertsDialog', function (editor) {
-       }
- 
-       this.element = element;
--      if (!this.insertMode) {
-+      if ( !this.insertMode ) {
-         this.setupContent(this.element);
-       }
-     },
- 
--    onOk: function () {
-+    onOk: function() {
-       let alert = this.element;
--      this.commitContent(alert);
-+      this.commitContent( alert );
- 
--      if (this.insertMode) {
-+      if ( this.insertMode ) {
-         editor.insertElement(alert);
-       }
-     }
