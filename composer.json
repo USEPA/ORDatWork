@@ -7,7 +7,7 @@
         "bootstrap/bootstrap": "4.1.3",
         "ckeditor-plugin/templates": "^4.16",
         "cweagans/composer-patches": "^1.6.0",
-        "dompdf/dompdf": " 0.8.5",
+        "dompdf/dompdf": " 2.0.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupal/address": "~1.11",
         "drupal/addtocal": "^2.0@beta",
