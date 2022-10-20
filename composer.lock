@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "520f90d1ac89ccc90ae22cc3328044fe",
+    "content-hash": "c497a7b827de837ae2e0568f1bcbc948",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1449,21 +1449,21 @@
         },
         {
             "name": "drupal/addtocal",
-            "version": "2.0.0-beta3",
+            "version": "2.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/addtocal.git",
-                "reference": "8.x-2.0-beta3"
+                "reference": "8.x-2.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/addtocal-8.x-2.0-beta3.zip",
-                "reference": "8.x-2.0-beta3",
-                "shasum": "149d0cab29cb1edeee3ff5f9005d0a135afc7559"
+                "url": "https://ftp.drupal.org/files/projects/addtocal-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "07e3a04418e3d702a30912ec2425b40c23ce740a"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
-                "spatie/calendar-links": "^1.4"
+                "spatie/calendar-links": "^1.7"
             },
             "suggest": {
                 "drupal/token": "Enables addtocal token ui and field tokens."
@@ -1471,16 +1471,12 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta3",
-                    "datestamp": "1607099933",
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1648740638",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "1551026: Allow compatibility with smart date": "https://www.drupal.org/files/issues/2021-02-26/1551026-smart_date.patch",
-                    "3197306": "https://www.drupal.org/files/issues/2021-04-09/field-token-values-not-cleared-when-empty-3197306-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -14307,30 +14303,31 @@
         },
         {
             "name": "spatie/calendar-links",
-            "version": "1.4.3",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/calendar-links.git",
-                "reference": "f2ebf9b376e0f473a36ec20e7ce12b8e6805e5ec"
+                "reference": "654fc0174e6279539b9bf0abdc3339e34c5286d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/calendar-links/zipball/f2ebf9b376e0f473a36ec20e7ce12b8e6805e5ec",
-                "reference": "f2ebf9b376e0f473a36ec20e7ce12b8e6805e5ec",
+                "url": "https://api.github.com/repos/spatie/calendar-links/zipball/654fc0174e6279539b9bf0abdc3339e34c5286d7",
+                "reference": "654fc0174e6279539b9bf0abdc3339e34c5286d7",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5 || ^9.0",
-                "spatie/phpunit-snapshot-assertions": "^3.0|^4.0",
-                "vimeo/psalm": "^4.1"
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/phpunit-snapshot-assertions": "^4.0",
+                "vimeo/psalm": "^4.20"
             },
             "type": "library",
             "extra": {
                 "patches_applied": {
-                    "Fix ICS HTML formatting": "patches/spatie_ics_html_format_and_timezone.patch"
+                    "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format.patch"
                 }
             },
             "autoload": {
@@ -14362,7 +14359,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-03-05T09:07:44+00:00"
+            "time": "2022-08-20T12:59:17+00:00"
         },
         {
             "name": "stack/builder",
