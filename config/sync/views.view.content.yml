@@ -5,12 +5,16 @@ dependencies:
   config:
     - node.type.article
     - node.type.blog_post
+    - node.type.event
     - node.type.landing_page
     - node.type.page
     - node.type.policy
     - node.type.policy_delegation
     - node.type.policy_delegation_auth_action
+    - node.type.qapp
     - node.type.quiz
+    - node.type.sop
+    - node.type.staff_member
     - node.type.webform
     - user.role.administrator
     - workflows.workflow.editorial
@@ -1326,6 +1330,52 @@ display:
           role:
             administrator: administrator
       filters:
+        type_1:
+          id: type_1
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: 'not in'
+          value:
+            event: event
+            qapp: qapp
+            sop: sop
+            staff_member: staff_member
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            argument: null
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         title:
           id: title
           table: node_field_data

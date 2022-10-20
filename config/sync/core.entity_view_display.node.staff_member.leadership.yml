@@ -1,0 +1,94 @@
+uuid: c8363e46-6fc9-4d57-83ca-70679cf3b37c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.leadership
+    - field.field.node.staff_member.feeds_item
+    - field.field.node.staff_member.field_email
+    - field.field.node.staff_member.field_first_name
+    - field.field.node.staff_member.field_last_name
+    - field.field.node.staff_member.field_location
+    - field.field.node.staff_member.field_organization
+    - field.field.node.staff_member.field_phone
+    - field.field.node.staff_member.field_research_program_area
+    - field.field.node.staff_member.field_staff_biography
+    - field.field.node.staff_member.field_staff_photo
+    - field.field.node.staff_member.field_staff_position
+    - field.field.node.staff_member.field_staff_profile
+    - field.field.node.staff_member.field_staff_secondary_location
+    - node.type.staff_member
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - link
+    - telephone
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      allowed_blocks: {  }
+id: node.staff_member.leadership
+targetEntityType: node
+bundle: staff_member
+mode: leadership
+content:
+  field_email:
+    type: email_mailto
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_phone:
+    type: telephone_link
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_staff_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: staff_member_card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_staff_profile:
+    type: link
+    label: inline
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_first_name: true
+  field_last_name: true
+  field_location: true
+  field_organization: true
+  field_research_program_area: true
+  field_staff_biography: true
+  field_staff_position: true
+  field_staff_secondary_location: true
+  links: true
+  search_api_excerpt: true

@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.photos_of_the_week.body
+    - field.field.node.photos_of_the_week.field_photos_for_slideshow
+    - field.field.node.photos_of_the_week.field_week_photos
     - node.type.photos_of_the_week
   module:
     - text
@@ -15,22 +17,23 @@ bundle: photos_of_the_week
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   content_moderation_control: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_photos_for_slideshow: true
   field_week_photos: true
   search_api_excerpt: true

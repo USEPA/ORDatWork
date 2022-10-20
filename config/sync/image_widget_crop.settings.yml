@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: JTiHOl3PIo9Nyv7j53xwY5OwbwJWwCItksgv_X-NcbE
 settings:
   library_url: libraries/cropper/dist/cropper.min.js
   css_url: libraries/cropper/dist/cropper.min.css
@@ -6,5 +8,3 @@ settings:
   crop_types_required: {  }
   warn_multiple_usages: false
   show_default_crop: true
-_core:
-  default_config_hash: JTiHOl3PIo9Nyv7j53xwY5OwbwJWwCItksgv_X-NcbE

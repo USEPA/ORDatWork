@@ -6,6 +6,7 @@ id: light_blue_blue_light_
 label: 'Blue Light'
 classes: section-blue-light
 type: section
-weight: 0
+group: default
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: 0

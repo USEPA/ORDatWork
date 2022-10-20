@@ -1,0 +1,20 @@
+uuid: 2181161d-6b6a-4c56-8784-9759b492a50d
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - group
+id: group.field_webarea_archive_date
+field_name: field_webarea_archive_date
+entity_type: group
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

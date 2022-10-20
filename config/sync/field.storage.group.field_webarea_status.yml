@@ -1,0 +1,30 @@
+uuid: a515cb91-8506-48da-83a5-ffb3de1af184
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - options
+id: group.field_webarea_status
+field_name: field_webarea_status
+entity_type: group
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: draft
+      label: Draft
+    -
+      value: live
+      label: Live
+    -
+      value: archived
+      label: Archived
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

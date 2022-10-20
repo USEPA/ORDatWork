@@ -3,51 +3,106 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.web_area.field_eic
     - field.field.group.web_area.field_group_contact
     - field.field.group.web_area.field_group_contact_info
     - field.field.group.web_area.field_group_description
+    - field.field.group.web_area.field_web_area_homepage
+    - field.field.group.web_area.field_webarea_archive_date
+    - field.field.group.web_area.field_webarea_contact_us_form
+    - field.field.group.web_area.field_webarea_office_center
+    - field.field.group.web_area.field_webarea_status
     - group.type.web_area
   module:
+    - datetime
+    - link
+    - options
     - text
 id: group.web_area.default
 targetEntityType: group
 bundle: web_area
 mode: default
 content:
-  field_group_contact:
-    weight: 3
+  field_eic:
+    type: entity_reference_label
     label: inline
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    type: email_mailto
+    weight: 2
     region: content
   field_group_contact_info:
-    weight: 2
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 6
     region: content
   field_group_description:
-    weight: 1
-    label: hidden
+    type: basic_string
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 3
+    region: content
+  field_web_area_homepage:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_webarea_archive_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_webarea_contact_us_form:
+    type: link
+    label: inline
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_webarea_office_center:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_webarea_status:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
     region: content
   label:
-    label: hidden
     type: string
-    weight: 0
-    region: content
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   changed: true
   created: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_group_contact: true
   search_api_excerpt: true
   uid: true

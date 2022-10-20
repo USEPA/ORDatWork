@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   action: 0
   address: 0
@@ -55,9 +57,9 @@ module:
   entity_browser_block: 0
   entity_browser_entity_form: 0
   entity_embed: 0
-  entity_reference: 0
   entity_reference_revisions: 0
   entity_reference_tree: 0
+  entity_usage: 0
   entity_view_group_bypass: 0
   epa_core: 0
   epa_media: 0
@@ -68,6 +70,7 @@ module:
   feeds_ex: 0
   field: 0
   field_group: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -178,7 +181,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  update: 0
   twig_field_value: 0
   user: 0
   uswds_ckeditor_integration: 0
@@ -228,5 +230,3 @@ theme:
   uswds: 0
   epa_intranet: 0
 profile: standard
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

@@ -60,19 +60,19 @@ h3:not([class$="__heading"]) {
   line-height: 1.2;
 }
 
-h4 {
+h4:not([class$="__heading"])  {
   font-family: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 0.98rem !important;
   line-height: 1.2;
 }
 
-h5 {
+h5:not([class$="__heading"])  {
   font-family: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 0.91rem !important;
   line-height: 1.2;
 }
 
-h6 {
+h6:not([class$="__heading"])  {
   font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   font-size: 0.87rem !important;
   line-height: 1.1;

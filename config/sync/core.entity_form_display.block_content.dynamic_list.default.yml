@@ -15,21 +15,21 @@ bundle: dynamic_list
 mode: default
 content:
   field_list_footer:
+    type: text_textarea
     weight: 3
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_list_header:
+    type: text_textarea
     weight: 1
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   info:
     type: string_textfield
     weight: 0

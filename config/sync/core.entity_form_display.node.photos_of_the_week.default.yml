@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
     - field.field.node.photos_of_the_week.body
+    - field.field.node.photos_of_the_week.field_photos_for_slideshow
     - field.field.node.photos_of_the_week.field_week_photos
     - node.type.photos_of_the_week
     - workflows.workflow.editorial
   module:
     - content_moderation
-    - entity_browser
+    - lightning_scheduler
+    - paragraphs
     - path
     - text
 id: node.photos_of_the_week.default
@@ -21,38 +22,43 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 6
+    region: content
     settings:
       rows: 4
-      placeholder: ''
       summary_rows: 2
+      placeholder: ''
+      show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_week_photos:
-    type: entity_browser_entity_reference
-    weight: 7
-    settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: thumbnail
-      open: true
-      field_widget_replace: false
+  field_photos_for_slideshow:
+    type: paragraphs
+    weight: 8
     region: content
+    settings:
+      title: Photo
+      title_plural: Photos
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slide_show
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 4
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -62,10 +68,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -78,18 +84,19 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 1
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 7
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
+  field_week_photos: true
   promote: true
   sticky: true
