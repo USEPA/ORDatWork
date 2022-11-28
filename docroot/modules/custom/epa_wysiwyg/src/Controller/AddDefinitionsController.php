@@ -100,25 +100,19 @@ class AddDefinitionsController extends ControllerBase {
 
     //establish as default view mode
     $view_mode = EntityDisplayRepositoryInterface::DEFAULT_DISPLAY_MODE;
-    $build = \Drupal::entityTypeManager()->getViewBuilder('media')->view($media, 'epa-file-link');
+    $build = \Drupal::entityTypeManager()->getViewBuilder('media')->view($media, 'link');
+    $build['#theme'] = 'media';
+    $build['#type'] = 'media';
+    $build['#embed'] = TRUE;
+    $rawField = $build['#media']->get('field_document')->view('link');
 
-    return $build;
-    $response = new ResourceResponse(json_encode($build), 200);
-//    $response->addCacheableDependency($entity);
-//
-//    if ($entity instanceof FieldableEntityInterface) {
-//      foreach ($entity as $field_name => $field) {
-//        /** @var \Drupal\Core\Field\FieldItemListInterface $field */
-//        $field_access = $field->access('view', NULL, TRUE);
-//        $response->addCacheableDependency($field_access);
-//
-//        if (!$field_access->isAllowed()) {
-//          $entity->set($field_name, NULL);
-//        }
-//      }
-//    }
-//
-//    $this->addLinkHeaders($entity, $response);
+    $renderedObject = \Drupal::service('renderer')
+      ->renderRoot($rawField);
+
+    $renderedObject = preg_replace('/<!--(.*)-->/Uis', '', $renderedObject);
+
+    $response->setContent($renderedObject);
+
 
     return $response;
 

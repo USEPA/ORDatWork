@@ -12,7 +12,5 @@ epa_wysiwyg.load_media:
   defaults:
     _controller: '\Drupal\epa_wysiwyg\Controller\AddDefinitionsController::getDocumentMediaItem'
     _title: 'Media Item Lookup'
-  options:
-    _theme: ajax_base_page
   requirements:
     _access: 'TRUE'
