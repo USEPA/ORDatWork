@@ -4,8 +4,12 @@ namespace Drupal\epa_wysiwyg\Controller;
 
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Routing\AccessAwareRouterInterface;
 use Drupal\Core\Url;
 use Drupal\epa_wysiwyg\Plugin\CKEditorPlugin\EPAAddDefinitions;
+use Drupal\rest\ResourceResponse;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
@@ -82,6 +86,42 @@ class AddDefinitionsController extends ControllerBase {
     }
 
     return $response;
+  }
+
+
+  public function getDocumentMediaItem($uuid) {
+    $response = new Response();
+
+    $entityRepository = \Drupal::service('entity.repository');
+
+    $media = $entityRepository->loadEntityByUuid('media', $uuid);
+    $media_uri = $media->field_document->entity->getFileUri();
+    $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($media_uri);
+
+    //establish as default view mode
+    $view_mode = EntityDisplayRepositoryInterface::DEFAULT_DISPLAY_MODE;
+    $build = \Drupal::entityTypeManager()->getViewBuilder('media')->view($media, 'epa-file-link');
+
+    return $build;
+    $response = new ResourceResponse(json_encode($build), 200);
+//    $response->addCacheableDependency($entity);
+//
+//    if ($entity instanceof FieldableEntityInterface) {
+//      foreach ($entity as $field_name => $field) {
+//        /** @var \Drupal\Core\Field\FieldItemListInterface $field */
+//        $field_access = $field->access('view', NULL, TRUE);
+//        $response->addCacheableDependency($field_access);
+//
+//        if (!$field_access->isAllowed()) {
+//          $entity->set($field_name, NULL);
+//        }
+//      }
+//    }
+//
+//    $this->addLinkHeaders($entity, $response);
+
+    return $response;
+
   }
 
 }

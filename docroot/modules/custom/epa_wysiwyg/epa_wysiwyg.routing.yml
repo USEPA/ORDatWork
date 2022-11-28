@@ -7,3 +7,12 @@ epa_wysiwyg.definitions_dialog:
     _theme: ajax_base_page
   requirements:
     _role: 'authenticated'
+epa_wysiwyg.load_media:
+  path: '/epa_wysiwyg/loadDocumentMedia/{uuid}'
+  defaults:
+    _controller: '\Drupal\epa_wysiwyg\Controller\AddDefinitionsController::getDocumentMediaItem'
+    _title: 'Media Item Lookup'
+  options:
+    _theme: ajax_base_page
+  requirements:
+    _access: 'TRUE'
