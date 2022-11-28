@@ -118,4 +118,29 @@ class AddDefinitionsController extends ControllerBase {
 
   }
 
+  /**
+   * Equivalent to uuid loading in function, but accepts/looks up media item by its MID instead of UUID
+   * @param $mid
+   * @return Response
+   */
+  public function getDocumentMediaItemByMid($mid) {
+    $response = new Response();
+
+    $media = \Drupal\media\Entity\Media::load($mid);
+
+    $build = \Drupal::entityTypeManager()->getViewBuilder('media')->view($media, 'link');
+    $rawField = $build['#media']->get('field_document')->view('link');
+
+    $renderedObject = \Drupal::service('renderer')
+      ->renderRoot($rawField);
+
+    $renderedObject = preg_replace('/<!--(.*)-->/Uis', '', $renderedObject);
+
+    $response->setContent($renderedObject);
+
+
+    return $response;
+
+  }
+
 }

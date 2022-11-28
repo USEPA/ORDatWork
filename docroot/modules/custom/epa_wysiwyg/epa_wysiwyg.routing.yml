@@ -14,3 +14,10 @@ epa_wysiwyg.load_media:
     _title: 'Media Item Lookup'
   requirements:
     _access: 'TRUE'
+epa_wysiwyg.load_media_by_mid:
+  path: '/epa_wysiwyg/loadDocumentMediaByMid/{mid}'
+  defaults:
+    _controller: '\Drupal\epa_wysiwyg\Controller\AddDefinitionsController::getDocumentMediaItemByMid'
+    _title: 'Media Item Lookup By MID'
+  requirements:
+    _access: 'TRUE'
