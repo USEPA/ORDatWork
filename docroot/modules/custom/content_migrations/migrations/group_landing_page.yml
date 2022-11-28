@@ -1,0 +1,83 @@
+id: group_landing_page_2
+label: 'Landing Page Content for Group 2'
+migration_tags: null
+migration_group: migrate_content
+source:
+  plugin: url
+  # Specifies the http fetcher plugin.
+  data_fetcher_plugin: http
+  # Specifies the JSON parser plugin.
+  data_parser_plugin: json
+  #  authentication:
+  #    plugin: basic
+  #    username: 'hamster'
+  #    password: 'GummyBear2389'
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+  # One or more URLs from which to fetch the source data.
+  urls: http://localhost:8090/group/2/content/rest_export?_format=json
+  # For JSON, item_selector is the xpath used to select
+  # our source items (tags in this case).
+  item_selector: 0
+  # For each source field, we specify a selector,
+  # the field name which will be used to access the field in the
+  # process configuration, and a label to document the meaning
+  # of the field in front-ends.
+  fields:
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: body
+      label: 'Body'
+      selector: body
+    - name: field_landing_description
+      label: 'Description'
+      selector: field_landing_description
+    - name: field_hero
+      label: 'Hero'
+      selector: field_hero
+    - name: uuid
+      label: 'UUID'
+      selector: uuid
+
+  # Under ids, we specify which of the source fields retrieved
+  # above (product_id in this case) represent our unique
+  # identifier for the item, and the schema type for that field.
+  ids:
+    uuid:
+      type: string
+
+destination:
+  plugin: entity:node
+  default_bundle: landing_page
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid and vid fields to allow incremental migrations.
+  # In D7, nodes always have a tnid, but it's zero for untranslated nodes.
+  # We normalize it to equal the nid in that case.
+  # @see \Drupal\node\Plugin\migrate\source\d7\Node::prepareRow().
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  title: title
+  type:
+    plugin: default_value
+    default_value: landing_page
+  uid: uid
+  uuid: uuid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  metatag: metatag
+  path: path
+  body: body
+  field_landing_description: field_landing_description
+  field_hero: field_hero

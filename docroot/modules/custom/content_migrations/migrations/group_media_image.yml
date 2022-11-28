@@ -1,0 +1,103 @@
+id: group_image_2
+label: 'Image Media for Group 2'
+migration_tags: null
+migration_group: migrate_media
+source:
+  plugin: url
+  # Specifies the http fetcher plugin.
+  data_fetcher_plugin: http
+  # Specifies the JSON parser plugin.
+  data_parser_plugin: json
+  #  authentication:
+  #    plugin: basic
+  #    username: 'hamster'
+  #    password: 'GummyBear2389'
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+  # One or more URLs from which to fetch the source data.
+  urls: http://localhost:8090/group/2/media/rest_csv_export?_format=json&bundle=document
+  # For JSON, item_selector is the xpath used to select
+  # our source items (tags in this case).
+  item_selector: 0
+  # For each source field, we specify a selector,
+  # the field name which will be used to access the field in the
+  # process configuration, and a label to document the meaning
+  # of the field in front-ends.
+  fields:
+    - name: name
+      label: 'Name'
+      selector: name
+    - name: thumbnail
+      label: 'Thumbnail'
+      selector: thumbnail
+    - name: field_caption
+      label: 'Featured'
+      selector: field_caption
+    - name: field_limit_file_accessibility
+      label: 'File Availability'
+      selector: field_limit_file_accessibility
+    - name: field_media_image
+      label: 'Image'
+      selector: field_media_image
+    - name: image
+      label: 'Image'
+      selector: image
+    - name: field_keywords
+      label: 'Keywords (LEGACY)'
+      selector: field_keywords
+    - name: field_media_in_library
+      label: 'Show in media library'
+      selector: field_media_in_library
+    - name:	field_media_tags
+      label: 'Tags'
+      selector:	field_media_tags
+    - name: uuid
+      label: 'UUID'
+      selector: uuid
+
+  # Under ids, we specify which of the source fields retrieved
+  # above (product_id in this case) represent our unique
+  # identifier for the item, and the schema type for that field.
+  ids:
+    uuid:
+      type: string
+
+destination:
+  plugin: entity:media
+  default_bundle: image
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid and vid fields to allow incremental migrations.
+  # In D7, nodes always have a tnid, but it's zero for untranslated nodes.
+  # We normalize it to equal the nid in that case.
+  # @see \Drupal\node\Plugin\migrate\source\d7\Node::prepareRow().
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "en"
+  name: name
+  thumbnail: thumbnail
+  type:
+    plugin: default_value
+    default_value: image
+  uid: uid
+  uuid: uuid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  metatag: metatag
+  path: path
+  field_caption: field_caption
+  field_limit_file_accessibility: field_limit_file_accessibility
+  field_media_image: field_media_image
+  image: image
+  field_keywords: field_keywords
+  field_media_in_library: field_media_in_library
+  field_media_tags: field_media_tags
