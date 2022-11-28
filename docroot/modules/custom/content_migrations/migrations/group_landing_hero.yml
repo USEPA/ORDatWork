@@ -1,0 +1,29 @@
+id: group_landing_page_8
+label: 'Hero Carousel Dependency for landing pages'
+migration_tags: null
+migration_group: migrate_content
+source:
+  plugin: migration_lookup
+  fields:
+    - name: title
+      label: 'Title'
+      selector: title
+
+  # Under ids, we specify which of the source fields retrieved
+  # above (product_id in this case) represent our unique
+  # identifier for the item, and the schema type for that field.
+  ids:
+    uuid:
+      type: string
+
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: uswds_hero
+
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the nid and vid fields to allow incremental migrations.
+  # In D7, nodes always have a tnid, but it's zero for untranslated nodes.
+  # We normalize it to equal the nid in that case.
+  # @see \Drupal\node\Plugin\migrate\source\d7\Node::prepareRow().
+  field_heroes: field_heroes

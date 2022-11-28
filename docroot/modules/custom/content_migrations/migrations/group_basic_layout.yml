@@ -3,7 +3,7 @@ label: 'Landing Page Content for Group 2'
 migration_tags: null
 migration_group: migrate_content
 source:
-  plugin: url
+  plugin: embedded_data
   # Specifies the http fetcher plugin.
   data_fetcher_plugin: http
   # Specifies the JSON parser plugin.
