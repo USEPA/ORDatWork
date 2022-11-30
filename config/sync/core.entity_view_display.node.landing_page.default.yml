@@ -35,7 +35,7 @@ third_party_settings:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
-      blacklisted_blocks:
+      denylisted_blocks:
         'Chaos Tools':
           - 'entity_view:node'
           - 'entity_view:user'
@@ -58,7 +58,7 @@ third_party_settings:
           - 'inline_block:dynamic_list'
           - 'inline_block:google_map'
           - 'inline_block:text'
-      whitelisted_blocks:
+      allowlisted_blocks:
         'Content fields': {  }
         'Entity Block':
           - 'entity_block:node'
