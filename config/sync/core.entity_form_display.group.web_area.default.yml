@@ -33,14 +33,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_group_contact:
-    type: email_default
-    weight: 10
-    region: content
-    settings:
-      placeholder: ''
-      size: 60
-    third_party_settings: {  }
   field_group_contact_info:
     type: text_textarea
     weight: 8
@@ -112,5 +104,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_group_contact: true
   status: true
   uid: true
