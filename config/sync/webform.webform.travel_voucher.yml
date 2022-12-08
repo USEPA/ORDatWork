@@ -1,12 +1,12 @@
 uuid: 60c8435e-4a93-4ae7-a349-95f8e3289bb1
 langcode: en
-status: open
+status: closed
 dependencies:
   module:
     - webform_custom_submissions
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 7
 template: false
 archive: false
@@ -199,7 +199,6 @@ elements: |-
         visible:
           ':input[name="trip_type"]':
             value: 'One Way'
-      '#departing_date__required': true
     round_trip_flight:
       '#type': 'webform_composite:round_trip_flight'
       '#title': 'Round Trip Flight'
@@ -208,7 +207,6 @@ elements: |-
         visible:
           ':input[name="trip_type"]':
             value: 'Round Trip'
-      '#departing_date__required': true
     multi_city_flight:
       '#type': 'webform_composite:one_way_flight'
       '#title': 'Multi-city Flight'
@@ -223,7 +221,6 @@ elements: |-
       '#multiple__operations': false
       '#multiple__add_more_input': false
       '#multiple__add_more_button_label': 'Add Stop'
-      '#departing_date__required': true
   expenses:
     '#type': fieldset
     '#title': Expenses
@@ -257,7 +254,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="transportation_expenses[POV]"]':
+          ':input[name="transportation_expenses[Personally Owned Vehicle (POV)]"]':
             checked: true
       '#min': 0
     cost_of_rental_car_fee:
@@ -267,7 +264,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="transportation_expenses[Rental Car]"]':
+          ':input[name="transportation_expenses[Rental Car Fee]"]':
             checked: true
       '#min': 0
     cost_of_rental_car_fuel:
@@ -371,7 +368,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="additional_expenses[Baggage Fee]"]':
+          ':input[name="additional_expenses[Baggage Fees]"]':
             checked: true
       '#min': 0
     cost_of_cash_withdraw_finance_fees:
@@ -399,9 +396,6 @@ elements: |-
       '#title': 'Cost of Supplies'
       '#description': 'Please itemize and attach all receipts.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Supplies]"]':
@@ -411,6 +405,7 @@ elements: |-
       '#title': 'Receipts for Supplies'
       '#multiple': true
       '#description': 'You are required to attach receipts for supplies.'
+      '#required': true
       '#states':
         visible:
           ':input[name="additional_expenses[Supplies]"]':
@@ -422,20 +417,18 @@ elements: |-
       '#title': 'Cost of Other Expenses'
       '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Other]"]':
             checked: true
     required_receipts:
       '#type': managed_file
-      '#title': Receipts
+      '#title': 'Required Receipts'
       '#multiple': true
       '#file_placeholder': '<strong>Please attach electronic copies of receipts for any expenses over $75.00 for Domestic and International Travel, and all expenses over $25 for Invitational Travel prior to submitting this request.</strong>'
       '#file_extensions': 'gif jpg png pdf doc docx tar zip'
       '#sanitize': true
+      '#required': true
     were_all_meals_provided_through_your_registration_costs_or_by_th:
       '#type': select
       '#title': 'Were all meals provided through your registration costs or by the meeting sponsor?'
@@ -510,7 +503,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="transportation_expenses_rr[POV]"]':
+          ':input[name="transportation_expenses_rr[Personally Owned Vehicle (POV)]"]':
             checked: true
       '#min': 0
     cost_of_rental_car_fee_rr:
@@ -520,7 +513,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="transportation_expenses_rr[Rental Car]"]':
+          ':input[name="transportation_expenses_rr[Rental Car Fee]"]':
             checked: true
       '#min': 0
     cost_of_rental_car_fuel_rr:
@@ -628,7 +621,7 @@ elements: |-
       '#required': true
       '#states':
         visible:
-          ':input[name="additional_expenses_rr[Baggage Fee]"]':
+          ':input[name="additional_expenses_rr[Baggage Fees]"]':
             checked: true
       '#min': 0
     cost_of_cash_withdraw_finance_fees_rr:
@@ -698,42 +691,50 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: source_entity_webform
+  form_title: both
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
-  form_remote_addr: true
+  form_disable_remote_addr: false
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: false
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -742,11 +743,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -757,15 +753,17 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: true
+  wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
@@ -784,9 +782,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: "Thank you for submitting this form. Your submission has been received.<br />\r\n<br />\r\n[webform_submission:values:html]"
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -813,6 +811,8 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -863,9 +863,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: 'Completer Confirmation Email'
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0
@@ -874,13 +874,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:your_information:your_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -891,18 +895,14 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   completer_confirmation_email:
     id: email
+    handler_id: completer_confirmation_email
     label: 'Non-completer Confirmation Email'
     notes: ''
-    handler_id: completer_confirmation_email
     status: true
     conditions: {  }
     weight: 1
@@ -911,13 +911,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:traveler_information:traveler_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -928,51 +932,16 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   travelform_submission_handler:
     id: webform_custom_submissions
+    handler_id: travelform_submission_handler
     label: 'Travelform Submission Handler'
     notes: ''
-    handler_id: null
     status: true
     conditions: {  }
-    weight: null
-    settings:
-      id: webform_custom_submissions
-      label: 'Travelform Submission Handler'
-      notes: ''
-      handler_id: null
-      status: true
-      conditions: {  }
-      weight: null
-      settings:
-        id: webform_custom_submissions
-        label: 'Travelform Submission Handler'
-        notes: ''
-        handler_id: null
-        status: true
-        conditions: {  }
-        weight: null
-        settings:
-          id: webform_custom_submissions
-          label: 'Travelform Submission Handler'
-          notes: ''
-          handler_id: null
-          status: true
-          conditions: {  }
-          weight: null
-          settings:
-            id: webform_custom_submissions
-            label: 'Travelform Submission Handler'
-            handler_id: travelform_submission_handler
-            status: true
-            conditions: {  }
-            weight: 2
-            settings: {  }
+    weight: 2
+    settings: {  }
 variants: {  }
