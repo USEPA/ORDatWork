@@ -4,9 +4,9 @@ status: open
 dependencies:
   module:
     - webform_custom_submissions
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -27,13 +27,6 @@ elements: |-
       '#type': 'webform_composite:completer_information'
       '#title': 'Your Information'
       '#required': true
-    traveler_s_information:
-      '#type': 'webform_composite:traveler_information'
-      '#title': 'Traveler''s Information'
-      '#states':
-        visible:
-          ':input[name="are_you_completing_this_form_for_someone_else_"]':
-            value: 'Yes'
     your_division:
       '#type': select
       '#title': 'Your Division'
@@ -52,44 +45,80 @@ elements: |-
         visible:
           ':input[name="are_you_completing_this_form_for_someone_else_"]':
             value: 'Yes'
-    traveler_destination:
-      '#type': textfield
-      '#title': Destination
-      '#required': true
   travel_details:
     '#type': fieldset
     '#title': 'Travel Details'
+    travel_type:
+      '#type': radios
+      '#title': 'Travel Type'
+      '#options': travel_type
+      '#required': true
+    trip_type:
+      '#type': radios
+      '#title': 'Trip Type'
+      '#options': trip_type
+      '#required': true
     region_departed_from:
       '#type': select
       '#title': 'Departed from'
       '#options':
         Residence: Residence
         'Duty Station': 'Duty Station'
-    departure_date:
-      '#type': date
-      '#title': 'Departure Date'
-      '#required': true
-      '#date_date_format': ''
-    approximate_departure_time:
-      '#type': webform_time
-      '#title': 'Approximate Departure Time'
-      '#required': true
     region_returned_to:
       '#type': select
       '#title': 'Returned to'
       '#options':
         Residence: Residence
         'Duty Station': 'Duty Station'
-    return_date:
-      '#type': date
-      '#title': 'Return Date'
-      '#date_date_format': ''
-    approximate_return_time:
-      '#type': webform_time
-      '#title': 'Approximate Return Time'
+    one_way_flight:
+      '#type': 'webform_composite:one_way_flight'
+      '#title': 'One-way Flight'
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: 'One Way'
+      '#departing_date__required': true
+    round_trip_flight:
+      '#type': 'webform_composite:round_trip_flight'
+      '#title': 'Round Trip Flight'
+      '#title_display': none
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: 'Round Trip'
+      '#departing_date__required': true
+    multi_city_flight:
+      '#type': 'webform_composite:one_way_flight'
+      '#title': 'Multi-city Flight'
+      '#multiple': true
+      '#title_display': none
+      '#states':
+        visible:
+          ':input[name="trip_type"]':
+            value: Multi-city
+      '#multiple__header_label': 'Flight Information'
+      '#multiple__sorting': false
+      '#multiple__operations': false
+      '#multiple__add_more_input': false
+      '#multiple__add_more_button_label': 'Add Stop'
+      '#departing_date__required': true
   expenses:
     '#type': fieldset
     '#title': Expenses
+    travel_card_paid_off:
+      '#title': 'Do you want your travel card paid off for this trip?'
+      '#type': select
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#default_value': 'No'
+    travel_card_pay_off_amount:
+      '#type': textfield
+      '#title': 'Amount to be paid'
+      '#states':
+        visible:
+          ':input[name="travel_card_paid_off"]':
+            value: 'Yes'
     transportation_expenses:
       '#type': checkboxes
       '#title': 'Transportation Expenses'
@@ -114,13 +143,15 @@ elements: |-
             checked: true
       '#min': 0
     cost_of_pov:
-      '#type': textfield
-      '#title': 'POV Mileage (Round Trip)'
+      '#type': number
+      '#title': 'Cost of POV'
+      '#description': 'Please enter the POV mileage (and indicate one-way or round trip).&nbsp;'
       '#required': true
       '#states':
         visible:
           ':input[name="transportation_expenses[POV]"]':
             checked: true
+      '#min': 0
     cost_of_rental_car_fee:
       '#type': number
       '#title': 'Cost of Rental Car Fee'
@@ -260,9 +291,6 @@ elements: |-
       '#title': 'Cost of Supplies'
       '#description': 'Please itemize and attach all receipts.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Supplies]"]':
@@ -284,9 +312,6 @@ elements: |-
       '#title': 'Cost of Other Expenses'
       '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Other]"]':
@@ -298,6 +323,7 @@ elements: |-
       '#file_placeholder': '<strong>Please attach electronic copies of receipts for any expenses over $75.00 for Domestic and International Travel, and all expenses over $25 for Invitational Travel prior to submitting this request.</strong>'
       '#file_extensions': 'gif jpg png pdf doc docx tar zip'
       '#sanitize': true
+      '#required': true
     were_all_meals_provided_through_your_registration_costs_or_by_th:
       '#type': select
       '#title': 'Were all meals provided through your registration costs or by the meeting sponsor?'
@@ -333,15 +359,9 @@ elements: |-
       '#type': webform_message
       '#message_type': info
       '#message_message': 'Airfare, hotel expenses, and TMC service fees are automatically reimbursed to GOVCC. If you would like any other expense paid directly to card, please specify type and amount.'
-    travel_card_paid_off:
-      '#type': select
-      '#title': 'Do you want your travel card paid off for this trip?'
-      '#options':
-        'Yes': 'Yes'
-        'No': 'No'
     do_you_have_any_other_expense_you_would_like_to_reimburse_to_you:
       '#type': select
-      '#title': 'Do you have any individual expense you would like to reimburse to your government credit card?'
+      '#title': 'Do you have any other expense you would like to reimburse to your government credit card?'
       '#options': yes_no
       '#required': true
     transportation_expenses_rr:
@@ -369,6 +389,16 @@ elements: |-
       '#states':
         visible:
           ':input[name="transportation_expenses_rr[Metro / Bus / Public Transportation]"]':
+            checked: true
+      '#min': 0
+    cost_of_pov_rr:
+      '#type': number
+      '#title': 'Cost of POV'
+      '#description': 'Please enter the POV mileage (and indicate one-way or round trip).&nbsp;'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="transportation_expenses_rr[POV]"]':
             checked: true
       '#min': 0
     cost_of_rental_car_fee_rr:
@@ -519,13 +549,10 @@ elements: |-
           ':input[name="additional_expenses_rr[Supplies]"]':
             checked: true
     cost_of_other_expenses_rr:
-      '#type': textarea
+      '#type': number
       '#title': 'Cost of Other Expenses'
       '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses_rr[Other]"]':
@@ -539,7 +566,6 @@ elements: |-
     additional_information_textarea:
       '#type': textarea
       '#title': 'Additional Information'
-      '#description': 'For local voucher, please provide travel description. Please also provide/explain any special requirements related to this travel request.'
     attachment_s_:
       '#type': managed_file
       '#title': Attachment(s)
@@ -562,40 +588,48 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
-  form_remote_addr: true
+  form_disable_remote_addr: false
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: false
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -604,11 +638,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -619,11 +648,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -646,9 +677,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: "Thank you for submitting this form. Your submission has been received.<br />\r\n<br />\r\n[webform_submission:values:html]"
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -675,6 +706,8 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -725,9 +758,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: 'Completer Confirmation Email'
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0
@@ -736,13 +769,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:your_information:your_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -753,18 +790,14 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   completer_confirmation_email:
     id: email
+    handler_id: completer_confirmation_email
     label: 'Non-completer Confirmation Email'
     notes: ''
-    handler_id: completer_confirmation_email
     status: true
     conditions: {  }
     weight: 1
@@ -773,13 +806,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:traveler_information:traveler_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -790,51 +827,16 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   travelform_submission_handler:
     id: webform_custom_submissions
+    handler_id: travelform_submission_handler
     label: 'Travelform Submission Handler'
     notes: ''
-    handler_id: null
     status: true
     conditions: {  }
-    weight: null
-    settings:
-      id: webform_custom_submissions
-      label: 'Travelform Submission Handler'
-      notes: ''
-      handler_id: null
-      status: true
-      conditions: {  }
-      weight: null
-      settings:
-        id: webform_custom_submissions
-        label: 'Travelform Submission Handler'
-        notes: ''
-        handler_id: null
-        status: true
-        conditions: {  }
-        weight: null
-        settings:
-          id: webform_custom_submissions
-          label: 'Travelform Submission Handler'
-          notes: ''
-          handler_id: null
-          status: true
-          conditions: {  }
-          weight: null
-          settings:
-            id: webform_custom_submissions
-            label: 'Travelform Submission Handler'
-            handler_id: travelform_submission_handler
-            status: true
-            conditions: {  }
-            weight: 2
-            settings: {  }
+    weight: 2
+    settings: {  }
 variants: {  }

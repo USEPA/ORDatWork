@@ -4,9 +4,9 @@ status: open
 dependencies:
   module:
     - webform_custom_submissions
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -67,7 +67,7 @@ elements: |-
           ':input[name="are_you_completing_this_form_for_someone_else_"]':
             value: 'Yes'
     alternative_phone:
-      '#type': tel
+      '#type': textfield
       '#title': 'Alternative phone (optional)'
     region_8_your_division:
       '#type': select
@@ -87,6 +87,10 @@ elements: |-
         visible:
           ':input[name="are_you_completing_this_form_for_someone_else_"]':
             value: 'Yes'
+    office_point_of_contact:
+      '#type': textfield
+      '#title': 'Office Point of Contact'
+      '#description': 'Please provide a first and last name.'
     traveler_type:
       '#type': radios
       '#title': 'Traveler Type'
@@ -108,7 +112,6 @@ elements: |-
             value: International
       '#datepicker': true
       '#date_date_format': m/d/Y
-      '#required': true
     emergency_contact_information:
       '#type': 'webform_composite:emergency_contact_information'
       '#title': 'Emergency Contact Information'
@@ -132,48 +135,26 @@ elements: |-
       '#title': 'Trip Type'
       '#options': trip_type
       '#required': true
-    departing_from:
-      '#type': select
-      '#title': 'Departing From'
-      '#options':
-        Residence: Residence
-        'Duty Station': 'Duty Station'
-      '#required': true
-    returning_to:
-      '#type': select
-      '#title': 'Returning To'
-      '#options':
-        Residence: Residence
-        'Duty Station': 'Duty Station'
-      '#required': true
-      '#states':
-        invisible:
-          ':input[name="trip_type"]':
-            value: 'One Way'
     one_way_flight:
       '#type': 'webform_composite:one_way_flight'
-      '#title': One-way
+      '#title': 'One-way Flight'
       '#states':
         visible:
           ':input[name="trip_type"]':
             value: 'One Way'
-      '#flying_from__title': From
       '#flying_from__required': true
-      '#flying_to__title': To
       '#flying_to__required': true
       '#departing_date__required': true
       '#departing_time__required': true
     round_trip_flight:
       '#type': 'webform_composite:round_trip_flight'
-      '#title': 'Round Trip'
+      '#title': 'Round Trip Flight'
       '#title_display': none
       '#states':
         visible:
           ':input[name="trip_type"]':
             value: 'Round Trip'
-      '#flying_from__title': From
       '#flying_from__required': true
-      '#flying_to__title': To
       '#flying_to__required': true
       '#departing_date__required': true
       '#departing_time__required': true
@@ -181,35 +162,22 @@ elements: |-
       '#returning_time__required': true
     multi_city_flight:
       '#type': 'webform_composite:one_way_flight'
-      '#title': 'Multi-city Trip'
+      '#title': 'Multi-city Flight'
       '#multiple': true
       '#title_display': none
       '#states':
         visible:
           ':input[name="trip_type"]':
             value: Multi-city
-      '#multiple__header_label': 'Multiple Destinations'
+      '#multiple__header_label': 'Flight Information'
       '#multiple__sorting': false
       '#multiple__operations': false
       '#multiple__add_more_input': false
       '#multiple__add_more_button_label': 'Add Stop'
-      '#flying_from__title': From
       '#flying_from__required': true
-      '#flying_to__title': To
       '#flying_to__required': true
       '#departing_date__required': true
       '#departing_time__required': true
-    destination_country_contact_name_phone_organization_:
-      '#type': textarea
-      '#title': 'Destination Country Contact (Name/Phone/Organization)'
-      '#description': 'If traveling to multiple countries, please list a POC for each destination country. (Ex. Canada - Jane Doe, 888-000-1234, United Nations)'
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
-      '#states':
-        visible:
-          ':input[name="travel_type"]':
-            value: International
     is_personal_annual_leave_being_requested_:
       '#type': select
       '#title': 'Is Personal/Annual leave being requested?'
@@ -256,14 +224,14 @@ elements: |-
       '#title': 'Is there a block of rooms reserved for you to book with?'
       '#options': yes_no
       '#required': true
-    name_of_room_block:
-      '#type': textfield
-      '#title': 'Name of Room Block'
-      '#required': true
+    block_of_rooms_message:
+      '#type': webform_message
       '#states':
         visible:
           ':input[name="is_there_a_block_of_rooms_reserved_for_you_to_book_with_"]':
             value: 'Yes'
+      '#message_type': info
+      '#message_message': 'You will need to make your own reservation using the room block information. Please provide the hotel name and room rate to your travel preparer.'
     do_you_already_have_a_room_reserved_:
       '#type': select
       '#title': 'Do you already have a room reserved?'
@@ -291,6 +259,8 @@ elements: |-
         visible:
           ':input[name="do_you_already_have_a_room_reserved_"]':
             value: 'No'
+          ':input[name="is_there_a_block_of_rooms_reserved_for_you_to_book_with_"]':
+            value: 'No'
     hotel_preference:
       '#type': 'webform_composite:hotel_preference'
       '#title': 'Hotel Preference'
@@ -313,13 +283,14 @@ elements: |-
         visible:
           ':input[name="do_you_already_have_a_room_reserved_"]':
             value: 'No'
+          ':input[name="is_there_a_block_of_rooms_reserved_for_you_to_book_with_"]':
+            value: 'No'
       '#multiple__header_label': 'Address of Meeting(s)'
       '#multiple__sorting': false
       '#multiple__operations': false
       '#multiple__add_more_input': false
       '#multiple__add_more_button_label': 'Add Location'
       '#address_2__access': false
-      '#required': true
   transportation:
     '#type': fieldset
     '#title': Transportation
@@ -336,14 +307,6 @@ elements: |-
         'Rental Car': 'Rental Car'
         Rail: Rail
         'Government Vehicle': 'Government Vehicle'
-    pov_mileage:
-      '#type': textfield
-      '#title': 'POV Mileage'
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="mode_s_of_transportation[Privately Owned Vehicle (POV)]"]':
-            checked: true
     government_vehicle_available:
       '#type': select
       '#title': 'Is government vehicle available?'
@@ -375,33 +338,6 @@ elements: |-
         visible:
           ':input[name="mode_s_of_transportation[Air]"]':
             checked: true
-    cost_of_airfare:
-      '#type': textfield
-      '#title': 'Cost of Airfare'
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="have_you_made_your_own_airline_reservation_"]':
-            value: 'Yes'
-    name_of_airline:
-      '#type': textfield
-      '#title': 'Name of Airline'
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="have_you_made_your_own_airline_reservation_"]':
-            value: 'Yes'
-    flight_number_s_:
-      '#type': textarea
-      '#title': 'Flight Number(s)'
-      '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
-      '#states':
-        visible:
-          ':input[name="have_you_made_your_own_airline_reservation_"]':
-            value: 'Yes'
     would_you_like_to_request_a_specific_flight_:
       '#type': select
       '#title': 'Would you like to request a specific flight?'
@@ -426,10 +362,6 @@ elements: |-
   purpose_and_funding:
     '#type': fieldset
     '#title': 'Purpose and Funding'
-    region_travel_description:
-      '#type': textarea
-      '#title': 'Travel Description'
-      '#required': true
     travel_purpose:
       '#type': select
       '#title': 'Travel Purpose'
@@ -451,90 +383,32 @@ elements: |-
         visible:
           ':input[name="is_this_travel_for_an_epa_conference_"]':
             value: 'Yes'
-    is_there_a_registration_fee_:
-      '#type': select
-      '#title': 'Is there a registration fee?'
-      '#options': yes_no
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="travel_purpose"]':
-            value: 'P4- Conference'
-    has_registration_fee_been_paid_by_gov_t_purchase_card_bank_card_:
-      '#type': select
-      '#title': 'Has registration fee been paid by Gov''t Purchase Card (Bank Card)?'
-      '#options': yes_no
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="is_there_a_registration_fee_"]':
-            value: 'Yes'
-    what_s_the_dollar_amount_to_include_in_ta:
-      '#type': textfield
-      '#title': 'What''s the dollar amount to include in TA'
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="is_there_a_registration_fee_"]':
-            value: 'Yes'
-    will_training_dollars_be_used_for_this_travel_:
-      '#type': select
-      '#title': 'Will training dollars be used for this travel?'
-      '#options': yes_no
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="travel_purpose"]':
-            value: 'P5- Training'
-    is_this_sf_182_approved_:
-      '#type': select
-      '#title': 'Is this SF-182 approved?'
-      '#options': yes_no
-      '#states':
-        visible:
-          ':input[name="will_training_dollars_be_used_for_this_travel_"]':
-            value: 'Yes'
-    please_provide_more_information_about_the_current_status_of_the_:
+    region_travel_description:
       '#type': textarea
-      '#title': 'Please provide more information about the current status of the SF-182.'
+      '#title': 'Travel Description'
+      '#required': true
+    how_will_this_trip_benefit_the_epa_:
+      '#type': textarea
+      '#title': 'How will this trip benefit the EPA?'
       '#required': true
       '#states':
         visible:
-          ':input[name="is_this_sf_182_approved_"]':
-            value: 'No'
-    please_attach_the_approved_sf_182:
+          ':input[name="travel_type"]':
+            value: International
+    daily_itinerary:
       '#type': managed_file
-      '#title': 'Please attach the approved SF-182'
+      '#title': 'Daily Itinerary'
+      '#description': '<strong>Please attach a daily itinerary for what you will be doing while out of the country.</strong>'
       '#required': true
       '#states':
         visible:
-          ':input[name="is_this_sf_182_approved_"]':
-            value: 'Yes'
-      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
+          ':input[name="travel_type"]':
+            value: International
+      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx xml tar zip'
       '#sanitize': true
-    are_you_presenting_:
-      '#type': select
-      '#title': 'Are you presenting?'
-      '#options': yes_no
-      '#required': true
-      '#states':
-        visible:
-          ':input[name="will_training_dollars_be_used_for_this_travel_"]':
-            value: 'Yes'
-    what_day_s_are_you_presenting_:
-      '#type': textarea
-      '#title': 'What day(s) are you presenting?'
-      '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
-      '#states':
-        visible:
-          ':input[name="are_you_presenting_"]':
-            value: 'Yes'
     division_director_and_or_branch_chief_s_name:
       '#type': textarea
-      '#title': 'List your Division Director and/or Branch Chief Name(s)'
+      '#title': "Division Director and/or\_Branch Chief's Name"
       '#required': true
       '#states':
         visible:
@@ -548,31 +422,41 @@ elements: |-
         visible:
           ':input[name="travel_type"]':
             value: International
-    how_will_this_trip_benefit_the_epa_:
-      '#type': textarea
-      '#title': 'How will this trip benefit the EPA?'
+    destination_country_contact_s_name:
+      '#type': textfield
+      '#title': 'Destination Country Contact''s Name'
       '#required': true
       '#states':
         visible:
           ':input[name="travel_type"]':
             value: International
-    are_others_from_your_l_c_o_attending_this_meeting_as_well_:
-      '#type': select
-      '#title': 'Are others from your ARAship attending this meeting as well?'
-      '#options': yes_no
-      '#required': true
-      '#states':
-        invisible:
-          ':input[name="travel_type"]':
-            value: 'Invitational (Non-EPA)'
-    please_provide_the_names_of_the_others_attending_this_meeting_wi:
-      '#type': textarea
-      '#title': "Please provide the names of the others attending this meeting with you.\_"
+    destination_country_contact_s_telephone:
+      '#type': tel
+      '#title': 'Destination Country Contact''s Telephone'
       '#required': true
       '#states':
         visible:
-          ':input[name="are_others_from_your_l_c_o_attending_this_meeting_as_well_"]':
-            value: 'Yes'
+          ':input[name="travel_type"]':
+            value: International
+      '#international': true
+      '#international_initial_country': US
+    destination_country_contact_s_org:
+      '#type': textfield
+      '#title': 'Destination Country Contact''s Organization'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: International
+    hosting_organization_point_of_contact:
+      '#type': textfield
+      '#title': 'Hosting Organization Point of Contact'
+      '#description': 'Please provide name and phone number.'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="travel_type"]':
+            value: 'Invitational (Non-EPA)'
     is_someone_else_paying_for_a_portion_or_all_of_the_travel_:
       '#type': select
       '#title': 'Is another organization paying for a portion or all of the travel?'
@@ -580,7 +464,7 @@ elements: |-
       '#required': true
     who_is_paying_:
       '#type': textfield
-      '#title': 'Name of Organization Paying'
+      '#title': 'Name of org paying'
       '#required': true
       '#states':
         visible:
@@ -597,17 +481,22 @@ elements: |-
         visible:
           ':input[name="who_is_paying_"]':
             value: 'EPA Office'
-    office_point_of_contact:
-      '#type': textfield
-      '#title': 'Office Point of Contact'
-      '#description': 'Please provide a first and last name.'
     cross_funding_label_:
       '#type': textfield
-      '#title': 'Cross-funding label (if available)'
+      '#title': "Cross-funding Label\_"
+      '#required': true
       '#states':
         visible:
-          ':input[name="is_someone_else_paying_for_a_portion_or_all_of_the_travel_"]':
-            value: 'Yes'
+          ':input[name="who_is_paying_"]':
+            value: 'EPA Office'
+    agency_name:
+      '#type': textfield
+      '#title': 'Agency Name'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="who_is_paying_"]':
+            value: 'Non-EPA, US Federal Agency'
     name_of_funding_organization:
       '#type': textfield
       '#title': 'Name of Funding Organization'
@@ -657,6 +546,50 @@ elements: |-
               value: 'No'
       '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
       '#sanitize': true
+    will_training_dollars_be_used_for_this_travel_:
+      '#type': select
+      '#title': 'Will training dollars be used for this travel?'
+      '#options': yes_no
+      '#required': true
+    is_this_sf_182_approved_:
+      '#type': select
+      '#title': 'Is this SF-182 approved?'
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="will_training_dollars_be_used_for_this_travel_"]':
+            value: 'Yes'
+    please_provide_more_information_about_the_current_status_of_the_:
+      '#type': textarea
+      '#title': 'Please provide more information about the current status of the SF-182.'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_this_sf_182_approved_"]':
+            value: 'No'
+    please_attach_the_approved_sf_182:
+      '#type': managed_file
+      '#title': 'Please attach the approved SF-182'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="is_this_sf_182_approved_"]':
+            value: 'Yes'
+      '#file_extensions': 'gif jpg png pdf doc docx ppt pptx xls xlsx tar zip'
+      '#sanitize': true
+    are_others_from_your_l_c_o_attending_this_meeting_as_well_:
+      '#type': select
+      '#title': 'Are others from your L/C/O attending this meeting as well?'
+      '#options': yes_no
+      '#required': true
+    please_provide_the_names_of_the_others_attending_this_meeting_wi:
+      '#type': textarea
+      '#title': "Please provide the names of the others attending this meeting with you.\_"
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="are_others_from_your_l_c_o_attending_this_meeting_as_well_"]':
+            value: 'Yes'
   expenses:
     '#type': fieldset
     '#title': Expenses
@@ -794,7 +727,7 @@ elements: |-
       '#min': 0
     cost_of_airport_parking:
       '#type': number
-      '#title': 'Cost of Airport Parking (cost/ day)'
+      '#title': 'Cost of Airport Parking'
       '#description': 'Please enter the dollar amount for this expense.&nbsp;'
       '#required': true
       '#states':
@@ -837,9 +770,6 @@ elements: |-
       '#title': 'Cost of Supplies'
       '#description': 'Please itemize.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Supplies]"]':
@@ -849,9 +779,6 @@ elements: |-
       '#title': 'Cost of Other Expenses'
       '#description': 'Please itemize any other expenses (name and dollar amount for each expense) and provide an explanation for each.'
       '#required': true
-      '#counter_type': character
-      '#counter_maximum': 255
-      '#counter_maximum_message': '255 maximum characters allowed.'
       '#states':
         visible:
           ':input[name="additional_expenses[Other]"]':
@@ -889,40 +816,48 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
-  form_remote_addr: true
+  form_disable_remote_addr: false
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: false
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -931,11 +866,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -946,11 +876,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -973,9 +905,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: "Thank you for submitting this form. Your submission has been received.<br />\r\n<br />\r\n[webform_submission:values:html]"
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -1002,6 +934,8 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -1052,9 +986,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: 'Completer Confirmation Email'
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0
@@ -1063,13 +997,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:your_information:your_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -1080,18 +1018,14 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   completer_confirmation_email:
     id: email
+    handler_id: completer_confirmation_email
     label: 'Non-completer Confirmation Email'
     notes: ''
-    handler_id: completer_confirmation_email
     status: true
     conditions: {  }
     weight: 1
@@ -1100,13 +1034,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:traveler_information:traveler_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -1117,51 +1055,16 @@ handlers:
       html: true
       attachments: false
       twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   travelform_submission_handler:
     id: webform_custom_submissions
+    handler_id: travelform_submission_handler
     label: 'Travelform Submission Handler'
     notes: ''
-    handler_id: null
     status: true
     conditions: {  }
-    weight: null
-    settings:
-      id: webform_custom_submissions
-      label: 'Travelform Submission Handler'
-      notes: ''
-      handler_id: null
-      status: true
-      conditions: {  }
-      weight: null
-      settings:
-        id: webform_custom_submissions
-        label: 'Travelform Submission Handler'
-        notes: ''
-        handler_id: null
-        status: true
-        conditions: {  }
-        weight: null
-        settings:
-          id: webform_custom_submissions
-          label: 'Travelform Submission Handler'
-          notes: ''
-          handler_id: null
-          status: true
-          conditions: {  }
-          weight: null
-          settings:
-            id: webform_custom_submissions
-            label: 'Travelform Submission Handler'
-            handler_id: travelform_submission_handler
-            status: true
-            conditions: {  }
-            weight: 2
-            settings: {  }
+    weight: 2
+    settings: {  }
 variants: {  }
