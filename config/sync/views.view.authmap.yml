@@ -1,27 +1,18 @@
-uuid: 67bf4cfa-fc5c-4cf7-9576-287a57bcb562
+uuid: 68641409-8b56-424c-a11a-bfbeecca646d
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.group.field_eic
-    - field.storage.group.field_web_area_homepage
-    - field.storage.group.field_webarea_contact_us_form
-    - field.storage.group.field_webarea_office_center
-    - field.storage.group.field_webarea_status
-    - group.type.web_area
-    - taxonomy.vocabulary.centers_and_offices
   module:
-    - group
-    - link
-    - options
-    - taxonomy
-id: web_areas
-label: Web-Areas
+    - externalauth
+    - user
+    - views_autocomplete_filters
+id: authmap
+label: 'External authentication links'
 module: views
 description: ''
 tag: ''
-base_table: groups_field_data
-base_field: id
+base_table: authmap
+base_field: ''
 display:
   default:
     id: default
@@ -29,17 +20,66 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Web-Areas
+      title: 'External authentication links'
       fields:
-        counter:
-          id: counter
-          table: views
-          field: counter
+        provider_field:
+          id: provider_field
+          table: authmap
+          field: provider_field
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: counter
-          label: Count
+          plugin_id: standard
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        authname:
+          id: authname
+          table: authmap
+          field: authname
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Authentication Name'
           exclude: false
           alter:
             alter_text: false
@@ -80,24 +120,80 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          counter_start: 1
-        label:
-          id: label
-          table: groups_field_data
-          field: label
+        uid:
+          id: uid
+          table: authmap
+          field: uid
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: null
-          entity_field: label
-          plugin_id: field
-          label: 'Web Area'
+          plugin_id: numeric
+          label: 'Drupal User ID'
           exclude: false
           alter:
             alter_text: false
             text: ''
             make_link: false
-            path: '/group/{{ group__title }}/nodes'
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ''
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+        name:
+          id: name
+          table: users_field_data
+          field: name
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: name
+          plugin_id: field
+          label: 'Drupal User Name'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -133,7 +229,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: user_name
           settings:
             link_to_entity: true
           group_column: value
@@ -146,15 +242,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_eic:
-          id: field_eic
-          table: group__field_eic
-          field: field_eic
+        delete_link:
+          id: delete_link
+          table: authmap
+          field: delete_link
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
-          label: 'Editor in Chief'
+          plugin_id: authmap_link_delete
+          label: delete
           exclude: false
           alter:
             alter_text: false
@@ -195,275 +291,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_web_area_homepage:
-          id: field_web_area_homepage
-          table: group__field_web_area_homepage
-          field: field_web_area_homepage
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Web Area Homepage'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_webarea_contact_us_form:
-          id: field_webarea_contact_us_form
-          table: group__field_webarea_contact_us_form
-          field: field_webarea_contact_us_form
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Contact Form'
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<a href="{{ field_webarea_contact_us_form__uri}}">Contact Form</a>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link
-          settings:
-            trim_length: null
-            url_only: false
-            url_plain: false
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_webarea_office_center:
-          id: field_webarea_office_center
-          table: group__field_webarea_office_center
-          field: field_webarea_office_center
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Owning Organization'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_webarea_status:
-          id: field_webarea_status
-          table: group__field_webarea_status
-          field: field_webarea_status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Status
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          text: delete
+          output_url_as_text: false
+          absolute: false
       pager:
         type: mini
         options:
@@ -486,94 +316,148 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: true
+          reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
+        type: perm
+        options:
+          perm: 'view authmap'
+      cache:
         type: none
         options: {  }
-      cache:
-        type: tag
-        options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No links (from Authentication name to Drupal user) found.'
+          tokenize: false
       sorts: {  }
-      arguments: {  }
+      arguments:
+        provider_field:
+          id: provider_field
+          table: authmap
+          field: provider_field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: 'Links for {{ arguments.provider_field }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: false
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
       filters:
-        type:
-          id: type
-          table: groups_field_data
-          field: type
+        authname:
+          id: authname
+          table: authmap
+          field: authname
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: group
-          entity_field: type
-          plugin_id: bundle
+          plugin_id: string
+          operator: starts
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: authname_op
+            label: 'Authentication name'
+            description: ''
+            use_operator: false
+            operator: authname_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: authname
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              role3: '0'
+              role4: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
           operator: in
-          value:
-            web_area: web_area
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            argument: null
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        field_webarea_office_center_target_id:
-          id: field_webarea_office_center_target_id
-          table: group__field_webarea_office_center
-          field: field_webarea_office_center_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_webarea_office_center_target_id_op
-            label: Center/Office
+            operator_id: uid_op
+            label: 'Drupal user'
             description: ''
             use_operator: false
-            operator: field_webarea_office_center_target_id_op
+            operator: uid_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_webarea_office_center_target_id
+            identifier: uid
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              webform: '0'
               administrator: '0'
+              role3: '0'
+              role4: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -587,85 +471,42 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: centers_and_offices
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-          save_lineage: false
-          force_deepest: false
-          parent: 0
-          level_labels: ''
-          hierarchy_depth: 0
-          required_depth: 0
-        field_webarea_status_value:
-          id: field_webarea_status_value
-          table: group__field_webarea_status
-          field: field_webarea_status_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_webarea_status_value_op
-            label: Status
-            description: ''
-            use_operator: false
-            operator: field_webarea_status_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_webarea_status_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              webform: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
         type: table
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
           columns:
-            label: label
-            field_group_contact: field_group_contact
-          default: label
+            authname: authname
+            uid: uid
+            name: name
+            delete: delete
+          default: authname
           info:
-            label:
+            authname:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_group_contact:
+            uid:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            delete:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -687,7 +528,17 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        uid:
+          id: uid
+          table: authmap
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: 'Linked Drupal user'
+          plugin_id: standard
+          required: false
+      show_admin_links: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -698,22 +549,25 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
-      tags:
-        - 'config:field.storage.group.field_eic'
-        - 'config:field.storage.group.field_web_area_homepage'
-        - 'config:field.storage.group.field_webarea_contact_us_form'
-        - 'config:field.storage.group.field_webarea_office_center'
-        - 'config:field.storage.group.field_webarea_status'
-  page_web_areas:
-    id: page_web_areas
+        - user.permissions
+      tags: {  }
+  page:
+    id: page
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
-      path: web-areas
-      use_admin_theme: false
+      path: admin/people/authmap
+      menu:
+        type: tab
+        title: External
+        description: ''
+        weight: 20
+        expanded: false
+        menu_name: admin
+        parent: entity.user.collection
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -721,10 +575,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
-      tags:
-        - 'config:field.storage.group.field_eic'
-        - 'config:field.storage.group.field_web_area_homepage'
-        - 'config:field.storage.group.field_webarea_contact_us_form'
-        - 'config:field.storage.group.field_webarea_office_center'
-        - 'config:field.storage.group.field_webarea_status'
+        - user.permissions
+      tags: {  }

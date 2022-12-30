@@ -713,6 +713,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      enabled: false
       display_extenders: {  }
       path: policy/delegation-authority-page
     cache_metadata:
