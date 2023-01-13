@@ -4,6 +4,11 @@ namespace Drupal\media_inline_embed\Plugin\Filter;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\filter\FilterProcessResult;
 use Drupal\media\MediaInterface;
 use Drupal\media\Plugin\Filter\MediaEmbed;
@@ -25,6 +30,24 @@ use Drupal\media\Plugin\Filter\MediaEmbed;
  * )
  */
 class MediaInlineEmbed extends MediaEmbed {
+
+  protected $media_inline_config;
+  /**
+   * @param array $configuration
+   * @param $plugin_id
+   * @param $plugin_definition
+   * @param EntityRepositoryInterface $entity_repository
+   * @param EntityTypeManagerInterface $entity_type_manager
+   * @param EntityDisplayRepositoryInterface $entity_display_repository
+   * @param EntityTypeBundleInfoInterface $bundle_info
+   * @param RendererInterface $renderer
+   * @param LoggerChannelFactoryInterface $logger_factory
+   * Constructs parent MediaEmbed, with the addition of our custom ORD_Work media load URLs
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityRepositoryInterface $entity_repository, EntityTypeManagerInterface $entity_type_manager, EntityDisplayRepositoryInterface $entity_display_repository, EntityTypeBundleInfoInterface $bundle_info, RendererInterface $renderer, LoggerChannelFactoryInterface $logger_factory) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_repository, $entity_type_manager, $entity_display_repository, $bundle_info, $renderer, $logger_factory);
+    $this->media_inline_config = \Drupal::config('media_inline_embed.form');
+  }
 
   /**
    * {@inheritdoc}
@@ -79,6 +102,9 @@ class MediaInlineEmbed extends MediaEmbed {
         ? $this->renderMedia($media, $view_mode_id, $langcode)
         : $this->renderMissingMediaIndicator();
 
+      $build
+      $requestedMedia = $this->requestMediaFromORD($uuid);
+
       if (empty($build['#attributes']['class'])) {
         $build['#attributes']['class'] = [];
       }
@@ -106,6 +132,27 @@ class MediaInlineEmbed extends MediaEmbed {
     $result->setProcessedText(Html::serialize($dom));
 
     return $result;
+  }
+
+  /**
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   */
+  private function requestMediaFromORD($uuid) {
+    $url = 'http://localhost:8090/epa_wysiwyg/loadDocumentMedia/' . $uuid;
+    $method = 'GET';
+    $options = [
+      'form_params' => [
+      ]
+    ];
+
+    $client = \Drupal::httpClient();
+
+    $response = $client->request($method, $url, $options);
+    $code = $response->getStatusCode();
+    if ($code == 200) {
+      $body = $response->getBody()->getContents();
+    }
+    return $body;
   }
 
 }

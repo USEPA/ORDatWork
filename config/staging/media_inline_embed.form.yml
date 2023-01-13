@@ -1,0 +1,3 @@
+BASE_URL: 'http://localhost:8090/'
+LOAD_BY_UUID_EXTENSION: 'epa_wysiwyg/loadDocumentMedia/'
+LOAD_BY_MID_EXTENSION: 'epa_wysiwyg/loadDocumentMediaByMid/'

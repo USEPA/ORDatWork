@@ -1,0 +1,12 @@
+media_inline_embed.form:
+  title: 'ORD@Work connection'
+  route_name: media_inline_embed.form
+  description: 'Configure settings for Loading Media from ORD@Work'
+  parent: media_inline_embed.group.admin
+  weight: 99
+media_inline_embed.group.admin:
+  title: 'Inline Media'
+  route_name: system.admin_media_inline_embed
+  parent: system.admin_config
+  description: 'Configurations for Inline Media'
+  weight: -998

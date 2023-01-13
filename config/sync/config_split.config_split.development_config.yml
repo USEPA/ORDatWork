@@ -20,6 +20,7 @@ blacklist:
   - update.settings
   - webform_custom_submissions.form
   - webform_custom_submissions.jira_custom_fields
+  - media_inline_embed.form
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

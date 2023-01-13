@@ -1,0 +1,16 @@
+media_inline_embed.form:
+  path: '/admin/config/media_inline_embed/media_not_found'
+  defaults:
+    _form: '\Drupal\media_inline_embed\Form\MediaNotFoundForm'
+    _title: 'Media Not Found Settings'
+  description: 'Configure Media Not Found settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+system.admin_media_inline_embed:
+  path: '/admin/config/media_inline_embed'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Media Inline Embed'
+  requirements:
+    _permission: 'access administration pages'
