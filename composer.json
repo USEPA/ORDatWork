@@ -49,7 +49,7 @@
         "drupal/focal_point": "^1.5",
         "drupal/fontawesome": "^2.23",
         "drupal/fullcalendar_view": "^5.1",
-        "drupal/google_analytics": "3.1",
+        "drupal/google_analytics": "^4.0",
         "drupal/group": "1.4",
         "drupal/group_action": "^1.0@RC",
         "drupal/group_taxonomy": "^1.0",
@@ -173,9 +173,6 @@
             },
             "drupal/fullcalendar_view": {
                 "3168071: Mouse-hover tool-tip option for version since 8.x.4.2": "https://www.drupal.org/files/issues/2022-07-18/3168071-16.patch"
-            },
-            "drupal/google_analytics": {
-                "3312418: PHP deprecation": "https://www.drupal.org/files/issues/2022-09-28/google_analytics-deprecated_function-3312418-3.patch"
             },
             "drupal/group": {
                 "2797793: Associate menu with a group": "https://www.drupal.org/files/issues/2021-06-15/group-support_string_entity_ids-2797793-260.patch",
