@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53dfef250720f600c426529f5bc414de",
+    "content-hash": "b08eba2edbd2c41f96811c98a22689c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -97,7 +97,7 @@
             "version": "3.6.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "3711efedf0ca2e998cd0417324f717f2e0b828ec"
             },
             "dist": {
@@ -1735,7 +1735,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.9",
-                    "datestamp": "1643826959",
+                    "datestamp": "1673535832",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1796,18 +1796,6 @@
             ],
             "authors": [
                 {
-                    "name": "Pravin Ajaaz",
-                    "homepage": "https://www.drupal.org/user/2910049"
-                },
-                {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
-                },
-                {
                     "name": "bforchhammer",
                     "homepage": "https://www.drupal.org/user/216396"
                 },
@@ -1820,8 +1808,24 @@
                     "homepage": "https://www.drupal.org/user/1001934"
                 },
                 {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "Pravin Ajaaz",
+                    "homepage": "https://www.drupal.org/user/2910049"
+                },
+                {
                     "name": "purushotam.rai",
                     "homepage": "https://www.drupal.org/user/3193859"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
             "description": "Allows hiding of entity label fields and automatic label creation.",
@@ -3295,6 +3299,10 @@
             ],
             "authors": [
                 {
+                    "name": "ajay_reddy",
+                    "homepage": "https://www.drupal.org/user/3261994"
+                },
+                {
                     "name": "harika gujjula",
                     "homepage": "https://www.drupal.org/user/2978505"
                 },
@@ -3639,21 +3647,21 @@
         },
         {
             "name": "drupal/dynamic_entity_reference",
-            "version": "1.13.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/dynamic_entity_reference.git",
-                "reference": "8.x-1.13"
+                "reference": "8.x-1.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-8.x-1.13.zip",
-                "reference": "8.x-1.13",
-                "shasum": "cd22b6ca91e63d5787048ad5e0e1943dccf17878"
+                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "4155c11eac17ccd485888e6e5c52858358726415"
             },
             "require": {
                 "drupal/core": "^9.3",
-                "php": ">=7.3"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "drupal/diff": "1.x-dev",
@@ -3664,8 +3672,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.13",
-                    "datestamp": "1641212749",
+                    "version": "8.x-1.16",
+                    "datestamp": "1644273068",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3756,6 +3764,10 @@
                     "homepage": "https://www.drupal.org/user/3580850"
                 },
                 {
+                    "name": "NickDickinsonWilde",
+                    "homepage": "https://www.drupal.org/user/3094661"
+                },
+                {
                     "name": "RenatoG",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
@@ -3781,29 +3793,34 @@
         },
         {
             "name": "drupal/editoria11y",
-            "version": "1.0.14",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/editoria11y.git",
-                "reference": "1.0.14"
+                "reference": "2.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/editoria11y-1.0.14.zip",
-                "reference": "1.0.14",
-                "shasum": "5c278b863b3f97f4e15aceb41e48117258fed8a1"
+                "url": "https://ftp.drupal.org/files/projects/editoria11y-2.0.4.zip",
+                "reference": "2.0.4",
+                "shasum": "6764d7b2ebb9a829c37e329156471f0efc3325e1"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.14",
-                    "datestamp": "1651258764",
+                    "version": "2.0.4",
+                    "datestamp": "1672944158",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
                     }
                 }
             },
@@ -3813,22 +3830,31 @@
             ],
             "authors": [
                 {
-                    "name": "bkosborne",
-                    "homepage": "https://www.drupal.org/user/788032"
+                    "name": "John Jameson",
+                    "homepage": "https://www.drupal.org/u/itmaybejj",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "itmaybejj",
-                    "homepage": "https://www.drupal.org/user/1177504"
+                    "name": "Brian Osborne",
+                    "homepage": "https://www.drupal.org/u/bkosborne",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "partyka",
-                    "homepage": "https://www.drupal.org/user/344048"
+                    "name": "Jason Partyka",
+                    "homepage": "https://www.drupal.org/u/partyka",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/3187132/committers",
+                    "role": "contributor"
                 }
             ],
-            "description": "Checks for accessibility in page content.",
-            "homepage": "https://www.drupal.org/project/editoria11y",
+            "description": "Editoria11y (\"editorial accessibility\") is a user-friendly accessibility checker.",
+            "homepage": "http://drupal.org/project/editoria11y",
             "support": {
-                "source": "https://git.drupalcode.org/project/editoria11y"
+                "source": "https://git.drupalcode.org/project/editoria11y",
+                "issues": "http://drupal.org/project/issues/editoria11y"
             }
         },
         {
@@ -5393,6 +5419,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
                 {
                     "name": "falcon",
                     "homepage": "https://www.drupal.org/user/530912"
@@ -7595,26 +7625,26 @@
         },
         {
             "name": "drupal/node_revision_delete",
-            "version": "1.0.0-rc3",
+            "version": "1.0.0-rc6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/node_revision_delete.git",
-                "reference": "8.x-1.0-rc3"
+                "reference": "8.x-1.0-rc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/node_revision_delete-8.x-1.0-rc3.zip",
-                "reference": "8.x-1.0-rc3",
-                "shasum": "5c539e9ac8e4af276cc558a33f1da2a5ad57ac79"
+                "url": "https://ftp.drupal.org/files/projects/node_revision_delete-8.x-1.0-rc6.zip",
+                "reference": "8.x-1.0-rc6",
+                "shasum": "68db55e328bc247a2a16501dd930538961314107"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9.0"
+                "drupal/core": "^8.7.7 || ^9.0 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc3",
-                    "datestamp": "1600878567",
+                    "version": "8.x-1.0-rc6",
+                    "datestamp": "1668447494",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -7622,7 +7652,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9"
+                        "drush.services.yml": "^9.0 || ^10 || ^11"
                     }
                 }
             },
@@ -7785,6 +7815,10 @@
                     "name": "Mateu Aguiló Bosch",
                     "homepage": "https://www.drupal.org/user/3616626",
                     "email": "mateu.aguilo.bosch@gmail.com"
+                },
+                {
+                    "name": "bradjones1",
+                    "homepage": "https://www.drupal.org/user/405824"
                 },
                 {
                     "name": "e0ipso",
@@ -8257,7 +8291,7 @@
                     "datestamp": "1601818840",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -8268,25 +8302,29 @@
             "authors": [
                 {
                     "name": "Nikolay Ignatov",
-                    "homepage": "https://www.drupal.org/user/2301376",
+                    "homepage": "https://www.drupal.org/user/1443204",
                     "email": "nikolai.ignatov@gmail.com",
                     "role": "Creator and Maintainer"
                 },
                 {
                     "name": "Dobrin Dobrev",
-                    "homepage": "https://www.drupal.org/user/1443204",
+                    "homepage": "https://www.drupal.org/user/2803987",
                     "email": "ddobrev81@gmail.com",
                     "role": "Maintainer"
                 },
                 {
                     "name": "Milka Petkova",
-                    "homepage": "https://www.drupal.org/user/2803987",
+                    "homepage": "https://www.drupal.org/user/2301376",
                     "email": "milka.petkova.88@gmail.com",
                     "role": "Maintainer"
                 },
                 {
                     "name": "skek",
                     "homepage": "https://www.drupal.org/user/417078"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
                 }
             ],
             "description": "Allows for paragraph entities to be embedded as items into the CKE editor.",
@@ -8998,6 +9036,10 @@
             ],
             "authors": [
                 {
+                    "name": "abhinesh",
+                    "homepage": "https://www.drupal.org/user/3645979"
+                },
+                {
                     "name": "alanburke",
                     "homepage": "https://www.drupal.org/user/35997"
                 },
@@ -9335,20 +9377,12 @@
             ],
             "authors": [
                 {
-                    "name": "Andriy Khomych",
-                    "homepage": "https://www.drupal.org/user/3287133"
-                },
-                {
-                    "name": "JacobSanford",
-                    "homepage": "https://www.drupal.org/user/806538"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
-                },
-                {
                     "name": "alesbencina",
                     "homepage": "https://www.drupal.org/user/3558110"
+                },
+                {
+                    "name": "Andriy Khomych",
+                    "homepage": "https://www.drupal.org/user/3287133"
                 },
                 {
                     "name": "aurelianzaha",
@@ -9357,6 +9391,10 @@
                 {
                     "name": "dragan_bp",
                     "homepage": "https://www.drupal.org/user/3578037"
+                },
+                {
+                    "name": "JacobSanford",
+                    "homepage": "https://www.drupal.org/user/806538"
                 },
                 {
                     "name": "joaogarin",
@@ -9373,6 +9411,10 @@
                 {
                     "name": "mh86",
                     "homepage": "https://www.drupal.org/user/59747"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
             "description": "This module provides a powerful interface for managing taxonomies.",
@@ -9590,6 +9632,14 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "bizar1984",
+                    "homepage": "https://www.drupal.org/user/3719064"
+                },
+                {
+                    "name": "Gerben Spil",
+                    "homepage": "https://www.drupal.org/user/728030"
+                },
                 {
                     "name": "Sutharsan",
                     "homepage": "https://www.drupal.org/user/73854"
@@ -9909,6 +9959,10 @@
             ],
             "authors": [
                 {
+                    "name": "abhinesh",
+                    "homepage": "https://www.drupal.org/user/3645979"
+                },
+                {
                     "name": "jec006",
                     "homepage": "https://www.drupal.org/user/855980"
                 },
@@ -10082,17 +10136,17 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.2.1",
+            "version": "4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.2.1"
+                "reference": "4.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.1.zip",
-                "reference": "4.2.1",
-                "shasum": "3bce967e24c0ce19fc7e0de031594729e22c38ef"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.3.zip",
+                "reference": "4.2.3",
+                "shasum": "56014a68924b358caca5c41cd74b995fc0cc5e13"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
@@ -10107,8 +10161,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.1",
-                    "datestamp": "1666185226",
+                    "version": "4.2.3",
+                    "datestamp": "1673360841",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10429,12 +10483,12 @@
                 "drupal/telephone_validation": "~2.0",
                 "drupal/token": "~1.0",
                 "drupal/variationcache": "~1.0",
+                "drupal/webform-webform_group": "*",
                 "drupal/webform_access": "*",
                 "drupal/webform_attachment": "*",
                 "drupal/webform_clientside_validation": "*",
                 "drupal/webform_devel": "*",
                 "drupal/webform_entity_print": "*",
-                "drupal/webform_group": "*",
                 "drupal/webform_node": "*",
                 "drupal/webform_options_limit": "*",
                 "drupal/webform_scheduled_email": "*",
@@ -15600,6 +15654,7 @@
                 "issues": "https://github.com/simplesamlphp/twig-configurable-i18n/issues",
                 "source": "https://github.com/simplesamlphp/twig-configurable-i18n"
             },
+            "abandoned": true,
             "time": "2020-08-27T12:51:10+00:00"
         },
         {
@@ -20742,6 +20797,7 @@
         "drupal/linkchecker": 10,
         "drupal/moderation_dashboard": 10,
         "drupal/node_export": 15,
+        "drupal/node_revision_delete": 5,
         "drupal/uswds_paragraphs": 10,
         "drupal/views_taxonomy_term_name_into_id": 15,
         "drupal/webform_analysis": 10,
