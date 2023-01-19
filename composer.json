@@ -102,7 +102,7 @@
         "drupal/transliterate_filenames": "^1.4",
         "drupal/twig_field_value": "^2.0",
         "drupal/uswds": "^2.6",
-        "drupal/uswds_ckeditor_integration": "^1.0",
+        "drupal/uswds_ckeditor_integration": "^2.0",
         "drupal/uswds_paragraphs": "^2.0@beta",
         "drupal/vefl": "3.0",
         "drupal/views_add_button": "^2.0",
