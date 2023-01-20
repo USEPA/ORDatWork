@@ -19,6 +19,8 @@ module:
   breakpoint: 0
   bulk_update_fields: 0
   ckeditor: 0
+  ckeditor5: 0
+  ckeditor5_embedded_content: 0
   comment: 0
   conditional_fields: 0
   config: 0
