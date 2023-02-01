@@ -241,6 +241,9 @@
             "spatie/calendar-links": {
                 "Fix ICS HTML formatting": "patches/rerolled_spatie_timezone_format2.patch",
                 "PHP compatibility": "patches/spatie_php.patch"
+            },
+            "simplesamlphp/simplesamlphp": {
+                "Strftime php function replacement": "patches/simplesaml_strftime.patch"
             }
         },
         "patchLevel": {
