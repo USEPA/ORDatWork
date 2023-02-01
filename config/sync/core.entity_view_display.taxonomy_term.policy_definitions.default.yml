@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.policy_definitions.feeds_item
-    - field.field.taxonomy_term.policy_definitions.field_policy_topic
     - taxonomy.vocabulary.policy_definitions
   module:
     - text
@@ -17,14 +16,6 @@ content:
     type: text_default
     label: hidden
     settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_policy_topic:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
     third_party_settings: {  }
     weight: 0
     region: content
