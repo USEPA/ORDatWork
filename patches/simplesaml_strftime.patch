@@ -1,0 +1,22 @@
+diff --git a/vendor/simplesamlphp/simplesamlphp/lib/SimpleSAML/Logger/FileLoggingHandler.php b/vendor/simplesamlphp/simplesamlphp/lib/SimpleSAML/Logger/FileLoggingHandler.php
+index c07ec21f..36439a64 100644
+--- a/vendor/simplesamlphp/simplesamlphp/lib/SimpleSAML/Logger/FileLoggingHandler.php
++++ b/vendor/simplesamlphp/simplesamlphp/lib/SimpleSAML/Logger/FileLoggingHandler.php
+@@ -112,12 +112,16 @@ class FileLoggingHandler implements LoggingHandlerInterface
+             $matches = [];
+             if (preg_match('/%date(?:\{([^\}]+)\})?/', $this->format, $matches)) {
+                 $format = "%b %d %H:%M:%S";
++
++                // Manually replacing common format with current date format equivalent, ignoring other formats
++                $date = new \DateTimeImmutable();
++                $new_format = "M d H:i:s";
+                 if (isset($matches[1])) {
+                     $format = $matches[1];
+                 }
+ 
+                 array_push($formats, $matches[0]);
+-                array_push($replacements, strftime($format));
++                array_push($replacements, $date->format($new_format));
+             }
+ 
+             $string = str_replace($formats, $replacements, $string);
