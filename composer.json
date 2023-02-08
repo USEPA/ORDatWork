@@ -129,7 +129,8 @@
         "oomphinc/composer-installers-extender": "2.0.1",
         "psr/cache": "^1.0",
         "sabre/vobject": "^4.2",
-        "wikimedia/composer-merge-plugin": "v2.0.1"
+        "wikimedia/composer-merge-plugin": "v2.0.1",
+        "drupal/accessibility_scanner": "^2.0@beta"
     },
     "require-dev": {
         "drush/drush": "^10.0"
