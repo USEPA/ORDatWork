@@ -7,6 +7,7 @@ dependencies:
     - field.field.taxonomy_term.policy_definitions.field_policy_topic
     - taxonomy.vocabulary.policy_definitions
   module:
+    - cshs
     - path
     - text
 id: taxonomy_term.policy_definitions.default
@@ -23,10 +24,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_policy_topic:
-    type: options_select
+    type: cshs
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      force_deepest: false
+      parent: '0'
+      level_labels: ''
+      hierarchy_depth: '1'
+      required_depth: '0'
+      save_lineage: false
     third_party_settings: {  }
   name:
     type: string_textfield
