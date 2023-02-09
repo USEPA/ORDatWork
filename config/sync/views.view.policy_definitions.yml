@@ -5,6 +5,11 @@ dependencies:
   config:
     - taxonomy.vocabulary.policy_definitions
     - taxonomy.vocabulary.policy_topics
+  content:
+    - 'taxonomy_term:policy_topics:30ad5362-0234-4fed-a529-066aa4b80636'
+    - 'taxonomy_term:policy_topics:7fca4ed6-040e-42b0-8e9f-943917413bfa'
+    - 'taxonomy_term:policy_topics:cfe0d371-79c3-493f-b3b3-cce60ac4bb97'
+    - 'taxonomy_term:policy_topics:fc14128c-97fb-4ab3-bfe3-3228968afd5e'
   module:
     - csv_serialization
     - entity_reference_revisions
@@ -592,6 +597,339 @@ display:
         - user
         - user.permissions
       tags: {  }
+  page_1:
+    id: page_1
+    display_title: 'QA In Use Page'
+    display_plugin: page
+    position: 1
+    display_options:
+      title: 'QA Policy Definitions'
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          operator: in
+          value:
+            policy_definitions: policy_definitions
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            argument: null
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: 'Term Name'
+            description: ''
+            use_operator: false
+            operator: name_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              webform: '0'
+              administrator: '0'
+            placeholder: ''
+            autocomplete_filter: 0
+            autocomplete_min_chars: '0'
+            autocomplete_items: '10'
+            autocomplete_field: name
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_policy_topic_target_id:
+          id: field_policy_topic_target_id
+          table: taxonomy_term__field_policy_topic
+          field: field_policy_topic_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            27: 27
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: policy_topics
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+          save_lineage: false
+          force_deepest: false
+          parent: 0
+          level_labels: ''
+          hierarchy_depth: 0
+          required_depth: 0
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        header: false
+      display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<h1>Quality Assurance Policy Definitions</h1>'
+          tokenize: false
+      display_extenders: {  }
+      path: quality-assurance/policy-definitions
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - user.permissions
+      tags: {  }
   page_2:
     id: page_2
     display_title: 'In Use Page'
@@ -918,7 +1256,11 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: {  }
+          value:
+            27: 27
+            23: 23
+            26: 26
+            24: 24
           group: 1
           exposed: true
           expose:
@@ -953,8 +1295,8 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: policy_topics
-          type: cshs
-          hierarchy: true
+          type: select
+          hierarchy: false
           limit: true
           error_message: true
           save_lineage: false
