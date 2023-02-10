@@ -22,6 +22,7 @@ dependencies:
     - entity_reference_revisions
     - rest
     - serialization
+    - slick
     - taxonomy
     - text
     - user
@@ -730,9 +731,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
+          type: slick_text
           settings: {  }
-          group_column: value
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -925,11 +926,13 @@ display:
           1: AND
       defaults:
         title: false
+        group_by: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
         header: false
+      group_by: true
       display_description: ''
       header:
         area_text_custom:
