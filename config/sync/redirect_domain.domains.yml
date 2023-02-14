@@ -11,3 +11,21 @@ domain_redirects:
     -
       sub_path: /releasing-manuscripts-and-data
       destination: work.epa.gov/pamd
+    -
+      sub_path: '/about-ord/*'
+      destination: work.epa.gov/ord/about-office-research-development
+    -
+      sub_path: '/ioaa/*'
+      destination: work.epa.gov/ord/about-ords-immediate-office
+    -
+      sub_path: '/pubmed-central/*'
+      destination: work.epa.gov/publications/pubmed-central-epa
+    -
+      sub_path: /ioaa
+      destination: work.epa.gov/ord/about-ords-immediate-office
+    -
+      sub_path: /about-ord
+      destination: work.epa.gov/ord/about-office-research-development
+    -
+      sub_path: /pubmed-central
+      destination: work.epa.gov/publications/pubmed-central-epa
