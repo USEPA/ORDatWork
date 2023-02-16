@@ -110,7 +110,7 @@ class EditorInlineMediaDialog extends EditorMediaDialog {
     ];
 
     $view_mode_options = array_intersect_key($this->entityDisplayRepository->getViewModeOptionsByBundle('media', $media->bundle()), $media_embed_filter->settings['allowed_view_modes']);
-    $default_view_mode = static::getViewModeDefaultValue($view_mode_options, $media_embed_filter, $media_embed_element['data-view-mode']);
+    $default_view_mode = static::getViewModeDefaultValue($view_mode_options, $media_embed_filter, $media_embed_element['data-view-mode'] ?? NULL);
 
     $form['view_mode'] = [
       '#title' => $this->t("Display"),

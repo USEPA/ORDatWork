@@ -43,6 +43,8 @@ module:
   dblog: 0
   dblog_filter: 0
   depth_taxonomy_view_lookup: 0
+  devel: 0
+  devel_generate: 0
   diff: 0
   draggableviews: 0
   dropzonejs: 0
@@ -165,6 +167,7 @@ module:
   serialization: 0
   simple_gmap: 0
   simplesamlphp_auth: 0
+  single_content_sync: 0
   slick: 0
   slick_entityreference: 0
   slick_paragraphs: 0
@@ -184,6 +187,7 @@ module:
   token: 0
   toolbar: 0
   twig_field_value: 0
+  update: 0
   user: 0
   uswds_ckeditor_integration: 0
   uswds_paragraphs: 0
@@ -208,6 +212,7 @@ module:
   webform_composite: 0
   webform_config_ignore: 0
   webform_custom_submissions: 0
+  webform_devel: 0
   webform_group: 0
   webform_image_select: 0
   webform_node: 0
