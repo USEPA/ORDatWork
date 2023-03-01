@@ -29,3 +29,12 @@ domain_redirects:
     -
       sub_path: /pubmed-central
       destination: work.epa.gov/publications/pubmed-central-epa
+    -
+      sub_path: /science/science-inventory
+      destination: work.epa.gov/publications/science-inventory
+    -
+      sub_path: /science/board-scientific-counselors-bosc
+      destination: work.epa.gov/science-research/board-scientific-counselors-bosc
+    -
+      sub_path: /science/dual-use-research-concern-durc-policies
+      destination: work.epa.gov/science-research/dual-use-research-concern-durc
