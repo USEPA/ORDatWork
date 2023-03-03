@@ -38,3 +38,9 @@ domain_redirects:
     -
       sub_path: /science/dual-use-research-concern-durc-policies
       destination: work.epa.gov/science-research/dual-use-research-concern-durc
+    -
+      sub_path: /web-guide
+      destination: work.epa.gov/intranet-guide
+    -
+      sub_path: '/web-guide/*'
+      destination: work.epa.gov/intranet-guide
