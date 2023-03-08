@@ -160,7 +160,8 @@
                 "3035113: JSON API": "https://www.drupal.org/files/issues/2021-12-28/3035113-33.patch",
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
                 "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2022-07-14/923934-67.patch",
-                "3313185: utility php 8.1 deprecation": "https://www.drupal.org/files/issues/2022-10-03/utility.patch"
+                "3313185: utility php 8.1 deprecation": "https://www.drupal.org/files/issues/2022-10-03/utility.patch",
+                "3083690: Removing media render php error":  "https://www.drupal.org/files/issues/2022-01-19/3083690-12.patch"
             },
             "drupal/cshs": {
                 "3166046: Integrate select into webform": "https://www.drupal.org/files/issues/2021-04-13/3166046-7.patch",
