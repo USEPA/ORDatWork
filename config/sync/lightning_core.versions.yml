@@ -165,7 +165,6 @@ moderation_sidebar: 1.1.0
 mysql: 9.4.8
 no_autocomplete: 1.6.0
 node: 8.7.3
-node_export: 1.0.0-alpha1
 node_revision_delete: 1.0.0-rc2
 openapi: 1.0.0-beta4
 openapi_ui: 1.0.0-rc2
