@@ -219,6 +219,9 @@
             "drupal/single_content_sync": {
                 "3325903: If author doesn't exist, then revision log message fails, the revision message duplicates rather than updating": "https://www.drupal.org/files/issues/2023-01-28/allow-author-not-to-exist-in-export-3325903-4.patch"
             },
+            "drupal/smart_date": {
+                "3324142: Correct timezones from being handled as numeric on save": "https://www.drupal.org/files/issues/2022-12-07/3324142.patch"
+            },
             "drupal/taxonomy_term_depth": {
                 "3283096: PHP deprecation fix": "https://git.drupalcode.org/project/taxonomy_term_depth/-/merge_requests/4.patch"
             },
