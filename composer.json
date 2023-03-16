@@ -23,7 +23,7 @@
         "drupal/config_filter": "^1.10",
         "drupal/config_ignore": "^3.0",
         "drupal/config_split": "^1.9",
-        "drupal/core": "9.4.10",
+        "drupal/core": "9.4.12",
         "drupal/consumers": "1.11.0",
         "drupal/cshs": "^1.7",
         "drupal/csv_serialization": "^2.1",
