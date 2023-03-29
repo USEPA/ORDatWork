@@ -322,55 +322,6 @@ display:
           date_format: medium
           custom_date_format: ''
           timezone: ''
-        field_event_date_rrule:
-          id: field_event_date_rrule
-          table: node__field_event_date
-          field: field_event_date_rrule
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          label: 'Event Date - Recurring'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
       pager:
         type: mini
         options:
@@ -382,10 +333,10 @@ display:
             next: ››
             previous: ‹‹
           expose:
-            items_per_page: false
+            items_per_page: true
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: true
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
@@ -517,11 +468,10 @@ display:
             field_event_host: field_event_host
             field_event_date_value: field_event_date_value
             field_event_date_end_value: field_event_date_end_value
-            field_event_date_rrule: field_event_date_rrule
           default: '-1'
           info:
             nid:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -553,13 +503,6 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_event_date_rrule:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
           override: true
           sticky: false
           summary: ''
@@ -577,7 +520,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      group_by: false
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -595,12 +538,13 @@ display:
         - 'config:field.storage.node.field_event_host'
   page_migration_data:
     id: page_migration_data
-    display_title: Page
+    display_title: Events
     display_plugin: page
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
-      path: admin/migration-data
+      path: admin/migration-data/events
     cache_metadata:
       max-age: -1
       contexts:
