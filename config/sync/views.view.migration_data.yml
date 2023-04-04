@@ -1,26 +1,22 @@
-uuid: 756db7ed-f76f-4dc2-a8c9-50cb49e55661
+uuid: d1edde19-68b9-4652-806d-4ae1661f0218
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field_center_or_office
-    - field.storage.node.field_policy_delegation_party
-    - field.storage.taxonomy_term.field_delegation
-    - field.storage.taxonomy_term.field_policy_topic
-    - node.type.policy_delegation_auth_action
-    - taxonomy.vocabulary.centers_and_offices
-    - taxonomy.vocabulary.policy_delegation_actions
-    - taxonomy.vocabulary.policy_topics
+    - field.storage.node.field_event_host
+    - field.storage.node.field_first_name
+    - field.storage.node.field_last_name
+    - field.storage.node.field_organization
+    - node.type.event
+    - node.type.staff_member
+    - taxonomy.vocabulary.event_host
   module:
-    - entity_reference_revisions
+    - cshs
     - node
     - taxonomy
-    - text
     - user
-    - views_autocomplete_filters
-id: policy_delegation_authorities
-label: 'Policy Delegation Authorities'
+id: migration_data
+label: 'Migration Data'
 module: views
 description: ''
 tag: ''
@@ -29,23 +25,23 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
-      title: 'ORD Delegation Authorities'
+      title: 'Migration Data'
       fields:
-        title:
-          id: title
+        nid:
+          id: nid
           table: node_field_data
-          field: title
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
+          entity_field: nid
           plugin_id: field
-          label: ''
+          label: ID
           exclude: false
           alter:
             alter_text: false
@@ -65,8 +61,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -74,14 +70,78 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
-          element_class: highlight
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Title
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -100,15 +160,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_event_host:
+          id: field_event_host
+          table: node__field_event_host
+          field: field_event_host
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
+          label: 'Event Host'
           exclude: false
           alter:
             alter_text: false
@@ -141,80 +201,18 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_delegation:
-          id: field_delegation
-          table: taxonomy_term__field_delegation
-          field: field_delegation
-          relationship: term_node_tid
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Delegation
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: span
-          element_class: ''
-          element_label_type: strong
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -225,15 +223,67 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_policy_delegation_party:
-          id: field_policy_delegation_party
-          table: node__field_policy_delegation_party
-          field: field_policy_delegation_party
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
-          label: ''
+          plugin_id: date
+          label: Start
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          date_format: medium
+          custom_date_format: ''
+          timezone: ''
+        field_event_date_end_value:
+          id: field_event_date_end_value
+          table: node__field_event_date
+          field: field_event_date_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          label: End
           exclude: false
           alter:
             alter_text: false
@@ -274,109 +324,32 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_revisions_entity_view
-          settings:
-            view_mode: default
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_policy_topic:
-          id: field_policy_topic
-          table: taxonomy_term__field_policy_topic
-          field: field_policy_topic
-          relationship: term_node_tid
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: default
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          date_format: medium
+          custom_date_format: ''
+          timezone: ''
       pager:
-        type: full
+        type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 50
           total_pages: null
           id: 0
           tags:
             next: ››
             previous: ‹‹
-            first: '« First'
-            last: 'Last »'
           expose:
-            items_per_page: false
+            items_per_page: true
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: true
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
       exposed_form:
         type: basic
         options:
           submit_button: Apply
-          reset_button: true
+          reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -404,7 +377,7 @@ display:
           order: DESC
           expose:
             label: ''
-            field_identifier: created
+            field_identifier: ''
           exposed: false
           granularity: second
       arguments: {  }
@@ -426,49 +399,18 @@ display:
           id: type
           table: node_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
-            policy_delegation_auth_action: policy_delegation_auth_action
-          group: 1
-          exposed: false
+            event: event
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            argument: null
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        field_center_or_office_target_id:
-          id: field_center_or_office_target_id
-          table: node__field_center_or_office
-          field: field_center_or_office_target_id
+        field_event_host_target_id:
+          id: field_event_host_target_id
+          table: node__field_event_host
+          field: field_event_host_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -478,14 +420,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_center_or_office_target_id_op
-            label: 'Center or Office'
+            operator_id: field_event_host_target_id_op
+            label: 'Event Host'
             description: ''
             use_operator: false
-            operator: field_center_or_office_target_id_op
+            operator: field_event_host_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_center_or_office_target_id
+            identifier: field_event_host_target_id
             required: false
             remember: false
             multiple: false
@@ -508,9 +450,9 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: centers_and_offices
+          vid: event_host
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
           save_lineage: false
@@ -519,117 +461,59 @@ display:
           level_labels: ''
           hierarchy_depth: 0
           required_depth: 0
-        combine:
-          id: combine
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: views_autocomplete_filters_combine
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: combine_op
-            label: Search
-            description: ''
-            use_operator: false
-            operator: combine_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: combine
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              anonymous: '0'
-              authenticated: '0'
-              webform: '0'
-              administrator: '0'
-            placeholder: ''
-            autocomplete_filter: 0
-            autocomplete_min_chars: '0'
-            autocomplete_items: '10'
-            autocomplete_raw_suggestion: 0
-            autocomplete_raw_dropdown: 0
-            autocomplete_dependent: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields:
-            title: title
-            body: body
-        field_policy_topic_target_id:
-          id: field_policy_topic_target_id
-          table: taxonomy_term__field_policy_topic
-          field: field_policy_topic_target_id
-          relationship: term_node_tid
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: null
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_policy_topic_target_id_op
-            label: Topic
-            description: ''
-            use_operator: false
-            operator: field_policy_topic_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_policy_topic_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              webform: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: policy_topics
-          type: cshs
-          hierarchy: false
-          limit: true
-          error_message: true
-          save_lineage: false
-          force_deepest: true
-          parent: 0
-          level_labels: ''
-          hierarchy_depth: 0
-          required_depth: 0
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
-        type: default
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            nid: nid
+            title: title
+            field_event_host: field_event_host
+            field_event_date_value: field_event_date_value
+            field_event_date_end_value: field_event_date_end_value
+          default: '-1'
+          info:
+            nid:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_host:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_date_value:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_date_end_value:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:
@@ -640,31 +524,9 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        term_node_tid:
-          id: term_node_tid
-          table: node_field_data
-          field: term_node_tid
-          relationship: none
-          group_type: group
-          admin_label: term
-          entity_type: node
-          plugin_id: node_term_data
-          required: false
-          vids:
-            - policy_delegation_actions
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: false
-          content: "<h1>ORD Delegation Authorities </h1>\r\n<p class=\"usa-intro\">Listed below are ORD's Delegation Authorities. Use the filters below to restrict the results to a specific Center/Office and/or the different policy Topics. Active delegations are listed on the <a href=\"/policy/active-delegations\">Active Delegations</a> page.</p>"
-          tokenize: false
+      relationships: {  }
+      group_by: true
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -678,20 +540,19 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_policy_delegation_party'
-        - 'config:field.storage.taxonomy_term.field_delegation'
-        - 'config:field.storage.taxonomy_term.field_policy_topic'
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
+        - 'config:field.storage.node.field_event_host'
+  page_migration_data:
+    id: page_migration_data
+    display_title: Events
+    display_plugin: page
     position: 1
     display_options:
+      title: 'Migration Data - Events'
       defaults:
-        header: false
-      header: {  }
+        title: false
+      display_description: ''
       display_extenders: {  }
+      path: admin/migration-data/events
     cache_metadata:
       max-age: -1
       contexts:
@@ -703,53 +564,26 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_policy_delegation_party'
-        - 'config:field.storage.taxonomy_term.field_delegation'
-        - 'config:field.storage.taxonomy_term.field_policy_topic'
-  page_delegation_authorities:
-    id: page_delegation_authorities
-    display_title: Page
+        - 'config:field.storage.node.field_event_host'
+  page_migration_staff:
+    id: page_migration_staff
+    display_title: Staff
     display_plugin: page
     position: 1
     display_options:
-      enabled: false
-      display_extenders: {  }
-      path: policy/delegation-authority-page
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_policy_delegation_party'
-        - 'config:field.storage.taxonomy_term.field_delegation'
-        - 'config:field.storage.taxonomy_term.field_policy_topic'
-  page_manage_authorities:
-    id: page_manage_authorities
-    display_title: Manage
-    display_plugin: page
-    position: 2
-    display_options:
-      title: 'Manage ORD Delegation Authorities'
+      title: 'Migration Data - Staff'
       fields:
-        title:
-          id: title
+        nid:
+          id: nid
           table: node_field_data
-          field: title
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
+          entity_field: nid
           plugin_id: field
-          label: Action
+          label: ID
           exclude: false
           alter:
             alter_text: false
@@ -769,8 +603,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -782,18 +616,19 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: number_integer
           settings:
-            link_to_entity: true
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -804,15 +639,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_policy_topic:
-          id: field_policy_topic
-          table: taxonomy_term__field_policy_topic
-          field: field_policy_topic
-          relationship: term_node_tid
+        field_first_name:
+          id: field_first_name
+          table: node__field_first_name
+          field: field_first_name
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Topic
+          label: 'First Name'
           exclude: false
           alter:
             alter_text: false
@@ -841,11 +676,11 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: span
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -853,11 +688,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -867,15 +702,78 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_center_or_office:
-          id: field_center_or_office
-          table: node__field_center_or_office
-          field: field_center_or_office
+        field_last_name:
+          id: field_last_name
+          table: node__field_last_name
+          field: field_last_name
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Center or Office'
+          label: 'Last Name'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_organization:
+          id: field_organization
+          table: node__field_organization
+          field: field_organization
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Organization
           exclude: false
           alter:
             alter_text: false
@@ -917,9 +815,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: cshs_full_hierarchy
           settings:
-            link: false
+            linked: 0
+            reverse: 0
+            separator: ' » '
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -930,57 +830,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        operations:
-          id: operations
-          table: node
-          field: operations
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: entity_operations
-          label: Operations
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          destination: false
       filters:
         status:
           id: status
@@ -1007,7 +856,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
-            policy_delegation_auth_action: policy_delegation_auth_action
+            staff_member: staff_member
           group: 1
           exposed: false
           expose:
@@ -1038,178 +887,29 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_center_or_office_target_id:
-          id: field_center_or_office_target_id
-          table: node__field_center_or_office
-          field: field_center_or_office_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_center_or_office_target_id_op
-            label: 'Center or Office'
-            description: ''
-            use_operator: false
-            operator: field_center_or_office_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_center_or_office_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              webform: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: centers_and_offices
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-          save_lineage: false
-          force_deepest: false
-          parent: 0
-          level_labels: ''
-          hierarchy_depth: 0
-          required_depth: 0
-        field_policy_topic_target_id:
-          id: field_policy_topic_target_id
-          table: taxonomy_term__field_policy_topic
-          field: field_policy_topic_target_id
-          relationship: term_node_tid
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: null
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_policy_topic_target_id_op
-            label: Topic
-            description: ''
-            use_operator: false
-            operator: field_policy_topic_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_policy_topic_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              webform: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: policy_topics
-          type: cshs
-          hierarchy: false
-          limit: true
-          error_message: true
-          save_lineage: false
-          force_deepest: false
-          parent: 0
-          level_labels: ''
-          hierarchy_depth: 0
-          required_depth: 0
       filter_groups:
         operator: AND
         groups:
           1: AND
-      style:
-        type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          columns:
-            edit_node: edit_node
-            title: title
-            field_policy_topic: field_policy_topic
-          default: '-1'
-          info:
-            edit_node:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_policy_topic:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          override: true
-          sticky: false
-          summary: ''
-          empty_table: false
-          caption: ''
-          description: ''
-      row:
-        type: fields
-        options: {  }
       defaults:
         title: false
-        style: false
-        row: false
+        group_by: false
         fields: false
         filters: false
         filter_groups: false
+      group_by: false
       display_description: ''
       display_extenders: {  }
-      path: policy/delegation-authority/manage
+      path: admin/migration-data/staff
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_center_or_office'
-        - 'config:field.storage.taxonomy_term.field_policy_topic'
+        - 'config:field.storage.node.field_first_name'
+        - 'config:field.storage.node.field_last_name'
+        - 'config:field.storage.node.field_organization'
