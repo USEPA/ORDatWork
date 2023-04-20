@@ -44,3 +44,9 @@ domain_redirects:
     -
       sub_path: '/web-guide/*'
       destination: work.epa.gov/intranet-guide
+    -
+      sub_path: /cemm-acesd/acesd-library
+      destination: work.epa.gov/library-cemm-acesd
+    -
+      sub_path: /cemm-acesd/acesd-library-services
+      destination: work.epa.gov/library-cemm-acesd
