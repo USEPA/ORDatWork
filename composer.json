@@ -160,7 +160,8 @@
                 "2985882: Error: Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
                 "923934: Block visibility has wrong logic": "https://www.drupal.org/files/issues/2022-07-14/923934-67.patch",
                 "3313185: utility php 8.1 deprecation": "https://www.drupal.org/files/issues/2022-10-03/utility.patch",
-                "3083690: Removing media render php error":  "https://www.drupal.org/files/issues/2022-01-19/3083690-12.patch"
+                "3083690: Removing media render php error":  "https://www.drupal.org/files/issues/2022-01-19/3083690-12.patch",
+                "3266341: Fixing 'All' filter selection" : "https://www.drupal.org/files/issues/2022-03-14/3266341-9.patch"
             },
             "drupal/contact_storage": {
                 "3306684: Fix VBO and PHP 8 interaction": "https://www.drupal.org/files/issues/2022-09-22/contact_storage-vbo_wsod-3306684-2.patch"
