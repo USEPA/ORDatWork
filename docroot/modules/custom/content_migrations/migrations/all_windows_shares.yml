@@ -11,11 +11,11 @@ source:
   plugin: custom_sql_query
   # specify the database with the key
   key: migrate
-  sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB, EmailAddress, DFSPath
+  sql_query: 'select SiteCode, UserFolder, OwnerADAccount, FSRMQuotaSizeGB, EmailAddress, UPPER(DFSPath) as DFSPath_CAPS
               from AllWindowsShares
               where SiteCode != '' '' and UserFolder != '' '''
   keys:
-    - DFSPath
+    - DFSPath_CAPS
 process:
   name: UserFolder
   description: owner_and_size
