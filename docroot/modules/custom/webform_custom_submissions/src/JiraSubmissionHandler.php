@@ -27,12 +27,13 @@ class JiraSubmissionHandler {
   public function __construct($config) {
     $this->jira_services_config = $config->get('webform_custom_submissions.form');
     $this->jira_custom_fields_config = $config->get('webform_custom_submissions.jira_custom_fields');
+    $jira_settings = \Drupal::config('webform_custom_submissions.form');
     $system_config = $config->get('system.passwords');
-    $this->username = $this->jira_services_config->get('USERNAME');
+    $this->username = $jira_settings->get('USERNAME');
     $this->password = $system_config->get('jira');
-    $issue_creation_url = $this->jira_services_config->get('CREATE_ISSUE_URL');
-    $this->create_issue_url = $this->jira_services_config->get('CREATE_ISSUE_URL');
-    $this->base_url = $this->jira_services_config->get('BASE_URL');
+    $issue_creation_url = $jira_settings->get('CREATE_ISSUE_URL');
+    $this->create_issue_url = $issue_creation_url;
+    $this->base_url = $jira_settings->get('BASE_URL');
     $this->domestic_project = $this->jira_services_config->get('DOMESTIC_PROJECT');
     $this->international_project = $this->jira_services_config->get('INTERNATIONAL_PROJECT');
     $this->submission_client = new Client(['base_uri' => $issue_creation_url]);
