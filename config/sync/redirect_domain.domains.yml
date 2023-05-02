@@ -50,3 +50,6 @@ domain_redirects:
     -
       sub_path: /cemm-acesd/acesd-library-services
       destination: work.epa.gov/library-cemm-acesd
+    -
+      sub_path: /science/high-end-scientific-computing-resources
+      destination: work.epa.gov/science-research/high-end-scientific-computing-resources
