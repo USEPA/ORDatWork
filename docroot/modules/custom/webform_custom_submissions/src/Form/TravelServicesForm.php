@@ -31,25 +31,30 @@ class TravelServicesForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('webform_custom_submissions.form');
+    $jira_settings = \Drupal::config('webform_custom_submissions.form');
     $form['BASE_URL'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Base Url for Jira'),
-      '#default_value' => $config->get('BASE_URL'),
+      '#default_value' => $jira_settings->get('BASE_URL'),
+      '#disabled' => TRUE,
     ];
     $form['REST_URL'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Url of REST requests to Jira'),
-      '#default_value' => $config->get('REST_URL'),
+      '#default_value' => $jira_settings->get('REST_URL'),
+      '#disabled' => TRUE,
     ];
     $form['CREATE_ISSUE_URL'] = [
       '#type' => 'textfield',
       '#title' => $this->t('URL for issue creations requests to Jira'),
-      '#default_value' => $config->get('CREATE_ISSUE_URL'),
+      '#default_value' => $jira_settings->get('CREATE_ISSUE_URL'),
+      '#disabled' => TRUE,
     ];
     $form['USERNAME'] = [
       '#type' => 'textfield',
       '#title' => $this->t('User name authenticated with JIRA issue creation'),
-      '#default_value' => $config->get('USERNAME'),
+      '#default_value' => $jira_settings->get('USERNAME'),
+      '#disabled' => TRUE,
     ];
     $form['SERVER'] = [
       '#type' => 'textfield',
@@ -87,10 +92,6 @@ class TravelServicesForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
     $this->config('webform_custom_submissions.form')
-      ->set('BASE_URL', $form_state->getValue('BASE_URL'))
-      ->set('REST_URL', $form_state->getValue('REST_URL'))
-      ->set('CREATE_ISSUE_URL', $form_state->getValue('CREATE_ISSUE_URL'))
-      ->set('USERNAME', $form_state->getValue('USERNAME'))
       ->set('SERVER', $form_state->getValue('SERVER'))
       ->set('DOMESTIC_PROJECT', $form_state->getValue('DOMESTIC_PROJECT'))
       ->set('INTERNATIONAL_PROJECT', $form_state->getValue('INTERNATIONAL_PROJECT'))
