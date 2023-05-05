@@ -1,0 +1,23 @@
+uuid: 70f47739-b128-49d0-acd2-48c67f5ce5b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_accessible
+    - media.type.document
+  module:
+    - options
+id: media.document.field_accessible
+field_name: field_accessible
+entity_type: media
+bundle: document
+label: Accessible
+description: 'Has this document been tested for accessibility?'
+required: true
+translatable: false
+default_value:
+  -
+    value: unsure
+default_value_callback: ''
+settings: {  }
+field_type: list_string
