@@ -12,10 +12,6 @@ module:
   devel_generate: 0
   simplesamlphp_auth: 0
   stage_file_proxy: 0
-  tome: 0
-  tome_base: 0
-  tome_static: 0
-  tome_sync: 0
   update: 0
   webform_devel: 0
 theme: {  }
