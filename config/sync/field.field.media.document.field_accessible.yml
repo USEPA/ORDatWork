@@ -12,12 +12,12 @@ field_name: field_accessible
 entity_type: media
 bundle: document
 label: Accessible
-description: 'Has this document been tested for accessibility?'
+description: 'Has this document been tested for accessibility and <strong>passed all automated and manual checks for Section 508 compliance</strong>? By selecting Yes, you are certifying that the document was tested for Section 508 compliance using a combination of automated accessibility checkers AND a manual review.'
 required: true
 translatable: false
 default_value:
   -
-    value: unsure
+    value: 'no'
 default_value_callback: ''
 settings: {  }
 field_type: list_string

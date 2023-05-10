@@ -2005,7 +2005,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Media Document Accessibility'
+      title: 'Document Accessibility'
       fields:
         name:
           id: name
