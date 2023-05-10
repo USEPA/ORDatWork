@@ -2890,7 +2890,7 @@ display:
       path: group/%group/media/accessibility
       menu:
         type: tab
-        title: 'Media Accessibility'
+        title: 'Document Media Accessibility'
         description: ''
         weight: 0
         expanded: false
