@@ -351,10 +351,15 @@ class ContentExporter implements ContentExporterInterface {
   public function exportCustomValues(FieldableEntityInterface $entity, bool $check_translated_fields_only = FALSE): array {
     $fields = $check_translated_fields_only ? $entity->getTranslatableFields() : $entity->getFields();
     $values = [];
-
-    foreach ($fields as $field) {
-      if ($field->getFieldDefinition() instanceof FieldConfigInterface) {
+    if ($entity instanceof \Drupal\smart_date_recur\Entity\SmartDateRule || $entity instanceof \Drupal\smart_date_recur\Entity\SmartDateOverride) {
+      foreach ($fields as $field) {
         $values[$field->getName()] = !$field->isEmpty() ? $this->getFieldValue($field) : NULL;
+      }
+    } else {
+      foreach ($fields as $field) {
+        if ($field->getFieldDefinition() instanceof FieldConfigInterface) {
+          $values[$field->getName()] = !$field->isEmpty() ? $this->getFieldValue($field) : NULL;
+        }
       }
     }
 
@@ -375,6 +380,33 @@ class ContentExporter implements ContentExporterInterface {
       case 'address':
       case 'daterange':
       case 'datetime':
+      case 'smartdate':
+        $date = $field->getValue();
+        $ids = array_column($field->getValue(), 'rrule');
+        if (isset($ids) && sizeof($ids) > 0) {
+          $smart_date_rule_storage = $this->entityTypeManager->getStorage('smart_date_rule');
+          $smart_date_override_storage = $this->entityTypeManager->getStorage('smart_date_override');
+          $smart_date_rules = $smart_date_rule_storage->loadMultiple($ids);
+          $smart_date_overrides = $smart_date_override_storage->loadByProperties(['rrule' => $ids]);
+          $rules_array = [];
+          $overrides_array = [];
+          foreach ($smart_date_rules as $rule) {
+            $rules_array[] = $this->doExportToArray($rule);
+          }
+          foreach ($smart_date_overrides as $override) {
+            $overrides_array[] = $this->doExportToArray($override);
+          }
+          $value = [
+            'dates' => $date,
+            'rrule' => $rules_array,
+            'overrides' => $overrides_array
+          ];
+        } else {
+          $value = [
+            'dates' => $date
+          ];
+        }
+        break;
       case 'email':
       case 'geolocation':
       case 'link':

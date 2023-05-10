@@ -268,6 +268,9 @@ class ContentImporter implements ContentImporterInterface {
       case 'address':
       case 'daterange':
       case 'datetime':
+      case 'smartdate':
+        $entity->set($field_name, $field_value);
+        break;
       case 'email':
       case 'geolocation':
       case 'link':
