@@ -269,6 +269,17 @@ class ContentImporter implements ContentImporterInterface {
       case 'daterange':
       case 'datetime':
       case 'smartdate':
+        // Increase RID's 100 fold.
+
+        if (is_array($field_value)){
+          if (isset($field_value['rrule'])){
+            // Save rrule
+          }
+          if (isset($field_value['overrides'])) {
+            // Save overrides
+          }
+        }
+        // Save dates
         $entity->set($field_name, $field_value);
         break;
       case 'email':
