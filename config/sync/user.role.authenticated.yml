@@ -70,7 +70,6 @@ permissions:
   - 'create and edit custom blocks'
   - 'create event content'
   - 'create media'
-  - 'create staff_member content'
   - 'create terms in event_tags'
   - 'delete all revisions'
   - 'delete event revisions'
