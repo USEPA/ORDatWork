@@ -1757,6 +1757,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
+      title: Regex
       filters:
         title:
           id: title
@@ -2043,6 +2044,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         filters: false
         filter_groups: false
       display_description: ''
