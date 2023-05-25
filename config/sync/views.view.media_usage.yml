@@ -8,6 +8,7 @@ dependencies:
     - media.type.remote_video
     - media.type.tweet
     - taxonomy.vocabulary.tags
+    - user.role.administrator
   module:
     - entity_usage
     - group
@@ -589,9 +590,10 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: group_permission
+        type: role
         options:
-          group_permission: 'access group_media overview'
+          role:
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -985,11 +987,10 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - route.group
         - url
         - url.query_args
         - user
-        - user.group_permissions
+        - user.roles
       tags: {  }
   usage_group_page:
     id: usage_group_page
@@ -1015,9 +1016,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - route.group
         - url
         - url.query_args
         - user
-        - user.group_permissions
+        - user.roles
       tags: {  }

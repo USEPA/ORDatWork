@@ -5,14 +5,13 @@ dependencies:
   config:
     - field.storage.group.field_eic
     - field.storage.group.field_web_area_homepage
-    - field.storage.group.field_webarea_contact_us_form
     - field.storage.group.field_webarea_office_center
     - field.storage.group.field_webarea_status
+    - group.type.policy
     - group.type.web_area
     - taxonomy.vocabulary.centers_and_offices
   module:
     - group
-    - link
     - options
     - taxonomy
 id: web_areas
@@ -338,73 +337,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_webarea_contact_us_form:
-          id: field_webarea_contact_us_form
-          table: group__field_webarea_contact_us_form
-          field: field_webarea_contact_us_form
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Contact Form'
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<a href="{{ field_webarea_contact_us_form__uri}}">Contact Form</a>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link
-          settings:
-            trim_length: null
-            url_only: false
-            url_plain: false
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_webarea_office_center:
           id: field_webarea_office_center
           table: group__field_webarea_office_center
@@ -565,7 +497,22 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        label:
+          id: label
+          table: groups_field_data
+          field: label
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: group
+          entity_field: label
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         type:
@@ -580,6 +527,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            policy: policy
             web_area: web_area
           group: 1
           exposed: false
@@ -719,10 +667,22 @@ display:
           row_class: ''
           default_row_class: false
           columns:
+            counter: counter
             label: label
-            field_group_contact: field_group_contact
+            id: id
+            field_eic: field_eic
+            field_web_area_homepage: field_web_area_homepage
+            field_webarea_office_center: field_webarea_office_center
+            field_webarea_status: field_webarea_status
           default: label
           info:
+            counter:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             label:
               sortable: true
               default_sort_order: asc
@@ -730,15 +690,41 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_group_contact:
+            id:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
+            field_eic:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_web_area_homepage:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_webarea_office_center:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_webarea_status:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
           override: true
-          sticky: false
+          sticky: true
           summary: ''
           empty_table: false
           caption: ''
@@ -768,7 +754,6 @@ display:
       tags:
         - 'config:field.storage.group.field_eic'
         - 'config:field.storage.group.field_web_area_homepage'
-        - 'config:field.storage.group.field_webarea_contact_us_form'
         - 'config:field.storage.group.field_webarea_office_center'
         - 'config:field.storage.group.field_webarea_status'
   page_web_areas:
@@ -791,6 +776,5 @@ display:
       tags:
         - 'config:field.storage.group.field_eic'
         - 'config:field.storage.group.field_web_area_homepage'
-        - 'config:field.storage.group.field_webarea_contact_us_form'
         - 'config:field.storage.group.field_webarea_office_center'
         - 'config:field.storage.group.field_webarea_status'

@@ -2677,7 +2677,22 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<h2>Finding a Web Area's Group ID</h2>\r\nThe Group ID is the numerical identifier associated with a web area. Find the Group ID of a web area on the master list of <a href=\"/web-areas\">Web Areas</a>.\r\n<hr />"
+            format: rich_text
+          tokenize: false
       display_extenders: {  }
       path: admin/content/media/accessibility
     cache_metadata:
