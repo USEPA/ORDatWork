@@ -74,3 +74,9 @@ domain_redirects:
     -
       sub_path: '/css/*'
       destination: work.epa.gov/css
+    -
+      sub_path: /ace
+      destination: work.epa.gov/ace
+    -
+      sub_path: '/ace/*'
+      destination: work.epa.gov/ace
