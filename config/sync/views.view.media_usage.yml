@@ -1002,7 +1002,7 @@ display:
       path: group/%group/media/usage
       menu:
         type: tab
-        title: Media
+        title: 'Media Usage'
         description: ''
         weight: 0
         expanded: false

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.document.field_accessible
     - field.field.media.document.field_description
     - field.field.media.document.field_document
     - field.field.media.document.field_keywords
@@ -13,6 +14,7 @@ dependencies:
   module:
     - file
     - media_inline_embed
+    - options
 third_party_settings:
   media_inline_embed:
     embed_inline: false
@@ -23,6 +25,13 @@ targetEntityType: media
 bundle: document
 mode: default
 content:
+  field_accessible:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_description:
     type: string
     label: above

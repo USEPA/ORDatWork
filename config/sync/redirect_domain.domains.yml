@@ -53,3 +53,30 @@ domain_redirects:
     -
       sub_path: /science/high-end-scientific-computing-resources
       destination: work.epa.gov/science-research/high-end-scientific-computing-resources
+    -
+      sub_path: /deia/gender-pronouns
+      destination: work.epa.gov/deia/gender-pronouns
+    -
+      sub_path: /homeland-security
+      destination: work.epa.gov/homeland-security
+    -
+      sub_path: '/homeland-security/*'
+      destination: work.epa.gov/homeland-security
+    -
+      sub_path: /shc
+      destination: work.epa.gov/shc
+    -
+      sub_path: '/shc/*'
+      destination: work.epa.gov/shc
+    -
+      sub_path: /css
+      destination: work.epa.gov/css
+    -
+      sub_path: '/css/*'
+      destination: work.epa.gov/css
+    -
+      sub_path: /ace
+      destination: work.epa.gov/ace
+    -
+      sub_path: '/ace/*'
+      destination: work.epa.gov/ace

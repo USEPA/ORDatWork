@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: views_reference_list
 label: 'Content Type'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -27,8 +27,9 @@ settings:
     default: 0
     page: 0
     feed: 0
-    entity_browser: 0
     data_export: 0
+    rest_export: 0
+    entity_browser: 0
     entity_reference: 0
     embed: 0
   preselect_views:
@@ -38,8 +39,11 @@ settings:
     events_list: events_list
     admin_update_staff: 0
     all_articles: 0
+    all_shared_folders: 0
     articles: 0
+    authmap: 0
     block_content: 0
+    broken_links_report: 0
     card_with_image_count: 0
     comment: 0
     comments_recent: 0
@@ -57,30 +61,36 @@ settings:
     group_my_groups: 0
     group_nodes: 0
     h5p_results: 0
+    image_browser: 0
     media: 0
     media_browser: 0
     media_library: 0
+    media_usage: 0
+    migration_data: 0
     moderated_content: 0
-    moderation_dashboard_recent_changes: 0
     moderation_dashboard_recently_created: 0
+    moderation_dashboard_recent_changes: 0
     moderation_history: 0
     organizations_with_staff: 0
+    paragraphs_in_nodes: 0
+    photos_of_the_week: 0
     policies_and_delegations_agency: 0
     policy: 0
     policy_definitions: 0
     policy_delegation: 0
-    policy_delgation_action_authorizations: 0
+    policy_delegation_authorities: 0
+    policy_topics: 0
     qa_track_qapps: 0
     qa_track_sops: 0
     redirect: 0
     research_program_area_directories: 0
     staff_order: 0
     taxonomy_term: 0
-    user_admin_people: 0
     users_with_cards: 0
+    user_admin_people: 0
     watchdog: 0
-    web_areas: 0
     webform_submissions: 0
+    web_areas: 0
     weekly_compass: 0
     who_s_new: 0
     who_s_online: 0
