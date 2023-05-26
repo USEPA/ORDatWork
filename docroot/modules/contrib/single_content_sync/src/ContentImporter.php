@@ -269,8 +269,6 @@ class ContentImporter implements ContentImporterInterface {
       case 'daterange':
       case 'datetime':
       case 'smartdate':
-        // Increase RID's 100 fold.
-
         if (is_array($field_value)){
           if (isset($field_value['dates'])){
             foreach ($field_value['dates'] as $index => $value) {
@@ -283,8 +281,7 @@ class ContentImporter implements ContentImporterInterface {
           if (isset($field_value['rrule'])){
             // Save rrule
             foreach ($field_value['rrule'] as $index => $value) {
-              // TODO - INCREASE RRULE IS WRONG
-              $field_value['rrule'][$index]['custom_fields']['rid'][0] = $this->increaseRrule($field_value['rrule'][$index]['custom_fields']['rid'][0]);
+              $field_value['rrule'][$index]['custom_fields']['rid'][0]['value'] = $this->increaseRrule($field_value['rrule'][$index]['custom_fields']['rid'][0]['value']);
               $this->doImport($field_value['rrule'][$index]);
             }
           }
@@ -292,7 +289,7 @@ class ContentImporter implements ContentImporterInterface {
             // Save overrides
             foreach ($field_value['overrides'] as $index => $value) {
               // TODO - INCREASE RRULE IS WRONG
-              $field_value['overrides'][$index]['custom_fields']['rrule'][0] = $this->increaseRrule($field_value['overrides'][$index]['custom_fields']['rrule'][0]);
+              $field_value['overrides'][$index]['custom_fields']['rrule'][0]['value'] = $this->increaseRrule($field_value['overrides'][$index]['custom_fields']['rrule'][0]['value']);
               $this->doImport($field_value['overrides'][$index]);
             }
           }
