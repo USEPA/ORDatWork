@@ -272,15 +272,34 @@ class ContentImporter implements ContentImporterInterface {
         // Increase RID's 100 fold.
 
         if (is_array($field_value)){
+          if (isset($field_value['dates'])){
+            foreach ($field_value['dates'] as $index => $value) {
+              if (isset($value['rrule'])) {
+                $field_value['dates'][$index]['rrule'] = $this->increaseRrule($field_value['dates'][$index]['rrule']);
+              }
+            }
+            $entity->set($field_name, $field_value['dates']);
+          }
           if (isset($field_value['rrule'])){
             // Save rrule
+            foreach ($field_value['rrule'] as $index => $value) {
+              // TODO - INCREASE RRULE IS WRONG
+              $field_value['rrule'][$index]['custom_fields']['rid'][0] = $this->increaseRrule($field_value['rrule'][$index]['custom_fields']['rid'][0]);
+              $this->doImport($field_value['rrule'][$index]);
+            }
           }
           if (isset($field_value['overrides'])) {
             // Save overrides
+            foreach ($field_value['overrides'] as $index => $value) {
+              // TODO - INCREASE RRULE IS WRONG
+              $field_value['overrides'][$index]['custom_fields']['rrule'][0] = $this->increaseRrule($field_value['overrides'][$index]['custom_fields']['rrule'][0]);
+              $this->doImport($field_value['overrides'][$index]);
+            }
           }
+        } else {
+          // Save dates
+          $entity->set($field_name, $field_value);
         }
-        // Save dates
-        $entity->set($field_name, $field_value);
         break;
       case 'email':
       case 'geolocation':
@@ -656,6 +675,17 @@ class ContentImporter implements ContentImporterInterface {
    */
   protected function isFullEntity(array $entity): bool {
     return isset($entity['uuid']) && isset($entity['entity_type']) && isset($entity['base_fields']) && isset($entity['custom_fields']);
+  }
+
+  /**
+   * Updates RRULE IDs to avoid potential collisions
+   * @param $rrule
+   * @return float|int|void
+   */
+  protected function increaseRrule($rrule) {
+    if (isset($rrule) && is_numeric($rrule)) {
+      return $rrule * 1000;
+    }
   }
 
 }
