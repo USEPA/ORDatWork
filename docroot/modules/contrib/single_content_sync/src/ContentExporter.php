@@ -392,7 +392,6 @@ class ContentExporter implements ContentExporterInterface {
           $overrides_array = [];
           foreach ($smart_date_rules as $rule) {
             $rules_array[] = $this->doExportToArray($rule);
-            //$rules_array[0]['custom_fields']['uuid'] = $this->getFieldValue($rule->get('uuid'));
           }
           foreach ($smart_date_overrides as $override) {
             $overrides_array[] = $this->doExportToArray($override);
