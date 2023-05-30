@@ -7,10 +7,7 @@ dependencies:
     - user.role.administrator
   module:
     - group
-    - rest
-    - serialization
     - user
-    - views_data_export
 _core:
   default_config_hash: zIcnLmbW8inPRIQdPSVbKPuG2o5G5wHGJED4Jlgb2SY
 id: group_members
@@ -94,6 +91,73 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        status:
+          id: status
+          table: users_field_data
+          field: status
+          relationship: gc__user
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: status
+          plugin_id: field
+          label: 'User status'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: Member
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: custom
+            format_custom_false: Blocked
+            format_custom_true: Active
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         group_roles:
           id: group_roles
           table: group_content__group_roles
@@ -147,7 +211,7 @@ display:
           type: entity_reference_label
           settings:
             link: false
-          group_column: target_id
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -155,73 +219,6 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        changed:
-          id: changed
-          table: group_content_field_data
-          field: changed
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: group_content
-          entity_field: changed
-          plugin_id: field
-          label: Updated
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: short
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
           separator: ', '
           field_api_classes: false
         created:
@@ -504,6 +501,63 @@ display:
             group_roles: '0'
             changed: '0'
             created: '0'
+        id:
+          id: id
+          table: file_usage
+          field: id
+          relationship: gc__user
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          label: 'Entity ID'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
       pager:
         type: full
         options:
@@ -597,18 +651,23 @@ display:
       style:
         type: table
         options:
-          grouping: {  }
+          grouping:
+            -
+              field: id
+              rendered: true
+              rendered_strip: false
           row_class: ''
           default_row_class: true
           columns:
             name: name
+            status: status
             group_roles: group_roles
-            changed: changed
             created: created
             view_group_content: view_group_content
             edit_group_content: edit_group_content
             delete_group_content: delete_group_content
             dropbutton: dropbutton
+            id: id
           default: '-1'
           info:
             name:
@@ -618,14 +677,14 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            group_roles:
+            status:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            changed:
-              sortable: true
-              default_sort_order: asc
+            group_roles:
               align: ''
               separator: ''
               empty_column: false
@@ -659,6 +718,13 @@ display:
               empty_column: false
               responsive: ''
             dropbutton:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            id:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -802,7 +868,7 @@ display:
           table: users_field_data
           field: status
           relationship: gc__user
-          group_type: count_distinct
+          group_type: group
           admin_label: ''
           entity_type: user
           entity_field: status
@@ -884,55 +950,6 @@ display:
         - 'languages:language_interface'
         - user.roles
       tags: {  }
-  data_export_1:
-    id: data_export_1
-    display_title: 'Data export'
-    display_plugin: data_export
-    position: 1
-    display_options:
-      style:
-        type: data_export
-        options:
-          formats:
-            json: json
-          csv_settings:
-            delimiter: ','
-            enclosure: '"'
-            escape_char: \
-            strip_tags: true
-            trim: true
-            encoding: utf8
-            utf8_bom: '0'
-            use_serializer_encode_only: false
-      row:
-        type: data_entity
-        options: {  }
-      defaults:
-        group_by: false
-      group_by: false
-      display_extenders: {  }
-      path: group/%group/members/rest_csv_export
-      displays:
-        page_1: page_1
-        default: '0'
-        all_members_page: '0'
-      filename: group_members.json
-      automatic_download: true
-      store_in_public_file_directory: false
-      custom_redirect_path: false
-      redirect_to_display: none
-      include_query_params: false
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - request_format
-        - route.group
-        - url
-        - user.group_permissions
-      tags:
-        - 'config:field.storage.group_content.group_roles'
   page_1:
     id: page_1
     display_title: Page
@@ -960,47 +977,6 @@ display:
         - route.group
         - url
         - url.query_args
-        - user.group_permissions
-      tags:
-        - 'config:field.storage.group_content.group_roles'
-  rest_export_1:
-    id: rest_export_1
-    display_title: 'REST export'
-    display_plugin: rest_export
-    position: 1
-    display_options:
-      pager:
-        type: none
-        options:
-          offset: 0
-      style:
-        type: data_export
-        options:
-          uses_fields: false
-          formats:
-            json: json
-          csv_settings:
-            delimiter: ','
-            enclosure: '"'
-            escape_char: \
-            strip_tags: true
-            trim: true
-            encoding: utf8
-            utf8_bom: '0'
-            use_serializer_encode_only: false
-      defaults:
-        group_by: false
-      group_by: false
-      display_extenders: {  }
-      path: group/%group/members/rest_export
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - request_format
-        - route.group
-        - url
         - user.group_permissions
       tags:
         - 'config:field.storage.group_content.group_roles'
