@@ -80,3 +80,54 @@ domain_redirects:
     -
       sub_path: '/ace/*'
       destination: work.epa.gov/ace
+    -
+      sub_path: /human-resources/phased-retirement-program
+      destination: work.epa.gov/benefits-employee-services-retirement/phased-retirement
+    -
+      sub_path: /conferences-and-meetings
+      destination: work.epa.gov/conferences-and-meetings
+    -
+      sub_path: '/conferences-and-meetings/*'
+      destination: work.epa.gov/conferences-and-meetings
+    -
+      sub_path: '/human-resources/title-42*'
+      destination: work.epa.gov/specialized-workforce-programs/title-42
+    -
+      sub_path: /hera
+      destination: work.epa.gov/hera
+    -
+      sub_path: '/hera/*'
+      destination: work.epa.gov/hera
+    -
+      sub_path: /science-and-technology-policy-council
+      destination: work.epa.gov/science-technology-policy-council
+    -
+      sub_path: '/science-and-technology-policy-council/*'
+      destination: work.epa.gov/science-technology-policy-council
+    -
+      sub_path: /osape/public-access-forum
+      destination: work.epa.gov/science-technology-policy-council/public-access-forum
+    -
+      sub_path: /osape/risk-assessment-forum
+      destination: work.epa.gov/science-technology-policy-council/risk-assessment-forum
+    -
+      sub_path: /osape/peer-review-advisory-group
+      destination: work.epa.gov/science-technology-policy-council/peer-review-advisory-group
+    -
+      sub_path: /science/technical-support-ord
+      destination: work.epa.gov/scientific-technical-support
+    -
+      sub_path: /science/ord-assists
+      destination: work.epa.gov/scientific-technical-support/ord-assists
+    -
+      sub_path: /childrens-environmental-health-research
+      destination: work.epa.gov/childrens-environmental-health-research
+    -
+      sub_path: '/childrens-environmental-health-research/*'
+      destination: work.epa.gov/childrens-environmental-health-research
+    -
+      sub_path: /sswr
+      destination: work.epa.gov/sswr
+    -
+      sub_path: '/sswr/*'
+      destination: work.epa.gov/sswr
