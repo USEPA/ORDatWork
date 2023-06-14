@@ -1,7 +1,7 @@
-diff --git a/docroot/modules/contrib/single_content_sync/src/ContentImporter.php b/docroot/modules/contrib/single_content_sync/src/ContentImporter.php
+diff --git a/src/ContentImporter.php b/src/ContentImporter.php
 index 655f0d2d..5b7c4da6 100644
---- a/docroot/modules/contrib/single_content_sync/src/ContentImporter.php
-+++ b/docroot/modules/contrib/single_content_sync/src/ContentImporter.php
+--- a/src/ContentImporter.php
++++ b/src/ContentImporter.php
 @@ -15,6 +15,7 @@
  use Drupal\file\FileInterface;
  use Drupal\layout_builder\Plugin\Block\InlineBlock;
