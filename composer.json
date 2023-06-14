@@ -223,8 +223,7 @@
             "drupal/single_content_sync": {
                 "3325903: If author doesn't exist, then revision log message fails, the revision message duplicates rather than updating": "https://www.drupal.org/files/issues/2023-01-28/allow-author-not-to-exist-in-export-3325903-4.patch",
                 "Event Export support": "patches/content_sync_events_exporter.patch",
-                "Event Import support": "patches/content_sync_events_importer.patch",
-                "3352476: cover menu link support": "https://www.drupal.org/files/issues/2023-04-06/3352476-1.patch"
+                "Event Import support": "patches/content_sync_events_importer.patch"
             },
             "drupal/smart_date": {
                 "3324142: Correct timezones from being handled as numeric on save": "https://www.drupal.org/files/issues/2022-12-07/3324142.patch"

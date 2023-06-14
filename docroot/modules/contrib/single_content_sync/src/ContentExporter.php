@@ -270,15 +270,7 @@ class ContentExporter implements ContentExporterInterface {
       case 'node':
         if ($entity instanceof NodeInterface) {
           $owner = $entity->getOwner();
-
-          // TODO - currently gathering link info. Need to apply to correct location
-          $nid = $entity->get('nid')->getValue()[0]['value'];
-          $xd = $entity->get('menu_link');
-          /* @var $menuLink Drupal\menu_link_content\Plugin\Menu\MenuLinkContent */
-          $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-          $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $nid));
-
-          $menu_link = array_pop($result);
+          $array_menu_link = $this->generateMenuLink($entity);
           return [
             'title' => $entity->getTitle(),
             'status' => $entity->isPublished(),
@@ -288,7 +280,7 @@ class ContentExporter implements ContentExporterInterface {
             'url' => $entity->hasField('path') ? $entity->get('path')->alias : NULL,
             'revision_log_message' => $entity->getRevisionLogMessage(),
             'revision_uid' => $entity->getRevisionUserId(),
-            'menu_link_content' => $menu_link
+            'menu_link_content' => $array_menu_link
           ];
         }
         break;
@@ -628,6 +620,21 @@ class ContentExporter implements ContentExporterInterface {
     }
 
     return $value;
+  }
+
+  public function generateMenuLink($entity) {
+    $nid = $entity->get('nid')->getValue()[0]['value'];
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $nid));
+
+    $menu_link = array_pop($result);
+    return array(
+      'title' => $menu_link->getTitle(),
+      'description' => $menu_link->getDescription(),
+      'menu_name' => $menu_link->getMenuName(),
+      'weight' => $menu_link->getWeight(),
+      'bundle' => 'menu_link_content',
+    );
   }
 
 }
