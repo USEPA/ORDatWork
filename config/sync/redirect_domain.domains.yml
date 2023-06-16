@@ -131,3 +131,90 @@ domain_redirects:
     -
       sub_path: '/sswr/*'
       destination: work.epa.gov/sswr
+    -
+      sub_path: /awards/kudos-recognition
+      destination: work.epa.gov/awards/kudos-recognition
+    -
+      sub_path: /awards
+      destination: work.epa.gov/awards
+    -
+      sub_path: /awards/ord-honor-awards
+      destination: work.epa.gov/awards/ord-honor-awards
+    -
+      sub_path: /human-subject-research
+      destination: work.epa.gov/human-subject-research
+    -
+      sub_path: '/human-subject-research/*'
+      destination: work.epa.gov/human-subject-research
+    -
+      sub_path: /ftta
+      destination: work.epa.gov/ftta
+    -
+      sub_path: '/ftta/*'
+      destination: work.epa.gov/ftta
+    -
+      sub_path: /it-resources/itim-key-roles-contacts
+      destination: work.epa.gov/ord/ord-itim-key-roles-contacts
+    -
+      sub_path: /osim
+      destination: work.epa.gov/ord/about-osim
+    -
+      sub_path: '/osim/*'
+      destination: work.epa.gov/ord/about-osim
+    -
+      sub_path: /osim/osim-monthly-webinars
+      destination: work.epa.gov/ord/osim-monthly-webinars
+    -
+      sub_path: /orm/orm-who-does-what-listing
+      destination: work.epa.gov/ord/orm-who-does-what-listing
+    -
+      sub_path: /orm/servicing-contacts
+      destination: work.epa.gov/ord/service-points-contact
+    -
+      sub_path: /orm
+      destination: work.epa.gov/ord/about-orm
+    -
+      sub_path: '/orm/*'
+      destination: work.epa.gov/ord/about-orm
+    -
+      sub_path: /osape/raf-nominations-multi-year-plan-work-mypow-and-consolidated-guideline-project
+      destination: work.epa.gov/science-technology-policy-council/risk-assessment-forum-nominations
+    -
+      sub_path: /osape/tribal-science-council
+      destination: work.epa.gov/tribal-program/tribal-science-council
+    -
+      sub_path: /osape/risk-assessment-forum
+      destination: work.epa.gov/science-technology-policy-council/risk-assessment-forum
+    -
+      sub_path: /osape/peer-review-advisory-group
+      destination: work.epa.gov/science-technology-policy-council/peer-review-advisory-group
+    -
+      sub_path: /osape/translational-science-program
+      destination: work.epa.gov/science-research/translational-science-program
+    -
+      sub_path: /osape/people-prosperity-and-planet-p3-program
+      destination: work.epa.gov/science-research/people-prosperity-and-planet-p3-program
+    -
+      sub_path: /osape/ecorisk-portal
+      destination: work.epa.gov/science-research/ecorisk-portal
+    -
+      sub_path: /osape/science-achieve-results-star-grant-program
+      destination: work.epa.gov/grants/science-achieve-results-grant-program
+    -
+      sub_path: /science/publications-and-clearance
+      destination: work.epa.gov/clearance-peer-review
+    -
+      sub_path: /osape/peer-review-extramural-research-funding
+      destination: work.epa.gov/clearance-peer-review/peer-review-extramural-research-funding
+    -
+      sub_path: /osape
+      destination: work.epa.gov/ord/office-science-advisor-policy-and-engagement-osape
+    -
+      sub_path: '/osape/*'
+      destination: work.epa.gov/ord/office-science-advisor-policy-and-engagement-osape
+    -
+      sub_path: /regional-science/
+      destination: work.epa.gov/regional-science
+    -
+      sub_path: '/regional-science/*'
+      destination: work.epa.gov/regional-science
