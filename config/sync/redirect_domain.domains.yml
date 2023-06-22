@@ -218,3 +218,60 @@ domain_redirects:
     -
       sub_path: '/regional-science/*'
       destination: work.epa.gov/regional-science
+    -
+      sub_path: /stics
+      destination: work.epa.gov/clearance-peer-review/scientific-technical-information-clearance-system-stics
+    -
+      sub_path: /human-subject-research/step-1-determining-if-your-activity-research
+      destination: work.epa.gov/human-subject-research/determining-if-your-activity-research
+    -
+      sub_path: /sciencehub/about-sciencehub
+      destination: work.epa.gov/sciencehub/about-sciencehub
+    -
+      sub_path: /sciencehub/certification-and-attestation
+      destination: work.epa.gov/sciencehub/certification-and-attestation
+    -
+      sub_path: /sciencehub/dataset-publication-process
+      destination: work.epa.gov/sciencehub/dataset-publication-process
+    -
+      sub_path: /sciencehub/doi-process
+      destination: work.epa.gov/sciencehub/doi-process
+    -
+      sub_path: /sciencehub/feedback
+      destination: work.epa.gov/sciencehub/contact-us-about-sciencehub
+    -
+      sub_path: /sciencehub/glossary
+      destination: work.epa.gov/sciencehub/glossary
+    -
+      sub_path: /sciencehub/large-datasets-sciencehub
+      destination: work.epa.gov/sciencehub/large-datasets-sciencehub
+    -
+      sub_path: /sciencehub/training-materials
+      destination: work.epa.gov/sciencehub/training-materials
+    -
+      sub_path: /sciencehub/whats-new-sciencehub
+      destination: work.epa.gov/sciencehub/whats-new-sciencehub
+    -
+      sub_path: /sciencehub
+      destination: work.epa.gov/sciencehub
+    -
+      sub_path: '/sciencehub/*'
+      destination: work.epa.gov/sciencehub
+    -
+      sub_path: /stics/technical-information-managers
+      destination: work.epa.gov/clearance-peer-review/technical-information-managers
+    -
+      sub_path: /stics/product-subtypes-and-definitions
+      destination: work.epa.gov/clearance-peer-review/product-subtypes-definitions
+    -
+      sub_path: /innovation
+      destination: work.epa.gov/innovation
+    -
+      sub_path: '/innovation/*'
+      destination: work.epa.gov/innovation
+    -
+      sub_path: /scientific-data-management
+      destination: work.epa.gov/scientific-data-management
+    -
+      sub_path: '/scientific-data-management/*'
+      destination: work.epa.gov/scientific-data-management
