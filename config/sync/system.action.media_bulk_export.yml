@@ -1,0 +1,13 @@
+uuid: 282e3ca6-2ad5-4bfb-a883-9f2920d99999
+langcode: en
+status: true
+dependencies:
+  module:
+    - single_content_sync
+_core:
+  default_config_hash: h64R0kZquzABmTQ3k2X7VbJJvANnn0p3ubKUYN99999
+id: media_bulk_export
+label: 'Export media'
+type: media
+plugin: content_bulk_export
+configuration: {  }
