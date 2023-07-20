@@ -66,8 +66,8 @@ domain_redirects:
       sub_path: /shc
       destination: work.epa.gov/shc
     -
-      sub_path: '/shc/*'
-      destination: work.epa.gov/shc
+      sub_path: /shc/regional-sustainability-and-environmental-sciences-research-program-reses
+      destination: work.epa.gov/shc/regional-sustainability-and-environmental-sciences-research-program-reses
     -
       sub_path: /css
       destination: work.epa.gov/css
@@ -131,3 +131,201 @@ domain_redirects:
     -
       sub_path: '/sswr/*'
       destination: work.epa.gov/sswr
+    -
+      sub_path: /awards/kudos-recognition
+      destination: work.epa.gov/awards/kudos-recognition
+    -
+      sub_path: /awards
+      destination: work.epa.gov/awards
+    -
+      sub_path: /awards/ord-honor-awards
+      destination: work.epa.gov/awards/ord-honor-awards
+    -
+      sub_path: /human-subject-research
+      destination: work.epa.gov/human-subject-research
+    -
+      sub_path: '/human-subject-research/*'
+      destination: work.epa.gov/human-subject-research
+    -
+      sub_path: /ftta
+      destination: work.epa.gov/ftta
+    -
+      sub_path: '/ftta/*'
+      destination: work.epa.gov/ftta
+    -
+      sub_path: /it-resources/itim-key-roles-contacts
+      destination: work.epa.gov/ord/ord-itim-key-roles-contacts
+    -
+      sub_path: /osim
+      destination: work.epa.gov/ord/about-osim
+    -
+      sub_path: '/osim/*'
+      destination: work.epa.gov/ord/about-osim
+    -
+      sub_path: /osim/osim-monthly-webinars
+      destination: work.epa.gov/ord/osim-monthly-webinars
+    -
+      sub_path: /orm/orm-who-does-what-listing
+      destination: work.epa.gov/ord/orm-who-does-what-listing
+    -
+      sub_path: /orm/servicing-contacts
+      destination: work.epa.gov/ord/service-points-contact
+    -
+      sub_path: /orm
+      destination: work.epa.gov/ord/about-orm
+    -
+      sub_path: '/orm/*'
+      destination: work.epa.gov/ord/about-orm
+    -
+      sub_path: /osape/raf-nominations-multi-year-plan-work-mypow-and-consolidated-guideline-project
+      destination: work.epa.gov/science-technology-policy-council/risk-assessment-forum-nominations
+    -
+      sub_path: /osape/tribal-science-council
+      destination: work.epa.gov/tribal-program/tribal-science-council
+    -
+      sub_path: /osape/risk-assessment-forum
+      destination: work.epa.gov/science-technology-policy-council/risk-assessment-forum
+    -
+      sub_path: /osape/peer-review-advisory-group
+      destination: work.epa.gov/science-technology-policy-council/peer-review-advisory-group
+    -
+      sub_path: /osape/translational-science-program
+      destination: work.epa.gov/science-research/translational-science-program
+    -
+      sub_path: /osape/people-prosperity-and-planet-p3-program
+      destination: work.epa.gov/science-research/people-prosperity-and-planet-p3-program
+    -
+      sub_path: /osape/ecorisk-portal
+      destination: work.epa.gov/science-research/ecorisk-portal
+    -
+      sub_path: /osape/science-achieve-results-star-grant-program
+      destination: work.epa.gov/grants/science-achieve-results-grant-program
+    -
+      sub_path: /science/publications-and-clearance
+      destination: work.epa.gov/clearance-peer-review
+    -
+      sub_path: /osape/peer-review-extramural-research-funding
+      destination: work.epa.gov/clearance-peer-review/peer-review-extramural-research-funding
+    -
+      sub_path: /osape
+      destination: work.epa.gov/ord/office-science-advisor-policy-and-engagement-osape
+    -
+      sub_path: '/osape/*'
+      destination: work.epa.gov/ord/office-science-advisor-policy-and-engagement-osape
+    -
+      sub_path: /regional-science
+      destination: work.epa.gov/regional-science
+    -
+      sub_path: /regional-science/about-regional-science-program
+      destination: work.epa.gov/regional-science/about-regional-science-program
+    -
+      sub_path: /stics
+      destination: work.epa.gov/clearance-peer-review/scientific-technical-information-clearance-system-stics
+    -
+      sub_path: /human-subject-research/step-1-determining-if-your-activity-research
+      destination: work.epa.gov/human-subject-research/determining-if-your-activity-research
+    -
+      sub_path: /sciencehub/about-sciencehub
+      destination: work.epa.gov/sciencehub/about-sciencehub
+    -
+      sub_path: /sciencehub/certification-and-attestation
+      destination: work.epa.gov/sciencehub/certification-and-attestation
+    -
+      sub_path: /sciencehub/dataset-publication-process
+      destination: work.epa.gov/sciencehub/dataset-publication-process
+    -
+      sub_path: /sciencehub/doi-process
+      destination: work.epa.gov/sciencehub/doi-process
+    -
+      sub_path: /sciencehub/feedback
+      destination: work.epa.gov/sciencehub/contact-us-about-sciencehub
+    -
+      sub_path: /sciencehub/glossary
+      destination: work.epa.gov/sciencehub/glossary
+    -
+      sub_path: /sciencehub/large-datasets-sciencehub
+      destination: work.epa.gov/sciencehub/large-datasets-sciencehub
+    -
+      sub_path: /sciencehub/training-materials
+      destination: work.epa.gov/sciencehub/training-materials
+    -
+      sub_path: /sciencehub/whats-new-sciencehub
+      destination: work.epa.gov/sciencehub/whats-new-sciencehub
+    -
+      sub_path: /sciencehub
+      destination: work.epa.gov/sciencehub
+    -
+      sub_path: '/sciencehub/*'
+      destination: work.epa.gov/sciencehub
+    -
+      sub_path: /stics/technical-information-managers
+      destination: work.epa.gov/clearance-peer-review/technical-information-managers
+    -
+      sub_path: /stics/product-subtypes-and-definitions
+      destination: work.epa.gov/clearance-peer-review/product-subtypes-definitions
+    -
+      sub_path: /innovation
+      destination: work.epa.gov/innovation
+    -
+      sub_path: /innovation/regional-state-tribal-innovation-project
+      destination: work.epa.gov/innovation/regional-state-tribal-innovation-project
+    -
+      sub_path: /scientific-data-management
+      destination: work.epa.gov/scientific-data-management
+    -
+      sub_path: '/scientific-data-management/*'
+      destination: work.epa.gov/scientific-data-management
+    -
+      sub_path: /conferences-and-meetings
+      destination: work.epa.gov/conferences-and-meetings
+    -
+      sub_path: '/conferences-and-meetings/*'
+      destination: work.epa.gov/conferences-and-meetings
+    -
+      sub_path: /regional-science/rsp-tracker-database
+      destination: work.epa.gov/regional-science/rsp-tracker-database
+    -
+      sub_path: /regional-science/regional-ord-applied-research-program-roar
+      destination: work.epa.gov/regional-science/regional-ord-applied-research-program-roar
+    -
+      sub_path: /regional-science/regional-ord-community-science-networking-program-rocs-net
+      destination: work.epa.gov/regional-science/regional-ord-community-science-networking-program-rocs-net
+    -
+      sub_path: /regional-science/regional-research-partnership-program-r2p2
+      destination: work.epa.gov/regional-science/regional-research-partnership-program-r2p2
+    -
+      sub_path: /regional-science/regional-applied-research-effort-rare
+      destination: work.epa.gov/regional-science/regional-applied-research-effort-rare
+    -
+      sub_path: /regional-science/regional-science-staff
+      destination: work.epa.gov/regional-science/regional-science-staff
+    -
+      sub_path: '/shc/*'
+      destination: work.epa.gov/shc
+    -
+      sub_path: '/innovation/*'
+      destination: work.epa.gov/innovation
+    -
+      sub_path: /ada-shem-ems
+      destination: work.epa.gov/shem-ada
+    -
+      sub_path: '/ada-shem-ems/*'
+      destination: work.epa.gov/shem-ada
+    -
+      sub_path: /athens-shem-ems
+      destination: work.epa.gov/shem-athens
+    -
+      sub_path: '/athens-shem-ems/*'
+      destination: work.epa.gov/shem-athens
+    -
+      sub_path: /duluth-shem-ems
+      destination: work.epa.gov/shem-duluth
+    -
+      sub_path: '/duluth-shem-ems/*'
+      destination: work.epa.gov/shem-duluth
+    -
+      sub_path: /gulf-breeze-shem-ems
+      destination: work.epa.gov/shem-gulf-breeze
+    -
+      sub_path: '/gulf-breeze-shem-ems/*'
+      destination: work.epa.gov/shem-gulf-breeze
