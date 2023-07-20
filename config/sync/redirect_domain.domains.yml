@@ -66,8 +66,8 @@ domain_redirects:
       sub_path: /shc
       destination: work.epa.gov/shc
     -
-      sub_path: '/shc/*'
-      destination: work.epa.gov/shc
+      sub_path: /shc/regional-sustainability-and-environmental-sciences-research-program-reses
+      destination: work.epa.gov/shc/regional-sustainability-and-environmental-sciences-research-program-reses
     -
       sub_path: /css
       destination: work.epa.gov/css
@@ -213,11 +213,11 @@ domain_redirects:
       sub_path: '/osape/*'
       destination: work.epa.gov/ord/office-science-advisor-policy-and-engagement-osape
     -
-      sub_path: /regional-science/
+      sub_path: /regional-science
       destination: work.epa.gov/regional-science
     -
-      sub_path: '/regional-science/*'
-      destination: work.epa.gov/regional-science
+      sub_path: /regional-science/about-regional-science-program
+      destination: work.epa.gov/regional-science/about-regional-science-program
     -
       sub_path: /stics
       destination: work.epa.gov/clearance-peer-review/scientific-technical-information-clearance-system-stics
@@ -267,8 +267,8 @@ domain_redirects:
       sub_path: /innovation
       destination: work.epa.gov/innovation
     -
-      sub_path: '/innovation/*'
-      destination: work.epa.gov/innovation
+      sub_path: /innovation/regional-state-tribal-innovation-project
+      destination: work.epa.gov/innovation/regional-state-tribal-innovation-project
     -
       sub_path: /scientific-data-management
       destination: work.epa.gov/scientific-data-management
@@ -281,3 +281,51 @@ domain_redirects:
     -
       sub_path: '/conferences-and-meetings/*'
       destination: work.epa.gov/conferences-and-meetings
+    -
+      sub_path: /regional-science/rsp-tracker-database
+      destination: work.epa.gov/regional-science/rsp-tracker-database
+    -
+      sub_path: /regional-science/regional-ord-applied-research-program-roar
+      destination: work.epa.gov/regional-science/regional-ord-applied-research-program-roar
+    -
+      sub_path: /regional-science/regional-ord-community-science-networking-program-rocs-net
+      destination: work.epa.gov/regional-science/regional-ord-community-science-networking-program-rocs-net
+    -
+      sub_path: /regional-science/regional-research-partnership-program-r2p2
+      destination: work.epa.gov/regional-science/regional-research-partnership-program-r2p2
+    -
+      sub_path: /regional-science/regional-applied-research-effort-rare
+      destination: work.epa.gov/regional-science/regional-applied-research-effort-rare
+    -
+      sub_path: /regional-science/regional-science-staff
+      destination: work.epa.gov/regional-science/regional-science-staff
+    -
+      sub_path: '/shc/*'
+      destination: work.epa.gov/shc
+    -
+      sub_path: '/innovation/*'
+      destination: work.epa.gov/innovation
+    -
+      sub_path: /ada-shem-ems
+      destination: work.epa.gov/shem-ada
+    -
+      sub_path: '/ada-shem-ems/*'
+      destination: work.epa.gov/shem-ada
+    -
+      sub_path: /athens-shem-ems
+      destination: work.epa.gov/shem-athens
+    -
+      sub_path: '/athens-shem-ems/*'
+      destination: work.epa.gov/shem-athens
+    -
+      sub_path: /duluth-shem-ems
+      destination: work.epa.gov/shem-duluth
+    -
+      sub_path: '/duluth-shem-ems/*'
+      destination: work.epa.gov/shem-duluth
+    -
+      sub_path: /gulf-breeze-shem-ems
+      destination: work.epa.gov/shem-gulf-breeze
+    -
+      sub_path: '/gulf-breeze-shem-ems/*'
+      destination: work.epa.gov/shem-gulf-breeze
