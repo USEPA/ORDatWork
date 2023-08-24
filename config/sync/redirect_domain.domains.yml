@@ -329,3 +329,90 @@ domain_redirects:
     -
       sub_path: '/gulf-breeze-shem-ems/*'
       destination: work.epa.gov/shem-gulf-breeze
+    -
+      sub_path: /narragansett-shem-ems
+      destination: work.epa.gov/shem-narragansett
+    -
+      sub_path: '/narragansett-shem-ems/*'
+      destination: work.epa.gov/shem-narragansett
+    -
+      sub_path: /administrative-consulting-scientific-support
+      destination: work.epa.gov/administrative-consulting-scientific-support
+    -
+      sub_path: /administrative-consulting-scientific-support/national-student-services-contracting
+      destination: work.epa.gov/administrative-consulting-scientific-support/national-student-services-contracting
+    -
+      sub_path: '/administrative-consulting-scientific-support/*'
+      destination: work.epa.gov/administrative-consulting-scientific-support
+    -
+      sub_path: /extramural-services/aaas-science-and-technology-policy-fellowship-stpf
+      destination: work.epa.gov/administrative-consulting-scientific-support/aaas-science-technology-policy-fellowship
+    -
+      sub_path: /extramural-services/aspph-epa-environmental-health-fellowship-program
+      destination: work.epa.gov//administrative-consulting-scientific-support/aspph-epa-environmental-health-fellowship-program
+    -
+      sub_path: /orise
+      destination: work.epa.gov/administrative-consulting-scientific-support/oak-ridge-institute-science-education-research
+    -
+      sub_path: '/orise/*'
+      destination: work.epa.gov/administrative-consulting-scientific-support/oak-ridge-institute-science-education-research
+    -
+      sub_path: /extramural-services/about-research-fellowships-graduate-students-grfp
+      destination: work.epa.gov/administrative-consulting-scientific-support/research-fellowships-graduate-students
+    -
+      sub_path: /extramural-services/national-academy-sciences-engineering-and-medicine-nrc-programs
+      destination: work.epa.gov/administrative-consulting-scientific-support/national-academy-sciences-engineering-medicine-nrc
+    -
+      sub_path: /extramural-services/research-fellowships-graduate-students
+      destination: work.epa.gov/administrative-consulting-scientific-support/research-fellowships-graduate-students
+    -
+      sub_path: /human-resources/federal-postdoctoral-program
+      destination: work.epa.gov/specialized-workforce-programs/federal-postdoctoral-program
+    -
+      sub_path: /human-resources/ord-emeritus-program
+      destination: work.epa.gov/specialized-workforce-programs/ord-emeritus-program
+    -
+      sub_path: /calendar
+      destination: work.epa.gov/calendar/ord
+    -
+      sub_path: /calendar/2023-nsf-graduate-student-research-internship-program-epa
+      destination: work.epa.gov/calendar/2023-nsf-graduate-student-research-internship-program-epa
+    -
+      sub_path: /calendar/2023-epa-early-career-training-and-development-forum
+      destination: work.epa.gov/calendar/2023-epa-early-career-training-and-development-forum
+    -
+      sub_path: /calendar/epa-2023-r-3-day-workshop-all-virtual
+      destination: work.epa.gov/calendar/epa-2023-r-3-day-workshop-all-virtual
+    -
+      sub_path: /calendar/success-celebration-current-aaas-science-and-technology-policy-fellowship-participants
+      destination: work.epa.gov/calendar/success-celebration-current-aaas-science-and-technology-policy-fellowship-participants
+    -
+      sub_path: '/calendar/*'
+      destination: work.epa.gov/calendar/ord
+    -
+      sub_path: /deia/diversity-dashboard
+      destination: work.epa.gov/deia/diversity-dashboard
+    -
+      sub_path: /communications/conference-exhibiting
+      destination: work.epa.gov/communications/conference-exhibiting-ord
+    -
+      sub_path: /communications/communications-products-development-and-review-processes
+      destination: work.epa.gov/communications/communication-products-ord
+    -
+      sub_path: /communications
+      destination: work.epa.gov/communications
+    -
+      sub_path: '/communications/*'
+      destination: work.epa.gov/communications
+    -
+      sub_path: /it-resources/ord-application-inventory
+      destination: work.epa.gov/software/ord-application-inventory
+    -
+      sub_path: /it-resources/ord-team-representatives
+      destination: work.epa.gov//software/ord-team-representatives
+    -
+      sub_path: /it-resources/road-map-software-applications
+      destination: work.epa.gov/software/road-map-software-applications-ord
+    -
+      sub_path: '/it-resources/stage-*'
+      destination: work.epa.gov/software/road-map-software-applications-ord
