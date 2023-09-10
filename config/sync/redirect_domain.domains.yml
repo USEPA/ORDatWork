@@ -319,22 +319,22 @@ domain_redirects:
       destination: work.epa.gov/shem-athens
     -
       sub_path: /duluth-shem-ems
-      destination: work.epa.gov/shem-duluth
+      destination: work.epa.gov/duluth
     -
       sub_path: '/duluth-shem-ems/*'
-      destination: work.epa.gov/shem-duluth
+      destination: work.epa.gov/duluth
     -
       sub_path: /gulf-breeze-shem-ems
-      destination: work.epa.gov/shem-gulf-breeze
+      destination: work.epa.gov/gulf-breeze/gulf-breeze-shem
     -
       sub_path: '/gulf-breeze-shem-ems/*'
-      destination: work.epa.gov/shem-gulf-breeze
+      destination: work.epa.gov/gulf-breeze/gulf-breeze-shem
     -
       sub_path: /narragansett-shem-ems
-      destination: work.epa.gov/shem-narragansett
+      destination: work.epa.gov/narragansett/narragansett-shem
     -
       sub_path: '/narragansett-shem-ems/*'
-      destination: work.epa.gov/shem-narragansett
+      destination: work.epa.gov/narragansett/narragansett-shem
     -
       sub_path: /administrative-consulting-scientific-support
       destination: work.epa.gov/administrative-consulting-scientific-support
@@ -416,3 +416,130 @@ domain_redirects:
     -
       sub_path: '/it-resources/stage-*'
       destination: work.epa.gov/software/road-map-software-applications-ord
+    -
+      sub_path: /ceser
+      destination: work.epa.gov/ceser
+    -
+      sub_path: '/ceser/*'
+      destination: work.epa.gov/ceser
+    -
+      sub_path: /ccte-glted
+      destination: work.epa.gov/ccte/ordccte-great-lakes-toxicology-ecology-division
+    -
+      sub_path: '/ccte-glted/*'
+      destination: work.epa.gov/ccte/ordccte-great-lakes-toxicology-ecology-division
+    -
+      sub_path: /ccte
+      destination: work.epa.gov/ccte
+    -
+      sub_path: '/ccte/*'
+      destination: work.epa.gov/ccte
+    -
+      sub_path: /it-resources/mobile-devices-matrix
+      destination: work.epa.gov/information-technology/mobile-comparison-chart
+    -
+      sub_path: /it-resources/telephone-services
+      destination: work.epa.gov/information-technology/mobile-devices
+    -
+      sub_path: /it-resources/submitting-tickets-pcs-phones-and-printers
+      destination: work.epa.gov/information-technology/it-service-desk
+    -
+      sub_path: /it-resources/hardware
+      destination: work.epa.gov/information-technology/hardware
+    -
+      sub_path: /it-resources/ordering-equipment-ord-use-only
+      destination: work.epa.gov/information-technology/ordering-equipment-ord-use-only
+    -
+      sub_path: /it-resources/obtain-return-or-transfer-eisd-computers-and-other-it-resources
+      destination: work.epa.gov/information-technology/ordering-equipment-ord-use-only
+    -
+      sub_path: /it-resources/obtain-property-pass
+      destination: work.epa.gov/information-technology/property-pass
+    -
+      sub_path: /it-resources/ord-hardware-refresh-information
+      destination: work.epa.gov/information-technology/ord-hardware-refresh-information
+    -
+      sub_path: /administrative-operations/dprov
+      destination: work.epa.gov/information-technology/ordering-equipment-ord-use-only
+    -
+      sub_path: /it-resources/restrictions-and-recommendations
+      destination: work.epa.gov/information-technology/restrictions-recommendations-removable-storage-media
+    -
+      sub_path: /it-resources/removable-storage-media
+      destination: work.epa.gov/information-technology/removable-storage-media
+    -
+      sub_path: /it-resources/do-i-have-ord-machine-or-eisd-machine
+      destination: work.epa.gov/information-technology/contact-us-about-information-technology
+    -
+      sub_path: /it-resources/lablan-research-network-lab-equipment
+      destination: work.epa.gov/information-technology/lablan-research-network-lab-equipment
+    -
+      sub_path: /it-resources/file-locations
+      destination: work.epa.gov/intranet-guide/where-should-i-put-my-content
+    -
+      sub_path: /it-resources/network-file-storage
+      destination: work.epa.gov/information-technology/file-storage-sharing
+    -
+      sub_path: /it-resources/network-drives
+      destination: work.epa.gov/information-technology/file-storage-sharing
+    -
+      sub_path: /it-resources/how-do-i-share-files
+      destination: work.epa.gov/information-technology/file-storage-sharing
+    -
+      sub_path: /it-resources/file-storage-and-sharing-what-goes-where
+      destination: work.epa.gov/information-technology/file-storage-sharing
+    -
+      sub_path: /it-resources/ord-remote-desktop-gateway
+      destination: work.epa.gov/information-technology/ord-remote-desktop-gateway
+    -
+      sub_path: /it-resources/ord-virtual-workstation-request-form
+      destination: work.epa.gov/information-technology/ord-virtual-workstation-request-form
+    -
+      sub_path: /it-resources/virtual-machines
+      destination: work.epa.gov/information-technology/virtual-machines-ord
+    -
+      sub_path: /cphea/institutional-animal-care-and-use-committee-iacuc
+      destination: work.epa.gov/institutional-animal-care-use-committee
+    -
+      sub_path: /cphea
+      destination: work.epa.gov/cphea
+    -
+      sub_path: '/cphea/*'
+      destination: work.epa.gov/cphea
+    -
+      sub_path: /corvallis-newport-shem-ems
+      destination: work.epa.gov/corvallis-newport
+    -
+      sub_path: '/corvallis-newport-shem-ems/*'
+      destination: work.epa.gov/corvallis-newport
+    -
+      sub_path: /deia/aware-campaign
+      destination: work.epa.gov/deia/ord-diversity-equity-inclusion-accessibility
+    -
+      sub_path: /deia/special-emphasis-programs-seps
+      destination: work.epa.gov/special-emphasis-programs
+    -
+      sub_path: /deia
+      destination: work.epa.gov/deia/ord-diversity-equity-inclusion-accessibility
+  ' intranet:ord:epa:gov':
+    -
+      sub_path: '/deia/*'
+      destination: work.epa.gov/deia/ord-diversity-equity-inclusion-accessibility
+    -
+      sub_path: /cemm
+      destination: work.epa.gov/cemm
+    -
+      sub_path: '/cemm/*'
+      destination: work.epa.gov/cemm
+    -
+      sub_path: /cemm-acesd
+      destination: work.epa.gov/cemm-acesd
+    -
+      sub_path: '/cemm-acesd/*'
+      destination: work.epa.gov/cemm-acesd
+    -
+      sub_path: /cemm-gemmd
+      destination: work.epa.gov/cemm-gemmd
+    -
+      sub_path: '/cemm-gemmd/*'
+      destination: work.epa.gov/cemm-gemmd
