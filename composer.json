@@ -243,7 +243,8 @@
                 "3201294: Allows editing of autocompleted taxonomy filters": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-3201294-6.patch"
             },
             "drupal/webform": {
-                "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch"
+                "Cast variable to int for postgreSQL DBs": "patches/webform_group_variable_cast.patch",
+                "Allowing all users to download submission files": "patches/submission_file_access.patch"
             },
             "drupal/webform_analysis": {
                 "3137161: google charts fix": "https://www.drupal.org/files/issues/2020-06-07/google_charts_version_downgrade-3137161-5.patch"
