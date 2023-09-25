@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_definitions
     - field.storage.node.field_delegation
     - field.storage.node.field_effective_date
     - field.storage.node.field_last_reviewed_date
@@ -19,6 +18,7 @@ dependencies:
   content:
     - 'taxonomy_term:policy_topics:17d483f7-ffa3-4505-850d-58449ada77f4'
     - 'taxonomy_term:policy_topics:49a36efe-b258-4c46-956d-feebc8a67ce0'
+    - 'taxonomy_term:policy_topics:5b9a43e4-b93d-4e1e-bd31-b5abf1950519'
     - 'taxonomy_term:policy_topics:635ca668-dbfe-41de-af3c-562e1ac88e8a'
     - 'taxonomy_term:policy_topics:652d980b-eca2-46af-af61-a23458e6bc20'
     - 'taxonomy_term:policy_topics:7b88e031-364c-4aa2-8a31-92f4ff9270f4'
@@ -237,6 +237,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
+            121951: 121951
             89: 89
             90: 90
             91: 91
@@ -381,42 +382,42 @@ display:
           row_class: ''
           default_row_class: true
           columns:
-            field_prior_identifier: field_prior_identifier
+            title: title
             field_effective_date: field_effective_date
-            field_related_procedures: field_related_procedures
             field_last_reviewed_date: field_last_reviewed_date
-            field_next_review_date: field_next_review_date
+            field_policy_statement: field_policy_statement
+            field_topic_area_of_authority: field_topic_area_of_authority
           default: '-1'
           info:
-            field_prior_identifier:
-              sortable: false
+            title:
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_effective_date:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_related_procedures:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_last_reviewed_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_policy_statement:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_next_review_date:
-              sortable: false
-              default_sort_order: asc
+            field_topic_area_of_authority:
               align: ''
               separator: ''
               empty_column: false
@@ -2666,6 +2667,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
