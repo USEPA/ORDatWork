@@ -521,13 +521,9 @@ domain_redirects:
     -
       sub_path: /deia
       destination: work.epa.gov/deia/ord-diversity-equity-inclusion-accessibility
-  ' intranet:ord:epa:gov':
     -
       sub_path: '/deia/*'
       destination: work.epa.gov/deia/ord-diversity-equity-inclusion-accessibility
-    -
-      sub_path: /cemm
-      destination: work.epa.gov/cemm
     -
       sub_path: '/cemm/*'
       destination: work.epa.gov/cemm
@@ -543,3 +539,33 @@ domain_redirects:
     -
       sub_path: '/cemm-gemmd/*'
       destination: work.epa.gov/cemm-gemmd
+    -
+      sub_path: /science/orcid
+      destination: work.epa.gov/publications/open-researcher-and-contributor-id
+    -
+      sub_path: /vivo
+      destination: work.epa.gov/science-research/vivo
+    -
+      sub_path: /cemm
+      destination: work.epa.gov/cemm
+    -
+      sub_path: /solutions-driven-research
+      destination: work.epa.gov/translational-science
+    -
+      sub_path: '/solutions-driven-research/*'
+      destination: work.epa.gov/translational-science
+    -
+      sub_path: /it-resources/licensed-software-requests
+      destination: work.epa.gov/software/available-licensed-and-freewareshareware-software
+    -
+      sub_path: /cincinnati-shem
+      destination: work.epa.gov/shem-cincinnati
+    -
+      sub_path: '/cincinnati-shem/*'
+      destination: work.epa.gov/shem-cincinnati
+    -
+      sub_path: /science/createconfirm-orcid-id-vivo
+      destination: work.epa.gov/science/createconfirm-orcid-id-vivo
+    -
+      sub_path: /administrative-operations/sharepoint-transmittal-system
+      destination: work.epa.gov/ord/ord-transmittal-system
