@@ -569,3 +569,45 @@ domain_redirects:
     -
       sub_path: /administrative-operations/sharepoint-transmittal-system
       destination: work.epa.gov/ord/ord-transmittal-system
+    -
+      sub_path: /human-resources/technical-qualifications-board-tqb
+      destination: work.epa.gov/training-and-development/technical-qualifications-board
+    -
+      sub_path: /training-and-development/r-training
+      destination: work.epa.gov/training-and-development/r-training
+    -
+      sub_path: /training-and-development/sf-182-training-requests
+      destination: work.epa.gov/training-and-development/sf-182-training-requests-ord
+    -
+      sub_path: /business-data-analytics
+      destination: work.epa.gov/ord/business-data-analytics
+    -
+      sub_path: '/business-data-analytics/*'
+      destination: work.epa.gov/ord/business-data-analytics
+    -
+      sub_path: /records-management
+      destination: work.epa.gov/records-management/local-programs
+    -
+      sub_path: '/records-management/*'
+      destination: work.epa.gov/records-management/local-programs
+    -
+      sub_path: /awards/submit-kudos-nomination
+      destination: work.epa.gov/awards/submit-ord-kudos-nomination
+    -
+      sub_path: /human-resources/career-transition-and-retirement
+      destination: work.epa.gov/benefits-employee-services-retirement/retirement
+    -
+      sub_path: /human-resources/new-employee-orientation
+      destination: work.epa.gov/onboarding-and-offboarding/new-employee-onboarding
+    -
+      sub_path: /human-resources/performance-management
+      destination: work.epa.gov/performance-management
+    -
+      sub_path: /training-and-development
+      destination: work.epa.gov/training-and-development
+    -
+      sub_path: /public-web
+      destination: work.epa.gov/ord/ord-web-council
+    -
+      sub_path: '/public-web/*'
+      destination: work.epa.gov/ord/ord-web-council
