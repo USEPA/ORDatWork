@@ -8,7 +8,8 @@ use \Exception;
 use Drupal\file\Entity\File;
 use GuzzleHttp\Exception\GuzzleException;
 
-class JiraSubmissionHandler {
+class JiraSubmissionHandler
+{
 
   protected $create_issue_url;
   protected $domestic_project;
@@ -24,7 +25,8 @@ class JiraSubmissionHandler {
   protected $uploaded_file_names;
   protected $base_url;
 
-  public function __construct($config) {
+  public function __construct($config)
+  {
     $this->jira_services_config = $config->get('webform_custom_submissions.form');
     $this->jira_custom_fields_config = $config->get('webform_custom_submissions.jira_custom_fields');
     $jira_settings = \Drupal::config('webform_custom_submissions.form');
@@ -47,7 +49,8 @@ class JiraSubmissionHandler {
    * @param WebformSubmissionInterface $webform_submission
    * @throws Exception
    */
-  public function submitToJira(WebformSubmissionInterface $webform_submission) {
+  public function submitToJira(WebformSubmissionInterface $webform_submission)
+  {
     try {
       $this->field_helper->prepareCustomFieldMappings($this->jira_custom_fields_config);
       $this->field_helper->prepareFormData($this->jira_services_config, $webform_submission);
@@ -77,22 +80,27 @@ class JiraSubmissionHandler {
     }
   }
 
-  public function getSubmittedTicket() {
+  public function getSubmittedTicket()
+  {
     return $this->submitted_ticket;
   }
 
-  public function getSubmittedTicketURL() {
+  public function getSubmittedTicketURL()
+  {
     return $this->base_url . '/browse/' . $this->submitted_ticket;
   }
 
-  public function getUploadedFileNames() {
+  public function getUploadedFileNames()
+  {
     return $this->uploaded_file_names;
   }
 
   //Compiles POST data and returns the data formatted as JSON
-  protected function compilePOSTData($form_data) {
+  protected function compilePOSTData($form_data)
+  {
 
-    $dropDowns = $this->field_helper->get_dropdown_fields();
+    $dropDowns = $this->field_helper->getDropdownFields();
+    $timeDropDowns = $this->field_helper->getTimeDropdownFields();
 
     $data = array('fields' => array());
 
@@ -103,22 +111,9 @@ class JiraSubmissionHandler {
         continue;
       }
 
-      if ($key == 'customfield_10191') {
-        $data['fields'][$key] = array('value' => $val);
-      } elseif ($key == 'customfield_10093') {
-        $data['fields'][$key] = array('value' => $val);
-      } //Capture dropdowns and turn them into arrays
-      elseif (in_array($key, $dropDowns)) {
+     if (in_array($key, $dropDowns)) {
         //ignore time dropdowns if no time is selected
-        if (($key == 'customfield_10322' ||
-            $key == 'customfield_10320' ||
-            $key == 'customfield_10324' ||
-            $key == 'customfield_10316' ||
-            $key == 'customfield_10302' ||
-            $key == 'customfield_10318') && $val == 'none'
-        ) {
-          //do nothing
-        } else {
+        if (!(in_array($key, $timeDropDowns) && $val == 'none')) {
           $data['fields'][$key] = array('value' => $val);
         }
       } //Capture Checkboxes and turn them into arrays
@@ -128,15 +123,9 @@ class JiraSubmissionHandler {
           array_push($checkboxArray, array('value' => $value2));
         }
         $data['fields'][$key] = $checkboxArray;
-      } elseif ($key == 'customfield_10431') {
-        $data['fields']['customfield_10431'] = array('value' => $val);
       } else {
         $data['fields'][$key] = $val;
       }
-    }
-
-    if (isset($form_data['customfield_10431']) && $form_data['customfield_10431'] == 'Yes') {
-      $data['fields']['customfield_10431'] = array('value' => 'Yes');
     }
 
     $data['fields']['project'] = $form_data['fields']['project'];
@@ -152,7 +141,8 @@ class JiraSubmissionHandler {
    * @return mixed|null
    * @throws Exception | GuzzleException
    */
-  protected function createIssueAndResponse($jsonData) {
+  protected function createIssueAndResponse($jsonData)
+  {
     $jira_api_response_body = null;
     try {
       \Drupal::logger('Travel Services Payload')->info('<pre><code>' . print_r($jsonData, TRUE) . '</code></pre>');
@@ -177,7 +167,8 @@ class JiraSubmissionHandler {
    * @return array
    * @throws Exception
    */
-  protected function uploadFiles($id, $form_data) {
+  protected function uploadFiles($id, $form_data)
+  {
     $url = $this->create_issue_url . $id . '/attachments/';
     $fileNames = [];
     foreach ($form_data['files'] as $fid) {

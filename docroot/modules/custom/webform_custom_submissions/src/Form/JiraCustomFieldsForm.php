@@ -36,11 +36,29 @@ class JiraCustomFieldsForm extends ConfigFormBase {
       '#title' => $this->t('Jira fields that are checkboxes'),
       '#default_value' => $config->get('checkbox_fields'),
     ];
+    $form['trip_type'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('JIRA Trip Type Custom Field'),
+      '#description' => $this->t('Used to determine if form submission is international or domestic'),
+      '#default_value' => $config->get('trip_type'),
+    ];
     $form['flying_out_the_country'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Flying out the country custom field'),
-      '#description' => $this->t('Used to determine if form submission is international or domestic'),
+      '#description' => $this->t('Automatically set based on Trip Type'),
       '#default_value' => $config->get('flying_out_the_country'),
+    ];
+    $form['traveler_name'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Traveler name custom field'),
+      '#description' => $this->t('Traveler name, used to write JIRA Request Name'),
+      '#default_value' => $config->get('traveler_name'),
+    ];
+    $form['traveler_name_if_filling_for_someone_else'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Traveler name (if filling for someone else) custom field'),
+      '#description' => $this->t('Traveler name (if filling for someone else), used to write JIRA Request Name'),
+      '#default_value' => $config->get('traveler_name_if_filling_for_someone_else'),
     ];
     $form['form_to_jira_mapping'] = [
       '#type' => 'textarea',
@@ -54,6 +72,12 @@ class JiraCustomFieldsForm extends ConfigFormBase {
       '#description' => $this->t('Line separated list of JIRA dropdown custom fields'),
       '#default_value' => $config->get('dropdown_fields'),
     ];
+    $form['time_dropdown_fields'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Time Dropdown Fields'),
+      '#description' => $this->t('Line separated list of Time type dropdown fields. If these values are "none", no value is sent to JIRA.'),
+      '#default_value' => $config->get('time_dropdown_fields'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -62,9 +86,13 @@ class JiraCustomFieldsForm extends ConfigFormBase {
     parent::submitForm($form, $form_state);
     $this->config('webform_custom_submissions.jira_custom_fields')
       ->set('checkbox_fields', $form_state->getValue('checkbox_fields'))
+      ->set('trip_type', $form_state->getValue('trip_type'))
       ->set('flying_out_the_country', $form_state->getValue('flying_out_the_country'))
+      ->set('traveler_name', $form_state->getValue('traveler_name'))
+      ->set('traveler_name_if_filling_for_someone_else', $form_state->getValue('traveler_name_if_filling_for_someone_else'))
       ->set('form_to_jira_mapping', $form_state->getValue('form_to_jira_mapping'))
       ->set('dropdown_fields', $form_state->getValue('dropdown_fields'))
+      ->set('time_dropdown_fields', $form_state->getValue('time_dropdown_fields'))
       ->save();
   }
 }
