@@ -31,11 +31,7 @@ class JiraCustomFieldsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('webform_custom_submissions.jira_custom_fields');
-    $form['checkbox_fields'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Jira fields that are checkboxes'),
-      '#default_value' => $config->get('checkbox_fields'),
-    ];
+
     $form['trip_type'] = [
       '#type' => 'textfield',
       '#title' => $this->t('JIRA Trip Type Custom Field'),
@@ -60,6 +56,12 @@ class JiraCustomFieldsForm extends ConfigFormBase {
       '#description' => $this->t('Traveler name (if filling for someone else), used to write JIRA Request Name'),
       '#default_value' => $config->get('traveler_name_if_filling_for_someone_else'),
     ];
+    $form['jira_issue_types'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Jira Issue Types'),
+      '#description' => $this->t('JSON object mapping Drupal form machine names to JIRA issue type IDs'),
+      '#default_value' => $config->get('jira_issue_types'),
+    ];
     $form['form_to_jira_mapping'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Jira Custom Field Mapping'),
@@ -78,6 +80,11 @@ class JiraCustomFieldsForm extends ConfigFormBase {
       '#description' => $this->t('Line separated list of Time type dropdown fields. If these values are "none", no value is sent to JIRA.'),
       '#default_value' => $config->get('time_dropdown_fields'),
     ];
+    $form['checkbox_fields'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Jira fields that are checkboxes'),
+      '#default_value' => $config->get('checkbox_fields'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -93,6 +100,7 @@ class JiraCustomFieldsForm extends ConfigFormBase {
       ->set('form_to_jira_mapping', $form_state->getValue('form_to_jira_mapping'))
       ->set('dropdown_fields', $form_state->getValue('dropdown_fields'))
       ->set('time_dropdown_fields', $form_state->getValue('time_dropdown_fields'))
+      ->set('jira_issue_types', $form_state->getValue('jira_issue_types'))
       ->save();
   }
 }
