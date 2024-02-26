@@ -569,3 +569,144 @@ domain_redirects:
     -
       sub_path: /administrative-operations/sharepoint-transmittal-system
       destination: work.epa.gov/ord/ord-transmittal-system
+    -
+      sub_path: /human-resources/technical-qualifications-board-tqb
+      destination: work.epa.gov/training-and-development/technical-qualifications-board
+    -
+      sub_path: /training-and-development/r-training
+      destination: work.epa.gov/training-and-development/r-training
+    -
+      sub_path: /training-and-development/sf-182-training-requests
+      destination: work.epa.gov/training-and-development/sf-182-training-requests-ord
+    -
+      sub_path: /business-data-analytics
+      destination: work.epa.gov/ord/business-data-analytics
+    -
+      sub_path: '/business-data-analytics/*'
+      destination: work.epa.gov/ord/business-data-analytics
+    -
+      sub_path: /records-management
+      destination: work.epa.gov/records-management/local-programs
+    -
+      sub_path: '/records-management/*'
+      destination: work.epa.gov/records-management/local-programs
+    -
+      sub_path: /awards/submit-kudos-nomination
+      destination: work.epa.gov/awards/submit-ord-kudos-nomination
+    -
+      sub_path: /human-resources/career-transition-and-retirement
+      destination: work.epa.gov/benefits-employee-services-retirement/retirement
+    -
+      sub_path: /human-resources/new-employee-orientation
+      destination: work.epa.gov/onboarding-and-offboarding/new-employee-onboarding
+    -
+      sub_path: /human-resources/performance-management
+      destination: work.epa.gov/performance-management
+    -
+      sub_path: /training-and-development
+      destination: work.epa.gov/training-and-development
+    -
+      sub_path: /public-web
+      destination: work.epa.gov/ord/ord-web-council
+    -
+      sub_path: '/public-web/*'
+      destination: work.epa.gov/ord/ord-web-council
+    -
+      sub_path: /travel/mobile-devices-international-travel
+      destination: work.epa.gov/travel/international-travel-procedures-mobile-devices
+    -
+      sub_path: /it-resources/email-groups
+      destination: 'usepa.servicenowservices.com/epa?id=kb_search&query=email%20groups'
+    -
+      sub_path: /it-resources/reporting-spamphishing-emails
+      destination: work.epa.gov/information-technology/incident-response
+    -
+      sub_path: /it-resources/email-resources
+      destination: 'usepa.servicenowservices.com/epa?id=kb_search&query=email'
+    -
+      sub_path: /it-resources/new-or-leaving-employees
+      destination: work.epa.gov/onboarding-and-offboarding
+    -
+      sub_path: /it-resources/software
+      destination: work.epa.gov/software
+    -
+      sub_path: /it-resources/my-workplace
+      destination: work.epa.gov/information-technology/my-workplace-resources
+    -
+      sub_path: /it-resources/it-security
+      destination: work.epa.gov/information-technology/cybersecurity
+    -
+      sub_path: /it-resources/network-remote-access
+      destination: work.epa.gov/information-technology/network-remote-access
+    -
+      sub_path: /it-resources/customer-support-representatives
+      destination: work.epa.gov/ord/ord-customer-support-representatives
+    -
+      sub_path: /research-planning
+      destination: work.epa.gov/research-planning-implementation
+    -
+      sub_path: '/research-planning/*'
+      destination: work.epa.gov/research-planning-implementation
+    -
+      sub_path: /rapid
+      destination: work.epa.gov/research-planning-implementation/about-rapid
+    -
+      sub_path: '/rapid/*'
+      destination: work.epa.gov/research-planning-implementation/about-rapid
+    -
+      sub_path: /human-resources/gaining-access-tqb-system
+      destination: work.epa.gov/training-and-development/accessing-tqb-system
+    -
+      sub_path: /staff
+      destination: work.epa.gov/staff/ORD
+    -
+      sub_path: /rtp-shem-ems
+      destination: work.epa.gov/shem-rtp
+    -
+      sub_path: '/rtp-shem-ems/*'
+      destination: work.epa.gov/shem-rtp
+    -
+      sub_path: /extramural-services/purchase-card
+      destination: work.epa.gov/acquisitions/purchase-card-program
+    -
+      sub_path: /administrative-operations/ethics
+      destination: work.epa.gov/ethics
+    -
+      sub_path: /administrative-operations/facilities-management
+      destination: work.epa.gov/facilities
+    -
+      sub_path: /administrative-operations/ord-management-information-system-omis
+      destination: work.epa.gov/ord/ord-management-information-system
+    -
+      sub_path: /administrative-operations/surveys
+      destination: work.epa.gov/administrative-resources/surveys
+    -
+      sub_path: /it-resources/backing-files-cant-be-stored-onedrive
+      destination: work.epa.gov/information-technology/backing-files-cant-be-stored-onedrive-ord
+    -
+      sub_path: /extramural-services/memorandum-understanding-mou
+      destination: work.epa.gov/memorandums-understanding/ord-memorandums-understanding
+    -
+      sub_path: /it-acquisitions
+      destination: work.epa.gov/it-acquisitions
+    -
+      sub_path: '/it-acquisitions/*'
+      destination: work.epa.gov/it-acquisitions
+    -
+      sub_path: /section-508/requesting-section-508-exception
+      destination: work.epa.gov/accessibility/ord-508-exception-request
+    -
+      sub_path: /section-508
+      destination: work.epa.gov/accessibility
+    -
+      sub_path: '/section-508/*'
+      destination: work.epa.gov/accessibility
+    -
+      sub_path: /extramural-services/contracts-and-bpas-managed-ormemd
+      destination: work.epa.gov/acquisitions/ord-contracts-bpas
+    -
+      sub_path: /extramural-services/contracts
+      destination: work.epa.gov/acquisitions/ord-contracts-bpas
+    -
+      sub_path: /extramural-services/histology-and-pathology-services
+      destination: work.epa.gov/acquisitions/ord-histology-pathology-services
