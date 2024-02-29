@@ -16,9 +16,14 @@ class FieldHelper {
   private $domestic_project;
   private $region8_project;
   private $region9_project;
+  private $trip_type;
   private $flying_out_the_country;
+  private $traveler_name;
+  private $traveler_name_if_filling_for_someone_else;
+  private $jira_issue_types;
   private $checkbox_fields;
   private $dropdown_fields;
+  private $time_dropdown_fields;
 
   private $form_to_jira_mapping;
 
@@ -27,8 +32,12 @@ class FieldHelper {
   }
 
 
-  public function get_dropdown_fields() {
+  public function getDropdownFields() {
     return $this->dropdown_fields;
+  }
+
+  public function getTimeDropdownFields() {
+    return $this->time_dropdown_fields;
   }
 
 
@@ -38,8 +47,8 @@ class FieldHelper {
    */
   function isInternational() {
     $is_international = false;
-    if (isset($this->jira_data['customfield_10191'])) {
-      $is_international = strpos($this->jira_data['customfield_10191'], 'International') !== false;
+    if (isset($this->jira_data[$this->trip_type])) {
+      $is_international = strpos($this->jira_data[$this->trip_type], 'International') !== false;
     }
     return $is_international;
   }
@@ -63,12 +72,12 @@ class FieldHelper {
   public function addSummary() {
     $name = '';
     // Traveler
-    if (!empty($this->jira_data['customfield_10090'])) {
-      $name = $this->jira_data['customfield_10090'];
+    if (!empty($this->jira_data[$this->traveler_name])) {
+      $name = $this->jira_data[$this->traveler_name];
     }
     // Traveler if filling for someone else
-    if (!empty($this->jira_data['customfield_10331'])) {
-      $name = $this->jira_data['customfield_10331'];
+    if (!empty($this->jira_data[$this->traveler_name_if_filling_for_someone_else])) {
+      $name = $this->jira_data[$this->traveler_name_if_filling_for_someone_else];
     }
     $this->jira_data['fields']['summary'] = $this->webform_title . ': ' . $name;
   }
@@ -76,9 +85,14 @@ class FieldHelper {
   public function prepareCustomFieldMappings($custom_mapping_config) {
     $this->checkbox_fields = explode('|', $custom_mapping_config->get('checkbox_fields'));
     $this->dropdown_fields = explode('|', $custom_mapping_config->get('dropdown_fields'));
+    $this->time_dropdown_fields = explode('|', $custom_mapping_config->get('time_dropdown_fields'));
     $this->form_to_jira_mapping = json_decode($custom_mapping_config->get('form_to_jira_mapping'), TRUE);
-
+    $this->trip_type = $custom_mapping_config->get('trip_type');
     $this->flying_out_the_country = $custom_mapping_config->get('flying_out_the_country');
+    $this->traveler_name= $custom_mapping_config->get('traveler_name');
+    $this->traveler_name_if_filling_for_someone_else= $custom_mapping_config->get('traveler_name_if_filling_for_someone_else');
+    $this->jira_issue_types = json_decode($custom_mapping_config->get('jira_issue_types'), TRUE);
+
   }
 
   public function prepareFormData($config, WebformSubmissionInterface $webform_submission) {
@@ -98,17 +112,7 @@ class FieldHelper {
 
   public function setIssueType() {
     $webform_type = str_replace(["region9_", "region8_"], '', $this->webform_id);
-    $mapping = [
-      'travel_amendment' => '32',
-      'travel_cancellation' => '33',
-      'travel_profile' => '34',
-      'travel_concur_routing' => '10100',
-      'travel_question' => '37',
-      'travel_authorization' => '23',
-      'travel_voucher' => '24',
-      'travel_id_information' => '35',
-    ];
-    $this->jira_data['fields']['issuetype'] = ['id' => $mapping[$webform_type]];
+    $this->jira_data['fields']['issuetype'] = ['id' => $this->jira_issue_types[$webform_type]];
   }
 
   public function isCompositeToMerge($field_name) {
